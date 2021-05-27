@@ -124,11 +124,11 @@ const StyledDiv = styled.div`
     min-width: 4.5vw;
   }
   .OurServices {
-    padding-right: 0.5vw;
+    padding-right: 0.88vw;
     min-width: 7.4vw;
   }
   .Contact {
-    padding-right: 2vw;
+    padding-right: 1.65vw;
     min-width: 5.1vw;
   }
   .EN {

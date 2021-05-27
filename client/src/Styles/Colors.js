@@ -2,6 +2,7 @@
 
 const colors = {
   Black: "#433D3D",
+  White: "#FFFFFF",
 };
 
 module.exports = {
