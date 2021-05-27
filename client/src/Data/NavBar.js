@@ -3,7 +3,7 @@ const NavTags = [
   "Our Yachts",
   "Gallery",
   "Our Services",
-  "Contact",
+  "Contacts",
 ];
 
 module.exports = {
