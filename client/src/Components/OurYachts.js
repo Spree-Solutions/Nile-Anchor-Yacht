@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Title, TitleBold, List, body, bodyBold } from "../Data/OurYachts";
 import { colors } from "../Styles/Colors";
-import Bella from "../Images/Bella.png";
+import Bella_Dark from "../Images/Bella_Dark.png";
 import Liberty_Dark from "../Images/Liberty_Dark.png";
 import Liberty_Light from "../Images/Liberty_Light.png";
 import Liberty_Image from "../Images/Liberty_Image.png";
@@ -46,7 +46,7 @@ export default function OurYachts() {
                           alt="Love Story"
                           className="Love_Story_Dark"
                         />
-                        <img src={Bella} alt="Bella" className="Bella" />
+                        <img src={Bella_Dark} alt="Bella" className="Bella" />
                         <img
                           src={Liberty_Dark}
                           alt="Liberty"
