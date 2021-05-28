@@ -91,7 +91,7 @@ export default function NavBar() {
 }
 const StyledDiv = styled.div`
   /* box width and shadow */
-  padding: 2.2vw 5.6vw 2.1vw 5.1vw;
+  padding: 2.2vw 5.6vw 2.1vw 0vw;
   font-family: "Askan Regular" !important;
   color: ${colors.Black};
   font-size: 1.25vw;

@@ -3,6 +3,7 @@
 const colors = {
   Black: "#433D3D",
   White: "#FFFFFF",
+  Merino: "#E6DBCE",
 };
 
 module.exports = {
