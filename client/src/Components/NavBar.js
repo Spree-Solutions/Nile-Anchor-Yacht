@@ -4,7 +4,7 @@ import { NavTags } from "../Data/NavBar";
 import { colors } from "../Styles/Colors";
 import Main_Logo from "../Images/Main_Logo.png";
 
-export default function NavBar() {
+export default function NavBar(props) {
   const [language, setLanguage] = useState("EN");
   const [selectedTag, setSelectedTag] = useState("whoWeAre");
   const changeToAR = () => {
@@ -17,6 +17,11 @@ export default function NavBar() {
       setLanguage("EN");
     }
   };
+
+  function handleClick(Reference, Tag) {
+    props.executeScroll(Reference);
+    setSelectedTag(Tag);
+  }
   return (
     <StyledDiv>
       <table className="Table">
@@ -31,7 +36,9 @@ export default function NavBar() {
                 className={
                   selectedTag === "whoWeAre" ? "whoWeAre BoldText" : "whoWeAre"
                 }
-                onClick={() => setSelectedTag("whoWeAre")}
+                onClick={() =>
+                  handleClick(props.References.WelceomeRef, "whoWeAre")
+                }
               >
                 {NavTags[0]}{" "}
               </span>
@@ -39,7 +46,9 @@ export default function NavBar() {
                 className={
                   selectedTag === "OurYacht" ? "OurYacht BoldText" : "OurYacht"
                 }
-                onClick={() => setSelectedTag("OurYacht")}
+                onClick={() =>
+                  handleClick(props.References.OurYachtsRef, "OurYacht")
+                }
               >
                 {NavTags[1]}{" "}
               </span>
@@ -47,7 +56,9 @@ export default function NavBar() {
                 className={
                   selectedTag === "Gallery" ? "Gallery BoldText" : "Gallery"
                 }
-                onClick={() => setSelectedTag("Gallery")}
+                onClick={() =>
+                  handleClick(props.References.GalleryRef, "Gallery")
+                }
               >
                 {NavTags[2]}{" "}
               </span>
@@ -57,7 +68,9 @@ export default function NavBar() {
                     ? "OurServices BoldText"
                     : "OurServices"
                 }
-                onClick={() => setSelectedTag("OurServices")}
+                onClick={() =>
+                  handleClick(props.References.OurServicesRef, "OurServices")
+                }
               >
                 {NavTags[3]}{" "}
               </span>
@@ -65,7 +78,9 @@ export default function NavBar() {
                 className={
                   selectedTag === "Contact" ? "Contact BoldText" : "Contact"
                 }
-                onClick={() => setSelectedTag("Contact")}
+                onClick={() =>
+                  handleClick(props.References.ContactRef, "Contact")
+                }
               >
                 {NavTags[4]}{" "}
               </span>
