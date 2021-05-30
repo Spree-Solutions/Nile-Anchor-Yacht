@@ -37,7 +37,7 @@ const StyledDiv = styled.div`
     /* adding new arrow    */
 
     background: ${colors.Merino}
-      url('data:image/svg+xml;utf8,<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0H15.5L8 8L0 0Z" fill="%234D4D4F"/></g></svg>')
+      url('data:image/svg+xml;utf8,<svg width="10" height="5" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0H15.5L8 8L0 0Z" fill="%234D4D4F"/></g></svg>')
       no-repeat;
     background-position-x: 19vw !important;
     background-position-y: 50% !important;
