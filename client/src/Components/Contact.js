@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import styled from "styled-components";
 import {
   Title,
@@ -24,6 +23,7 @@ import egyptian_flag from "../Icons/egyptian_flag.svg";
 export default function Contact() {
   const options = ["Love Story", "Bella", "Liberty"];
   const [selected, setSelected] = useState(options[0]);
+  const [checkboxStatus, setCheckboxStatus] = useState(false);
   return (
     <StyledDiv>
       <div className="Titles">
@@ -115,11 +115,27 @@ export default function Contact() {
         </tbody>
       </table>
 
-      <div>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-        {CheckBox}
-      </div>
-      <div>{Button}</div>
+      <table>
+        <tbody>
+          <tr>
+            <td className="Col1">
+              <label class="container">
+                <input
+                  type="checkbox"
+                  checked={checkboxStatus}
+                  onClick={() => setCheckboxStatus(!checkboxStatus)}
+                />
+                <span class="checkmark"></span>
+              </label>
+            </td>
+            <td className="Col2"> {CheckBox}</td>
+            <td className="Col3">
+              {" "}
+              <div className="Button">{Button}</div>{" "}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </StyledDiv>
   );
 }
@@ -184,5 +200,89 @@ const StyledDiv = styled.div`
     width: 1.8vw;
     height: 1.25vw;
     padding-top: 0.15vw;
+  }
+  .Button {
+    width: 13.6vw;
+    padding: 0.4vw 0vw 0.4vw 0vw;
+    font-family: "Askan Light" !important;
+    border: none;
+    outline: none;
+    font-size: 1vw;
+    color: ${colors.Merino};
+    cursor: pointer;
+    background-color: ${colors.LightBlue};
+  }
+
+  /* The container */
+  .container {
+    position: relative;
+    cursor: pointer;
+    font-size: 3.75vw;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1vw;
+    width: 1vw;
+    background-color: ${colors.Merino};
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: ${colors.Merino};
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 0.28vw;
+    top: 0.08vw;
+    width: 0.2vw;
+    height: 0.6vw;
+    border: solid ${colors.DarkGrey};
+    border-width: 0 0.2vw 0.2vw 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .Col1 {
+    width: 4.2vw;
+    padding-bottom: 1vw;
+  }
+  .Col2 {
+    width: 10.8vw;
+    text-align: left;
+    font-size: 1vw;
+    color: ${colors.Merino};
+  }
+  .Col3 {
+    width: 28.7vw;
   }
 `;
