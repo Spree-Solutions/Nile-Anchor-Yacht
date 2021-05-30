@@ -33,9 +33,7 @@ export default function NavBar(props) {
 
             <td className="NavCell">
               <span
-                className={
-                  selectedTag === "whoWeAre" ? "whoWeAre BoldText" : "whoWeAre"
-                }
+                className="whoWeAre"
                 onClick={() =>
                   handleClick(props.References.WelceomeRef, "whoWeAre")
                 }
@@ -43,9 +41,7 @@ export default function NavBar(props) {
                 {NavTags[0]}{" "}
               </span>
               <span
-                className={
-                  selectedTag === "OurYacht" ? "OurYacht BoldText" : "OurYacht"
-                }
+                className="OurYacht"
                 onClick={() =>
                   handleClick(props.References.OurYachtsRef, "OurYacht")
                 }
@@ -53,9 +49,7 @@ export default function NavBar(props) {
                 {NavTags[1]}{" "}
               </span>
               <span
-                className={
-                  selectedTag === "Gallery" ? "Gallery BoldText" : "Gallery"
-                }
+                className="Gallery"
                 onClick={() =>
                   handleClick(props.References.GalleryRef, "Gallery")
                 }
@@ -63,11 +57,7 @@ export default function NavBar(props) {
                 {NavTags[2]}{" "}
               </span>
               <span
-                className={
-                  selectedTag === "OurServices"
-                    ? "OurServices BoldText"
-                    : "OurServices"
-                }
+                className="OurServices"
                 onClick={() =>
                   handleClick(props.References.OurServicesRef, "OurServices")
                 }
@@ -75,9 +65,7 @@ export default function NavBar(props) {
                 {NavTags[3]}{" "}
               </span>
               <span
-                className={
-                  selectedTag === "Contact" ? "Contact BoldText" : "Contact"
-                }
+                className="Contact"
                 onClick={() =>
                   handleClick(props.References.ContactRef, "Contact")
                 }
