@@ -24,7 +24,6 @@ export default function WhoAreWe() {
 }
 
 const StyledDiv = styled.div`
-  /* box width and shadow */
   padding: 0vw 5.6vw 0vw 5.1vw;
   font-family: "Askan Regular" !important;
   color: ${colors.White};

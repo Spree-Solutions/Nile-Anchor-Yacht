@@ -125,7 +125,6 @@ export default function Gallery() {
   );
 }
 const StyledDiv = styled.div`
-  /* box width and shadow */
   padding: 3vw 12vw 5.2vw 5.6vw;
   background-color: ${colors.Black};
   text-align: left;
@@ -152,7 +151,7 @@ const StyledDiv = styled.div`
     line-height: 3.75vw;
   }
   .TitleBold {
-    font-family: "Askan Bold" !important;
+    font-family: "Askan DemiBold" !important;
     font-size: 3.75vw;
     line-height: 3.75vw;
     padding-bottom: 7vw;

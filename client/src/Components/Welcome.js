@@ -20,7 +20,6 @@ export default function Welcome() {
 }
 
 const StyledDiv = styled.div`
-  /* box width and shadow */
   padding: 0vw 0vw 0vw 5.1vw;
   color: ${colors.Merino};
   background-image: url(${Background_Welcome});

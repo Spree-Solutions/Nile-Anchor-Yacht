@@ -27,7 +27,6 @@ export default function OurServices() {
 }
 
 const StyledDiv = styled.div`
-  /* box width and shadow */
   background-color: ${colors.Merino};
 
   color: ${colors.Black};
@@ -42,7 +41,7 @@ const StyledDiv = styled.div`
   }
 
   .TitleBold {
-    font-family: "Askan Bold" !important;
+    font-family: "Askan DemiBold" !important;
     padding-bottom: 7vw;
   }
   .Titles {
