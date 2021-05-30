@@ -6,11 +6,14 @@ import Background_Welcome from "../Images/Background_Welcome.png";
 import WhoAreWe from "./WhoAreWe";
 import NavBar from "./NavBar";
 
-export default function Welcome() {
+export default function Welcome(props) {
   return (
     <div>
       <StyledDiv>
-        <NavBar />
+        <NavBar
+          executeScroll={props.executeScroll}
+          References={props.References}
+        />
         <div className="Title">{Title}</div>
         <div className="TitleBold">{TitleBold}</div>
       </StyledDiv>
