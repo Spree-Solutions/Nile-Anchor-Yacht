@@ -15,10 +15,10 @@ import { colors } from "../Styles/Colors";
 import Selector from "../Styles/Selector";
 import TextField from "../Styles/TextField";
 
-import call from "../Icons/call.svg";
-import newsletter from "../Icons/newsletter.svg";
-import whatsapp_white from "../Icons/whatsapp_white.svg";
-import egyptian_flag from "../Icons/egyptian_flag.svg";
+import call from "../Images/call.png";
+import newsletter from "../Images/newsletter.png";
+import whatsapp_white from "../Images/whatsapp_white.png";
+import egyptian_flag from "../Images/egyptian_flag.png";
 
 export default function Contact() {
   const options = ["Love Story", "Bella", "Liberty"];
@@ -128,7 +128,11 @@ export default function Contact() {
                 <span class="checkmark"></span>
               </label>
             </td>
-            <td className="Col2"> {CheckBox}</td>
+            <td className="Col2">
+              <span onClick={() => setCheckboxStatus(!checkboxStatus)}>
+                {CheckBox}
+              </span>
+            </td>
             <td className="Col3">
               {" "}
               <div className="Button">{Button}</div>{" "}
@@ -284,5 +288,12 @@ const StyledDiv = styled.div`
   }
   .Col3 {
     width: 28.7vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    .Flag {
+      margin-right: 0vw;
+      padding: 0.2vw 5vw 0.26vw 0.8vw;
+    }
   }
 `;

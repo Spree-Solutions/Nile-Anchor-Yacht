@@ -37,7 +37,7 @@ const StyledDiv = styled.div`
     /* adding new arrow    */
 
     background: ${colors.Merino}
-      url('data:image/svg+xml;utf8,<svg width="10" height="5" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0H15.5L8 8L0 0Z" fill="%234D4D4F"/></g></svg>')
+      url('data:image/svg+xml;utf8,<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0H15.5L8 8L0 0Z" fill="%234D4D4F"/></g></svg>')
       no-repeat;
     background-position-x: 19vw !important;
     background-position-y: 50% !important;
@@ -49,5 +49,17 @@ const StyledDiv = styled.div`
     -ms-appearance: none !important;
     -o-appearance: none !important;
     appearance: none !important;
+  }
+
+  @media screen and (max-width: 620px) {
+    .Selector,
+    .Selector:hover,
+    .Selector:active {
+      background: ${colors.Merino}
+        url('data:image/svg+xml;utf8,<svg width="8" height="4" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0H15.5L8 8L0 0Z" fill="%234D4D4F"/></g></svg>')
+        no-repeat;
+      background-position-x: 17vw !important;
+      background-position-y: 50% !important;
+    }
   }
 `;
