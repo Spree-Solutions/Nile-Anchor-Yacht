@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SubTitle, Body } from "../Data/WhoAreWe";
+import { SubTitle, Body } from "../Data/English/WhoAreWe";
 import { colors } from "../Styles/Colors";
 import Blacked_Area_Welcome from "../Images/Blacked_Area_Welcome.png";
 import White_Logo from "../Images/White_Logo.png";

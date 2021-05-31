@@ -9,7 +9,7 @@ import {
   FormSelect,
   CheckBox,
   Button,
-} from "../Data/Contact";
+} from "../Data/English/Contact";
 
 import { colors } from "../Styles/Colors";
 import Selector from "../Styles/Selector";

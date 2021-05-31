@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { NavTags } from "../Data/NavBar";
+import { NavTags } from "../Data/English/NavBar";
 import { colors } from "../Styles/Colors";
 import Main_Logo from "../Images/Main_Logo.png";
 

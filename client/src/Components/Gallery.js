@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, TitleBold } from "../Data/Gallery";
+import { Title, TitleBold } from "../Data/English/Gallery";
 import { colors } from "../Styles/Colors";
 import Bella_Light from "../Images/Bella_Light.png";
 import Liberty_Light from "../Images/Liberty_Light.png";

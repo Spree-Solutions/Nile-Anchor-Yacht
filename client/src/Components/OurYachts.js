@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, TitleBold, List, body, bodyBold } from "../Data/OurYachts";
+import {
+  Title,
+  TitleBold,
+  List,
+  body,
+  bodyBold,
+} from "../Data/English/OurYachts";
 import { colors } from "../Styles/Colors";
 import Bella_Dark from "../Images/Bella_Dark.png";
 import Liberty_Dark from "../Images/Liberty_Dark.png";

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, TitleBold } from "../Data/WhoAreWe";
+import { Title, TitleBold } from "../Data/English/WhoAreWe";
 import { colors } from "../Styles/Colors";
 import Background_Welcome from "../Images/Background_Welcome.png";
 import WhoAreWe from "./WhoAreWe";

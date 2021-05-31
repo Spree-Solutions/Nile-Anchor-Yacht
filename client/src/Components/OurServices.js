@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, TitleBold, SubTitles } from "../Data/OurServices";
+import { Title, TitleBold, SubTitles } from "../Data/English/OurServices";
 import { colors } from "../Styles/Colors";
 import Wedding from "../Images/Wedding.png";
 import Business from "../Images/Business.png";

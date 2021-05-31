@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FooterTags, body } from "../Data/Footer";
+import { FooterTags, body } from "../Data/English/Footer";
 import { colors } from "../Styles/Colors";
 import Logo from "../Images/Logo.png";
 import fb from "../Icons/fb.svg";
