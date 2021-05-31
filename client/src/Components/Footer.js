@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { FooterTags, body } from "../Data/English/Footer";
+import { DataEnglish } from "../Data/English/Footer";
+import { DataArabic } from "../Data/Arabic/Footer";
+
 import { colors } from "../Styles/Colors";
 import Logo from "../Images/Logo.png";
 import fb from "../Icons/fb.svg";
@@ -8,7 +10,8 @@ import instagram from "../Icons/instagram.svg";
 import twitter from "../Icons/twitter.svg";
 import whatsapp from "../Icons/whatsapp.svg";
 
-export default function Footer() {
+export default function Footer(props) {
+  const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
       <table>
@@ -18,7 +21,7 @@ export default function Footer() {
               <img src={Logo} alt="Logo" className="Logo" />
             </td>
             <td className="Col2">
-              {FooterTags.map((item, index) => (
+              {Data.FooterTags.map((item, index) => (
                 <span className="Item">{item}</span>
               ))}
             </td>
@@ -28,7 +31,7 @@ export default function Footer() {
               <img src={whatsapp} alt="whatsapp" className="whatsapp" />
               <img src={instagram} alt="instagram" className="instagram" />
             </td>
-            <td className="Col4">{body}</td>
+            <td className="Col4">{Data.body}</td>
           </tr>
         </tbody>
       </table>

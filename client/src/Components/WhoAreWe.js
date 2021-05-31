@@ -1,18 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import { SubTitle, Body } from "../Data/English/WhoAreWe";
+import { DataEnglish } from "../Data/English/WhoAreWe";
+import { DataArabic } from "../Data/Arabic/WhoAreWe";
+
 import { colors } from "../Styles/Colors";
 import Blacked_Area_Welcome from "../Images/Blacked_Area_Welcome.png";
 import White_Logo from "../Images/White_Logo.png";
 
-export default function WhoAreWe() {
+export default function WhoAreWe(props) {
+  const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
       <table>
         <tbody>
           <tr>
-            <td className="SubTitle">{SubTitle}</td>
-            <td className="Body">{Body}</td>
+            <td className="SubTitle">{Data.SubTitle}</td>
+            <td className="Body">{Data.Body}</td>
             <td>
               <img src={White_Logo} alt="logo" className="ImageLogo" />
             </td>

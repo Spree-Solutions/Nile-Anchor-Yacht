@@ -1,7 +1,4 @@
-const Title = "Our";
-const TitleBold = "Gallery";
-
+const DataEnglish = { Title: "Our", TitleBold: "Gallery" };
 module.exports = {
-  Title,
-  TitleBold,
+  DataEnglish,
 };

@@ -1,8 +1,8 @@
-const Title = "Our";
-const TitleBold = "Services";
-const SubTitles = ["Weddings", "Business Events", "Gatherings & Parties"];
+const DataEnglish = {
+  Title: "Our",
+  TitleBold: "Services",
+  SubTitles: ["Weddings", "Business Events", "Gatherings & Parties"],
+};
 module.exports = {
-  Title,
-  TitleBold,
-  SubTitles,
+  DataEnglish,
 };

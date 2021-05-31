@@ -1,7 +1,4 @@
-const Title = " ";
-const TitleBold = "الصور";
-
+const DataArabic = { Title: " ", TitleBold: "الصور" };
 module.exports = {
-  Title,
-  TitleBold,
+  DataArabic,
 };

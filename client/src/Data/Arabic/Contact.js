@@ -1,22 +1,17 @@
-const Title = "احجز";
-const TitleBold = "الآن";
-const ButtonLabel = ["بالقصف العالم", "بالقصف العالم", "القصف العالم"];
-const ButtonAction = ["دون أي", "دون أي", "دون أي"];
-const FormInput = ["الاسم", "+02", "البريد"];
-const FormSelect = {
-  Boats: ["Love Story", "Bella", "Liberty"],
-  Time: ["Time"],
-  "Event Type": ["Event Type"],
+const DataArabic = {
+  Title: "احجز",
+  TitleBold: "الآن",
+  ButtonLabel: ["بالقصف العالم", "بالقصف العالم", "القصف العالم"],
+  ButtonAction: ["دون أي", "دون أي", "دون أي"],
+  FormInput: ["الاسم", "+02", "البريد"],
+  FormSelect: {
+    Boats: ["Love Story", "Bella", "Liberty"],
+    Time: ["Time"],
+    "Event Type": ["Event Type"],
+  },
+  CheckBox: "  للسيطرة عدد للأسطول.",
+  Button: "التالي",
 };
-const CheckBox = "  للسيطرة عدد للأسطول.";
-const Button = "التالي";
 module.exports = {
-  Title,
-  TitleBold,
-  ButtonLabel,
-  ButtonAction,
-  FormInput,
-  FormSelect,
-  CheckBox,
-  Button,
+  DataArabic,
 };

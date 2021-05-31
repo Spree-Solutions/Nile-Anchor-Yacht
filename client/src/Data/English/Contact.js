@@ -1,22 +1,17 @@
-const Title = "Book";
-const TitleBold = "Now";
-const ButtonLabel = ["Request a", "Register to our", "Chat with us on"];
-const ButtonAction = ["Free Call-back", "Newsletter", "Whatsapp"];
-const FormInput = ["Your Name", "+02", "Your Email"];
-const FormSelect = {
-  Boats: ["Love Story", "Bella", "Liberty"],
-  Time: ["Time"],
-  "Event Type": ["Event Type"],
+const DataEnglish = {
+  Title: "Book",
+  TitleBold: "Now",
+  ButtonLabel: ["Request a", "Register to our", "Chat with us on"],
+  ButtonAction: ["Free Call-back", "Newsletter", "Whatsapp"],
+  FormInput: ["Your Name", "+02", "Your Email"],
+  FormSelect: {
+    Boats: ["Love Story", "Bella", "Liberty"],
+    Time: ["Time"],
+    "Event Type": ["Event Type"],
+  },
+  CheckBox: "Send me newsletter",
+  Button: "Submit",
 };
-const CheckBox = "Send me newsletter";
-const Button = "Submit";
 module.exports = {
-  Title,
-  TitleBold,
-  ButtonLabel,
-  ButtonAction,
-  FormInput,
-  FormSelect,
-  CheckBox,
-  Button,
+  DataEnglish,
 };

@@ -1,11 +1,6 @@
-const NavTags = [
-  "who are we",
-  "Our Yachts",
-  "Gallery",
-  "Our Services",
-  "Contacts",
-];
-
+const DataEnglish = {
+  NavTags: ["who are we", "Our Yachts", "Gallery", "Our Services", "Contacts"],
+};
 module.exports = {
-  NavTags,
+  DataEnglish,
 };
