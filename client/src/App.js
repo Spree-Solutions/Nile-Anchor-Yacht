@@ -6,7 +6,9 @@ import Gallery from "./Components/Gallery";
 import OurServices from "./Components/OurServices";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
-
+import DirectionProvider, {
+  DIRECTIONS,
+} from "react-with-direction/dist/DirectionProvider";
 function App() {
   const References = {
     WelceomeRef: useRef(null),
@@ -22,23 +24,27 @@ function App() {
 
   return (
     <div className="App">
-      <div ref={References.WelceomeRef}>
-        <Welcome executeScroll={executeScroll} References={References} />
-      </div>
+      <DirectionProvider direction={DIRECTIONS.LTR}>
+        <div>
+          <div ref={References.WelceomeRef}>
+            <Welcome executeScroll={executeScroll} References={References} />
+          </div>
 
-      <div ref={References.OurYachtsRef}>
-        <OurYachts />
-      </div>
-      <div ref={References.GalleryRef}>
-        <Gallery />
-      </div>
-      <div ref={References.OurServicesRef}>
-        <OurServices />
-      </div>
-      <div ref={References.ContactRef}>
-        <Contact />
-      </div>
-      <Footer />
+          <div ref={References.OurYachtsRef}>
+            <OurYachts />
+          </div>
+          <div ref={References.GalleryRef}>
+            <Gallery />
+          </div>
+          <div ref={References.OurServicesRef}>
+            <OurServices />
+          </div>
+          <div ref={References.ContactRef}>
+            <Contact />
+          </div>
+          <Footer />
+        </div>
+      </DirectionProvider>
     </div>
   );
 }
