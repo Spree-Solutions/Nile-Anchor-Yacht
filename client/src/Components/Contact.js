@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import {
-  Title,
-  TitleBold,
-  ButtonLabel,
-  ButtonAction,
-  FormInput,
-  FormSelect,
-  CheckBox,
-  Button,
-} from "../Data/Contact";
+import { DataEnglish } from "../Data/English/Contact";
+import { DataArabic } from "../Data/Arabic/Contact";
 
 import { colors } from "../Styles/Colors";
 import Selector from "../Styles/Selector";
@@ -20,15 +12,16 @@ import newsletter from "../Images/newsletter.png";
 import whatsapp_white from "../Images/whatsapp_white.png";
 import egyptian_flag from "../Images/egyptian_flag.png";
 
-export default function Contact() {
+export default function Contact(props) {
+  const Data = props.language === "EN" ? DataEnglish : DataArabic;
   const options = ["Love Story", "Bella", "Liberty"];
   const [selected, setSelected] = useState(options[0]);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
   return (
     <StyledDiv>
       <div className="Titles">
-        <span className="Title">{Title}&nbsp;</span>
-        <span className="TitleBold">{TitleBold}</span>
+        <span className="Title">{Data.Title}&nbsp;</span>
+        <span className="TitleBold">{Data.TitleBold}</span>
       </div>
       <table className="ActionTable">
         <tbody>
@@ -37,24 +30,24 @@ export default function Contact() {
               <img src={call} alt="call" className="icon" />
             </td>
             <td className="Action Call">
-              <div className="ButtonLabel">{ButtonLabel[0]}</div>
-              <div>{ButtonAction[0]}</div>
+              <div className="ButtonLabel">{Data.ButtonLabel[0]}</div>
+              <div>{Data.ButtonAction[0]}</div>
             </td>
             <td className="Icons">
               <img src={newsletter} alt="newsletter" className="icon" />
             </td>
             <td className="Action Newsletter">
               {" "}
-              <div className="ButtonLabel">{ButtonLabel[1]}</div>
-              <div>{ButtonAction[1]}</div>
+              <div className="ButtonLabel">{Data.ButtonLabel[1]}</div>
+              <div>{Data.ButtonAction[1]}</div>
             </td>
             <td className="Icons">
               <img src={whatsapp_white} alt="whatsapp" className="icon" />
             </td>
             <td className="Action Whatsapp">
               {" "}
-              <div className="ButtonLabel">{ButtonLabel[2]}</div>
-              <div>{ButtonAction[2]}</div>
+              <div className="ButtonLabel">{Data.ButtonLabel[2]}</div>
+              <div>{Data.ButtonAction[2]}</div>
             </td>
           </tr>
         </tbody>
@@ -64,11 +57,14 @@ export default function Contact() {
           <tr className="RowMargin">
             <td>
               {" "}
-              <TextField width={"20.9vw"} placeholder={FormInput[0]} />
+              <TextField width={"20.9vw"} placeholder={Data.FormInput[0]} />
             </td>
             <td>
               {" "}
-              <Selector list={FormSelect.Boats} setSelected={setSelected} />
+              <Selector
+                list={Data.FormSelect.Boats}
+                setSelected={setSelected}
+              />
             </td>
           </tr>
           <tr className="RowMargin">
@@ -88,7 +84,10 @@ export default function Contact() {
                       </div>
                     </td>
                     <td>
-                      <TextField width={"13.8vw"} placeholder={FormInput[1]} />
+                      <TextField
+                        width={"13.8vw"}
+                        placeholder={Data.FormInput[1]}
+                      />
                     </td>
                   </tr>
                 </tbody>
@@ -96,18 +95,18 @@ export default function Contact() {
             </td>
             <td>
               {" "}
-              <Selector list={FormSelect.Time} setSelected={setSelected} />
+              <Selector list={Data.FormSelect.Time} setSelected={setSelected} />
             </td>
           </tr>
           <tr className="RowMargin">
             <td>
               {" "}
-              <TextField width={"20.9vw"} placeholder={FormInput[2]} />
+              <TextField width={"20.9vw"} placeholder={Data.FormInput[2]} />
             </td>
             <td>
               {" "}
               <Selector
-                list={FormSelect["Event Type"]}
+                list={Data.FormSelect["Event Type"]}
                 setSelected={setSelected}
               />
             </td>
@@ -130,12 +129,12 @@ export default function Contact() {
             </td>
             <td className="Col2">
               <span onClick={() => setCheckboxStatus(!checkboxStatus)}>
-                {CheckBox}
+                {Data.CheckBox}
               </span>
             </td>
             <td className="Col3">
               {" "}
-              <div className="Button">{Button}</div>{" "}
+              <div className="Button">{Data.Button}</div>{" "}
             </td>
           </tr>
         </tbody>

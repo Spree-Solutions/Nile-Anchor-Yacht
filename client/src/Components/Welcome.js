@@ -1,23 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, TitleBold } from "../Data/WhoAreWe";
+import { DataEnglish } from "../Data/English/WhoAreWe";
+import { DataArabic } from "../Data/Arabic/WhoAreWe";
+
 import { colors } from "../Styles/Colors";
 import Background_Welcome from "../Images/Background_Welcome.png";
 import WhoAreWe from "./WhoAreWe";
 import NavBar from "./NavBar";
 
 export default function Welcome(props) {
+  const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <div>
       <StyledDiv>
         <NavBar
           executeScroll={props.executeScroll}
           References={props.References}
+          setLanguage={props.setLanguage}
+          language={props.language}
         />
-        <div className="Title">{Title}</div>
-        <div className="TitleBold">{TitleBold}</div>
+        <div className="Title">{Data.Title}</div>
+        <div className="TitleBold">{Data.TitleBold}</div>
       </StyledDiv>
-      <WhoAreWe />
+      <WhoAreWe language={props.language} />
     </div>
   );
 }

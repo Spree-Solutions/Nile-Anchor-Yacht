@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Welcome from "./Components/Welcome";
 import OurYachts from "./Components/OurYachts";
 import Gallery from "./Components/Gallery";
@@ -9,7 +9,9 @@ import Footer from "./Components/Footer";
 import DirectionProvider, {
   DIRECTIONS,
 } from "react-with-direction/dist/DirectionProvider";
+
 function App() {
+  const [language, setLanguage] = useState("EN");
   const References = {
     WelceomeRef: useRef(null),
     OurYachtsRef: useRef(null),
@@ -27,22 +29,27 @@ function App() {
       <DirectionProvider direction={DIRECTIONS.LTR}>
         <div>
           <div ref={References.WelceomeRef}>
-            <Welcome executeScroll={executeScroll} References={References} />
+            <Welcome
+              executeScroll={executeScroll}
+              References={References}
+              setLanguage={setLanguage}
+              language={language}
+            />
           </div>
 
           <div ref={References.OurYachtsRef}>
-            <OurYachts />
+            <OurYachts language={language} />
           </div>
           <div ref={References.GalleryRef}>
-            <Gallery />
+            <Gallery language={language} />
           </div>
           <div ref={References.OurServicesRef}>
-            <OurServices />
+            <OurServices language={language} />
           </div>
           <div ref={References.ContactRef}>
-            <Contact />
+            <Contact language={language} />
           </div>
-          <Footer />
+          <Footer language={language} />
         </div>
       </DirectionProvider>
     </div>
