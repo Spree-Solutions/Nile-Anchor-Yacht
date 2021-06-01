@@ -91,7 +91,6 @@ export default function OurYachts() {
 }
 
 const StyledDiv = styled.div`
-  /* box width and shadow */
   padding: 4.1vw 5.9vw 5.3vw 5.9vw;
   background-color: ${colors.Merino};
   text-align: left;
@@ -112,7 +111,7 @@ const StyledDiv = styled.div`
     line-height: 3.75vw;
   }
   .TitleBold {
-    font-family: "Askan Bold" !important;
+    font-family: "Askan DemiBold" !important;
     font-size: 3.75vw;
     line-height: 3.75vw;
     padding-bottom: 4.8vw;

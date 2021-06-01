@@ -5,6 +5,8 @@ const colors = {
   White: "#FFFFFF",
   Merino: "#E6DBCE",
   DarkBlue: "#01355B",
+  DarkGrey: "#303030",
+  LightBlue: "#5CC5EF",
 };
 
 module.exports = {

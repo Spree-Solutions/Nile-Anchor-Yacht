@@ -36,7 +36,6 @@ export default function Footer() {
   );
 }
 const StyledDiv = styled.div`
-  /* box width and shadow */
   padding: 3.75vw 5.6vw 5vw 3.55vw;
   font-family: "Askan Light" !important;
   font-size: 1.25vw;
