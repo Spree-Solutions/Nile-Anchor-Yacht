@@ -1,21 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, TitleBold } from "../Data/Gallery";
+import { DataEnglish } from "../Data/English/Gallery";
+import { DataArabic } from "../Data/Arabic/Gallery";
+
 import { colors } from "../Styles/Colors";
 import Bella_Light from "../Images/Bella_Light.png";
 import Liberty_Light from "../Images/Liberty_Light.png";
 import Love_Story_Light from "../Images/Love_Story_Light.png";
 import Liberty_Image from "../Images/Liberty_Image.png";
 
-export default function Gallery() {
+export default function Gallery(props) {
+  const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
       <table>
         <tbody>
           <tr>
             <td className="Col1">
-              <div className="Title">{Title}</div>
-              <div className="TitleBold">{TitleBold}</div>
+              <div className="Title">{Data.Title}</div>
+              <div className="TitleBold">{Data.TitleBold}</div>
               <div>
                 <img
                   src={Love_Story_Light}

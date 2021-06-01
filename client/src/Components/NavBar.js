@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { NavTags } from "../Data/NavBar";
+import { DataEnglish } from "../Data/English/NavBar";
+import { DataArabic } from "../Data/Arabic/NavBar";
+
 import { colors } from "../Styles/Colors";
 import Main_Logo from "../Images/Main_Logo.png";
 
-export default function NavBar() {
-  const [language, setLanguage] = useState("EN");
+export default function NavBar(props) {
+  const Data = props.language === "EN" ? DataEnglish : DataArabic;
+  const { language, setLanguage } = props;
   const [selectedTag, setSelectedTag] = useState("whoWeAre");
   const changeToAR = () => {
     if (language !== "AR") {
@@ -17,6 +20,11 @@ export default function NavBar() {
       setLanguage("EN");
     }
   };
+
+  function handleClick(Reference, Tag) {
+    props.executeScroll(Reference);
+    setSelectedTag(Tag);
+  }
   return (
     <StyledDiv>
       <table className="Table">
@@ -28,46 +36,44 @@ export default function NavBar() {
 
             <td className="NavCell">
               <span
-                className={
-                  selectedTag === "whoWeAre" ? "whoWeAre BoldText" : "whoWeAre"
+                className="whoWeAre"
+                onClick={() =>
+                  handleClick(props.References.WelceomeRef, "whoWeAre")
                 }
-                onClick={() => setSelectedTag("whoWeAre")}
               >
-                {NavTags[0]}{" "}
+                {Data.NavTags[0]}{" "}
               </span>
               <span
-                className={
-                  selectedTag === "OurYacht" ? "OurYacht BoldText" : "OurYacht"
+                className="OurYacht"
+                onClick={() =>
+                  handleClick(props.References.OurYachtsRef, "OurYacht")
                 }
-                onClick={() => setSelectedTag("OurYacht")}
               >
-                {NavTags[1]}{" "}
+                {Data.NavTags[1]}{" "}
               </span>
               <span
-                className={
-                  selectedTag === "Gallery" ? "Gallery BoldText" : "Gallery"
+                className="Gallery"
+                onClick={() =>
+                  handleClick(props.References.GalleryRef, "Gallery")
                 }
-                onClick={() => setSelectedTag("Gallery")}
               >
-                {NavTags[2]}{" "}
+                {Data.NavTags[2]}{" "}
               </span>
               <span
-                className={
-                  selectedTag === "OurServices"
-                    ? "OurServices BoldText"
-                    : "OurServices"
+                className="OurServices"
+                onClick={() =>
+                  handleClick(props.References.OurServicesRef, "OurServices")
                 }
-                onClick={() => setSelectedTag("OurServices")}
               >
-                {NavTags[3]}{" "}
+                {Data.NavTags[3]}{" "}
               </span>
               <span
-                className={
-                  selectedTag === "Contact" ? "Contact BoldText" : "Contact"
+                className="Contact"
+                onClick={() =>
+                  handleClick(props.References.ContactRef, "Contact")
                 }
-                onClick={() => setSelectedTag("Contact")}
               >
-                {NavTags[4]}{" "}
+                {Data.NavTags[4]}{" "}
               </span>
               <span
                 className={language === "EN" ? "EN BoldText" : "EN NormalText"}

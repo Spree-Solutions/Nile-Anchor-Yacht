@@ -1,24 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, TitleBold, SubTitles } from "../Data/OurServices";
+import { DataEnglish } from "../Data/English/OurServices";
+import { DataArabic } from "../Data/Arabic/OurServices";
+
 import { colors } from "../Styles/Colors";
 import Wedding from "../Images/Wedding.png";
 import Business from "../Images/Business.png";
 import Parties from "../Images/Parties.png";
 
-export default function OurServices() {
+export default function OurServices(props) {
+  const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
       <div className="Titles">
-        <span className="Title">{Title}&nbsp;</span>
-        <span className="TitleBold">{TitleBold}</span>
+        <span className="Title">{Data.Title}&nbsp;</span>
+        <span className="TitleBold">{Data.TitleBold}</span>
       </div>
       <table className="Table">
         <tbody>
           <tr>
-            <td className="Wedding">Weddings</td>
-            <td className="Business">Business Events</td>
-            <td className="Parties">Gatherings & Parties</td>
+            <td className="Wedding">{Data.SubTitles[0]}</td>
+            <td className="Business">{Data.SubTitles[1]}</td>
+            <td className="Parties">{Data.SubTitles[2]}</td>
           </tr>
         </tbody>
       </table>
