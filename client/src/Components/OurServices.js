@@ -19,9 +19,9 @@ export default function OurServices(props) {
       <table className="Table">
         <tbody>
           <tr>
-            <td className="Wedding">Weddings</td>
-            <td className="Business">Business Events</td>
-            <td className="Parties">Gatherings & Parties</td>
+            <td className="Wedding">{Data.SubTitles[0]}</td>
+            <td className="Business">{Data.SubTitles[1]}</td>
+            <td className="Parties">{Data.SubTitles[2]}</td>
           </tr>
         </tbody>
       </table>
