@@ -91,7 +91,7 @@ export default function NavBar() {
 }
 const StyledDiv = styled.div`
   /* box width and shadow */
-  padding: 2.2vw 5.6vw 2.1vw 5.1vw;
+  padding: 2.2vw 5.6vw 2.1vw 0vw;
   font-family: "Askan Regular" !important;
   color: ${colors.Black};
   font-size: 1.25vw;
@@ -112,30 +112,37 @@ const StyledDiv = styled.div`
     padding-top: 0.5vw;
   }
   .whoWeAre {
-    padding-right: 1.7vw;
+    margin-right: 1.7vw;
     min-width: 6.6vw;
+    cursor: pointer;
   }
   .OurYacht {
-    padding-right: 1vw;
+    margin-right: 1vw;
     min-width: 6.6vw;
+    cursor: pointer;
   }
   .Gallery {
-    padding-right: 1.1vw;
+    margin-right: 1.1vw;
     min-width: 4.5vw;
+    cursor: pointer;
   }
   .OurServices {
-    padding-right: 0.5vw;
+    margin-right: 0.88vw;
     min-width: 7.4vw;
+    cursor: pointer;
   }
   .Contact {
-    padding-right: 2vw;
+    margin-right: 1.65vw;
     min-width: 5.1vw;
+    cursor: pointer;
   }
   .EN {
     min-width: 2.4vw;
+    cursor: pointer;
   }
   .AR {
     min-width: 3vw;
+    cursor: pointer;
   }
   .BoldText {
     font-family: "Askan DemiBold" !important;
