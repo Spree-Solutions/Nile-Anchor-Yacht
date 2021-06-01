@@ -6,8 +6,8 @@ const DataArabic = {
   FormInput: ["الاسم", "+02", "البريد"],
   FormSelect: {
     Boats: ["Love Story", "Bella", "Liberty"],
-    Time: ["Time"],
-    "Event Type": ["Event Type"],
+    Time: ["وقت"],
+    "Event Type": ["نوع النشاط"],
   },
   CheckBox: "  للسيطرة عدد للأسطول.",
   Button: "التالي",
