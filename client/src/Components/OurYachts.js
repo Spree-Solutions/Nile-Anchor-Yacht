@@ -98,7 +98,8 @@ const StyledDiv = styled.div`
   color: ${colors.Black};
   font-family: "Askan Regular" !important;
 
-  tr {
+  tr,
+  td {
     vertical-align: top;
   }
   .bullet {
