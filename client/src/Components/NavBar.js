@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { NavTags } from "../Data/NavBar";
+import { DataEnglish } from "../Data/English/NavBar";
+import { DataArabic } from "../Data/Arabic/NavBar";
+
 import { colors } from "../Styles/Colors";
 import Main_Logo from "../Images/Main_Logo.png";
 
 export default function NavBar(props) {
-  const [language, setLanguage] = useState("EN");
+  const Data = props.language === "EN" ? DataEnglish : DataArabic;
+  const { language, setLanguage } = props;
   const [selectedTag, setSelectedTag] = useState("whoWeAre");
   const changeToAR = () => {
     if (language !== "AR") {
@@ -38,7 +41,7 @@ export default function NavBar(props) {
                   handleClick(props.References.WelceomeRef, "whoWeAre")
                 }
               >
-                {NavTags[0]}{" "}
+                {Data.NavTags[0]}{" "}
               </span>
               <span
                 className="OurYacht"
@@ -46,7 +49,7 @@ export default function NavBar(props) {
                   handleClick(props.References.OurYachtsRef, "OurYacht")
                 }
               >
-                {NavTags[1]}{" "}
+                {Data.NavTags[1]}{" "}
               </span>
               <span
                 className="Gallery"
@@ -54,7 +57,7 @@ export default function NavBar(props) {
                   handleClick(props.References.GalleryRef, "Gallery")
                 }
               >
-                {NavTags[2]}{" "}
+                {Data.NavTags[2]}{" "}
               </span>
               <span
                 className="OurServices"
@@ -62,7 +65,7 @@ export default function NavBar(props) {
                   handleClick(props.References.OurServicesRef, "OurServices")
                 }
               >
-                {NavTags[3]}{" "}
+                {Data.NavTags[3]}{" "}
               </span>
               <span
                 className="Contact"
@@ -70,7 +73,7 @@ export default function NavBar(props) {
                   handleClick(props.References.ContactRef, "Contact")
                 }
               >
-                {NavTags[4]}{" "}
+                {Data.NavTags[4]}{" "}
               </span>
               <span
                 className={language === "EN" ? "EN BoldText" : "EN NormalText"}

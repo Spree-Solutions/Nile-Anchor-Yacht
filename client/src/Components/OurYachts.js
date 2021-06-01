@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, TitleBold, List, body, bodyBold } from "../Data/OurYachts";
+import { DataEnglish } from "../Data/English/OurYachts";
+import { DataArabic } from "../Data/Arabic/OurYachts";
+
 import { colors } from "../Styles/Colors";
 import Bella_Dark from "../Images/Bella_Dark.png";
 import Liberty_Dark from "../Images/Liberty_Dark.png";
@@ -10,7 +12,8 @@ import Love_Story_Dark from "../Images/Love_Story_Dark.png";
 
 import { isMobileOnly } from "react-device-detect";
 
-export default function OurYachts() {
+export default function OurYachts(props) {
+  const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
       {isMobileOnly ? (
@@ -19,8 +22,8 @@ export default function OurYachts() {
             <tbody>
               <tr>
                 <td className="Title_Mobile">
-                  <div> {Title}</div>
-                  <div className="TitleBold"> {TitleBold}</div>
+                  <div> {Data.Title}</div>
+                  <div className="TitleBold"> {Data.TitleBold}</div>
                 </td>
                 <td>
                   <img
@@ -59,15 +62,15 @@ export default function OurYachts() {
                     </div>
                   </td>
                   <td>
-                    <div className="body_Mobile">{body}</div>
-                    <div className="bodyBold_Mobile">{bodyBold}</div>
+                    <div className="body_Mobile">{Data.body}</div>
+                    <div className="bodyBold_Mobile">{Data.bodyBold}</div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div className="ListItems_Mobile">
-            {List.map((item, index) => (
+            {Data.List.map((item, index) => (
               <span className="ListItem_Mobile">
                 <svg
                   width="1.3vw"
@@ -89,9 +92,9 @@ export default function OurYachts() {
           <tbody>
             <tr>
               <td className="Col1">
-                <div className="Title"> {Title}</div>
-                <div className="TitleBold"> {TitleBold}</div>
-                {List.map((item, index) => (
+                <div className="Title"> {Data.Title}</div>
+                <div className="TitleBold"> {Data.TitleBold}</div>
+                {Data.List.map((item, index) => (
                   <div className="ListItem">
                     <svg
                       width="0.7vw"
@@ -150,8 +153,8 @@ export default function OurYachts() {
                             className="Liberty_Light"
                           />
                         </div>
-                        <div className="body">{body}</div>
-                        <div className="bodyBold">{bodyBold}</div>
+                        <div className="body">{Data.body}</div>
+                        <div className="bodyBold">{Data.bodyBold}</div>
                       </td>
                     </tr>
                   </tbody>
