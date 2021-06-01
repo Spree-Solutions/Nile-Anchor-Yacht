@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { DataEnglish } from "../Data/English/OurYachts";
 import { DataArabic } from "../Data/Arabic/OurYachts";
-
 import { colors } from "../Styles/Colors";
 import Bella_Dark from "../Images/Bella_Dark.png";
 import Liberty_Dark from "../Images/Liberty_Dark.png";
@@ -91,8 +90,8 @@ export default function OurYachts(props) {
         <table>
           <tbody>
             <tr>
-              <td className="Col1">
-                <div className="Title"> {Data.Title}</div>
+              <td className="Col1 Title">
+                <div> {Data.Title}</div>
                 <div className="TitleBold"> {Data.TitleBold}</div>
                 {Data.List.map((item, index) => (
                   <div className="ListItem">
@@ -182,7 +181,6 @@ const StyledDiv = styled.div`
   .bullet {
     margin: 0.3vw 0.5vw 0.2vw 0vw;
   }
-
   .Title {
     font-family: "Askan Light" !important;
     font-size: 3.75vw;
@@ -210,7 +208,6 @@ const StyledDiv = styled.div`
     line-height: 1.4vw;
     padding-left: 0.7vw;
   }
-
   .Col1 {
     width: 21vw;
   }
@@ -220,7 +217,6 @@ const StyledDiv = styled.div`
   .Col3 {
     width: 17vw;
   }
-
   .Love_Story_Dark {
     width: 11.1vw;
     height: 2.8vw;
@@ -254,7 +250,6 @@ const StyledDiv = styled.div`
   .MobileViewPadding {
     padding: 2.3vw 2.1vw 10.2vw 2.1vw;
   }
-
   .Love_Story_Dark_Mobile {
     width: 18.7vw;
     height: 4.8vw;
