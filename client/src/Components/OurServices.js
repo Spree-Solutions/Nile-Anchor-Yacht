@@ -28,17 +28,17 @@ export default function OurServices(props) {
         </div>
         {isMobileOnly ? (
           <div>
-            <div className="WeddingMobile"> {Data.SubTitles[0]}</div>
-            <div className="BusinessMobile"> {Data.SubTitles[1]}</div>
-            <div className="PartiesMobile"> {Data.SubTitles[2]}</div>
+            <div className="WeddingMobile">{Data.SubTitles[0]}</div>
+            <div className="BusinessMobile">{Data.SubTitles[1]}</div>
+            <div className="PartiesMobile">{Data.SubTitles[2]}</div>
           </div>
         ) : (
           <table className="Table">
             <tbody>
               <tr>
-                <td className="Wedding">{Data.SubTitles[0]}</td>
-                <td className="Business">{Data.SubTitles[1]}</td>
-                <td className="Parties">{Data.SubTitles[2]}</td>
+                <td className="WeddingWeb">{Data.SubTitles[0]}</td>
+                <td className="BusinessWeb">{Data.SubTitles[1]}</td>
+                <td className="PartiesWeb">{Data.SubTitles[2]}</td>
               </tr>
             </tbody>
           </table>
@@ -50,18 +50,15 @@ export default function OurServices(props) {
 
 const StyledDiv = styled.div`
   background-color: ${colors.Merino};
-
   color: ${colors.Black};
   font-family: "Askan Light" !important;
   font-size: 3.75vw;
   line-height: 3.75vw;
-
   tr,
   td {
     vertical-align: top;
     border: none;
   }
-
   .TitleBold {
     font-family: "Askan DemiBold" !important;
   }
@@ -76,7 +73,6 @@ const StyledDiv = styled.div`
     font-size: 6.7vw;
     line-height: 6.7vw;
   }
-
   .Table {
     width: 100%;
     height: 41.6vw;
@@ -110,7 +106,6 @@ const StyledDiv = styled.div`
     text-align: left;
     padding: 15vw 4.5vw 0vw 8vw;
   }
-
   .WeddingMobile {
     background-image: url(${Wedding_Mobile});
     background-position: center;
