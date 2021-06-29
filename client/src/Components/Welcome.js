@@ -8,6 +8,8 @@ import Background_Welcome from "../Images/Background_Welcome.png";
 import WhoAreWe from "./WhoAreWe";
 import NavBar from "./NavBar";
 
+import { isMobileOnly } from "react-device-detect";
+
 export default function Welcome(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
@@ -19,8 +21,18 @@ export default function Welcome(props) {
           setLanguage={props.setLanguage}
           language={props.language}
         />
-        <div className="Title">{Data.Title}</div>
-        <div className="TitleBold">{Data.TitleBold}</div>
+        {isMobileOnly ? (
+          <div>
+            <div className="TitleMobile">{Data.Title}</div>
+            <div className="TitleBoldMobile">{Data.TitleBold}</div>{" "}
+          </div>
+        ) : (
+          <div>
+            {" "}
+            <div className="Title">{Data.Title}</div>
+            <div className="TitleBold">{Data.TitleBold}</div>{" "}
+          </div>
+        )}
       </StyledDiv>
       <WhoAreWe language={props.language} />
     </div>
@@ -49,5 +61,20 @@ const StyledDiv = styled.div`
     padding-bottom: 11.5vw;
     font-size: 7.4vw;
     line-height: 7.4vw;
+  }
+
+  .TitleMobile {
+    font-family: "Askan Light" !important;
+    text-align: left;
+    font-size: 10.7vw;
+    line-height: 12vw;
+    padding-top: 57vw;
+  }
+  .TitleBoldMobile {
+    font-family: "Askan Bold" !important;
+    text-align: left;
+    font-size: 18.7vw;
+    line-height: 21vw;
+    padding-bottom: 99vw;
   }
 `;

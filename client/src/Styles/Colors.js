@@ -7,6 +7,7 @@ const colors = {
   DarkBlue: "#01355B",
   DarkGrey: "#303030",
   LightBlue: "#5CC5EF",
+  DarkBlack: "#161616",
 };
 
 module.exports = {
