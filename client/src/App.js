@@ -26,7 +26,9 @@ function App() {
 
   return (
     <div className="App">
-      <DirectionProvider direction={DIRECTIONS.LTR}>
+      <DirectionProvider
+        direction={language === "EN" ? DIRECTIONS.LTR : DIRECTIONS.RTL}
+      >
         <div>
           <div ref={References.WelceomeRef}>
             <Welcome
