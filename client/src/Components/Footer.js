@@ -14,37 +14,52 @@ export default function Footer(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
-      <table>
-        <tbody>
-          <tr>
-            <td className="Col1">
-              <img src={Logo} alt="Logo" className="Logo" />
-            </td>
-            <td className="Col2">
-              {Data.FooterTags.map((item, index) => (
-                <span className="Item">{item}</span>
-              ))}
-            </td>
-            <td className="Col3">
-              <img src={fb} alt="fb" className="fb" />
-              <img src={twitter} alt="twitter" className="twitter" />
-              <img src={whatsapp} alt="whatsapp" className="whatsapp" />
-              <img src={instagram} alt="instagram" className="instagram" />
-            </td>
-            <td className="Col4">{Data.body}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div
+        className={
+          props.language === "EN"
+            ? "EnglishComponentPadding"
+            : "ArabicComponentPadding"
+        }
+      >
+        <table>
+          <tbody>
+            <tr>
+              <td className="Col1">
+                <img src={Logo} alt="Logo" className="Logo" />
+              </td>
+              <td className="Col2">
+                {Data.FooterTags.map((item, index) => (
+                  <span className="Item">{item}</span>
+                ))}
+              </td>
+              <td className="Col3">
+                <img src={fb} alt="fb" className="fb" />
+                <img src={twitter} alt="twitter" className="twitter" />
+                <img src={whatsapp} alt="whatsapp" className="whatsapp" />
+                <img src={instagram} alt="instagram" className="instagram" />
+              </td>
+              <td className="Col4">{Data.body}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </StyledDiv>
   );
 }
 const StyledDiv = styled.div`
-  padding: 3.75vw 5.6vw 5vw 3.55vw;
   font-family: "Askan Light" !important;
   font-size: 1.25vw;
   color: ${colors.Black};
   background-color: ${colors.Merino};
-  text-align: left;
+
+  .EnglishComponentPadding {
+    padding: 3.75vw 5.6vw 5vw 3.55vw;
+    text-align: left;
+  }
+  .ArabicComponentPadding {
+    padding: 3.75vw 3.55vw 5vw 5.6vw;
+    text-align: right;
+  }
 
   tr,
   td {
@@ -54,7 +69,6 @@ const StyledDiv = styled.div`
   .Logo {
     width: 14.6vw;
     height: 8vw;
-    padding: 0vw 4.1vw 0vw 0vw;
   }
 
   .Col1 {
