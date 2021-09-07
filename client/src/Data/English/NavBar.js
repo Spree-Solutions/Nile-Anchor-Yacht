@@ -1,5 +1,12 @@
 const DataEnglish = {
-  NavTags: ["who are we", "Our Yachts", "Gallery", "Our Services", "Contacts"],
+  NavTags: [
+    "About Us",
+    "Yachts Collection",
+    "Gallery",
+    "Our Services",
+    "Additional Services",
+    "Contacts",
+  ],
 };
 module.exports = {
   DataEnglish,
