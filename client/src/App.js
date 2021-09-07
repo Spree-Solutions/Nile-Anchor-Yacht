@@ -1,6 +1,7 @@
 import "./App.css";
 import { useRef, useState } from "react";
-import Welcome from "./Components/Welcome";
+import Navbar from "./NewComponents/Navbar";
+import Welcome from "./NewComponents/Welcome";
 import OurYachts from "./Components/OurYachts";
 import Gallery from "./Components/Gallery";
 import OurServices from "./Components/OurServices";
@@ -13,10 +14,11 @@ import DirectionProvider, {
 function App() {
   const [language, setLanguage] = useState("EN");
   const References = {
-    WelceomeRef: useRef(null),
+    AboutUsRef: useRef(null),
     OurYachtsRef: useRef(null),
     GalleryRef: useRef(null),
     OurServicesRef: useRef(null),
+    AdditionalServicesRef: useRef(null),
     ContactRef: useRef(null),
   };
 
@@ -30,7 +32,13 @@ function App() {
         direction={language === "EN" ? DIRECTIONS.LTR : DIRECTIONS.RTL}
       >
         <div>
-          <div ref={References.WelceomeRef}>
+          <div ref={References.AboutUsRef}>
+            <Navbar
+              executeScroll={executeScroll}
+              References={References}
+              setLanguage={setLanguage}
+              language={language}
+            />
             <Welcome
               executeScroll={executeScroll}
               References={References}
@@ -46,6 +54,9 @@ function App() {
             <Gallery language={language} />
           </div>
           <div ref={References.OurServicesRef}>
+            <OurServices language={language} />
+          </div>
+          <div ref={References.AdditionalServicesRef}>
             <OurServices language={language} />
           </div>
           <div ref={References.ContactRef}>
