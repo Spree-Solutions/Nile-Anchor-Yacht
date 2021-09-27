@@ -15,154 +15,178 @@ export default function OurYachts(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
-      {isMobileOnly ? (
-        <div className="MobileViewPadding">
-          <table>
-            <tbody>
-              <tr>
-                <td className="Title_Mobile">
-                  <div> {Data.Title}</div>
-                  <div className="TitleBold"> {Data.TitleBold}</div>
-                </td>
-                <td>
-                  <img
-                    src={Love_Story_Dark}
-                    alt="Love Story"
-                    className="Love_Story_Dark_Mobile"
-                  />
-                  <img src={Bella_Dark} alt="Bella" className="Bella_Mobile" />
-                  <img
-                    src={Liberty_Dark}
-                    alt="Liberty"
-                    className="Liberty_Dark_Mobile"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div>
-            <img
-              src={Liberty_Image}
-              alt="Liberty"
-              className="Liberty_Image_Mobile"
-            />
-          </div>
-          <div>
+      <div
+        className={props.language === "EN" ? "LeftTextAlign" : "RightTextAlign"}
+      >
+        {isMobileOnly ? (
+          <div className="MobileViewPadding">
             <table>
               <tbody>
                 <tr>
-                  <td className="ImageCol">
-                    <div className="Liberty_Light_Background">
-                      <img
-                        src={Liberty_Light}
-                        alt="Liberty"
-                        className="Liberty_Light_Mobile"
-                      />
-                    </div>
+                  <td className="Title_Mobile">
+                    <div> {Data.Title}</div>
+                    <div className="TitleBold"> {Data.TitleBold}</div>
                   </td>
                   <td>
-                    <div className="body_Mobile">{Data.body}</div>
-                    <div className="bodyBold_Mobile">{Data.bodyBold}</div>
+                    <img
+                      src={Love_Story_Dark}
+                      alt="Love Story"
+                      className="Love_Story_Dark_Mobile"
+                    />
+                    <img
+                      src={Bella_Dark}
+                      alt="Bella"
+                      className="Bella_Mobile"
+                    />
+                    <img
+                      src={Liberty_Dark}
+                      alt="Liberty"
+                      className="Liberty_Dark_Mobile"
+                    />
                   </td>
                 </tr>
               </tbody>
             </table>
+            <div>
+              <img
+                src={Liberty_Image}
+                alt="Liberty"
+                className="Liberty_Image_Mobile"
+              />
+            </div>
+            <div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td className="ImageCol">
+                      <div className="Liberty_Light_Background">
+                        <img
+                          src={Liberty_Light}
+                          alt="Liberty"
+                          className="Liberty_Light_Mobile"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      <div className="body_Mobile">{Data.body}</div>
+                      <div className="bodyBold_Mobile">{Data.bodyBold}</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="ListItems_Mobile">
+              {Data.List.map((item, index) => (
+                <span className="ListItem_Mobile">
+                  <svg
+                    width="1.3vw"
+                    height="1.3vw"
+                    viewBox="0 0 1.3vw 1.3vw"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="bullet_Mobile"
+                  >
+                    <rect width="1.3vw" height="1.3vw" fill={colors.Black} />
+                  </svg>
+                  <span> {item}</span>
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="ListItems_Mobile">
-            {Data.List.map((item, index) => (
-              <span className="ListItem_Mobile">
-                <svg
-                  width="1.3vw"
-                  height="1.3vw"
-                  viewBox="0 0 1.3vw 1.3vw"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="bullet_Mobile"
-                >
-                  <rect width="1.3vw" height="1.3vw" fill={colors.Black} />
-                </svg>
-                <span> {item}</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <table>
-          <tbody>
-            <tr>
-              <td className="Col1 Title">
-                <div> {Data.Title}</div>
-                <div className="TitleBold"> {Data.TitleBold}</div>
-                {Data.List.map((item, index) => (
-                  <div className="ListItem">
-                    <svg
-                      width="0.7vw"
-                      height="0.7vw"
-                      viewBox="0 0 0.7vw 0.7vw"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="bullet"
-                    >
-                      <rect width="0.7vw" height="0.7vw" fill={colors.Black} />
-                    </svg>
+        ) : (
+          <table>
+            <tbody>
+              <tr>
+                <td className="Col1 Title">
+                  <div> {Data.Title}</div>
+                  <div className="TitleBold"> {Data.TitleBold}</div>
+                  {Data.List.map((item, index) => (
+                    <div className="ListItem">
+                      <svg
+                        width="0.7vw"
+                        height="0.7vw"
+                        viewBox="0 0 0.7vw 0.7vw"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={
+                          props.language === "EN" ? "ENbullet" : "ARbullet"
+                        }
+                      >
+                        <rect
+                          width="0.7vw"
+                          height="0.7vw"
+                          fill={colors.Black}
+                        />
+                      </svg>
 
-                    <span> {item}</span>
-                  </div>
-                ))}
-              </td>
-              <td>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        {" "}
-                        <div className="images">
-                          <img
-                            src={Love_Story_Dark}
-                            alt="Love Story"
-                            className="Love_Story_Dark"
-                          />
-                          <img src={Bella_Dark} alt="Bella" className="Bella" />
-                          <img
-                            src={Liberty_Dark}
-                            alt="Liberty"
-                            className="Liberty_Dark"
-                          />
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        {" "}
-                        <div className="Col2">
-                          <img
-                            src={Liberty_Image}
-                            alt="Liberty"
-                            className="Liberty_Image"
-                          />
-                        </div>
-                      </td>
-                      <td className="Col3">
-                        {" "}
-                        <div className="Liberty_Light_Background">
+                      <span> {item}</span>
+                    </div>
+                  ))}
+                </td>
+                <td>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
                           {" "}
-                          <img
-                            src={Liberty_Light}
-                            alt="Liberty"
-                            className="Liberty_Light"
-                          />
-                        </div>
-                        <div className="body">{Data.body}</div>
-                        <div className="bodyBold">{Data.bodyBold}</div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      )}
+                          <div className="images">
+                            <img
+                              src={Love_Story_Dark}
+                              alt="Love Story"
+                              className={
+                                props.language === "EN"
+                                  ? "ENLove_Story_Dark"
+                                  : "ARLove_Story_Dark"
+                              }
+                            />
+                            <img
+                              src={Bella_Dark}
+                              alt="Bella"
+                              className={
+                                props.language === "EN" ? "ENBella" : "ARBella"
+                              }
+                            />
+                            <img
+                              src={Liberty_Dark}
+                              alt="Liberty"
+                              className="Liberty_Dark"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          {" "}
+                          <div className="Col2">
+                            <img
+                              src={Liberty_Image}
+                              alt="Liberty"
+                              className="Liberty_Image"
+                            />
+                          </div>
+                        </td>
+                        <td className="Col3">
+                          {" "}
+                          <div className="Liberty_Light_Background">
+                            {" "}
+                            <img
+                              src={Liberty_Light}
+                              alt="Liberty"
+                              className="Liberty_Light"
+                            />
+                          </div>
+                          <div className="body">{Data.body}</div>
+                          <div className="bodyBold">{Data.bodyBold}</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        )}
+      </div>
     </StyledDiv>
   );
 }
@@ -170,16 +194,25 @@ export default function OurYachts(props) {
 const StyledDiv = styled.div`
   padding: 4.1vw 5.9vw 5.3vw 5.9vw;
   background-color: ${colors.Merino};
-  text-align: left;
   color: ${colors.Black};
   font-family: "Askan Regular" !important;
+
+  .LeftTextAlign {
+    text-align: left;
+  }
+  .RightTextAlign {
+    text-align: right;
+  }
 
   tr,
   td {
     vertical-align: top;
   }
-  .bullet {
+  .ENbullet {
     margin: 0.3vw 0.5vw 0.2vw 0vw;
+  }
+  .ARbullet {
+    margin: 0.3vw 0vw 0.2vw 0.5vw;
   }
   .Title {
     font-family: "Askan Light" !important;
@@ -217,15 +250,25 @@ const StyledDiv = styled.div`
   .Col3 {
     width: 17vw;
   }
-  .Love_Story_Dark {
+  .ENLove_Story_Dark {
     width: 11.1vw;
     height: 2.8vw;
     padding-right: 2.7vw;
   }
-  .Bella {
+  .ENBella {
     width: 7.6vw;
     height: 2.8vw;
     padding-right: 2.6vw;
+  }
+  .ARLove_Story_Dark {
+    width: 11.1vw;
+    height: 2.8vw;
+    padding-left: 2.7vw;
+  }
+  .ARBella {
+    width: 7.6vw;
+    height: 2.8vw;
+    padding-left: 2.6vw;
   }
   .Liberty_Dark {
     width: 9.2vw;
@@ -245,8 +288,9 @@ const StyledDiv = styled.div`
     padding: 2.7vw 2.3vw 2.77vw 2.3vw;
   }
   .images {
-    padding: 5vw 2.6vw 2.5vw 2.4vw;
+    padding: 5vw 2.4vw 2.5vw 2.4vw;
   }
+
   .MobileViewPadding {
     padding: 2.3vw 2.1vw 10.2vw 2.1vw;
   }

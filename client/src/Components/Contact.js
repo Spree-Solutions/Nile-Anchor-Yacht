@@ -15,130 +15,180 @@ import egyptian_flag from "../Images/egyptian_flag.png";
 export default function Contact(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   const options = ["Love Story", "Bella", "Liberty"];
+  // eslint-disable-next-line no-unused-vars
   const [selected, setSelected] = useState(options[0]);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
   return (
     <StyledDiv>
-      <div className="Titles">
-        <span className="Title">{Data.Title}&nbsp;</span>
-        <span className="TitleBold">{Data.TitleBold}</span>
-      </div>
-      <table className="ActionTable">
-        <tbody>
-          <tr>
-            <td className="Icons">
-              <img src={call} alt="call" className="icon" />
-            </td>
-            <td className="Action Call">
-              <div className="ButtonLabel">{Data.ButtonLabel[0]}</div>
-              <div>{Data.ButtonAction[0]}</div>
-            </td>
-            <td className="Icons">
-              <img src={newsletter} alt="newsletter" className="icon" />
-            </td>
-            <td className="Action Newsletter">
-              {" "}
-              <div className="ButtonLabel">{Data.ButtonLabel[1]}</div>
-              <div>{Data.ButtonAction[1]}</div>
-            </td>
-            <td className="Icons">
-              <img src={whatsapp_white} alt="whatsapp" className="icon" />
-            </td>
-            <td className="Action Whatsapp">
-              {" "}
-              <div className="ButtonLabel">{Data.ButtonLabel[2]}</div>
-              <div>{Data.ButtonAction[2]}</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <tbody>
-          <tr className="RowMargin">
-            <td>
-              {" "}
-              <TextField width={"20.9vw"} placeholder={Data.FormInput[0]} />
-            </td>
-            <td>
-              {" "}
-              <Selector
-                list={Data.FormSelect.Boats}
-                setSelected={setSelected}
-              />
-            </td>
-          </tr>
-          <tr className="RowMargin">
-            <td>
-              {" "}
-              <table>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div className="Flag">
-                        {" "}
-                        <img
-                          src={egyptian_flag}
-                          alt="lag"
-                          className="EgyptianFlag"
-                        />
-                      </div>
-                    </td>
-                    <td>
-                      <TextField
-                        width={"13.8vw"}
-                        placeholder={Data.FormInput[1]}
-                      />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td>
-              {" "}
-              <Selector list={Data.FormSelect.Time} setSelected={setSelected} />
-            </td>
-          </tr>
-          <tr className="RowMargin">
-            <td>
-              {" "}
-              <TextField width={"20.9vw"} placeholder={Data.FormInput[2]} />
-            </td>
-            <td>
-              {" "}
-              <Selector
-                list={Data.FormSelect["Event Type"]}
-                setSelected={setSelected}
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table>
-        <tbody>
-          <tr>
-            <td className="Col1">
-              <label class="container">
-                <input
-                  type="checkbox"
-                  checked={checkboxStatus}
-                  onClick={() => setCheckboxStatus(!checkboxStatus)}
+      <div
+        className={
+          props.language === "EN"
+            ? "EnglishComponentPadding"
+            : "ArabicComponentPadding"
+        }
+      >
+        <div className="Titles">
+          <span className="Title">{Data.Title}&nbsp;</span>
+          <span className="TitleBold">{Data.TitleBold}</span>
+        </div>
+        <table className="ActionTable">
+          <tbody>
+            <tr>
+              <td className="Icons">
+                <img
+                  src={call}
+                  alt="call"
+                  className={props.language === "EN" ? "ENicon" : "ARicon"}
                 />
-                <span class="checkmark"></span>
-              </label>
-            </td>
-            <td className="Col2">
-              <span onClick={() => setCheckboxStatus(!checkboxStatus)}>
-                {Data.CheckBox}
-              </span>
-            </td>
-            <td className="Col3">
-              {" "}
-              <div className="Button">{Data.Button}</div>{" "}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+              <td
+                className={
+                  props.language === "EN" ? "Action ENcall" : "Action ARcall"
+                }
+              >
+                <div className="ButtonLabel">{Data.ButtonLabel[0]}</div>
+                <div>{Data.ButtonAction[0]}</div>
+              </td>
+              <td className="Icons">
+                <img
+                  src={newsletter}
+                  alt="newsletter"
+                  className={props.language === "EN" ? "ENicon" : "ARicon"}
+                />
+              </td>
+              <td
+                className={
+                  props.language === "EN"
+                    ? "Action ENnewsletter"
+                    : "Action ARnewsletter"
+                }
+              >
+                {" "}
+                <div className="ButtonLabel">{Data.ButtonLabel[1]}</div>
+                <div>{Data.ButtonAction[1]}</div>
+              </td>
+              <td className="Icons">
+                <img
+                  src={whatsapp_white}
+                  alt="whatsapp"
+                  className={props.language === "EN" ? "ENicon" : "ARicon"}
+                />
+              </td>
+              <td className="Action Whatsapp">
+                {" "}
+                <div className="ButtonLabel">{Data.ButtonLabel[2]}</div>
+                <div>{Data.ButtonAction[2]}</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr className="RowMargin">
+              <td>
+                {" "}
+                <TextField
+                  width={"20.9vw"}
+                  placeholder={Data.FormInput[0]}
+                  language={props.language}
+                />
+              </td>
+              <td>
+                {" "}
+                <Selector
+                  list={Data.FormSelect.Boats}
+                  setSelected={setSelected}
+                />
+              </td>
+            </tr>
+            <tr className="RowMargin">
+              <td>
+                {" "}
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div
+                          className={
+                            props.language === "EN"
+                              ? "Flag ENflag"
+                              : "Flag ARflag"
+                          }
+                        >
+                          {" "}
+                          <img
+                            src={egyptian_flag}
+                            alt="lag"
+                            className="EgyptianFlag"
+                          />
+                        </div>
+                      </td>
+                      <td>
+                        <TextField
+                          width={"13.6vw"}
+                          placeholder={Data.FormInput[1]}
+                          language={props.language}
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td>
+                {" "}
+                <Selector
+                  list={Data.FormSelect.Time}
+                  setSelected={setSelected}
+                />
+              </td>
+            </tr>
+            <tr className="RowMargin">
+              <td>
+                {" "}
+                <TextField
+                  width={"20.9vw"}
+                  placeholder={Data.FormInput[2]}
+                  language={props.language}
+                />
+              </td>
+              <td>
+                {" "}
+                <Selector
+                  list={Data.FormSelect["Event Type"]}
+                  setSelected={setSelected}
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <tbody>
+            <tr>
+              <td className="Col0"></td>
+              <td className="Col1">
+                <label class="container">
+                  <input
+                    type="checkbox"
+                    checked={checkboxStatus}
+                    onClick={() => setCheckboxStatus(!checkboxStatus)}
+                  />
+                  <span class="checkmark"></span>
+                </label>
+              </td>
+              <td className="Col2">
+                <span onClick={() => setCheckboxStatus(!checkboxStatus)}>
+                  {Data.CheckBox}
+                </span>
+              </td>
+              <td className="Col3">
+                {" "}
+                <div className="Button">{Data.Button}</div>{" "}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </StyledDiv>
   );
 }
@@ -146,11 +196,16 @@ export default function Contact(props) {
 const StyledDiv = styled.div`
   padding: 4vw 27vw 4.3vw 27vw;
   background-color: ${colors.DarkGrey};
-
   color: ${colors.White};
   font-family: "Askan Light" !important;
   font-size: 1vw;
-  text-align: center;
+
+  .EnglishComponentPadding {
+    text-align: left;
+  }
+  .ArabicComponentPadding {
+    text-align: right;
+  }
 
   .ActionTable {
     padding-bottom: 2.1vw;
@@ -164,9 +219,13 @@ const StyledDiv = styled.div`
     line-height: 3.75vw;
     padding-bottom: 3.6vw;
   }
-  .icon {
+  .ENicon {
     width: 2.8vw;
     margin-right: 1.2vw;
+  }
+  .ARicon {
+    width: 2.8vw;
+    margin-left: 1.2vw;
   }
   .Icons {
     width: 4vw;
@@ -174,17 +233,24 @@ const StyledDiv = styled.div`
   }
   .Action {
     font-size: 1.4vw;
-    text-align: left;
   }
   .ButtonLabel {
     font-size: 1vw;
   }
-  .Call {
+  .ENcall {
     padding-right: 4.4vw;
     width: 9.1vw;
   }
-  .Newsletter {
+  .ARcall {
+    padding-left: 4.4vw;
+    width: 9.1vw;
+  }
+  .ENnewsletter {
     padding-right: 3vw;
+    width: 9vw;
+  }
+  .ARnewsletter {
+    padding-left: 3vw;
     width: 9vw;
   }
   .Whatsapp {
@@ -192,12 +258,17 @@ const StyledDiv = styled.div`
   }
   .Flag {
     width: 0px;
-    margin-right: 1vw;
-    text-align-last: left;
     background-color: ${colors.Merino} !important;
     height: unset;
-    padding: 0.2vw 5vw 0.15vw 0.8vw;
     margin-bottom: 1.4vw;
+  }
+  .ENflag {
+    margin-right: 1vw;
+    padding: 0.2vw 5vw 0.15vw 0.8vw;
+  }
+  .ARflag {
+    margin-left: 1vw;
+    padding: 0.2vw 0.8vw 0.15vw 5vw;
   }
   .EgyptianFlag {
     width: 1.8vw;
@@ -214,6 +285,7 @@ const StyledDiv = styled.div`
     color: ${colors.Merino};
     cursor: pointer;
     background-color: ${colors.LightBlue};
+    text-align: center;
   }
 
   /* The container */
@@ -241,6 +313,7 @@ const StyledDiv = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     height: 1vw;
     width: 1vw;
     background-color: ${colors.Merino};
@@ -275,13 +348,15 @@ const StyledDiv = styled.div`
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+  .Col0 {
+    width: 3.7vw;
+  }
   .Col1 {
-    width: 4.2vw;
+    width: 1.5vw;
     padding-bottom: 1vw;
   }
   .Col2 {
     width: 10.8vw;
-    text-align: left;
     font-size: 1vw;
     color: ${colors.Merino};
   }
@@ -292,6 +367,7 @@ const StyledDiv = styled.div`
   @media screen and (max-width: 480px) {
     .Flag {
       margin-right: 0vw;
+      margin-left: 0vw;
       padding: 0.2vw 5vw 0.26vw 0.8vw;
     }
   }

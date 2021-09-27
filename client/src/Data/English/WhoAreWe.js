@@ -1,8 +1,9 @@
 const DataEnglish = {
   Title: "Welcome",
   TitleBold: "On Board",
-  SubTitle: "Who We Are?",
-  Body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus at justo, tincidunt molestie enim lacus nibh pharetra. Nisi, mauris eget pellentesque mattis habitant enim vel, sed id. Vel mauris nibh nullam faucibus. Eget tellus vel arcu venenatis ligula volutpat elementum ut justo. Neque mauris ullamcorper purus vitae mauris, dolor scelerisque phasellus. Nisl, ipsum sed est in pulvinar. Enim ac non aliquet eget ornare.",
+  SubTitle: "Who",
+  SubTitleBold: "We Are?",
+  Body: "Launching in 2021 with a dedicated drive towards becoming Egypt’s top luxurious, hospitable onboard service cruise boats. The Nile Anchor aims at providing high-end value by developing exclusive offers and premium packages which cater the needs to develop memorable, breathtaking moments on Egypt’s Nile River. Premium packages are customizable and are currently available to; individuals, corporations and organizations providing stress-free solutions to those who wish to organize and hold exclusive events whether; corporate or group outing’s, wedding/engagement ceremonies or even celebrations. ",
 };
 module.exports = {
   DataEnglish,
