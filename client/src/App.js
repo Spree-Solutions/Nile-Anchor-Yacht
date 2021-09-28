@@ -1,12 +1,13 @@
 import "./App.css";
 import { useRef, useState } from "react";
-import Navbar from "./NewComponents/Navbar";
-import Welcome from "./NewComponents/Welcome";
-import OurYachts from "./Components/OurYachts";
-import Gallery from "./Components/Gallery";
-import OurServices from "./Components/OurServices";
-import Contact from "./Components/Contact";
-import Footer from "./Components/Footer";
+import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
+
+import AboutPage from "./Pages/AboutPage";
+import HomePage from "./Pages/HomePage";
+import GatheringsPage from "./Pages/GatheringsPage";
+import WeddingPage from "./Pages/WeddingPage";
+import BusinessPage from "./Pages/BusinessPage";
+
 import DirectionProvider, {
   DIRECTIONS,
 } from "react-with-direction/dist/DirectionProvider";
@@ -25,6 +26,8 @@ function App() {
   function executeScroll(key) {
     key.current.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+  const [showError, setShowError] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   return (
     <div className="App">
@@ -32,37 +35,57 @@ function App() {
         direction={language === "EN" ? DIRECTIONS.LTR : DIRECTIONS.RTL}
       >
         <div>
-          <div ref={References.AboutUsRef}>
-            <Navbar
-              executeScroll={executeScroll}
-              References={References}
-              setLanguage={setLanguage}
-              language={language}
-            />
-            <Welcome
-              executeScroll={executeScroll}
-              References={References}
-              setLanguage={setLanguage}
-              language={language}
-            />
-          </div>
-
-          <div ref={References.OurYachtsRef}>
-            <OurYachts language={language} />
-          </div>
-          <div ref={References.GalleryRef}>
-            <Gallery language={language} />
-          </div>
-          <div ref={References.OurServicesRef}>
-            <OurServices language={language} />
-          </div>
-          <div ref={References.AdditionalServicesRef}>
-            <OurServices language={language} />
-          </div>
-          <div ref={References.ContactRef}>
-            <Contact language={language} />
-          </div>
-          <Footer language={language} />
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/">
+                <HomePage
+                  References={References}
+                  executeScroll={executeScroll}
+                  language={language}
+                  setLanguage={setLanguage}
+                  showError={showError}
+                  setShowError={setShowSuccess}
+                  setShowSuccess={setShowSuccess}
+                  showSuccess={showSuccess}
+                />
+              </Route>
+              <Route exact path="/About">
+                <AboutPage
+                  References={References}
+                  executeScroll={executeScroll}
+                  language={language}
+                  setLanguage={setLanguage}
+                />
+              </Route>
+              <Route exact path="/Wedding">
+                {" "}
+                <WeddingPage
+                  References={References}
+                  executeScroll={executeScroll}
+                  language={language}
+                  setLanguage={setLanguage}
+                />
+              </Route>
+              <Route exact path="/Business">
+                <BusinessPage
+                  References={References}
+                  executeScroll={executeScroll}
+                  language={language}
+                  setLanguage={setLanguage}
+                />
+              </Route>
+              <Route exact path="/Gathering">
+                <GatheringsPage
+                  References={References}
+                  executeScroll={executeScroll}
+                  language={language}
+                  setLanguage={setLanguage}
+                />
+              </Route>
+              {/* Route with no  exact path incase user enters incorrect url, he gets directed to dashboard*/}
+              <Route render={() => <Redirect to="/" />} />
+            </Switch>
+          </BrowserRouter>
         </div>
       </DirectionProvider>
     </div>
