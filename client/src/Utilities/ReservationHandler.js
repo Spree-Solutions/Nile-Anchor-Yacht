@@ -1,8 +1,11 @@
 import PaymentHandler from './PaymentHandler';
+
+export const WRONG_RESERVATION_DATE_FORMAT = 110;
 export default class ReservationHandler {
     username="";
     phoneNumber="";
     email="";
+    serviceName="";
     selectedYacht=null;
     _selectedReservationDay=null;
     selectedStartingTime=null;
@@ -60,9 +63,62 @@ export default class ReservationHandler {
     } 
 
     async reserve(){
+        this.isLoading = true;
         window.TanawysPHandler = PaymentHandler;
+        let params = {
+            customer_name: this.username,
+            customer_email:this.email,
+            customer_mobile:this.phoneNumber,
+            description:`Nile Yacht Reservation for ${this.serviceName}
+            on yacht ${this.selectedYacht}
+            on day ${this.reservationDate}
+            from time ${this.selectedStartingTime} to ${this.selectedEndingTime}
+            for ${this.calculatedFinalPrice}`,
+            amount:this.calculatedFinalPrice
+        };
+        let response = await PaymentHandler.initializeIFrame(params);
+        this.isLoading = false;
+        return response;
+
 
     }
+
+    set reservationDate(value) {
+        if(typeof value !== typeof "")
+            throw {
+                code:WRONG_RESERVATION_DATE_FORMAT,
+                message:"reservation date must be string"};
+        // check date format
+
+        // if all is right assign value
+        this._selectedReservationDay = value;
+
+        // get appropriate time block calculated
+
+    }
+
+    get reservationDate(){
+        return this._selectedReservationDay;
+        
+    }
+
+    async availableTimeSlots(dayDate = null){
+
+
+
+    }
+
+    async _getAvailability(dayDate){
+        
+        // insure request parameter exists
+
+        // send availability request
+
+        // set existing Reservation Array
+
+        return true;
+    }
+
 
 
     
