@@ -23,6 +23,9 @@ export default class ReservationHandler {
     // reserve yacht on a given date
     // calculate yacht price for a given time period same day
 
+    constructor(){
+        window.TanawysPHandler = PaymentHandler;
+    }
     calculatePrice(hoursCount){
         // check if type is valid
         // if(typeof(hoursCount)===typeof(0))
@@ -64,7 +67,6 @@ export default class ReservationHandler {
 
     async reserve(){
         this.isLoading = true;
-        window.TanawysPHandler = PaymentHandler;
         let params = {
             customer_name: this.username,
             customer_email:this.email,
