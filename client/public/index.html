@@ -29,6 +29,19 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <script src="https://staging.cowpay.me/js/plugins/CCIframePlugin.js"></script>
+    <script>
+      window.addEventListener('message', function (e) {
+        if (e.data && e.data.message_source === 'cowpay') {
+            console.log("Tanawy caught in event listener",e);
+                    let paymentStatus = e.data.payment_status,
+                        cowpayReferenceId = e.data.cowpay_reference_id,
+                        gatewayReferenceId = e.data.payment_gateway_reference_id;
+                    
+                    // take an action based on the values 
+                }
+                
+            }, false);
+    </script>
     <div id="root"></div>
     <div id="cowpay-iframe-container"></div>
     <!--

@@ -135,18 +135,6 @@ class CowpayService {
             // return {error:false,message:response}
 
             // set eventListener
-            window.addEventListener('message', function (e) {
-                console.log("Tanawy caught in event listener",e);
-                if (e.data && e.data.message_source === 'cowpay') {
-                    let paymentStatus = e.data.payment_status,
-                        cowpayReferenceId = e.data.cowpay_reference_id,
-                        gatewayReferenceId = e.data.payment_gateway_reference_id;
-                    
-                    // take an action based on the values 
-                }
-                
-            }, false);
-            
             window.COWPAYIFRAMEDIALOG.init()
             window.COWPAYIFRAMEDIALOG.load(tokenValue) // token value from the previous response
             return {error:false,message:{referenceId}} 
