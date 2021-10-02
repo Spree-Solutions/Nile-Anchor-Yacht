@@ -58,6 +58,13 @@ code {
 }
 
 @font-face {
+  font-family: "Merriweather Regular";
+  src: local("Merriweather Regular"),
+    url("./Fonts/Merriweather-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
   font-family: "Merriweather Bold";
   src: local("Merriweather Bold"),
     url("./Fonts/Merriweather-Bold.ttf") format("truetype");

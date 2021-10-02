@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { DataEnglish } from "../Data/English/Footer";
-import { DataArabic } from "../Data/Arabic/Footer";
+import { DataEnglish } from "../Data/English/HomePage/Footer";
+import { DataArabic } from "../Data/Arabic/HomePage/Footer";
 
 import { colors } from "../Styles/Colors";
 import Logo from "../Images/Logo.png";
@@ -38,7 +38,13 @@ export default function Footer(props) {
                 <img src={whatsapp} alt="whatsapp" className="whatsapp" />
                 <img src={instagram} alt="instagram" className="instagram" />
               </td>
-              <td className="Col4">{Data.body}</td>
+              <td className="Col4">
+                <div>{Data.body1}</div>
+                <div>{Data.body2}</div>
+                <div>{Data.body3}</div>
+                <div>{Data.body4}</div>
+                <div>{Data.body5}</div>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -57,7 +63,7 @@ const StyledDiv = styled.div`
     text-align: left;
   }
   .ArabicComponentPadding {
-    padding: 3.75vw 3.55vw 5vw 5.6vw;
+    padding: 3.75vw 7vw 5vw 5.6vw;
     text-align: right;
   }
 
@@ -85,6 +91,7 @@ const StyledDiv = styled.div`
   .Col4 {
     width: 18.5vw;
     font-size: 1.1vw;
+    padding: 2vw 0vw 0vw 0vw;
   }
 
   .Item {

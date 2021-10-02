@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { DataEnglish } from "../Data/English/Contact";
-import { DataArabic } from "../Data/Arabic/Contact";
+import { DataEnglish } from "../Data/English/HomePage/Contact";
+import { DataArabic } from "../Data/Arabic/HomePage/Contact";
 
 import { colors } from "../Styles/Colors";
 import Selector from "../Styles/Selector";
@@ -98,6 +98,7 @@ export default function Contact(props) {
                 <Selector
                   list={Data.FormSelect.Boats}
                   setSelected={setSelected}
+                  language={props.language}
                 />
               </td>
             </tr>
@@ -139,6 +140,7 @@ export default function Contact(props) {
                 <Selector
                   list={Data.FormSelect.Time}
                   setSelected={setSelected}
+                  language={props.language}
                 />
               </td>
             </tr>
@@ -156,6 +158,7 @@ export default function Contact(props) {
                 <Selector
                   list={Data.FormSelect["Event Type"]}
                   setSelected={setSelected}
+                  language={props.language}
                 />
               </td>
             </tr>
@@ -201,10 +204,10 @@ const StyledDiv = styled.div`
   font-size: 1vw;
 
   .EnglishComponentPadding {
-    text-align: left;
+    text-align: left !important;
   }
   .ArabicComponentPadding {
-    text-align: right;
+    text-align: right !important;
   }
 
   .ActionTable {
@@ -218,6 +221,7 @@ const StyledDiv = styled.div`
     font-size: 3.75vw;
     line-height: 3.75vw;
     padding-bottom: 3.6vw;
+    text-align: center;
   }
   .ENicon {
     width: 2.8vw;
