@@ -1,4 +1,4 @@
-
+import PaymentHandler from './PaymentHandler';
 export default class ReservationHandler {
     username="";
     phoneNumber="";
@@ -13,6 +13,7 @@ export default class ReservationHandler {
     priceSegments=[];
     availableHourSegments=[]; // type []{startTime:"hh:mm",endTime:"hh:mm"}
     existingReservations = [];
+    paymentReferenceNumber = null;
 
 
     // get yacht availability given date
@@ -45,7 +46,7 @@ export default class ReservationHandler {
     calculateAvailablity(){
         let hoursArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
         // sort reservation earlier first
-        reservations = this.existingReservations.sort(((hoursA,hoursB)=> Number(hoursA.fromHours)- Number(hoursB.fromHours)))
+        let reservations = this.existingReservations.sort(((hoursA,hoursB)=> Number(hoursA.fromHours)- Number(hoursB.fromHours)))
 
         let connectedSegments = reservations.map(reservation=>{
             let startHour = hoursArray.indexOf(Math.floor(reservation.fromHours));
@@ -57,6 +58,11 @@ export default class ReservationHandler {
 
         return connectedSegments;
     } 
+
+    async reserve(){
+        window.TanawysPHandler = PaymentHandler;
+
+    }
 
 
     

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { DataEnglish } from "../Data/English/Contact";
 import { DataArabic } from "../Data/Arabic/Contact";
+import ReservationHandler from "../Utilities/ReservationHandler";
 
 import { colors } from "../Styles/Colors";
 import Selector from "../Styles/Selector";
@@ -17,6 +18,8 @@ export default function Contact(props) {
   const options = ["Love Story", "Bella", "Liberty"];
   const [selected, setSelected] = useState(options[0]);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
+  // initializa reservation handler
+  const reservationInstance = new ReservationHandler();
   return (
     <StyledDiv>
       <div className="Titles">
@@ -134,7 +137,7 @@ export default function Contact(props) {
             </td>
             <td className="Col3">
               {" "}
-              <div className="Button">{Data.Button}</div>{" "}
+              <div className="Button" onClick={(e)=>{reservationInstance.reserve()}}>{Data.Button}</div>{" "}
             </td>
           </tr>
         </tbody>
