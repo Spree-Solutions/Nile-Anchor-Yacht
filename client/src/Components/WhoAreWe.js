@@ -23,8 +23,24 @@ export default function WhoAreWe(props) {
           <table>
             <tbody>
               <tr>
-                <td className="SubTitle">{Data.SubTitle}</td>
-                <td className="Body">{Data.Body}</td>
+                <td
+                  className={
+                    props.language === "EN"
+                      ? "SubTitle LeftTextAlign"
+                      : "SubTitle RightTextAlign"
+                  }
+                >
+                  {Data.SubTitle}
+                </td>
+                <td
+                  className={
+                    props.language === "EN"
+                      ? "Body LeftTextAlign"
+                      : "Body RightTextAlign"
+                  }
+                >
+                  {Data.Body}
+                </td>
                 <td>
                   <img src={White_Logo} alt="logo" className="ImageLogo" />
                 </td>
@@ -49,7 +65,6 @@ const StyledDiv = styled.div`
   .SubTitle {
     font-family: "Askan Light" !important;
     font-size: 4.16vw;
-    text-align: left;
     width: 15.2vw;
     padding: 0vw 0vw 1.25vw 0vw;
     line-height: 3.8vw;
@@ -60,8 +75,14 @@ const StyledDiv = styled.div`
     font-size: 1.15vw;
     width: 43.7vw;
     padding: 0vw 8.9vw 0vw 7.3vw;
-    text-align: left;
     line-height: 1.39vw;
+  }
+
+  .LeftTextAlign {
+    text-align: left;
+  }
+  .RightTextAlign {
+    text-align: right;
   }
 
   .ImageLogo {

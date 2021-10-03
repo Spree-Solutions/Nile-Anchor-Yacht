@@ -49,130 +49,140 @@ export default function Gallery(props) {
         </StyledMobileDiv>
       ) : (
         <StyledDiv>
-          <table>
-            <tbody>
-              <tr>
-                <td className="Col1">
-                  <div className="Title">{Data.Title}</div>
-                  <div className="TitleBold">{Data.TitleBold}</div>
-                  <div>
-                    <img
-                      src={Love_Story_Light}
-                      alt="Love_Story"
-                      className="Love_Story_Light"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      src={Bella_Light}
-                      alt="Bella"
-                      className="Bella_Light"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      src={Liberty_Light}
-                      alt="Liberty"
-                      className="Liberty_Light"
-                    />
-                  </div>
-                </td>
-                <td className="Col2">
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td className="ImageCell">
-                          {" "}
-                          <img
-                            src={Liberty_Image}
-                            alt="Liberty"
-                            className="Liberty_Image"
-                          />
-                        </td>
-                        <td className="ImageCell">
-                          {" "}
-                          <img
-                            src={Liberty_Image}
-                            alt="Liberty"
-                            className="Liberty_Image"
-                          />
-                        </td>
-                        <td className="ImageCell">
-                          {" "}
-                          <img
-                            src={Liberty_Image}
-                            alt="Liberty"
-                            className="Liberty_Image"
-                          />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="ImageCell">
-                          {" "}
-                          <img
-                            src={Liberty_Image}
-                            alt="Liberty"
-                            className="Liberty_Image"
-                          />
-                        </td>
-                        <td className="ImageCell">
-                          {" "}
-                          <img
-                            src={Liberty_Image}
-                            alt="Liberty"
-                            className="Liberty_Image"
-                          />
-                        </td>
-                        <td className="ImageCell">
-                          {" "}
-                          <img
-                            src={Liberty_Image}
-                            alt="Liberty"
-                            className="Liberty_Image"
-                          />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="ImageCell">
-                          {" "}
-                          <img
-                            src={Liberty_Image}
-                            alt="Liberty"
-                            className="Liberty_Image"
-                          />
-                        </td>
-                        <td className="ImageCell">
-                          {" "}
-                          <img
-                            src={Liberty_Image}
-                            alt="Liberty"
-                            className="Liberty_Image"
-                          />
-                        </td>
-                        <td className="ImageCell">
-                          {" "}
-                          <img
-                            src={Liberty_Image}
-                            alt="Liberty"
-                            className="Liberty_Image"
-                          />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div
+            className={
+              props.language === "EN"
+                ? "EnglishComponentPadding"
+                : "ArabicComponentPadding"
+            }
+          >
+            <table>
+              <tbody>
+                <tr>
+                  <td className="Col1">
+                    <div className="Title">{Data.Title}</div>
+                    <div className="TitleBold">{Data.TitleBold}</div>
+                    <div>
+                      <img
+                        src={Love_Story_Light}
+                        alt="Love_Story"
+                        className="Love_Story_Light"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src={Bella_Light}
+                        alt="Bella"
+                        className="Bella_Light"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src={Liberty_Light}
+                        alt="Liberty"
+                        className="Liberty_Light"
+                      />
+                    </div>
+                  </td>
+                  <td className="Col2">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td className="ImageCell">
+                            {" "}
+                            <img
+                              src={Liberty_Image}
+                              alt="Liberty"
+                              className="Liberty_Image"
+                            />
+                          </td>
+                          <td className="ImageCell">
+                            {" "}
+                            <img
+                              src={Liberty_Image}
+                              alt="Liberty"
+                              className="Liberty_Image"
+                            />
+                          </td>
+                          <td className="ImageCell">
+                            {" "}
+                            <img
+                              src={Liberty_Image}
+                              alt="Liberty"
+                              className="Liberty_Image"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="ImageCell">
+                            {" "}
+                            <img
+                              src={Liberty_Image}
+                              alt="Liberty"
+                              className="Liberty_Image"
+                            />
+                          </td>
+                          <td className="ImageCell">
+                            {" "}
+                            <img
+                              src={Liberty_Image}
+                              alt="Liberty"
+                              className="Liberty_Image"
+                            />
+                          </td>
+                          <td className="ImageCell">
+                            {" "}
+                            <img
+                              src={Liberty_Image}
+                              alt="Liberty"
+                              className="Liberty_Image"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="ImageCell">
+                            {" "}
+                            <img
+                              src={Liberty_Image}
+                              alt="Liberty"
+                              className="Liberty_Image"
+                            />
+                          </td>
+                          <td className="ImageCell">
+                            {" "}
+                            <img
+                              src={Liberty_Image}
+                              alt="Liberty"
+                              className="Liberty_Image"
+                            />
+                          </td>
+                          <td className="ImageCell">
+                            {" "}
+                            <img
+                              src={Liberty_Image}
+                              alt="Liberty"
+                              className="Liberty_Image"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div className="ServicesTitle Title">
+              <span>{Data.ServicesTitle}</span>
+              <span className="TitleBold">{Data.ServicesTitleBold}</span>
+            </div>
+          </div>
         </StyledDiv>
       )}
     </div>
   );
 }
 const StyledDiv = styled.div`
-  padding: 3vw 12vw 5.2vw 5.6vw;
-  background-color: ${colors.Black};
-  text-align: left;
+  background-color: ${colors.DarkGrey};
   color: ${colors.White};
   font-family: "Askan Regular" !important;
 
@@ -202,6 +212,15 @@ const StyledDiv = styled.div`
     padding-bottom: 7vw;
   }
 
+  .EnglishComponentPadding {
+    padding: 3vw 12vw 1.7vw 5.6vw;
+    text-align: left;
+  }
+  .ArabicComponentPadding {
+    padding: 3vw 5.6vw 1.7vw 12vw;
+    text-align: right;
+  }
+
   .Love_Story_Light {
     width: 11vw;
     height: 2.85vw;
@@ -220,6 +239,11 @@ const StyledDiv = styled.div`
   .Liberty_Image {
     width: 18vw;
     height: 9.7vw;
+  }
+
+  .ServicesTitle {
+    margin-top: 8vw;
+    color: ${colors.Merino};
   }
 `;
 

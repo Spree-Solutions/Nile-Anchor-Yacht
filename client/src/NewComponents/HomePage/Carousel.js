@@ -1,0 +1,146 @@
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+
+import imageOne from "../../Images/Gatherings_Background.png";
+import imageTwo from "../../Images/Business_Background.png";
+import imageThree from "../../Images/Party_Bags.png";
+import imageFour from "../../Images/Business_Coffee.png";
+
+import left_button from "../../Icons/left_button.svg";
+import right_button from "../../Icons/right_button.svg";
+import { colors } from "../../Styles/Colors";
+
+export default function CarouselComponent(props) {
+  const [value, setValue] = useState(0);
+  const [slides, setSlides] = useState([
+    <img src={imageOne} alt="" className="image" />,
+    <img src={imageTwo} alt="" className="image" />,
+    <img src={imageThree} alt="" className="image" />,
+    <img src={imageFour} alt="" className="image" />,
+  ]);
+  const [main, setMain] = useState([
+    <img src={imageOne} alt="" className="main" />,
+    <img src={imageTwo} alt="" className="main" />,
+    <img src={imageThree} alt="" className="main" />,
+    <img src={imageFour} alt="" className="main" />,
+  ]);
+  const [render, setRender] = useState([0, 1, 2, 3]);
+
+  const pressNext = () => {
+    let tempValue = value + 1;
+    if (tempValue >= slides.length) tempValue = 0;
+    setValue(tempValue);
+    getRenderValue(tempValue);
+  };
+
+  const pressPrev = () => {
+    let tempValue = value - 1;
+    if (tempValue < 0) tempValue = slides.length - 1;
+    setValue(tempValue);
+    getRenderValue(tempValue);
+  };
+
+  const getRenderValue = (correctValue) => {
+    let currentValue = correctValue;
+    let tempArray = [];
+
+    for (let i = 0; i < 4; i++) {
+      tempArray[i] = currentValue;
+      if (currentValue === slides.length - 1) {
+        currentValue = 0;
+      } else {
+        currentValue = currentValue + 1;
+      }
+    }
+    setRender(tempArray);
+  };
+
+  useEffect(() => {
+    getRenderValue(0);
+  }, []);
+
+  console.log(render);
+
+  return (
+    <StyledDiv>
+      <div className="centered">{main[value]}</div>
+      <table className="Table">
+        <tbody>
+          <tr>
+            <td>
+              {props.language === "EN" ? (
+                <img
+                  src={left_button}
+                  alt=""
+                  className="icon"
+                  onClick={pressPrev}
+                />
+              ) : (
+                <img
+                  src={right_button}
+                  alt=""
+                  className="icon"
+                  onClick={pressPrev}
+                />
+              )}
+            </td>
+
+            {render.map((itemIndex) => {
+              return itemIndex !== value ? (
+                <td>{slides[itemIndex]}</td>
+              ) : (
+                <td className="chosen">{slides[itemIndex]}</td>
+              );
+            })}
+
+            <td>
+              {props.language === "EN" ? (
+                <img
+                  src={right_button}
+                  alt=""
+                  className="icon"
+                  onClick={pressNext}
+                />
+              ) : (
+                <img
+                  src={left_button}
+                  alt=""
+                  className="icon"
+                  onClick={pressNext}
+                />
+              )}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </StyledDiv>
+  );
+}
+
+const StyledDiv = styled.div`
+  .image {
+    width: 9vw;
+    height: 5.7vw;
+    padding: 0vw 0.625vw 0vw 0.625vw;
+  }
+  .main {
+    width: 44vw;
+    height: 27.6vw;
+    padding: 4.2vw 0vw 0vw 0vw;
+  }
+  .centered {
+    text-align: center;
+  }
+  .Table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .icon {
+    width: 0.67vw;
+    height: 1.52vw;
+    cursor: pointer;
+  }
+  .chosen {
+    border-bottom: 2px solid ${colors.White};
+  }
+`;
