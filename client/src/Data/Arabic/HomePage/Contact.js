@@ -5,7 +5,7 @@ const DataArabic = {
   ButtonAction: ["دون أي", "دون أي", "دون أي"],
   FormInput: ["الاسم", "+02", "البريد"],
   FormSelect: {
-    Boats: ["Love Story", "Bella", "Liberty"],
+    Boats: ["Bella", "Liberty"],
     Time: ["وقت"],
     "Event Type": ["نوع النشاط"],
   },

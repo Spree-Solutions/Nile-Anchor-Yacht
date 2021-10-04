@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { DataEnglish } from "../Data/English/Contact";
-import { DataArabic } from "../Data/Arabic/Contact";
+import { DataEnglish } from "../Data/English/HomePage/Contact";
+import { DataArabic } from "../Data/Arabic/HomePage/Contact";
 import ReservationHandler from "../Utilities/ReservationHandler";
 
 import { colors } from "../Styles/Colors";
@@ -15,7 +15,7 @@ import egyptian_flag from "../Images/egyptian_flag.png";
 
 export default function Contact(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
-  const options = ["Love Story", "Bella", "Liberty"];
+  const options = ["Bella", "Liberty"];
   // eslint-disable-next-line no-unused-vars
   const [selected, setSelected] = useState(options[0]);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
@@ -189,7 +189,14 @@ export default function Contact(props) {
               </td>
               <td className="Col3">
                 {" "}
-                <div className="Button">{Data.Button}</div>{" "}
+                <div className="Button" onClick={e=>{reservationInstance.reserve().then(result=>{
+                  if (result.error){
+                    // handle error
+                    console.log("error returned from reserve()", result);
+                  } else {
+                    console.log("reserved successfully", result);
+                  }
+                })}}>{Data.Button}</div>{" "}
               </td>
             </tr>
           </tbody>
