@@ -30,7 +30,11 @@ margin-bottom: 1.4vw;
 }
 
 .ARDatePicker {
-  margin-left: 1.6vw;
+  text-align-last: right;
+}
+.ARDatePicker:active,
+.ARDatePicker:hover {
+    text-align-last: right;
 }
 `;
 
@@ -47,6 +51,14 @@ export const DatePickerComponent = (props) => {
     }
     const [startDate, setStartDate] = useState(initialValue);
 
+    
+    let initialText = "Select a date";
+    let language = "EN";
+    if(props.language && props.language === "AR"){
+        initialText = "اختار اليوم";
+        language = "AR"
+    }
+
 
     const onChangeHandler = (date)=>{
         if(props.onChange != undefined && typeof props.onChange == "function"  ){
@@ -59,7 +71,7 @@ export const DatePickerComponent = (props) => {
     return (
         <React.Fragment>
 
-            <DatePicker wrapperClassName="hideOverflow" className="DatePicker fullWidth" value={!startDate?"Select a date":undefined} selected={startDate? startDate:undefined} onChange={onChangeHandler} />
+            <DatePicker wrapperClassName="hideOverflow" className={`DatePicker fullWidth ${language==="AR"?"ARDatePicker":""}`} value={!startDate?initialText:undefined} selected={startDate? startDate:undefined} onChange={onChangeHandler} />
             <DatePickerWrapperStyles />
         </React.Fragment>
     );

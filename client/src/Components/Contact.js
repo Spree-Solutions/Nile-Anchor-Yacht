@@ -159,6 +159,7 @@ export default function Contact(props) {
                     reservationInstance.reservationDate = formattedDate;
                     console.log("tanawy is testing", {date}); window.tanawyTestingVar = date;
                     }} 
+                  language={props.language}
                 />
               </td>
             </tr>
