@@ -7,7 +7,7 @@ const DataEnglish = {
   FormSelect: {
     Boats: ["Bella", "Liberty"],
     Time: ["Time"],
-    "Event Type": ["Event Type"],
+    "Event Type": ["Wedding", "Corporate", "Individual"],
   },
   CheckBox: "Send me newsletter",
   Button: "Submit",

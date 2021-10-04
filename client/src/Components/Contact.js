@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { DataEnglish } from "../Data/English/HomePage/Contact";
 import { DataArabic } from "../Data/Arabic/HomePage/Contact";
 import ReservationHandler from "../Utilities/ReservationHandler";
+import {DatePickerComponent} from "../NewComponents/DatePicker/DayDatePicker";
 
 import { colors } from "../Styles/Colors";
 import Selector from "../Styles/Selector";
@@ -94,13 +95,21 @@ export default function Contact(props) {
                   width={"20.9vw"}
                   placeholder={Data.FormInput[0]}
                   language={props.language}
+                  handleChange={(event)=>{
+                    let name = event.target.value;
+                    reservationInstance.username = name;
+
+                  }}
                 />
               </td>
               <td>
                 {" "}
                 <Selector
                   list={Data.FormSelect.Boats}
-                  setSelected={setSelected}
+                  setSelected={(value)=>{
+                    reservationInstance.setYacht(value);
+                    setSelected(value)}
+                  }
                   language={props.language}
                 />
               </td>
@@ -131,6 +140,10 @@ export default function Contact(props) {
                         <TextField
                           width={"13.6vw"}
                           placeholder={Data.FormInput[1]}
+                          handleChange={(event)=>{
+                            console.log("phone number input debug", event.target.value);
+                            reservationInstance.phoneNumber = event.target.value;
+                          }}
                           language={props.language}
                         />
                       </td>
@@ -140,10 +153,12 @@ export default function Contact(props) {
               </td>
               <td>
                 {" "}
-                <Selector
-                  list={Data.FormSelect.Time}
-                  setSelected={setSelected}
-                  language={props.language}
+                <DatePickerComponent 
+                  onChange={(date)=>{
+                    let formattedDate = date.toISOString().split('T')[0].replaceAll('-','');
+                    reservationInstance.reservationDate = formattedDate;
+                    console.log("tanawy is testing", {date}); window.tanawyTestingVar = date;
+                    }} 
                 />
               </td>
             </tr>
@@ -153,6 +168,10 @@ export default function Contact(props) {
                 <TextField
                   width={"20.9vw"}
                   placeholder={Data.FormInput[2]}
+                  handleChange={(event)=>{
+                    console.log("event trigger on email input", event.target.value);
+                    reservationInstance.email = event.target.value;
+                  }}
                   language={props.language}
                 />
               </td>
