@@ -1,6 +1,13 @@
 import PaymentHandler from './PaymentHandler';
+import axios from 'axios';
+import {configs} from './variables';
 
 export const WRONG_RESERVATION_DATE_FORMAT = 110;
+export const YACHT_BELLA = "B02";
+export const YACHT_LIBERTY = "B01";
+export const EVENT_TYPE_WEDDING = "01";
+export const EVENT_TYPE_cCORPORATE = "02";
+export const EVENT_TYPE_INDIVIDUAL = "03";
 export default class ReservationHandler {
     username="";
     phoneNumber="";
@@ -12,7 +19,8 @@ export default class ReservationHandler {
     selectedEndingTime=null;
     calculatedFinalPrice=0;
     isLoading=false;
-    availableYachts=[];
+    availableYachts=["Bella", "Liberty"];
+    availableEvents=["Wedding", "Corporate", "Individual"];
     priceSegments=[];
     availableHourSegments=[]; // type []{startTime:"hh:mm",endTime:"hh:mm"}
     existingReservations = [];
@@ -65,6 +73,17 @@ export default class ReservationHandler {
         return connectedSegments;
     } 
 
+    setYacht(yachtName){
+        let yachtCode = null;
+        if(yachtName === "Bella"){
+            yachtCode = YACHT_BELLA;
+        } else if(yachtName === "Liberty") {
+            yachtCode = YACHT_LIBERTY;
+
+        }
+
+        this.selectedYacht = yachtCode;
+    }
     async reserve(){
         this.isLoading = true;
         let params = {
@@ -87,13 +106,16 @@ export default class ReservationHandler {
 
     set reservationDate(value) {
         if(typeof value !== typeof "")
-            throw {
+            throw Error({
                 code:WRONG_RESERVATION_DATE_FORMAT,
-                message:"reservation date must be string"};
+                message:"reservation date must be string"});
         // check date format
 
         // if all is right assign value
         this._selectedReservationDay = value;
+        if(this.selectedYacht){
+            this._getAvailability(this._selectedReservationDay);
+        }
 
         // get appropriate time block calculated
 
@@ -113,8 +135,15 @@ export default class ReservationHandler {
     async _getAvailability(dayDate){
         
         // insure request parameter exists
+        if(!this.selectedYacht || !dayDate ){
+            throw Error({error:true, message:{code:119,text:"please ensure date and yacht are selected and in correct format"}})
+        }
 
         // send availability request
+        let response = await axios.get(
+            `${configs.BACKEND_API_BASE_URL}?type=assetTimes&user=WS&pass=WebSite123&assetCode=${this.selectedYacht}&onDate=${dayDate}`);
+
+            console.log("availability response", response);
 
         // set existing Reservation Array
 
