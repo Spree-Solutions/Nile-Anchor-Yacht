@@ -151,7 +151,7 @@ export default function Contact(props) {
                   </tbody>
                 </table>
               </td>
-              <td>
+              <td style={{verticalAlign: "baseline",paddingTop: "4px"}}>
                 {" "}
                 <DatePickerComponent 
                   onChange={(date)=>{
