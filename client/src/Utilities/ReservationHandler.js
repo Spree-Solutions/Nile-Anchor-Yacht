@@ -8,12 +8,12 @@ export const YACHT_LIBERTY = "B01";
 export const EVENT_TYPE_WEDDING = "01";
 export const EVENT_TYPE_cCORPORATE = "02";
 export const EVENT_TYPE_INDIVIDUAL = "03";
-export default class ReservationHandler {
+export class ReservationHandler {
     username="";
     phoneNumber="";
     email="";
     serviceName="";
-    selectedYacht=null;
+    selectedYacht=YACHT_BELLA;
     _selectedReservationDay=null;
     selectedStartingTime=null;
     selectedEndingTime=null;
@@ -24,22 +24,35 @@ export default class ReservationHandler {
     priceSegments=[];
     availableHourSegments=[]; // type []{startTime:"hh:mm",endTime:"hh:mm"}
     existingReservations = [];
+    // existingReservations = [{ fromDateTime: "2021-10-24T14:00:00", toDateTime: "2021-10-24T19:00:00" }];
     paymentReferenceNumber = null;
+    _availableHours = [];
+    static _instance=null;
+    notifyStartHour=null;
+    notifyEndHour=null;
 
 
     // get yacht availability given date
     // reserve yacht on a given date
     // calculate yacht price for a given time period same day
-
-    constructor(){
+    static getInstance() {
+        if (ReservationHandler._instance) {
+          return ReservationHandler._instance;
+        }
         window.TanawysPHandler = PaymentHandler;
+        window.TanawysRHandler = ReservationHandler._instance;
+        
+        ReservationHandler._instance = new ReservationHandler();
+        return ReservationHandler._instance;
+      }
+    constructor(){
     }
     calculatePrice(hoursCount){
         // check if type is valid
         // if(typeof(hoursCount)===typeof(0))
 
         // sort by from hours smallest first
-        let sortedPriceList = this.priceSegments.sort(((hoursA,hoursB)=> Number(hoursA.fromHours)- Number(hoursB.fromHours)));
+        let sortedPriceList = [...this.priceSegments.sort(((hoursA,hoursB)=> Number(hoursA.fromHours)- Number(hoursB.fromHours)))];
         let accumulator =0;
         let lastInterval;
         while(hoursCount>0){
@@ -53,24 +66,100 @@ export default class ReservationHandler {
                 
                 accumulator += Number(lastInterval.price);
             }
+            hoursCount--;
         }
         return accumulator;
+    }
+
+    set startingHour(value){
+        console.log(value);
+        this.selectedStartingTime = Number(value);
+        if(this.notifyEndHour){
+            this.notifyEndHour();
+        }
+    }
+set endingHour(value){
+        this.selectedEndingTime = Number(value);
+        this.calculatedFinalPrice =this.calculatePrice(this.selectedEndingTime-this.selectedStartingTime);
+    }
+
+    get availableStartHours(){
+        if(this.availableHourSegments.length===0){
+            return []
+        }
+        return this._availableHours;
+
+    }
+
+    getAvailableEndHours(){
+        if(this.selectedStartingTime === null){
+            return [];
+        }
+        let segmentEnd;
+        let segmentStart = this.selectedStartingTime;
+        this.availableHourSegments.forEach((segment)=>{
+            if(segment.fromHour <= segmentStart && segment.toHour >= segmentStart){
+                segmentEnd = segment.toHour;
+
+            }
+        });
+        let endingHoursArray = [];
+        for(let i = segmentStart; i<=segmentEnd;i++){
+            endingHoursArray.push(i);
+        }
+
+        return endingHoursArray;
+
     }
 
     calculateAvailablity(){
         let hoursArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
         // sort reservation earlier first
-        let reservations = this.existingReservations.sort(((hoursA,hoursB)=> Number(hoursA.fromHours)- Number(hoursB.fromHours)))
-
-        let connectedSegments = reservations.map(reservation=>{
-            let startHour = hoursArray.indexOf(Math.floor(reservation.fromHours));
-            let endingHour = hoursArray.indexOf(Math.ceil(reservation.toHours));
-            let singleSegment = {fromHours:hoursArray[0],toHours:hoursArray[startHour-1]};
-            hoursArray = hoursArray.splice(startHour,endingHour-startHour);
-            return singleSegment
+        let reservations = this.existingReservations.sort(((hoursA,hoursB)=> Number((new Date(hoursA.fromHours)).getHours())- Number((new Date(hoursB.fromHours)).getHours())))
+        let startHour;
+        let endingHour;
+        let startingHourIndex ;
+        let endingHourIndex;
+        reservations.forEach(reservation=>{
+            startHour = (new Date(reservation.fromDateTime)).getHours();
+            endingHour = (new Date(reservation.toDateTime)).getHours();
+            startingHourIndex = hoursArray.indexOf(startHour);
+            endingHourIndex = hoursArray.indexOf(endingHour);
+            console.log("debugging availability",{
+                reservation,
+                startHour,
+                endingHour,
+                hoursArray,
+                startingHourIndex,
+                endingHourIndex
+            });
+            hoursArray.splice(startHour,endingHour-startHour);
         });
+        startHour = hoursArray[0];
+        let endHour = startHour;
+        let connectedSegments = [];
+        hoursArray.forEach(currentHour=>{
+            if(startHour !== currentHour){
+                if(currentHour -endHour >1){
+                    let singleSegment = {fromHour:startHour,toHour:endHour}
+                    connectedSegments.push(singleSegment);
+                    startHour = currentHour;
+                    endHour = startHour;
+                } else {
+                    endHour = currentHour;
+                }
+            }
+        });
+        this._availableHours = hoursArray;
+        connectedSegments.push({fromHour:startHour,toHour:endHour});
+        this.availableHourSegments = connectedSegments;
+        if(this.notifyStartHour){
+            this.notifyStartHour();
+        }
 
-        return connectedSegments;
+        
+        
+
     } 
 
     setYacht(yachtName){
@@ -105,7 +194,7 @@ export default class ReservationHandler {
     }
 
     set reservationDate(value) {
-        if(typeof value !== typeof "")
+        if(typeof value !== typeof ""&& typeof value !== typeof (new Date()))
             throw Error({
                 code:WRONG_RESERVATION_DATE_FORMAT,
                 message:"reservation date must be string"});
@@ -113,8 +202,9 @@ export default class ReservationHandler {
 
         // if all is right assign value
         this._selectedReservationDay = value;
+        let formattedValue = value.toISOString().split('T')[0].replaceAll('-','');
         if(this.selectedYacht){
-            this._getAvailability(this._selectedReservationDay);
+            this._getAvailability(formattedValue);
         }
 
         // get appropriate time block calculated
@@ -122,7 +212,7 @@ export default class ReservationHandler {
     }
 
     get reservationDate(){
-        return this._selectedReservationDay;
+        return this._selectedReservationDay.toISOString().split('T')[0].replaceAll('-','');
         
     }
 
@@ -144,6 +234,23 @@ export default class ReservationHandler {
             `${configs.BACKEND_API_BASE_URL}?type=assetTimes&user=WS&pass=WebSite123&assetCode=${this.selectedYacht}&onDate=${dayDate}`);
 
             console.log("availability response", response);
+            if(response.data.reservations){
+                if(response.data.reservations.length>0){
+                    let sameDayReservation = response.data.reservations.filter(reservation=>{
+                        let date = (new Date(reservation.toDateTime)).toISOString().split('T')[0].replaceAll('-','');
+                        console.log("from sameday filter",{date,dayDate})
+                        return date === dayDate;
+                    });
+
+                    this.existingReservations = sameDayReservation;
+                }
+            }
+            this.calculateAvailablity();
+
+            if(response.data.prices){
+                this.priceSegments = response.data.prices;
+            }
+
 
         // set existing Reservation Array
 
