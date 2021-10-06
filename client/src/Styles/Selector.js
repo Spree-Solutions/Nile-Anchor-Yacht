@@ -9,6 +9,9 @@ export default function Selector(props) {
         onChange={(e) => props.setSelected(e.target.value)}
         className={props.language === "EN" ? "SelectorEN" : "SelectorAR"}
       >
+        {props.disabledOption && (<option className="Option" value={undefined} selected disabled>
+          {props.disabledOption}
+        </option>)}
         {props.list.map((item) => (
           <option className="Option" value={item}>
             {item}
