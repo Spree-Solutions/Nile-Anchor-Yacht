@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { DataEnglish } from "../Data/English/HomePage/Contact";
 import { DataArabic } from "../Data/Arabic/HomePage/Contact";
-import ReservationHandler from "../Utilities/ReservationHandler";
+import {ReservationHandler} from "../Utilities/ReservationHandler";
 import {DatePickerComponent} from "../NewComponents/DatePicker/DayDatePicker";
 
 import { colors } from "../Styles/Colors";
@@ -20,8 +20,21 @@ export default function Contact(props) {
   // eslint-disable-next-line no-unused-vars
   const [selected, setSelected] = useState(options[0]);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
+  const [startHourOptions, setStartHourOptions ] = useState([]);
+  const [endHourOptions, setEndHourOptions ] = useState([]);
+  const [finalPrice, setFinalPrice] = useState(null);
   // initializa reservation handler
-  const reservationInstance = new ReservationHandler();
+  const reservationInstance = ReservationHandler.getInstance();
+  console.log("before if condition to available startHours",{class:reservationInstance,state:startHourOptions})
+  if(reservationInstance.availableStartHours.length> startHourOptions.length){
+    setStartHourOptions(reservationInstance.availableStartHours);
+  }
+  if(reservationInstance.getAvailableEndHours().length!==endHourOptions.length){
+    setEndHourOptions(reservationInstance.getAvailableEndHours());
+  }
+  if(typeof window !== typeof undefined){
+    window.TanawyComponentTest = reservationInstance;
+  }
   return (
     <StyledDiv>
       <div
@@ -155,10 +168,43 @@ export default function Contact(props) {
                 {" "}
                 <DatePickerComponent 
                   onChange={(date)=>{
-                    let formattedDate = date.toISOString().split('T')[0].replaceAll('-','');
+                    date.setHours(8);
+                    let formattedDate = date;
                     reservationInstance.reservationDate = formattedDate;
+                    reservationInstance.notifyStartHour = ()=>{
+                      console.log("notify start hours was called", reservationInstance.availableStartHours);
+                      setStartHourOptions(reservationInstance.availableStartHours);
+                    }
                     console.log("tanawy is testing", {date}); window.tanawyTestingVar = date;
                     }} 
+                  language={props.language}
+                />
+              </td>
+            </tr>
+            <tr className="RowMargin">
+            <td>
+                {" "}
+                <Selector
+                  list={startHourOptions}
+                  disabledOption={!props.language?"Starting hour":props.language === "EN"?"Starting hour":"ساعة البداية"}
+                  setSelected={data=>{
+                    reservationInstance.notifyEndHour = ()=>{
+                      setEndHourOptions(reservationInstance.getAvailableEndHours())
+                    }
+                    reservationInstance.startingHour = data;
+                    console.log("event trigger on start hour",data);}}
+                  language={props.language}
+                />
+              </td>
+              <td>
+                {" "}
+                <Selector
+                  list={endHourOptions}
+                  disabledOption={!props.language?"Ending hour":props.language === "EN"?"Ending hour":"ساعة النهاية"}
+                  setSelected={data=>{
+                    reservationInstance.endingHour = data;
+                    setFinalPrice(reservationInstance.calculatedFinalPrice);
+                    console.log("event trigger on Ending hour",data);}}
                   language={props.language}
                 />
               </td>
@@ -180,7 +226,10 @@ export default function Contact(props) {
                 {" "}
                 <Selector
                   list={Data.FormSelect["Event Type"]}
-                  setSelected={setSelected}
+                  setSelected={data=>{
+                    console.log("event trigger on event type input",data);
+                    reservationInstance.serviceName = data;
+                    setSelected(data)}}
                   language={props.language}
                 />
               </td>
@@ -194,12 +243,13 @@ export default function Contact(props) {
               <td className="Col0"></td>
               <td className="Col1">
                 <label class="container">
+                <span class="checkmark">
                   <input
                     type="checkbox"
                     checked={checkboxStatus}
                     onClick={() => setCheckboxStatus(!checkboxStatus)}
                   />
-                  <span class="checkmark"></span>
+                  </span>
                 </label>
               </td>
               <td className="Col2">
@@ -216,7 +266,7 @@ export default function Contact(props) {
                   } else {
                     console.log("reserved successfully", result);
                   }
-                })}}>{Data.Button}</div>{" "}
+                })}}>{finalPrice?`Pay ( EGP ${finalPrice} )`:Data.Button}</div>{" "}
               </td>
             </tr>
           </tbody>
