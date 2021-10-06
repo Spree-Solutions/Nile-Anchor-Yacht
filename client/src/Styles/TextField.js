@@ -7,7 +7,7 @@ export default function TextField(props) {
     <StyledDiv>
       <input
         style={{ width: props.width }}
-        className="Input"
+        className={props.language === "EN" ? "Input ENInput" : "Input ARInput"}
         placeholder={props.placeholder}
         type="text"
         value={props.value}
@@ -23,7 +23,7 @@ const StyledDiv = styled.div`
   .Input:hover,
   .Input:active {
     text-align-last: left;
-    padding: 0.4vw 0vw 0.4vw 0.6vw;
+    padding: 0.4vw 0.6vw 0.4vw 0.6vw;
     font-family: "Askan Light" !important;
     border: none;
     outline: none;
@@ -31,6 +31,12 @@ const StyledDiv = styled.div`
     color: ${colors.Black};
     cursor: pointer;
     background-color: ${colors.Merino} !important;
+  }
+  .ENInput {
     margin-right: 1.6vw;
+  }
+
+  .ARInput {
+    margin-left: 1.6vw;
   }
 `;
