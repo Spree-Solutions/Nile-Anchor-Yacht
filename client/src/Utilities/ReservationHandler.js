@@ -1,13 +1,18 @@
 import PaymentHandler from './PaymentHandler';
 import axios from 'axios';
-import {configs} from './variables';
+import configs from './variables';
 
 export const WRONG_RESERVATION_DATE_FORMAT = 110;
 export const YACHT_BELLA = "B02";
 export const YACHT_LIBERTY = "B01";
 export const EVENT_TYPE_WEDDING = "01";
-export const EVENT_TYPE_cCORPORATE = "02";
+export const EVENT_TYPE_CORPORATE = "02";
 export const EVENT_TYPE_INDIVIDUAL = "03";
+const TRANSACTION_PENDING_CONFIRMATION = "pendingConfirmation";
+const TRANSACTION_UNINITIALIZED = "uninitialized";
+const TRANSACTION_COMPLETED = "complete";
+const PAYMENT_STATUS_SUCCESSFULL = "PAID";
+const PAYMENT_STATUS_FAILED = "FAILED"
 export class ReservationHandler {
     username="";
     phoneNumber="";
@@ -30,6 +35,9 @@ export class ReservationHandler {
     static _instance=null;
     notifyStartHour=null;
     notifyEndHour=null;
+    _transactionState=TRANSACTION_UNINITIALIZED;// "uninitialized" "pendingConfirmation" "complete"
+    _paymentRef = null;
+    _merchantRef = null;
 
 
     // get yacht availability given date
@@ -43,6 +51,24 @@ export class ReservationHandler {
         window.TanawysRHandler = ReservationHandler._instance;
         
         ReservationHandler._instance = new ReservationHandler();
+        ReservationHandler._instance.fromLocalStorage();
+        window.addEventListener('message', function (e) {
+            if (e.data && e.data.message_source === 'cowpay') {
+                console.log("Tanawy caught in event from Reservation Handler",e);
+                        let paymentStatus = e.data.payment_status,
+                            cowpayReferenceId = e.data.cowpay_reference_id,
+                            gatewayReferenceId = e.data.payment_gateway_reference_id;
+                            ReservationHandler._instance.completeReservation(ReservationHandler._instance._merchantRef);
+                            if(paymentStatus === PAYMENT_STATUS_SUCCESSFULL){
+                                console.log("the payment was successfull");
+                            }else {
+                                console.log("the payment failed");
+                            }
+                        
+                        // take an action based on the values 
+                    }
+                    
+                }, false);
         return ReservationHandler._instance;
       }
     constructor(){
@@ -78,7 +104,7 @@ export class ReservationHandler {
             this.notifyEndHour();
         }
     }
-set endingHour(value){
+    set endingHour(value){
         this.selectedEndingTime = Number(value);
         this.calculatedFinalPrice =this.calculatePrice(this.selectedEndingTime-this.selectedStartingTime);
     }
@@ -91,6 +117,22 @@ set endingHour(value){
 
     }
 
+    get serviceCode(){
+        let result = "";
+        if(this.serviceName == this.availableEvents[0]){
+            result = EVENT_TYPE_WEDDING;
+        } else if(this.serviceName == this.availableEvents[1]){
+            result = EVENT_TYPE_CORPORATE;
+        } else if ( this.serviceName === this.availableEvents[2]){
+            result = EVENT_TYPE_INDIVIDUAL;
+        }
+
+        return result;
+    }
+
+    get priceClassifier(){
+        return `${this.selectedYacht}${this.serviceCode}`;
+    }
     getAvailableEndHours(){
         if(this.selectedStartingTime === null){
             return [];
@@ -186,10 +228,64 @@ set endingHour(value){
             for ${this.calculatedFinalPrice}`,
             amount:this.calculatedFinalPrice
         };
+        this._transactionState = TRANSACTION_PENDING_CONFIRMATION;
+        // let reservationResponse = await axios.post(`${configs.BACKEND_API_ALIAS}?type=assetTimes&user=WS&pass=WebSite123`,{
+            
+        //         "Customer" : [ {
+        //         "group" : "Customer$#C",
+        //         "description2" : this.username,
+        //         "contactInfo" : {
+        //           "telephone1" : this.phoneNumber
+        //         }
+        //       } ],
+        //       "RARentalRequest" : [ {
+        //         "book" : "RARentalRequest$#RR",
+        //         "code" : "RR00001@draft",
+        //         "term" : "RARentalRequest$#RR",
+        //         "valueDate" : (new Date()).toISOString().split('T')[0],
+        //         "customer" : this.phoneNumber,
+        //         "payDate" : (new Date()).toISOString().split('T')[0],
+        //         "rentalAsset" : this.selectedYacht,
+        //         "priceClassifier1" : this.priceClassifier,
+        //         "fromDate" : "28-10-2021",
+        //         "fromTime" : "14:00",
+        //         "toDate" : "28-10-2021",
+        //         "toTime" : "19:00"
+        //       } ]
+             
+             
+        // });
+        // console.log("respnse reservation", reservationResponse);
+        // let response={error:true};
         let response = await PaymentHandler.initializeIFrame(params);
+        if(!response.error){
+            this._paymentRef = response.message.referenceId;
+            this._merchantRef = response.message.merchant_reference_id;
+            this.toLocalStorage();
+        }else {
+            this._transactionState = TRANSACTION_UNINITIALIZED;
+        }
         this.isLoading = false;
         return response;
 
+
+    }
+
+    async completeReservation(receivedData){
+        console.log("testing complete Reservation",receivedData);
+        try{
+
+            let response = await PaymentHandler.getPaymentStatus(receivedData);
+            if(response.status === 200){
+                let orderStatus = response.data.order_status;
+                if(orderStatus === "PAID"){
+                    axios.post()
+                }
+            }
+            console.log("complete transaction status",response);
+        }catch(e){
+            console.log("error while completing the transaction",e);
+        }
 
     }
 
@@ -231,7 +327,7 @@ set endingHour(value){
 
         // send availability request
         let response = await axios.get(
-            `${configs.BACKEND_API_BASE_URL}?type=assetTimes&user=WS&pass=WebSite123&assetCode=${this.selectedYacht}&onDate=${dayDate}`);
+            `${configs.BACKEND_API_ALIAS}?type=assetTimes&user=WS&pass=WebSite123&assetCode=${this.selectedYacht}&onDate=${dayDate}`);
 
             console.log("availability response", response);
             if(response.data.reservations){
@@ -257,7 +353,48 @@ set endingHour(value){
         return true;
     }
 
+    toLocalStorage(){
+        let json = {...this
+        }
 
+        let jsonString = JSON.stringify(json);
+        localStorage.setItem("handlerB",jsonString);
+        console.log("here is the json object of this class", json);
+    }
+
+    fromLocalStorage(){
+        let jsonString = localStorage.getItem("handlerB");
+        let json = null;
+        if(jsonString){
+            json = JSON.parse(jsonString);
+            console.log("from local storage Json",json);
+            this.username= json.username;
+            this.phoneNumber= json.phoneNumber;
+            this.email= json.email;
+            this.serviceName= json.serviceName;
+            this.selectedYacht= json.selectedYacht;
+            this._selectedReservationDay= json._selectedReservationDay;
+            this.selectedStartingTime= json.selectedStartingTime;
+            this.selectedEndingTime= json.selectedEndingTime;
+            this.calculatedFinalPrice= json.calculatedFinalPrice;
+            this.isLoading= json.isLoading;
+            this.availableYachts= json.availableYachts;
+            this.availableEvents= json.availableEvents;
+            this.priceSegments= json.priceSegments;
+            this.availableHourSegments= json.availableHourSegments; // type []{startTime:"hh:mm",endTime:"hh:mm"}
+            this.existingReservations = json.existingReservations;
+            this.paymentReferenceNumber = json.paymentReferenceNumber;
+            this._availableHours = json._availableHours;
+            this._transactionState= json._transactionState;
+            this._paymentRef = json._paymentRef;
+            this._merchantRef = json._merchantRef;
+
+        }
+    }
+
+    clearStorage(){
+        localStorage.removeItem("handlerB");
+    }
 
     
 

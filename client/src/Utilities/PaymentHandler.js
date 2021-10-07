@@ -1,7 +1,8 @@
 import axios from 'axios';
 import SHA256 from 'sha256';
+import configs from './variables';
 
-axios.defaults.baseURL = '/'; // or: https://staging.cowpay.me/api/v1/
+axios.defaults.baseURL = configs.COWPAY_API_ALIAS; // or: https://staging.cowpay.me/api/v1/
 
 class CowpayService {
 
@@ -137,7 +138,7 @@ class CowpayService {
             // set eventListener
             window.COWPAYIFRAMEDIALOG.init()
             window.COWPAYIFRAMEDIALOG.load(tokenValue) // token value from the previous response
-            return {error:false,message:{referenceId}} 
+            return {error:false,message:{referenceId,merchant_reference_id:param.merchant_reference_id}} 
 
         }catch(e){
             console.log("Error message occurred while requesting payment card",e);
