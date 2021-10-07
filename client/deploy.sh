@@ -1,7 +1,7 @@
 #!/bin/bash
 set -xe;
 
-$(aws ecr get-login --no-include-email --region us-east-2 --profile=spree-staging);
+$(aws ecr get-login --no-include-email --region us-east-2 --profile=nileanchor);
 
 export IMAGE_TAG=$1;
 
