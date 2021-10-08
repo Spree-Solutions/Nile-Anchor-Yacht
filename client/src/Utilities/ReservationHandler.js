@@ -17,7 +17,7 @@ export class ReservationHandler {
     username="";
     phoneNumber="";
     email="";
-    serviceName="";
+    serviceName="Wedding";
     selectedYacht=YACHT_BELLA;
     _selectedReservationDay=null;
     selectedStartingTime=null;
@@ -96,7 +96,7 @@ export class ReservationHandler {
             }
             hoursCount--;
         }
-        return accumulator;
+        return (accumulator*0.5).toFixed(2);
     }
 
     set startingHour(value){
