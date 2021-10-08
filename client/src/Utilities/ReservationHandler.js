@@ -38,6 +38,8 @@ export class ReservationHandler {
     _transactionState=TRANSACTION_UNINITIALIZED;// "uninitialized" "pendingConfirmation" "complete"
     _paymentRef = null;
     _merchantRef = null;
+    _rentalRequestCode = null;
+    _customerCode=null;
 
 
     // get yacht availability given date
@@ -229,34 +231,47 @@ export class ReservationHandler {
             amount:this.calculatedFinalPrice
         };
         this._transactionState = TRANSACTION_PENDING_CONFIRMATION;
-        // let reservationResponse = await axios.post(`${configs.BACKEND_API_ALIAS}?type=assetTimes&user=WS&pass=WebSite123`,{
+        // let reservationDateArray = this._selectedReservationDay.split('T')[0].split('-').reverse().join('-');
+        let formattedReservationDate = this._selectedReservationDay.toISOString().split('T')[0].split('-').reverse().join('-');
+        let timestamp = new Date().getTime();
+        this._customerCode = `${this.phoneNumber}-${timestamp}`;
+        let startHour = this.selectedStartingTime >9?`${this.selectedStartingTime}`:`0${this.selectedStartingTime}`;
+        let endHour = this.selectedEndingTime >9?`${this.selectedEndingTime}`:`0${this.selectedEndingTime}`;
+        let reservationResponse = await axios.post(`${configs.BACKEND_API_ALIAS}?integrator=reservations&user=WS&pass=WebSite123`,{
             
-        //         "Customer" : [ {
-        //         "group" : "Customer$#C",
-        //         "description2" : this.username,
-        //         "contactInfo" : {
-        //           "telephone1" : this.phoneNumber
-        //         }
-        //       } ],
-        //       "RARentalRequest" : [ {
-        //         "book" : "RARentalRequest$#RR",
-        //         "code" : "RR00001@draft",
-        //         "term" : "RARentalRequest$#RR",
-        //         "valueDate" : (new Date()).toISOString().split('T')[0],
-        //         "customer" : this.phoneNumber,
-        //         "payDate" : (new Date()).toISOString().split('T')[0],
-        //         "rentalAsset" : this.selectedYacht,
-        //         "priceClassifier1" : this.priceClassifier,
-        //         "fromDate" : "28-10-2021",
-        //         "fromTime" : "14:00",
-        //         "toDate" : "28-10-2021",
-        //         "toTime" : "19:00"
-        //       } ]
+                "Customer" : [ {
+                "group" : "Customer$#C",
+                "description2" : this.username,
+                "contactInfo" : {
+                  "telephone1" : this._customerCode
+                }
+              } ],
+              "RARentalRequest" : [ {
+                "book" : "RARentalRequest$#RR",
+                "code" : "RR00001@draft",
+                "term" : "RARentalRequest$#RR",
+                "valueDate" : (new Date()).toISOString().split('T')[0].split('-').reverse().join('-'),
+                "customer" : this._customerCode,
+                "payDate" : (new Date()).toISOString().split('T')[0].split('-').reverse().join('-'),
+                "rentalAsset" : this.selectedYacht,
+                "priceClassifier1" : this.priceClassifier,
+                "fromDate" : formattedReservationDate,
+                "fromTime" : `${startHour}:00`,
+                "toDate" : formattedReservationDate,
+                "toTime" : `${endHour}:00`
+              } ]
              
              
-        // });
-        // console.log("respnse reservation", reservationResponse);
-        // let response={error:true};
+        });
+        console.log("respnse reservation", reservationResponse);
+        let failedRecords = reservationResponse.data.failed_records_count;
+        if(failedRecords){
+            this.isLoading = false;
+            let returnValue = {error:true};
+            return returnValue;
+        }
+        this._rentalRequestCode = reservationResponse.data.saved_records.RARentalRequest[0].code;
+        // let response={error:true,value:reservationResponse.data.saved_records.RARentalRequest[0].code};
         let response = await PaymentHandler.initializeIFrame(params);
         if(!response.error){
             this._paymentRef = response.message.referenceId;
@@ -279,7 +294,43 @@ export class ReservationHandler {
             if(response.status === 200){
                 let orderStatus = response.data.order_status;
                 if(orderStatus === "PAID"){
-                    axios.post()
+                    let confirmationResponse = await axios.post(`${configs.BACKEND_API_ALIAS}?integrator=reservations&user=WS&pass=WebSite123`,{
+                        
+                            "ReceiptVoucher" : [ {
+                              "book" : "ReceiptVoucher$#RVV",
+                              "code" : "RV00001@draft",
+                              "term" : "ReceiptVoucher$#RVV",
+                              "valueDate" : new Date().toISOString().split('T')[0].split('-').reverse().join('-'),
+                              "fromDoc" : {
+                                "entityType" : "RARentalRequest",
+                                "code" : this._rentalRequestCode
+                              },
+                              "firstSideSubsidiary" : {
+                                "entityType" : "BankAccount",
+                                "code" : "1"
+                              },
+                              "firstSideAccount" : "120201",
+                              "amount" : {
+                                "value" : {
+                                  "amount" : this.calculatedFinalPrice,
+                                  "currency" : "EGP"
+                                }
+                              },
+                              "relatedSubsidiary" : {
+                                "entityType" : "Customer",
+                                "code" : this._customerCode
+                              }
+                            } ]
+                           
+                           
+                    });
+                    if(confirmationResponse.data && confirmationResponse.data.failed_records_count){
+                        alert(`Reservation is not successfull please contact admin and give them the payment code, ${response.data.merchant_reference_id}`);
+                    }else if(confirmationResponse.data && confirmationResponse.data.saved_records){
+                        alert("Reservation is successfull");
+                        this.clearStorage();
+                    }
+                    console.log("this is confirmation Response",confirmationResponse);
                 }
             }
             console.log("complete transaction status",response);
@@ -388,6 +439,8 @@ export class ReservationHandler {
             this._transactionState= json._transactionState;
             this._paymentRef = json._paymentRef;
             this._merchantRef = json._merchantRef;
+            this._rentalRequestCode = json._rentalRequestCode;
+            this._customerCode = json._customerCode;
 
         }
     }
