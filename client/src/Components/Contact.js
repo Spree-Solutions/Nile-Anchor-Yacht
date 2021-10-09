@@ -266,7 +266,7 @@ export default function Contact(props) {
                   } else {
                     console.log("reserved successfully", result);
                   }
-                })}}>{finalPrice?`Pay ( EGP ${finalPrice} )`:Data.Button}</div>{" "}
+                })}}>{finalPrice?`Pay 50% ( EGP ${finalPrice} )`:Data.Button}</div>{" "}
               </td>
             </tr>
           </tbody>
