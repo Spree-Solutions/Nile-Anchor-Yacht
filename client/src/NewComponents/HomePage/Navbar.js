@@ -111,7 +111,8 @@ export default function Navbar(props) {
                 >
                   {Data.NavTags[5]}{" "}
                 </span>
-                <span
+                {/* Changing language is commented out, pending arabic content */}
+                {/* <span
                   className={
                     language === "EN" ? "EN BoldText" : "EN NormalText"
                   }
@@ -127,7 +128,7 @@ export default function Navbar(props) {
                   onClick={changeToAR}
                 >
                   عربي
-                </span>
+                </span> */}
               </td>
             </tr>
           </tbody>

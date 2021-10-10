@@ -34,4 +34,8 @@ const StyledDiv = styled.div`
   .RightTextAlign {
     text-align: right;
   }
+  a {
+    text-decoration: none;
+    color: black;
+  }
 `;
