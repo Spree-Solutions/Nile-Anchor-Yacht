@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 import { DataEnglish } from "../../Data/English/HomePage/NavBar";
 import { DataArabic } from "../../Data/Arabic/HomePage/NavBar";
 
 import { colors } from "../../Styles/Colors";
 import Main_Logo from "../../Images/Main_Logo.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
+  const history = useHistory();
+  console.log(history);
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   const { language, setLanguage } = props;
   // eslint-disable-next-line no-unused-vars
@@ -27,6 +31,9 @@ export default function Navbar(props) {
     setSelectedTag(Tag);
   }
 
+  function handleClickByHistory(tagId) {
+    history.push(`/#${tagId}`);
+  }
   return (
     <StyledDiv>
       <div
@@ -46,7 +53,9 @@ export default function Navbar(props) {
                     : "LogoCell RightTextAlign"
                 }
               >
-                <img src={Main_Logo} alt="logo" className="LogoNavBar" />
+                <Link to="/">
+                  <img src={Main_Logo} alt="logo" className="LogoNavBar" />
+                </Link>
               </td>
 
               <td
@@ -56,61 +65,31 @@ export default function Navbar(props) {
                     : "NavCell LeftTextAlign"
                 }
               >
-                <span
-                  className="NavSpan"
-                  onClick={() =>
-                    handleClick(props.References.AboutUsRef, "AboutUs")
-                  }
-                >
+                <a href="/#about-us" className="NavSpan">
                   {Data.NavTags[0]}{" "}
-                </span>
-                <span
-                  className="NavSpan"
-                  onClick={() =>
-                    handleClick(props.References.OurYachtsRef, "OurYacht")
-                  }
-                >
+                </a>
+                <a href="/#our-yachts" className="NavSpan">
                   {Data.NavTags[1]}{" "}
-                </span>
-                <span
-                  className="NavSpan"
-                  onClick={() =>
-                    handleClick(props.References.GalleryRef, "Gallery")
-                  }
-                >
+                </a>
+                <a href="/#gallery" className="NavSpan">
                   {Data.NavTags[2]}{" "}
-                </span>
-                <span
+                </a>
+                <a
+                  href="/#our-services"
                   className={
                     language === "EN"
                       ? "NavSpan"
                       : "OurServices CenterTextAlign"
                   }
-                  onClick={() =>
-                    handleClick(props.References.OurServicesRef, "OurServices")
-                  }
                 >
                   {Data.NavTags[3]}{" "}
-                </span>
-                <span
-                  className="NavSpan"
-                  onClick={() =>
-                    handleClick(
-                      props.References.AdditionalServicesRef,
-                      "AdditionalServices"
-                    )
-                  }
-                >
+                </a>
+                <a href="/#additional-services" className="NavSpan">
                   {Data.NavTags[4]}{" "}
-                </span>
-                <span
-                  className="NavSpan"
-                  onClick={() =>
-                    handleClick(props.References.ContactRef, "Contact")
-                  }
-                >
+                </a>
+                <a href="/#contacts" className="NavSpan">
                   {Data.NavTags[5]}{" "}
-                </span>
+                </a>
                 {/* Changing language is commented out, pending arabic content */}
                 {/* <span
                   className={
@@ -142,6 +121,8 @@ const StyledDiv = styled.div`
   color: ${colors.Black};
   font-size: 0.97vw;
   background-color: ${colors.MainBeige};
+  /* position: sticky;
+  top: 0; */
 
   .EnglishNavComponentPadding {
     padding: 1.53vw 5.56vw 1.46vw 4vw;
@@ -166,6 +147,8 @@ const StyledDiv = styled.div`
     margin-right: 1.4vw;
     cursor: pointer;
     text-align: right;
+    text-decoration: none;
+    color: black;
   }
   .EN {
     min-width: 2.4vw;

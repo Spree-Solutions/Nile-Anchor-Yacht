@@ -9,6 +9,7 @@ import fb from "../Icons/fb.svg";
 import instagram from "../Icons/instagram.svg";
 import twitter from "../Icons/twitter.svg";
 import whatsapp from "../Icons/whatsapp.svg";
+import { Link } from "react-router-dom";
 
 export default function Footer(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -28,9 +29,15 @@ export default function Footer(props) {
                 <img src={Logo} alt="Logo" className="Logo" />
               </td>
               <td className="Col2">
-                {Data.FooterTags.map((item, index) => (
-                  <span className="Item">{item}</span>
-                ))}
+                {Data.FooterTags.map((item, index) =>
+                  item === "Contact Us" ? (
+                    <Link className="Item" to="/contact-us">
+                      {item}
+                    </Link>
+                  ) : (
+                    <span className="Item">{item}</span>
+                  )
+                )}
               </td>
               <td className="Col3">
                 <img src={fb} alt="fb" className="fb" />
@@ -57,6 +64,10 @@ const StyledDiv = styled.div`
   font-size: 1.25vw;
   color: ${colors.Black};
   background-color: ${colors.Merino};
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   .EnglishComponentPadding {
     padding: 3.75vw 5.6vw 5vw 3.55vw;
