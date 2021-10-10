@@ -10,6 +10,7 @@ export default function Selector(props) {
         className={props.language === "EN" ? "SelectorEN" : "SelectorAR"}
         name={props.name}
         required={props.required}
+        value={props.value}
       >
         {props.disabledOption && (
           <option className="Option" value="" selected disabled>

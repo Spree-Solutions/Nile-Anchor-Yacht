@@ -14,6 +14,7 @@ export default function TextField(props) {
         onChange={props.handleChange}
         name={props.name}
         required={props.required}
+        pattern={props.pattern}
       />
     </StyledDiv>
   );

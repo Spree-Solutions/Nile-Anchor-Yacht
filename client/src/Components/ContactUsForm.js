@@ -8,14 +8,15 @@ import TextField from "../Styles/TextField";
 
 const ContactUsForm = (props) => {
   const form = useRef();
-  const [data, setData] = useState({
+  const initData = {
     subject: "",
-    yacht: "Still",
+    yacht: "",
     name: "",
     email: "",
     number: "",
     message: "",
-  });
+  };
+  const [data, setData] = useState(initData);
   const [loading, setLoading] = useState(false);
   const sendEmail = (e) => {
     e.preventDefault();
@@ -31,6 +32,7 @@ const ContactUsForm = (props) => {
         (result) => {
           console.log(result.text);
           setLoading(false);
+          setData(initData);
         },
         (error) => {
           console.log(error.text);
@@ -50,11 +52,13 @@ const ContactUsForm = (props) => {
             language={props.language}
             type="text"
             name="subject"
+            value={data.subject}
             placeholder="Subject"
             required
           />
           <Selector
-            setSelected={() => null}
+            setSelected={(choice) => setData({ ...data, yacht: choice })}
+            value={data.yacht}
             language={props.language}
             disabledOption="Select yacht"
             list={["Liberty", "Bella"]}
@@ -79,6 +83,7 @@ const ContactUsForm = (props) => {
             language={props.language}
             type="email"
             name="email"
+            value={data.email}
             placeholder="Email"
           />
           <TextField
@@ -86,9 +91,11 @@ const ContactUsForm = (props) => {
               setData({ ...data, [e.target.name]: e.target.value })
             }
             language={props.language}
-            type="text"
+            type="tel"
+            pattern="^(00201|\+201|01)[0-2,5]{1}[0-9]{8}$"
             name="number"
-            placeholder="Phone number"
+            value={data.number}
+            placeholder="Phone number (01XXXXXXXXX)"
             required
           />
         </div>
@@ -99,6 +106,7 @@ const ContactUsForm = (props) => {
           placeholder="Enter your message here.."
           name="message"
           required
+          value={data.message}
         />
         <button type="submit" className="Button" disabled={loading}>
           {`${loading ? "Loading .." : "Submit"}`}
