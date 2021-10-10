@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { colors } from "../Styles/Colors";
 
-export default function TextField(props) {
+export default function TextArea(props) {
   return (
     <StyledDiv>
-      <input
+      <textarea
+        rows="4"
+        cols="50"
         style={{ width: props.width }}
         className={props.language === "EN" ? "Input ENInput" : "Input ARInput"}
         placeholder={props.placeholder}
@@ -34,11 +36,11 @@ const StyledDiv = styled.div`
     cursor: pointer;
     background-color: ${colors.Merino} !important;
   }
-  .ENInput {
+  /* .ENInput {
     margin-right: 1.6vw;
   }
 
   .ARInput {
     margin-left: 1.6vw;
-  }
+  } */
 `;

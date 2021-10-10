@@ -8,10 +8,14 @@ export default function Selector(props) {
       <select
         onChange={(e) => props.setSelected(e.target.value)}
         className={props.language === "EN" ? "SelectorEN" : "SelectorAR"}
+        name={props.name}
+        required={props.required}
       >
-        {props.disabledOption && (<option className="Option" value={undefined} selected disabled>
-          {props.disabledOption}
-        </option>)}
+        {props.disabledOption && (
+          <option className="Option" value="" selected disabled>
+            {props.disabledOption}
+          </option>
+        )}
         {props.list.map((item) => (
           <option className="Option" value={item}>
             {item}
@@ -42,7 +46,8 @@ const StyledDiv = styled.div`
     background: ${colors.Merino}
       url('data:image/svg+xml;utf8,<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0H15.5L8 8L0 0Z" fill="%234D4D4F"/></g></svg>')
       no-repeat;
-    background-position-x: 19vw !important;
+    background-position-x: 95% !important;
+    /* background-position-x: 19vw !important; */
     background-position-y: 50% !important;
 
     /* remove preexisiting arrow  */
@@ -61,7 +66,8 @@ const StyledDiv = styled.div`
       background: ${colors.Merino}
         url('data:image/svg+xml;utf8,<svg width="8" height="4" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0H15.5L8 8L0 0Z" fill="%234D4D4F"/></g></svg>')
         no-repeat;
-      background-position-x: 17vw !important;
+      background-position-x: 96% !important;
+      /* background-position-x: 17vw !important; */
       background-position-y: 50% !important;
     }
   }

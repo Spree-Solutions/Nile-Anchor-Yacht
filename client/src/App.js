@@ -12,6 +12,7 @@ import DirectionProvider, {
   DIRECTIONS,
 } from "react-with-direction/dist/DirectionProvider";
 import ScrollTop from "./Components/ScrollTop";
+import ContactUs from "./Pages/ContactUs";
 
 function App() {
   const [language, setLanguage] = useState("EN");
@@ -78,6 +79,14 @@ function App() {
               </Route>
               <Route exact path="/Gathering">
                 <GatheringsPage
+                  References={References}
+                  executeScroll={executeScroll}
+                  language={language}
+                  setLanguage={setLanguage}
+                />
+              </Route>
+              <Route exact path="/contact-us">
+                <ContactUs
                   References={References}
                   executeScroll={executeScroll}
                   language={language}
