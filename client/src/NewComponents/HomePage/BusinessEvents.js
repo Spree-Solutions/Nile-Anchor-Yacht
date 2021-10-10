@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import { colors } from "../../Styles/Colors";
 import { DataEnglish } from "../../Data/English/HomePage/BusinessEvents";
 import { DataArabic } from "../../Data/Arabic/HomePage/BusinessEvents";
@@ -19,7 +21,9 @@ export default function BusinessEvents(props) {
             <td className={props.language === "EN" ? "ENcol1" : "ARcol1"}>
               <div className="TitleBold">{Data.Title} </div>
               <div className="body">{Data.body} </div>
-              <div className="bodyBold">{Data.ReadMore}</div>
+              <div className="bodyBold">
+                <Link to="/business">{Data.ReadMore}</Link>
+              </div>
             </td>
             <td>
               <img

@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import { DataEnglish } from "../../Data/English/HomePage/Gatherings";
 import { DataArabic } from "../../Data/Arabic/HomePage/Gatherings";
 
@@ -20,7 +22,9 @@ export default function Gatherings(props) {
             <td className={props.language === "EN" ? "ENcol1" : "ARcol1"}>
               <div className="TitleBold">{Data.Title} </div>
               <div className="body">{Data.body} </div>
-              <div className="bodyBold">{Data.ReadMore}</div>
+              <div className="bodyBold">
+                <Link to="/gathering">{Data.ReadMore}</Link>
+              </div>
             </td>
             <td className={props.language === "EN" ? "ENcol2" : "ARcol2"}>
               <img
