@@ -11,6 +11,7 @@ import BusinessPage from "./Pages/BusinessPage";
 import DirectionProvider, {
   DIRECTIONS,
 } from "react-with-direction/dist/DirectionProvider";
+import ScrollTop from "./Components/ScrollTop";
 
 function App() {
   const [language, setLanguage] = useState("EN");
@@ -36,6 +37,7 @@ function App() {
       >
         <div>
           <BrowserRouter>
+            <ScrollTop />
             <Switch>
               <Route exact path="/">
                 <HomePage
