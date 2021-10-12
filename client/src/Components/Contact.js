@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { DataEnglish } from "../Data/English/HomePage/Contact";
 import { DataArabic } from "../Data/Arabic/HomePage/Contact";
-import {ReservationHandler} from "../Utilities/ReservationHandler";
-import {DatePickerComponent} from "../NewComponents/DatePicker/DayDatePicker";
+import { ReservationHandler } from "../Utilities/ReservationHandler";
+import { DatePickerComponent } from "../NewComponents/DatePicker/DayDatePicker";
 
 import { colors } from "../Styles/Colors";
 import Selector from "../Styles/Selector";
@@ -20,19 +20,26 @@ export default function Contact(props) {
   // eslint-disable-next-line no-unused-vars
   const [selected, setSelected] = useState(options[0]);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
-  const [startHourOptions, setStartHourOptions ] = useState([]);
-  const [endHourOptions, setEndHourOptions ] = useState([]);
+  const [startHourOptions, setStartHourOptions] = useState([]);
+  const [endHourOptions, setEndHourOptions] = useState([]);
   const [finalPrice, setFinalPrice] = useState(null);
   // initializa reservation handler
   const reservationInstance = ReservationHandler.getInstance();
-  console.log("before if condition to available startHours",{class:reservationInstance,state:startHourOptions})
-  if(reservationInstance.availableStartHours.length> startHourOptions.length){
+  console.log("before if condition to available startHours", {
+    class: reservationInstance,
+    state: startHourOptions,
+  });
+  if (
+    reservationInstance.availableStartHours.length > startHourOptions.length
+  ) {
     setStartHourOptions(reservationInstance.availableStartHours);
   }
-  if(reservationInstance.getAvailableEndHours().length!==endHourOptions.length){
+  if (
+    reservationInstance.getAvailableEndHours().length !== endHourOptions.length
+  ) {
     setEndHourOptions(reservationInstance.getAvailableEndHours());
   }
-  if(typeof window !== typeof undefined){
+  if (typeof window !== typeof undefined) {
     window.TanawyComponentTest = reservationInstance;
   }
   return (
@@ -99,7 +106,7 @@ export default function Contact(props) {
             </tr>
           </tbody>
         </table>
-        <table>
+        <table className="form-table">
           <tbody>
             <tr className="RowMargin">
               <td>
@@ -108,10 +115,9 @@ export default function Contact(props) {
                   width={"20.9vw"}
                   placeholder={Data.FormInput[0]}
                   language={props.language}
-                  handleChange={(event)=>{
+                  handleChange={(event) => {
                     let name = event.target.value;
                     reservationInstance.username = name;
-
                   }}
                 />
               </td>
@@ -119,10 +125,10 @@ export default function Contact(props) {
                 {" "}
                 <Selector
                   list={Data.FormSelect.Boats}
-                  setSelected={(value)=>{
+                  setSelected={(value) => {
                     reservationInstance.setYacht(value);
-                    setSelected(value)}
-                  }
+                    setSelected(value);
+                  }}
                   language={props.language}
                 />
               </td>
@@ -151,11 +157,16 @@ export default function Contact(props) {
                       </td>
                       <td>
                         <TextField
+                          id="special-text"
                           width={"13.6vw"}
                           placeholder={Data.FormInput[1]}
-                          handleChange={(event)=>{
-                            console.log("phone number input debug", event.target.value);
-                            reservationInstance.phoneNumber = event.target.value;
+                          handleChange={(event) => {
+                            console.log(
+                              "phone number input debug",
+                              event.target.value
+                            );
+                            reservationInstance.phoneNumber =
+                              event.target.value;
                           }}
                           language={props.language}
                         />
@@ -164,35 +175,50 @@ export default function Contact(props) {
                   </tbody>
                 </table>
               </td>
-              <td style={{verticalAlign: "baseline",paddingTop: "4px"}}>
+              <td style={{ verticalAlign: "baseline", paddingTop: "4px" }}>
                 {" "}
-                <DatePickerComponent 
-                  onChange={(date)=>{
+                <DatePickerComponent
+                  onChange={(date) => {
                     date.setHours(8);
                     let formattedDate = date;
                     reservationInstance.reservationDate = formattedDate;
-                    reservationInstance.notifyStartHour = ()=>{
-                      console.log("notify start hours was called", reservationInstance.availableStartHours);
-                      setStartHourOptions(reservationInstance.availableStartHours);
-                    }
-                    console.log("tanawy is testing", {date}); window.tanawyTestingVar = date;
-                    }} 
+                    reservationInstance.notifyStartHour = () => {
+                      console.log(
+                        "notify start hours was called",
+                        reservationInstance.availableStartHours
+                      );
+                      setStartHourOptions(
+                        reservationInstance.availableStartHours
+                      );
+                    };
+                    console.log("tanawy is testing", { date });
+                    window.tanawyTestingVar = date;
+                  }}
                   language={props.language}
                 />
               </td>
             </tr>
             <tr className="RowMargin">
-            <td>
+              <td>
                 {" "}
                 <Selector
                   list={startHourOptions}
-                  disabledOption={!props.language?"Starting hour":props.language === "EN"?"Starting hour":"ساعة البداية"}
-                  setSelected={data=>{
-                    reservationInstance.notifyEndHour = ()=>{
-                      setEndHourOptions(reservationInstance.getAvailableEndHours())
-                    }
+                  disabledOption={
+                    !props.language
+                      ? "Starting hour"
+                      : props.language === "EN"
+                      ? "Starting hour"
+                      : "ساعة البداية"
+                  }
+                  setSelected={(data) => {
+                    reservationInstance.notifyEndHour = () => {
+                      setEndHourOptions(
+                        reservationInstance.getAvailableEndHours()
+                      );
+                    };
                     reservationInstance.startingHour = data;
-                    console.log("event trigger on start hour",data);}}
+                    console.log("event trigger on start hour", data);
+                  }}
                   language={props.language}
                 />
               </td>
@@ -200,11 +226,18 @@ export default function Contact(props) {
                 {" "}
                 <Selector
                   list={endHourOptions}
-                  disabledOption={!props.language?"Ending hour":props.language === "EN"?"Ending hour":"ساعة النهاية"}
-                  setSelected={data=>{
+                  disabledOption={
+                    !props.language
+                      ? "Ending hour"
+                      : props.language === "EN"
+                      ? "Ending hour"
+                      : "ساعة النهاية"
+                  }
+                  setSelected={(data) => {
                     reservationInstance.endingHour = data;
                     setFinalPrice(reservationInstance.calculatedFinalPrice);
-                    console.log("event trigger on Ending hour",data);}}
+                    console.log("event trigger on Ending hour", data);
+                  }}
                   language={props.language}
                 />
               </td>
@@ -215,8 +248,11 @@ export default function Contact(props) {
                 <TextField
                   width={"20.9vw"}
                   placeholder={Data.FormInput[2]}
-                  handleChange={(event)=>{
-                    console.log("event trigger on email input", event.target.value);
+                  handleChange={(event) => {
+                    console.log(
+                      "event trigger on email input",
+                      event.target.value
+                    );
                     reservationInstance.email = event.target.value;
                   }}
                   language={props.language}
@@ -226,10 +262,11 @@ export default function Contact(props) {
                 {" "}
                 <Selector
                   list={Data.FormSelect["Event Type"]}
-                  setSelected={data=>{
-                    console.log("event trigger on event type input",data);
+                  setSelected={(data) => {
+                    console.log("event trigger on event type input", data);
                     reservationInstance.serviceName = data;
-                    setSelected(data)}}
+                    setSelected(data);
+                  }}
                   language={props.language}
                 />
               </td>
@@ -237,18 +274,19 @@ export default function Contact(props) {
           </tbody>
         </table>
 
-        <table>
+        <table className="action-table-booking">
           <tbody>
             <tr>
               <td className="Col0"></td>
+              {/* <tr className="special-row-check"> */}
               <td className="Col1">
                 <label class="container">
-                <span class="checkmark">
-                  <input
-                    type="checkbox"
-                    checked={checkboxStatus}
-                    onClick={() => setCheckboxStatus(!checkboxStatus)}
-                  />
+                  <span class="checkmark">
+                    <input
+                      type="checkbox"
+                      checked={checkboxStatus}
+                      onClick={() => setCheckboxStatus(!checkboxStatus)}
+                    />
                   </span>
                 </label>
               </td>
@@ -257,17 +295,27 @@ export default function Contact(props) {
                   {Data.CheckBox}
                 </span>
               </td>
-              <td className="Col3">
-                {" "}
-                <div className="Button" onClick={e=>{reservationInstance.reserve().then(result=>{
-                  if (result.error){
-                    // handle error
-                    console.log("error returned from reserve()", result);
-                  } else {
-                    console.log("reserved successfully", result);
-                  }
-                })}}>{finalPrice?`Pay 50% ( EGP ${finalPrice} )`:Data.Button}</div>{" "}
-              </td>
+              {/* </tr> */}
+              <tr>
+                <td className="Col3">
+                  {" "}
+                  <div
+                    className="Button"
+                    onClick={(e) => {
+                      reservationInstance.reserve().then((result) => {
+                        if (result.error) {
+                          // handle error
+                          console.log("error returned from reserve()", result);
+                        } else {
+                          console.log("reserved successfully", result);
+                        }
+                      });
+                    }}
+                  >
+                    {finalPrice ? `Pay 50% ( EGP ${finalPrice} )` : Data.Button}
+                  </div>{" "}
+                </td>
+              </tr>
             </tr>
           </tbody>
         </table>
@@ -282,6 +330,35 @@ const StyledDiv = styled.div`
   color: ${colors.White};
   font-family: "Askan Light" !important;
   font-size: 1vw;
+  @media (max-width: 768px) {
+    * {
+      /* margin: 0; */
+      padding: 0;
+      box-sizing: border-box;
+    }
+    padding: 8vw;
+    .Input:not(#special-text) {
+      width: 100% !important;
+    }
+    #special-text {
+      width: 26.2vw !important;
+    }
+    .action-table-booking {
+      width: 100%;
+      tbody {
+        width: 100%;
+        tr {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:not(.special-row-check) {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
 
   .EnglishComponentPadding {
     text-align: left !important;
@@ -306,10 +383,16 @@ const StyledDiv = styled.div`
   .ENicon {
     width: 2.8vw;
     margin-right: 1.2vw;
+    @media (max-width: 768px) {
+      width: 6.13vw;
+    }
   }
   .ARicon {
     width: 2.8vw;
     margin-left: 1.2vw;
+    @media (max-width: 768px) {
+      width: 6.13vw;
+    }
   }
   .Icons {
     width: 4vw;
@@ -317,9 +400,17 @@ const StyledDiv = styled.div`
   }
   .Action {
     font-size: 1.4vw;
+    @media (max-width: 768px) {
+      font-size: 2.4vw;
+      width: 15.2vw;
+    }
   }
   .ButtonLabel {
     font-size: 1vw;
+    @media (max-width: 768px) {
+      font-size: 2.4vw;
+      width: 15.2vw;
+    }
   }
   .ENcall {
     padding-right: 4.4vw;
@@ -345,19 +436,39 @@ const StyledDiv = styled.div`
     background-color: ${colors.Merino} !important;
     height: unset;
     margin-bottom: 1.4vw;
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 8.9vw !important;
+      margin: 0;
+    }
   }
   .ENflag {
     margin-right: 1vw;
     padding: 0.2vw 5vw 0.15vw 0.8vw;
+    @media (max-width: 768px) {
+      margin: 0;
+      padding: 0;
+    }
   }
   .ARflag {
     margin-left: 1vw;
     padding: 0.2vw 0.8vw 0.15vw 5vw;
+    @media (max-width: 768px) {
+      margin: 0;
+      padding: 0;
+    }
   }
   .EgyptianFlag {
     width: 1.8vw;
     height: 1.25vw;
     padding-top: 0.15vw;
+    @media (max-width: 768px) {
+      width: 80%;
+      height: 4.8vw;
+      padding: 0;
+    }
   }
   .Button {
     width: 13.6vw;
@@ -370,8 +481,41 @@ const StyledDiv = styled.div`
     cursor: pointer;
     background-color: ${colors.LightBlue};
     text-align: center;
+    @media (max-width: 768px) {
+      width: 52.3vw;
+      height: 8.8vw;
+      font-size: 3.7vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      margin-top: 2.4vw;
+    }
   }
-
+  .form-table {
+    @media (max-width: 768px) {
+      width: 100%;
+      font-size: 2.4vw !important;
+      margin-bottom: 6.4vw;
+      tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2.7vw;
+      }
+      td {
+        .custom-selector {
+          width: 100%;
+          font-size: 2.4vw;
+        }
+        width: 100%;
+        & > * {
+          height: 8.8vw;
+          width: 100%;
+          /* width: 100%; */
+        }
+      }
+    }
+  }
   /* The container */
   .container {
     position: relative;
@@ -401,6 +545,12 @@ const StyledDiv = styled.div`
     height: 1vw;
     width: 1vw;
     background-color: ${colors.Merino};
+    @media (max-width: 768px) {
+      left: -22vw;
+      top: 2vw;
+      width: 3.7vw;
+      height: 3.7vw;
+    }
   }
 
   /* When the checkbox is checked, add a blue background */
@@ -443,16 +593,17 @@ const StyledDiv = styled.div`
     width: 10.8vw;
     font-size: 1vw;
     color: ${colors.Merino};
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+      /* width: 100%; */
+      width: 34.4vw;
+      margin-left: 1vw;
+    }
   }
   .Col3 {
     width: 28.7vw;
-  }
-
-  @media screen and (max-width: 480px) {
-    .Flag {
-      margin-right: 0vw;
-      margin-left: 0vw;
-      padding: 0.2vw 5vw 0.26vw 0.8vw;
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
 `;

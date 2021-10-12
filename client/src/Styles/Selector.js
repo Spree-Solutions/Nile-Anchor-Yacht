@@ -7,7 +7,11 @@ export default function Selector(props) {
     <StyledDiv>
       <select
         onChange={(e) => props.setSelected(e.target.value)}
-        className={props.language === "EN" ? "SelectorEN" : "SelectorAR"}
+        className={
+          props.language === "EN"
+            ? "SelectorEN custom-selector"
+            : "SelectorAR custom-selector"
+        }
         name={props.name}
         required={props.required}
         value={props.value}
@@ -60,7 +64,7 @@ const StyledDiv = styled.div`
     appearance: none !important;
   }
 
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: 786px) {
     .SelectorEN,
     .SelectorEN:hover,
     .SelectorEN:active {
@@ -70,6 +74,7 @@ const StyledDiv = styled.div`
       background-position-x: 96% !important;
       /* background-position-x: 17vw !important; */
       background-position-y: 50% !important;
+      height: 100%;
     }
   }
 
@@ -103,7 +108,7 @@ const StyledDiv = styled.div`
     appearance: none !important;
   }
 
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: 786px) {
     .SelectorAR,
     .SelectorAR:hover,
     .SelectorAR:active {

@@ -165,7 +165,10 @@ const StyledDiv = styled.div`
     height: 27.6vw;
     object-fit: cover;
     padding: 4.2vw 0vw 0vw 0vw;
-    transition: all 5s linear;
+    @media (max-width: 768px) {
+      width: 80vw;
+      height: 60vw;
+    }
   }
   .centered {
     text-align: center;
@@ -177,6 +180,17 @@ const StyledDiv = styled.div`
     margin-left: auto;
     margin-right: auto;
     transition: border-width 5s linear;
+    @media (max-width: 768px) {
+      height: 10vw;
+      /* width: 80vw; */
+      img {
+        width: 16.5vw;
+        height: 9.7vw;
+        &.icon {
+          width: 2.4vw;
+        }
+      }
+    }
   }
   .icon {
     width: 0.67vw;

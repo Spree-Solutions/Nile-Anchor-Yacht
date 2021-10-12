@@ -71,6 +71,9 @@ const StyledDiv = styled.div`
 
   .EnglishComponentPadding {
     padding: 3.75vw 5.6vw 5vw 3.55vw;
+    @media (max-width: 768px) {
+      padding: 7.73vw 30vw 10.4vw 30vw;
+    }
     text-align: left;
   }
   .ArabicComponentPadding {
@@ -82,27 +85,68 @@ const StyledDiv = styled.div`
   td {
     vertical-align: top;
   }
+  table {
+    @media (max-width: 768px) {
+      width: 100%;
+      tr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 
   .Logo {
     width: 14.6vw;
     height: 8vw;
+    @media (max-width: 768px) {
+      width: 26.1vw;
+      height: 14.13vw;
+    }
   }
 
   .Col1 {
     width: 18.75vw;
+    @media (max-width: 768px) {
+      width: auto;
+    }
   }
   .Col2 {
     width: 19vw;
     padding: 4.5vw 0vw 0vw 1vw;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   .Col3 {
     width: 28vw;
     padding: 4.1vw 0vw 2.2vw 5.2vw;
+    @media (max-width: 768px) {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding-top: 12.8vw;
+      padding-left: 0;
+      padding-right: 0;
+      margin: auto;
+      & > * {
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
   }
   .Col4 {
     width: 18.5vw;
     font-size: 1.1vw;
     padding: 2vw 0vw 0vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 3.2vw;
+      width: 38.7vw;
+      padding-top: 9.1vw;
+    }
   }
 
   .Item {
@@ -116,20 +160,32 @@ const StyledDiv = styled.div`
     width: 2.43vw;
     margin-right: 3.75vw;
     cursor: pointer;
+    @media (max-width: 768px) {
+      width: 4.5vw;
+    }
   }
   .twitter {
     width: 2.43vw;
     margin-right: 3.75vw;
     cursor: pointer;
+    @media (max-width: 768px) {
+      width: 4.5vw;
+    }
   }
   .whatsapp {
     width: 2.43vw;
     margin-right: 3.75vw;
     cursor: pointer;
+    @media (max-width: 768px) {
+      width: 4.5vw;
+    }
   }
   .instagram {
     width: 2.43vw;
     margin-right: 3.75vw;
     cursor: pointer;
+    @media (max-width: 768px) {
+      width: 4.5vw;
+    }
   }
 `;
