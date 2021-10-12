@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { colors } from "../Styles/Colors";
 
 export default function TextField(props) {
+  console.log("width", props.width);
   return (
     <StyledDiv>
       <input
@@ -15,6 +16,7 @@ export default function TextField(props) {
         name={props.name}
         required={props.required}
         pattern={props.pattern}
+        id={props.id}
       />
     </StyledDiv>
   );
@@ -34,12 +36,22 @@ const StyledDiv = styled.div`
     color: ${colors.Black};
     cursor: pointer;
     background-color: ${colors.Merino} !important;
+    @media (max-width: 768px) {
+      height: 100%;
+      font-size: 2.4vw;
+    }
   }
   .ENInput {
     margin-right: 1.6vw;
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
 
   .ARInput {
     margin-left: 1.6vw;
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
 `;

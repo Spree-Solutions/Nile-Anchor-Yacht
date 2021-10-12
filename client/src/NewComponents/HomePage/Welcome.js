@@ -53,6 +53,10 @@ const StyledDiv = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  @media (max-width: 768px) {
+    background-position: 75%;
+    background-size: cover;
+  }
 
   .EnglishComponentPadding {
     padding: 0vw 0vw 0vw 5.1vw;
@@ -66,21 +70,34 @@ const StyledDiv = styled.div`
     padding-top: 16vw;
     font-size: 3.75vw;
     line-height: 4vw;
+    @media (max-width: 768px) {
+      font-family: "Askan Light" !important;
+      text-align: left;
+      font-size: 10.7vw;
+      line-height: 12vw;
+      padding-top: 57vw;
+    }
   }
   .TitleBold {
     font-family: "Askan Bold" !important;
     padding-bottom: 11.9vw;
     font-size: 6.67vw;
     line-height: 6.9vw;
+    @media (max-width: 768px) {
+      font-family: "Askan Bold" !important;
+      font-size: 18.7vw;
+      line-height: 21vw;
+      padding-bottom: 99vw;
+    }
   }
 
-  .TitleMobile {
+  /* .TitleMobile {
     font-family: "Askan Light" !important;
     text-align: left;
     font-size: 10.7vw;
     line-height: 12vw;
     padding-top: 57vw;
-  }
+  } */
   .TitleBoldMobile {
     font-family: "Askan Bold" !important;
     font-size: 18.7vw;

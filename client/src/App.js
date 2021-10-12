@@ -13,7 +13,8 @@ import DirectionProvider, {
 } from "react-with-direction/dist/DirectionProvider";
 import ScrollTop from "./Components/ScrollTop";
 import ContactUs from "./Pages/ContactUs";
-
+import Navbar from "./NewComponents/HomePage/Navbar";
+import Footer from "./Components/Footer";
 function App() {
   const [language, setLanguage] = useState("EN");
   const References = {
@@ -26,6 +27,7 @@ function App() {
   };
 
   function executeScroll(key) {
+    console.log("key", key);
     key.current.scrollIntoView({ behavior: "smooth", block: "start" });
   }
   const [showError, setShowError] = useState(false);
@@ -39,6 +41,12 @@ function App() {
         <div>
           <BrowserRouter>
             <ScrollTop />
+            <Navbar
+              executeScroll={executeScroll}
+              References={References}
+              setLanguage={setLanguage}
+              language={language}
+            />
             <Switch>
               <Route exact path="/">
                 <HomePage
@@ -96,6 +104,7 @@ function App() {
               {/* Route with no  exact path incase user enters incorrect url, he gets directed to dashboard*/}
               <Route render={() => <Redirect to="/" />} />
             </Switch>
+            <Footer language={language} />
           </BrowserRouter>
         </div>
       </DirectionProvider>

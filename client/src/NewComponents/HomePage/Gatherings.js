@@ -26,16 +26,18 @@ export default function Gatherings(props) {
                 <Link to="/gathering">{Data.ReadMore}</Link>
               </div>
             </td>
-            <td className={props.language === "EN" ? "ENcol2" : "ARcol2"}>
-              <img
-                src={Kids_Birthday}
-                alt="Kids_Birthday"
-                className="Kids_Birthday"
-              />
-            </td>
-            <td>
-              <img src={Party_Bags} alt="Party_Bags" className="Party_Bags" />
-            </td>
+            <tr className="images-row">
+              <td className={props.language === "EN" ? "ENcol2" : "ARcol2"}>
+                <img
+                  src={Kids_Birthday}
+                  alt="Kids_Birthday"
+                  className="Kids_Birthday"
+                />
+              </td>
+              <td>
+                <img src={Party_Bags} alt="Party_Bags" className="Party_Bags" />
+              </td>
+            </tr>
           </tr>
         </tbody>
       </table>
@@ -44,54 +46,164 @@ export default function Gatherings(props) {
 }
 
 const StyledDiv = styled.div`
-  padding: 3.47vw 5.48vw 3.75vw 5.42vw;
+  padding: 3.96vw 5.6vw 3.6vw 5.63vw;
   color: ${colors.Black};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${Gatherings_Background});
+  @media (max-width: 768px) {
+    padding: 8vw;
+  }
 
+  table {
+    @media (max-width: 768px) {
+      width: 84vw;
+    }
+  }
   tr,
   td {
     vertical-align: top;
     border: none;
   }
+  tr {
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+
+      &.images-row {
+        /* display: flex; */
+        margin-top: 12.5vw;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
   .TitleBold {
     font-size: 2.8vw;
     font-family: "Askan Bold" !important;
+    color: ${colors.Pink};
+    @media (max-width: 768px) {
+      font-size: 5.9vw;
+      width: 26.4vw;
+    }
   }
   .body {
     font-family: "Lato Regular" !important;
     font-size: 0.97vw;
     line-height: 1.4vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 3.2vw;
+      line-height: normal;
+      margin-top: 4.5vw;
+      margin-bottom: 4.3vw;
+    }
   }
   .bodyBold {
     font-family: "Lato Bold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;
+    @media (max-width: 768px) {
+      font-size: 3.2vw;
+      line-height: normal;
+    }
   }
 
   .ENcol1 {
-    width: 41vw;
-    padding-right: 16vw;
+    width: 52.5vw;
+    padding-right: 23.9vw;
+    @media (max-width: 768px) {
+      padding: 0;
+      width: 100%;
+    }
   }
   .ARcol1 {
-    width: 41vw;
-    padding-left: 16vw;
+    width: 52.5vw;
+    padding-left: 23.9vw;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
   }
   .ENcol2 {
     padding-right: 1.4vw;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
   }
   .ARcol2 {
     padding-left: 1.4vw;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
   }
   .Kids_Birthday {
-    width: 33vw;
-    height: 21vw;
+    width: 13.68vw;
+    height: 14.7vw;
+    @media (max-width: 768px) {
+      width: 44.8vw;
+      height: 31.75vw;
+    }
   }
   .Party_Bags {
-    width: 13.75vw;
-    height: 21vw;
+    width: 21.25vw;
+    height: 14.7vw;
+    @media (max-width: 768px) {
+      width: 33.9vw;
+      height: 31.75vw;
+    }
   }
 `;
+
+// const StyledDiv = styled.div`
+//   padding: 3.47vw 5.48vw 3.75vw 5.42vw;
+//   color: ${colors.Black};
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-image: url(${Gatherings_Background});
+
+//   tr,
+//   td {
+//     vertical-align: top;
+//     border: none;
+//   }
+//   .TitleBold {
+//     font-size: 2.8vw;
+//     font-family: "Askan Bold" !important;
+//   }
+//   .body {
+//     font-family: "Lato Regular" !important;
+//     font-size: 0.97vw;
+//     line-height: 1.4vw;
+//     padding: 1.88vw 0vw 1.88vw 0vw;
+//   }
+//   .bodyBold {
+//     font-family: "Lato Bold" !important;
+//     font-size: 1.1vw;
+//     line-height: 1.4vw;
+//   }
+
+//   .ENcol1 {
+//     width: 41vw;
+//     padding-right: 16vw;
+//   }
+//   .ARcol1 {
+//     width: 41vw;
+//     padding-left: 16vw;
+//   }
+//   .ENcol2 {
+//     padding-right: 1.4vw;
+//   }
+//   .ARcol2 {
+//     padding-left: 1.4vw;
+//   }
+//   .Kids_Birthday {
+//     width: 33vw;
+//     height: 21vw;
+//   }
+//   .Party_Bags {
+//     width: 13.75vw;
+//     height: 21vw;
+//   }
+// `;

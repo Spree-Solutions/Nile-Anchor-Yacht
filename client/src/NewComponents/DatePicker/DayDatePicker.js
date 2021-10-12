@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import {colors } from "../../Styles/Colors";
-import {createGlobalStyle} from 'styled-components';
+import { colors } from "../../Styles/Colors";
+import { createGlobalStyle } from "styled-components";
 import "react-datepicker/dist/react-datepicker.css";
 
 const DatePickerWrapperStyles = createGlobalStyle`
@@ -18,6 +18,10 @@ margin-bottom: 1.4vw;
   color: ${colors.Black};
   cursor: pointer;
   background-color: ${colors.Merino} !important;
+  @media (max-width: 768px) {
+      height: 8.8vw;
+      font-size: 2.4vw;
+  }
 }
 .fullWidth {
     width: 100%;
@@ -42,37 +46,41 @@ margin-bottom: 1.4vw;
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export const DatePickerComponent = (props) => {
+  let initialValue = null;
+  if (typeof props.initialValue === typeof initialValue) {
+    initialValue = props.initialValue;
+  } else {
+    initialValue = null;
+  }
+  const [startDate, setStartDate] = useState(initialValue);
 
-    let initialValue =null;
-    if (typeof props.initialValue === typeof initialValue){
-        initialValue = props.initialValue;
-    } else {
-        initialValue = null;
-    }
-    const [startDate, setStartDate] = useState(initialValue);
+  let initialText = "Select a date";
+  let language = "EN";
+  if (props.language && props.language === "AR") {
+    initialText = "اختار اليوم";
+    language = "AR";
+  }
 
-    
-    let initialText = "Select a date";
-    let language = "EN";
-    if(props.language && props.language === "AR"){
-        initialText = "اختار اليوم";
-        language = "AR"
-    }
-
-
-    const onChangeHandler = (date)=>{
-        if(props.onChange != undefined && typeof props.onChange == "function"  ){
-            props.onChange(date);
-        }
-
-        setStartDate(date);
+  const onChangeHandler = (date) => {
+    if (props.onChange != undefined && typeof props.onChange == "function") {
+      props.onChange(date);
     }
 
-    return (
-        <React.Fragment>
+    setStartDate(date);
+  };
 
-            <DatePicker wrapperClassName="hideOverflow" className={`DatePicker fullWidth ${language==="AR"?"ARDatePicker":""}`} value={!startDate?initialText:undefined} selected={startDate? startDate:undefined} onChange={onChangeHandler} />
-            <DatePickerWrapperStyles />
-        </React.Fragment>
-    );
+  return (
+    <React.Fragment>
+      <DatePicker
+        wrapperClassName="hideOverflow"
+        className={`DatePicker fullWidth ${
+          language === "AR" ? "ARDatePicker" : ""
+        }`}
+        value={!startDate ? initialText : undefined}
+        selected={startDate ? startDate : undefined}
+        onChange={onChangeHandler}
+      />
+      <DatePickerWrapperStyles />
+    </React.Fragment>
+  );
 };

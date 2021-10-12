@@ -18,8 +18,8 @@ export default function WhoAreWe(props) {
               <td
                 className={
                   props.language === "EN"
-                    ? "SubTitle LeftTextAlign"
-                    : "SubTitle RightTextAlign"
+                    ? "SubTitle LeftTextAlign title"
+                    : "SubTitle RightTextAlign title"
                 }
               >
                 <div> {Data.SubTitle}</div>
@@ -53,9 +53,23 @@ const StyledDiv = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  @media (max-width: 768px) {
+    padding: 0vw 13vw 0vw 9.6vw;
+  }
 
   .tableContent {
     vertical-align: bottom;
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      .title {
+        display: flex;
+        margin-bottom: 21.6vw;
+        /* margin: auto; */
+      }
+    }
   }
 
   .SubTitle {
@@ -64,9 +78,17 @@ const StyledDiv = styled.div`
     width: 16vw;
     padding: 0vw 0vw 0vw 0vw;
     line-height: 3.5vw;
+    @media (max-width: 768px) {
+      width: fit-content;
+      font-size: 6.67vw;
+      margin-top: 11.5vw;
+    }
   }
   .SubTitleBold {
     font-family: "Askan Bold" !important;
+    @media (max-width: 768px) {
+      margin-left: 1vw;
+    }
   }
 
   .Body {
@@ -75,6 +97,13 @@ const StyledDiv = styled.div`
     width: 53vw;
     padding: 0vw 3.5vw 0vw 7vw;
     line-height: 1.7vw;
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+      line-height: 6vw;
+      width: 77vw;
+      padding: 0;
+      margin-bottom: 27.2vw;
+    }
   }
 
   .LeftTextAlign {
@@ -88,5 +117,8 @@ const StyledDiv = styled.div`
     width: 9.86vw;
     height: 10.4vw;
     padding: 1.7vw 0vw 0vw 0vw;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 `;

@@ -26,18 +26,32 @@ export default function CarouselComponent(props) {
   ]);
   const [render, setRender] = useState([0, 1, 2, 3]);
 
+  const [mainOpacity, setMainOpacity] = useState(0);
+  const [animate, setAnimate] = useState(false);
+
   const pressNext = () => {
     let tempValue = value + 1;
     if (tempValue >= slides.length) tempValue = 0;
-    setValue(tempValue);
+    delay(200).then(() => setValue(tempValue));
+
+    // setValue(tempValue);
+    setAnimate(!animate);
+
     getRenderValue(tempValue);
   };
 
   const pressPrev = () => {
     let tempValue = value - 1;
     if (tempValue < 0) tempValue = slides.length - 1;
-    setValue(tempValue);
+    // setValue(tempValue);
+    delay(200).then(() => setValue(tempValue));
+    setAnimate(!animate);
     getRenderValue(tempValue);
+  };
+  const handleClick = (itemIndex) => {
+    delay(200).then(() => setValue(itemIndex));
+    // setValue(itemIndex);
+    setAnimate(!animate);
   };
 
   const getRenderValue = (correctValue) => {
@@ -55,15 +69,26 @@ export default function CarouselComponent(props) {
     setRender(tempArray);
   };
 
+  function delay(time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+
   useEffect(() => {
     getRenderValue(0);
   }, []);
+
+  useEffect(() => {
+    setMainOpacity(0);
+    delay(300).then(() => setMainOpacity(1));
+  }, [animate]);
 
   console.log(render);
 
   return (
     <StyledDiv>
-      <div className="centered">{main[value]}</div>
+      <div style={{ opacity: mainOpacity }} className="centered animated">
+        {main[value]}
+      </div>
       <table className="Table">
         <tbody>
           <tr>
@@ -87,7 +112,9 @@ export default function CarouselComponent(props) {
 
             {render.map((itemIndex) => {
               return itemIndex !== value ? (
-                <td>{slides[itemIndex]}</td>
+                <td onClick={() => handleClick(itemIndex)}>
+                  {slides[itemIndex]}
+                </td>
               ) : (
                 <td className="chosen">{slides[itemIndex]}</td>
               );
@@ -118,27 +145,61 @@ export default function CarouselComponent(props) {
 }
 
 const StyledDiv = styled.div`
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   .image {
     width: 9vw;
     height: 5.7vw;
+    object-fit: cover;
     padding: 0vw 0.625vw 0vw 0.625vw;
   }
   .main {
+    animation: fade-in 1s linear 2s;
     width: 44vw;
     height: 27.6vw;
+    object-fit: cover;
     padding: 4.2vw 0vw 0vw 0vw;
+    @media (max-width: 768px) {
+      width: 80vw;
+      height: 60vw;
+    }
   }
   .centered {
     text-align: center;
   }
+  .animated {
+    transition: all 0.2s ease-in-out;
+  }
   .Table {
     margin-left: auto;
     margin-right: auto;
+    transition: border-width 5s linear;
+    @media (max-width: 768px) {
+      height: 10vw;
+      /* width: 80vw; */
+      img {
+        width: 16.5vw;
+        height: 9.7vw;
+        &.icon {
+          width: 2.4vw;
+        }
+      }
+    }
   }
   .icon {
     width: 0.67vw;
     height: 1.52vw;
     cursor: pointer;
+  }
+  td {
+    transition: all 0.5s ease-in-out;
+    border-bottom: 2px solid ${colors.DarkGrey};
   }
   .chosen {
     border-bottom: 2px solid ${colors.White};

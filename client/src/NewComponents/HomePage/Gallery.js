@@ -15,7 +15,13 @@ export default function Gallery(props) {
       <div
         className={props.language === "EN" ? "LeftTextAlign" : "RightTextAlign"}
       >
-        <div className={props.language === "EN" ? "ENTitle" : "ARTitle"}>
+        <div
+          className={
+            props.language === "EN"
+              ? "ENTitle gallery-title"
+              : "ARTitle gallery-title"
+          }
+        >
           {Data.Title}
         </div>
         <div className={props.language === "EN" ? "ENTable" : "ARTable"}>
@@ -71,17 +77,24 @@ const StyledDiv = styled.div`
   .top {
     vertical-align: top;
   }
+  .gallery-title {
+    font-size: 2.1vw;
+    @media (max-width: 768px) {
+      height: 16vw;
+      font-size: 6vw;
+      display: flex;
+      align-items: center;
+    }
+  }
   .ENTitle {
     background-color: ${colors.DarkBrown};
     font-family: "Merriweather Regular";
-    font-size: 2.1vw;
     line-height: 3vw;
     padding: 1.9vw 0vw 1.5vw 5.5vw;
   }
   .ARTitle {
     background-color: ${colors.DarkBrown};
     font-family: "Merriweather Regular";
-    font-size: 2.1vw;
     line-height: 3vw;
     padding: 1.9vw 05.5vw 1.5vw 0vw;
   }
@@ -98,6 +111,26 @@ const StyledDiv = styled.div`
     font-size: 0.97vw;
     line-height: 1.4vw;
     background: rgba(37, 28, 21, 0.7);
+  }
+  .ENTable,
+  .ARTable {
+    @media (max-width: 768px) {
+      font-size: 3.73vw;
+      line-height: normal;
+      table {
+        tr {
+          display: flex;
+          flex-direction: column;
+          td {
+            padding: 0;
+            width: 84%;
+            &:not(:first-child) {
+              margin-top: 16.3vw;
+            }
+          }
+        }
+      }
+    }
   }
   .Col1 {
     width: 36.3vw;
