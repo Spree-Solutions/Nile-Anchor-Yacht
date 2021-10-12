@@ -61,7 +61,7 @@ const ContactUsForm = (props) => {
             value={data.yacht}
             language={props.language}
             disabledOption="Select yacht"
-            list={["Liberty", "Bella"]}
+            list={["Liberty"]}
             name="yacht"
             required
           />

@@ -16,7 +16,7 @@ import egyptian_flag from "../Images/egyptian_flag.png";
 
 export default function Contact(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
-  const options = ["Bella", "Liberty"];
+  const options = [ "Liberty"];
   // eslint-disable-next-line no-unused-vars
   const [selected, setSelected] = useState(options[0]);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
@@ -27,6 +27,7 @@ export default function Contact(props) {
   const reservationInstance = ReservationHandler.getInstance();
   console.log("before if condition to available startHours",{class:reservationInstance,state:startHourOptions})
   if(reservationInstance.availableStartHours.length> startHourOptions.length){
+    // let formattedStartHour = reservationInstance.ava
     setStartHourOptions(reservationInstance.availableStartHours);
   }
   if(reservationInstance.getAvailableEndHours().length!==endHourOptions.length){

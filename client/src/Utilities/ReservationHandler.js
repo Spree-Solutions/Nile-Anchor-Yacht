@@ -18,13 +18,13 @@ export class ReservationHandler {
     phoneNumber="";
     email="";
     serviceName="Wedding";
-    selectedYacht=YACHT_BELLA;
+    selectedYacht=YACHT_LIBERTY;
     _selectedReservationDay=null;
     selectedStartingTime=null;
     selectedEndingTime=null;
     calculatedFinalPrice=0;
     isLoading=false;
-    availableYachts=["Bella", "Liberty"];
+    availableYachts=[ "Liberty"];
     availableEvents=["Wedding", "Corporate", "Individual"];
     priceSegments=[];
     availableHourSegments=[]; // type []{startTime:"hh:mm",endTime:"hh:mm"}
@@ -157,7 +157,7 @@ export class ReservationHandler {
     }
 
     calculateAvailablity(){
-        let hoursArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+        let hoursArray = [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
         // sort reservation earlier first
         let reservations = this.existingReservations.sort(((hoursA,hoursB)=> Number((new Date(hoursA.fromHours)).getHours())- Number((new Date(hoursB.fromHours)).getHours())))
         let startHour;
