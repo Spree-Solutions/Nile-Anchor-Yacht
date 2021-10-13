@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import imageOne from "../../Images/Gatherings_Background.png";
-import imageTwo from "../../Images/Business_Background.png";
-import imageThree from "../../Images/Party_Bags.png";
-import imageFour from "../../Images/Business_Coffee.png";
+import imageOne from "../../Images/Gatherings_Background.jpeg";
+import imageTwo from "../../Images/Business_Background.jpeg";
+import imageThree from "../../Images/Party_Bags.jpeg";
+import imageFour from "../../Images/Business_Coffee.jpeg";
 
 import left_button from "../../Icons/left_button.svg";
 import right_button from "../../Icons/right_button.svg";

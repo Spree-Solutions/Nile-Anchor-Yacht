@@ -7,8 +7,8 @@ import { DataEnglish } from "../../Data/English/HomePage/BusinessEvents";
 import { DataArabic } from "../../Data/Arabic/HomePage/BusinessEvents";
 
 // import { isMobileOnly } from "react-device-detect";
-import Business_Coffee from "../../Images/Business_Coffee.png";
-import Business_Background from "../../Images/Business_Background.png";
+import Business_Coffee from "../../Images/Business_Coffee.jpeg";
+import Business_Background from "../../Images/Business_Background.jpeg";
 
 export default function BusinessEvents(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

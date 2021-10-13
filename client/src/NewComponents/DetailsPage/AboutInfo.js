@@ -5,7 +5,7 @@ import { DataArabic } from "../../Data/Arabic/DetailsPage/AboutInfo";
 import { DataEnglish } from "../../Data/English/DetailsPage/AboutInfo";
 
 import { colors } from "../../Styles/Colors";
-import AboutTitle from "../../Images/AboutTitle.png";
+import AboutTitle from "../../Images/AboutTitle.jpeg";
 
 export default function AboutInfo(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

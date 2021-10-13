@@ -5,13 +5,13 @@ import { DataArabic } from "../Data/Arabic/OurServices";
 
 import { colors } from "../Styles/Colors";
 
-// import Wedding from "../Images/Wedding.png";
-// import Business from "../Images/Business.png";
-// import Parties from "../Images/Parties.png";
+// import Wedding from "../Images/Wedding.jpeg";
+// import Business from "../Images/Business.jpeg";
+// import Parties from "../Images/Parties.jpeg";
 
-// import Wedding_Mobile from "../Images/Wedding_Mobile.png";
-// import Business_Mobile from "../Images/Business_Mobile.png";
-// import Parties_Mobile from "../Images/Parties_Mobile.png";
+// import Wedding_Mobile from "../Images/Wedding_Mobile.jpeg";
+// import Business_Mobile from "../Images/Business_Mobile.jpeg";
+// import Parties_Mobile from "../Images/Parties_Mobile.jpeg";
 
 import { isMobileOnly } from "react-device-detect";
 

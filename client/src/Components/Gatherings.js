@@ -5,9 +5,9 @@ import { colors } from "../Styles/Colors";
 
 // import { isMobileOnly } from "react-device-detect";
 
-import Kids_Birthday from "../Images/Kids_Birthday.png";
-import Party_Bags from "../Images/Party_Bags.png";
-import Gathering_Background from "../Images/Gathering_Background.png";
+import Kids_Birthday from "../Images/Kids_Birthday.jpeg";
+import Party_Bags from "../Images/Party_Bags.jpeg";
+import Gathering_Background from "../Images/Gathering_Background.jpeg";
 
 export default function Gatherings(props) {
   return (

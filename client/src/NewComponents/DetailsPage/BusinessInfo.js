@@ -5,11 +5,11 @@ import { DataArabic } from "../../Data/Arabic/DetailsPage/BusinessInfo";
 
 import { colors } from "../../Styles/Colors";
 
-import BusinessInfo_1 from "../../Images/BusinessInfo_1.png";
-import BusinessInfo_2 from "../../Images/BusinessInfo_2.png";
-import BusinessInfo_3 from "../../Images/BusinessInfo_3.png";
-import BusinessInfo_4 from "../../Images/BusinessInfo_4.png";
-import BusinessInfo_Background from "../../Images/BusinessInfo_Background.png";
+import BusinessInfo_1 from "../../Images/BusinessInfo_1.jpeg";
+import BusinessInfo_2 from "../../Images/BusinessInfo_2.jpeg";
+import BusinessInfo_3 from "../../Images/BusinessInfo_3.jpeg";
+import BusinessInfo_4 from "../../Images/BusinessInfo_4.jpeg";
+import BusinessInfo_Background from "../../Images/BusinessInfo_Background.jpeg";
 
 export default function BusinessInfo(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

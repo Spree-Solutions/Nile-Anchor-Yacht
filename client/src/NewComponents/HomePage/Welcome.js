@@ -4,7 +4,7 @@ import { DataEnglish } from "../../Data/English/HomePage/WhoAreWe";
 import { DataArabic } from "../../Data/Arabic/HomePage/WhoAreWe";
 
 import { colors } from "../../Styles/Colors";
-import Background_Welcome from "../../Images/Background_Welcome_Blue.png";
+import Background_Welcome from "../../Images/Background_Welcome_Blue.jpg";
 import WhoAreWe from "./WhoAreWe";
 
 export default function Welcome(props) {

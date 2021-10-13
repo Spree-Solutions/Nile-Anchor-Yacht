@@ -5,10 +5,10 @@ import { DataArabic } from "../../Data/Arabic/DetailsPage/WeddingsInfo";
 
 import { colors } from "../../Styles/Colors";
 
-import WeddingsInfo_1 from "../../Images/WeddingsInfo_1.png";
-import WeddingsInfo_2 from "../../Images/WeddingsInfo_2.png";
-import WeddingsInfo_3 from "../../Images/WeddingsInfo_3.png";
-import WeddingsInfo_Background from "../../Images/WeddingsInfo_Background.png";
+import WeddingsInfo_1 from "../../Images/WeddingsInfo_1.jpeg";
+import WeddingsInfo_2 from "../../Images/WeddingsInfo_2.jpeg";
+import WeddingsInfo_3 from "../../Images/WeddingsInfo_3.jpeg";
+import WeddingsInfo_Background from "../../Images/WeddingsInfo_Background.jpeg";
 
 export default function WeddingsInfo(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

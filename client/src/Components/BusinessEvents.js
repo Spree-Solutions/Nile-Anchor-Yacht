@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { colors } from "../Styles/Colors";
 
 // import { isMobileOnly } from "react-device-detect";
-import Business_Table from "../Images/Business_Table.png";
-import Business_Meeting from "../Images/Business_Meeting.png";
-import Business_Background from "../Images/Business_Background.png";
+import Business_Table from "../Images/Business_Table.jpeg";
+import Business_Meeting from "../Images/Business_Meeting.jpeg";
+import Business_Background from "../Images/Business_Background.jpeg";
 
 export default function BusinessEvents(props) {
   return (

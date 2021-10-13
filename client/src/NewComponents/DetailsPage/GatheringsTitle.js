@@ -4,7 +4,7 @@ import { DataEnglish } from "../../Data/English/DetailsPage/GatheringsTitle";
 import { DataArabic } from "../../Data/Arabic/DetailsPage/GatheringsTitle";
 
 import { colors } from "../../Styles/Colors";
-import GatheringsTitleImg from "../../Images/GatheringsTitle.png";
+import GatheringsTitleImg from "../../Images/GatheringsTitle.jpeg";
 
 export default function GatheringsTitle(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

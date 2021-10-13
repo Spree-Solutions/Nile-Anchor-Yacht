@@ -5,10 +5,10 @@ import { DataArabic } from "../../Data/Arabic/DetailsPage/GatheringsInfo";
 
 import { colors } from "../../Styles/Colors";
 
-import GatheringsInfo_1 from "../../Images/GatheringsInfo_1.png";
-import GatheringsInfo_2 from "../../Images/GatheringsInfo_2.png";
-import GatheringsInfo_3 from "../../Images/GatheringsInfo_3.png";
-import GatheringsInfo_Background from "../../Images/GatheringsInfo_Background.png";
+import GatheringsInfo_1 from "../../Images/GatheringsInfo_1.jpeg";
+import GatheringsInfo_2 from "../../Images/GatheringsInfo_2.jpeg";
+import GatheringsInfo_3 from "../../Images/GatheringsInfo_3.jpeg";
+import GatheringsInfo_Background from "../../Images/GatheringsInfo_Background.jpeg";
 
 export default function GatheringsInfo(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
