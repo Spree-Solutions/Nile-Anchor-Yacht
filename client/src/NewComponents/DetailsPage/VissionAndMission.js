@@ -30,6 +30,10 @@ const StyledDiv = styled.div`
   color: ${colors.Black};
   padding: 3.61vw 28.3vw 4.72vw 28.3vw;
   background-color: ${colors.MainBeige};
+  @media (max-width: 768px) {
+    padding: 0;
+    padding-bottom: 36.3vw;
+  }
   .ARRight {
     text-align: right;
   }
@@ -41,16 +45,33 @@ const StyledDiv = styled.div`
     font-size: 2vw;
     text-align: center;
     padding: 0vw 0vw 4vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 5.9vw;
+      padding-top: 16.5vw;
+    }
   }
   .Body {
     font-family: "Lato Regular" !important;
     font-size: 1vw;
     line-height: 1.3vw;
     padding: 0vw 0vw 1.4vw 0vw;
+    @media (max-width: 768px) {
+      width: 85vw;
+      font-size: 3.7vw;
+      line-height: 5.3vw;
+      margin: auto;
+      &:not(:first-child) {
+        margin-top: 8vw;
+      }
+    }
   }
   .Subtitle {
     font-family: "Lato Bold" !important;
     font-size: 1vw;
     line-height: 1.3vw;
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+      line-height: 5.3vw;
+    }
   }
 `;

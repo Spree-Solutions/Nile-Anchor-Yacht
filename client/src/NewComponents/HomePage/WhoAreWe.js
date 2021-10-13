@@ -4,7 +4,7 @@ import { DataEnglish } from "../../Data/English/HomePage/WhoAreWe";
 import { DataArabic } from "../../Data/Arabic/HomePage/WhoAreWe";
 
 import { colors } from "../../Styles/Colors";
-import Blacked_Area_Welcome from "../../Images/Blacked_Area_Welcome.png";
+import Blacked_Area_Welcome from "../../Images/Blacked_Area_Welcome.jpeg";
 import White_Logo from "../../Images/White_Logo.png";
 
 export default function WhoAreWe(props) {

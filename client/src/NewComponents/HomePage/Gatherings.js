@@ -7,9 +7,9 @@ import { DataArabic } from "../../Data/Arabic/HomePage/Gatherings";
 
 import { colors } from "../../Styles/Colors";
 
-import Kids_Birthday from "../../Images/Kids_Birthday.png";
-import Party_Bags from "../../Images/Party_Bags.png";
-import Gatherings_Background from "../../Images/Gatherings_Background.png";
+import Kids_Birthday from "../../Images/Kids_Birthday.jpeg";
+import Party_Bags from "../../Images/Party_Bags.jpeg";
+import Gatherings_Background from "../../Images/Gatherings_Background.jpeg";
 
 export default function Gatherings(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

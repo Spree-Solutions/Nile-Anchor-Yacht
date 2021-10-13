@@ -8,9 +8,9 @@ import { colors } from "../../Styles/Colors";
 
 // import { isMobileOnly } from "react-device-detect";
 
-import Wedding_Rings from "../../Images/Wedding_Rings.png";
-import Wedding_Setup from "../../Images/Wedding_Setup.png";
-import Wedding_Background from "../../Images/Wedding_Background.png";
+import Wedding_Rings from "../../Images/Wedding_Rings.jpeg";
+import Wedding_Setup from "../../Images/Wedding_Setup.jpeg";
+import Wedding_Background from "../../Images/Wedding_Background.jpeg";
 
 export default function Weddings(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

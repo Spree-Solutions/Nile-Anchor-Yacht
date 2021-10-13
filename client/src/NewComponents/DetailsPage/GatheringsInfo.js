@@ -5,10 +5,10 @@ import { DataArabic } from "../../Data/Arabic/DetailsPage/GatheringsInfo";
 
 import { colors } from "../../Styles/Colors";
 
-import GatheringsInfo_1 from "../../Images/GatheringsInfo_1.png";
-import GatheringsInfo_2 from "../../Images/GatheringsInfo_2.png";
-import GatheringsInfo_3 from "../../Images/GatheringsInfo_3.png";
-import GatheringsInfo_Background from "../../Images/GatheringsInfo_Background.png";
+import GatheringsInfo_1 from "../../Images/GatheringsInfo_1.jpeg";
+import GatheringsInfo_2 from "../../Images/GatheringsInfo_2.jpeg";
+import GatheringsInfo_3 from "../../Images/GatheringsInfo_3.jpeg";
+import GatheringsInfo_Background from "../../Images/GatheringsInfo_Background.jpeg";
 
 export default function GatheringsInfo(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -16,7 +16,7 @@ export default function GatheringsInfo(props) {
   return (
     <StyledDiv>
       <div className={props.language === "EN" ? "ENLeft" : "ARRight"}>
-        <table>
+        <table className="table-1">
           <tbody>
             <tr>
               <td>
@@ -34,7 +34,7 @@ export default function GatheringsInfo(props) {
             </tr>
           </tbody>
         </table>
-        <table>
+        <table className="table-2">
           <tbody>
             <tr>
               <td>{Data.body2}</td>
@@ -52,7 +52,7 @@ export default function GatheringsInfo(props) {
             </tr>
           </tbody>
         </table>
-        <table>
+        <table className="table-3">
           <tbody>
             <tr>
               <td>
@@ -85,6 +85,39 @@ const StyledDiv = styled.div`
   line-height: 1.3vw;
   font-family: "Lato Regular" !important;
   color: ${colors.Black};
+  @media (max-width: 768px) {
+    padding: 10.01vw 8.36vw 15.7vw 8.3vw;
+    img {
+      padding: 0 !important;
+    }
+  }
+  table {
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+      line-height: 5.33vw;
+      td {
+        width: 100%;
+      }
+      &.table-1 {
+        tr {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      &.table-2 {
+        tr {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+      }
+      &.table-3 {
+        tr {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
 
   td,
   tr {
@@ -101,6 +134,11 @@ const StyledDiv = styled.div`
     width: 36.2vw;
     height: 18.6vw;
     padding: 0vw 1.4vw 0vw 0vw;
+    @media (max-width: 768px) {
+      width: 83.4vw;
+      width: 100%;
+      height: 43vw;
+    }
   }
   .GatheringsInfo_1_AR {
     width: 36.2vw;
@@ -111,6 +149,10 @@ const StyledDiv = styled.div`
     width: 35.9vw;
     height: 19vw;
     padding: 0vw 1.4vw 0vw 1.6vw;
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 44vw;
+    }
   }
   .GatheringsInfo_2_AR {
     width: 35.9vw;
@@ -121,6 +163,10 @@ const StyledDiv = styled.div`
     width: 36.2vw;
     height: 19vw;
     padding: 0vw 1.4vw 0vw 1.6vw;
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 44vw;
+    }
   }
   .GatheringsInfo_3_AR {
     width: 36.2vw;

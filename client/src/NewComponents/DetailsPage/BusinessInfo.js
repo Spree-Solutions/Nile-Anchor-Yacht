@@ -5,11 +5,11 @@ import { DataArabic } from "../../Data/Arabic/DetailsPage/BusinessInfo";
 
 import { colors } from "../../Styles/Colors";
 
-import BusinessInfo_1 from "../../Images/BusinessInfo_1.png";
-import BusinessInfo_2 from "../../Images/BusinessInfo_2.png";
-import BusinessInfo_3 from "../../Images/BusinessInfo_3.png";
-import BusinessInfo_4 from "../../Images/BusinessInfo_4.png";
-import BusinessInfo_Background from "../../Images/BusinessInfo_Background.png";
+import BusinessInfo_1 from "../../Images/BusinessInfo_1.jpeg";
+import BusinessInfo_2 from "../../Images/BusinessInfo_2.jpeg";
+import BusinessInfo_3 from "../../Images/BusinessInfo_3.jpeg";
+import BusinessInfo_4 from "../../Images/BusinessInfo_4.jpeg";
+import BusinessInfo_Background from "../../Images/BusinessInfo_Background.jpeg";
 
 export default function BusinessInfo(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -17,7 +17,7 @@ export default function BusinessInfo(props) {
   return (
     <StyledDiv>
       <div className={props.language === "EN" ? "ENLeft" : "ARRight"}>
-        <table>
+        <table className="table-1">
           <tbody>
             <tr>
               <td>
@@ -35,28 +35,30 @@ export default function BusinessInfo(props) {
             </tr>
           </tbody>
         </table>
-        <table>
+        <table className="table-2">
           <tbody>
             <tr>
               <td>{Data.body2}</td>
-              <td>
-                <img
-                  src={BusinessInfo_2}
-                  alt=""
-                  className={
-                    props.language === "EN"
-                      ? "BusinessInfo_2_EN"
-                      : "BusinessInfo_2_AR"
-                  }
-                />
-              </td>
-              <td>
-                <img src={BusinessInfo_3} alt="" className="BusinessInfo_3" />
-              </td>
+              <div>
+                <td>
+                  <img
+                    src={BusinessInfo_2}
+                    alt=""
+                    className={
+                      props.language === "EN"
+                        ? "BusinessInfo_2_EN"
+                        : "BusinessInfo_2_AR"
+                    }
+                  />
+                </td>
+                <td>
+                  <img src={BusinessInfo_3} alt="" className="BusinessInfo_3" />
+                </td>
+              </div>
             </tr>
           </tbody>
         </table>
-        <table>
+        <table className="table-3">
           <tbody>
             <tr>
               <td>
@@ -87,7 +89,39 @@ const StyledDiv = styled.div`
   font-size: 1vw;
   line-height: 1.3vw;
   font-family: "Lato Regular" !important;
-
+  @media (max-width: 768px) {
+    padding: 10.01vw 8.36vw 15.7vw 8.3vw;
+    img {
+      padding: 0 !important;
+    }
+  }
+  table {
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+      line-height: 5.33vw;
+      td {
+        width: 100%;
+      }
+      &.table-1 {
+        tr {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      &.table-2 {
+        tr {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+      }
+      &.table-3 {
+        tr {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
   td,
   tr {
     vertical-align: top;
@@ -103,6 +137,11 @@ const StyledDiv = styled.div`
     width: 36.2vw;
     height: 18.6vw;
     padding: 0vw 1.4vw 0vw 0vw;
+    @media (max-width: 768px) {
+      width: 83.4vw;
+      width: 100%;
+      height: 43vw;
+    }
   }
   .BusinessInfo_1_AR {
     width: 36.2vw;
@@ -113,6 +152,10 @@ const StyledDiv = styled.div`
     width: 21.2vw;
     height: 19vw;
     padding: 0vw 1.4vw 0vw 1.6vw;
+    @media (max-width: 768px) {
+      width: 48.9vw;
+      height: 44vw;
+    }
   }
   .BusinessInfo_2_AR {
     width: 21.2vw;
@@ -122,11 +165,21 @@ const StyledDiv = styled.div`
   .BusinessInfo_3 {
     width: 13.7vw;
     height: 19vw;
+    @media (max-width: 768px) {
+      width: 31vw;
+      height: 44vw;
+      margin-left: 1vw;
+    }
   }
   .BusinessInfo_4_EN {
     width: 36.2vw;
     height: 19vw;
     padding: 0vw 1.5vw 0vw 0vw;
+    @media (max-width: 768px) {
+      width: 83.4vw;
+      width: 100%;
+      height: 43vw;
+    }
   }
   .BusinessInfo_4_AR {
     width: 36.2vw;

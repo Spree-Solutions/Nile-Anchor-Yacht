@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { DataEnglish } from "../../Data/English/HomePage/Gallery";
 import { DataArabic } from "../../Data/Arabic/HomePage/Gallery";
 import { colors } from "../../Styles/Colors";
-import Gallery_Background from "../../Images/Gallery_Background.png";
+import Gallery_Background from "../../Images/Gallery_Background.jpeg";
 import Liberty_Light from "../../Images/Liberty_Light.png";
 import Bella_Light from "../../Images/Bella_Light.png";
 import CarouselComponent from "./Carousel";

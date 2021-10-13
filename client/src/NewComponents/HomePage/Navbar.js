@@ -7,6 +7,7 @@ import { DataArabic } from "../../Data/Arabic/HomePage/NavBar";
 import { colors } from "../../Styles/Colors";
 import Main_Logo from "../../Images/Main_Logo.png";
 import { Link } from "react-router-dom";
+import feather from "../../Icons/search.svg";
 
 export default function Navbar(props) {
   const history = useHistory();
@@ -49,13 +50,14 @@ export default function Navbar(props) {
               <td
                 className={
                   language === "EN"
-                    ? "LogoCell LeftTextAlign"
-                    : "LogoCell RightTextAlign"
+                    ? "LogoCell LeftTextAlign  logo-td"
+                    : "LogoCell RightTextAlign logo-td"
                 }
               >
                 <Link to="/">
                   <img src={Main_Logo} alt="logo" className="LogoNavBar" />
                 </Link>
+                <img className="feather-icon" src={feather} />
               </td>
 
               <td
@@ -65,7 +67,7 @@ export default function Navbar(props) {
                     : "NavCell LeftTextAlign"
                 }
               >
-                <a href="/#about-us" className="NavSpan">
+                <a href="/About" className="NavSpan">
                   {Data.NavTags[0]}{" "}
                 </a>
                 <a href="/#our-yachts" className="NavSpan">
@@ -121,6 +123,9 @@ const StyledDiv = styled.div`
   color: ${colors.Black};
   font-size: 0.97vw;
   background-color: ${colors.MainBeige};
+  @media (max-width: 768px) {
+    height: 20.8vw;
+  }
   /* position: sticky;
   top: 0; */
 
@@ -132,6 +137,23 @@ const StyledDiv = styled.div`
   }
   td {
     vertical-align: top;
+    @media (max-width: 768px) {
+      &.logo-td {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-content: center;
+        padding: 5.33vw 0vw 5.9vw 0vw;
+      }
+    }
+    .feather-icon {
+      display: none;
+      @media (max-width: 768px) {
+        display: unset;
+        width: 8.5vw;
+        height: 8.9vw;
+      }
+    }
   }
   .Table {
     width: 100%;
@@ -142,6 +164,9 @@ const StyledDiv = styled.div`
   .NavCell {
     width: 68vw;
     padding-top: 1vw;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   .NavSpan {
     margin-right: 1.4vw;
@@ -168,6 +193,10 @@ const StyledDiv = styled.div`
   .LogoNavBar {
     width: 11.3vw;
     height: 2.36vw;
+    @media (max-width: 768px) {
+      width: 47.7vw;
+      height: 9.6vw;
+    }
   }
   span {
     display: inline-block;
