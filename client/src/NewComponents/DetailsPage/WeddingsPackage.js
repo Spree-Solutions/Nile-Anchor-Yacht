@@ -17,9 +17,9 @@ export default function WeddingsPackage(props) {
           return <div>{item}</div>;
         })}
       </div>
-      <table>
+      <table className="cta-table">
         <tbody>
-          <tr>
+          <tr className="cta-row">
             <td>
               <img
                 src={WeddingsPackages}
@@ -47,16 +47,48 @@ const StyledDiv = styled.div`
   padding: 3.47vw 5.6vw 0vw 5.6vw;
   background-color: ${colors.White};
   text-align: center;
+  @media (max-width: 768px) {
+    padding-top: 13.33vw;
+    padding-bottom: 0vw;
+    padding-left: 7.7vw;
+    padding-right: 7.7vw;
+    .cta-table {
+      width: 100%;
+      margin-top: 9.7vw;
+    }
+    .cta-row {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      width: 100%;
+      td {
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
 
   .Title {
     font-family: "Askan DemiBold" !important;
     font-size: 2vw;
     padding: 0vw 0vw 3vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 5.9vw;
+    }
   }
   .Body {
     font-family: "Lato Regular" !important;
     font-size: 1.2vw;
     line-height: 1.7vw;
+    @media (max-width: 768px) {
+      padding: 0;
+      width: 84.8vw;
+      margin: auto;
+      font-size: 4.3vw;
+      line-height: 6.4vw;
+    }
   }
   .End_EN {
     font-family: "Lato Bold" !important;
@@ -64,6 +96,12 @@ const StyledDiv = styled.div`
     line-height: 1.7vw;
     padding: 17vw 0vw 2.3vw 22vw;
     text-align: right;
+    @media (max-width: 768px) {
+      font-size: 3vw;
+      margin-top: 6vw;
+      padding: 0;
+      line-height: 5.33vw;
+    }
   }
   .End_AR {
     font-family: "Lato Bold" !important;
@@ -76,6 +114,11 @@ const StyledDiv = styled.div`
     width: 10.9vw;
     height: 16.1vw;
     padding: 6.7vw 0vw 0vw 38vw;
+    @media (max-width: 768px) {
+      width: 28vw;
+      height: 41.1vw;
+      padding: 0;
+    }
   }
   .WeddingsPackages_AR {
     width: 10.9vw;

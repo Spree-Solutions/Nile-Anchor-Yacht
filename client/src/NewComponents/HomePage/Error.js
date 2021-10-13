@@ -51,33 +51,68 @@ const StyledDiv = styled.div`
     padding: 1.9vw 7.6vw 3.9vw 7.9vw;
     background-color: ${colors.MainBeige};
     margin: 12vw 29vw 0vw 29vw;
+    @media (max-width: 768px) {
+      height: 100%;
+      padding: 0;
+      width: 100%;
+      margin: 0;
+    }
   }
 
   .warning {
     width: 3.2vw;
     height: 3vw;
+    @media (max-width: 768px) {
+      width: 12.3vw;
+      height: 11.77vw;
+      margin-top: 60vw;
+      margin-bottom: 11.8vw;
+    }
   }
 
   .dark_logo {
     width: 3.2vw;
     height: 3.2vw;
     padding: 0vw 0vw 3.9vw 0vw;
+    @media (max-width: 768px) {
+      width: 15.5vw;
+      height: 15.5vw;
+      margin-top: 12vw;
+    }
   }
 
   .DataBody {
     font-family: "Lato Regular" !important;
     font-size: 1vw;
     padding: 3vw 0vw 2vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+      width: 57.3vw;
+      margin: auto;
+      margin-bottom: 2vw;
+    }
   }
   .DataBodyBold {
     font-family: "Lato Bold" !important;
     font-size: 1vw;
     padding: 0vw 0vw 3vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+      /* margin-top: 60vw; */
+      margin-bottom: 12vw;
+      width: 50vw;
+      margin: auto;
+    }
   }
   .cross {
     width: 1.2vw;
     height: 1.2vw;
     padding: 0vw 0vw 2vw 32vw;
     cursor: pointer;
+    @media (max-width: 768px) {
+      padding: 2vw 0vw 0vw 90vw;
+      width: 4vw;
+      height: 4vw;
+    }
   }
 `;

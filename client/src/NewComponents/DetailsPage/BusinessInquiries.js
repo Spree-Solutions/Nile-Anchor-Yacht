@@ -31,11 +31,27 @@ const StyledDiv = styled.div`
   .ENLeft {
     text-align: left;
     padding: 2vw 51.4vw 9vw 5.6vw;
+    @media (max-width: 768px) {
+      padding: 0;
+      width: 84.8vw;
+      margin: auto;
+    }
   }
   .Body {
     font-family: "Lato Regular" !important;
     font-size: 1vw;
     line-height: 1.5vw;
     padding: 3.5vw 0vw 0vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+      line-height: 5.33vw;
+      padding-top: 10.67vw;
+      &:first-child {
+        padding-top: 12vw;
+      }
+      &:last-child {
+        padding-bottom: 13.33vw;
+      }
+    }
   }
 `;

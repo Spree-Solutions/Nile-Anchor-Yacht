@@ -39,23 +39,43 @@ const StyledDiv = styled.div`
   .ENLeft {
     text-align: left;
     padding: 12vw 50vw 14vw 5.9vw;
+    @media (max-width: 768px) {
+      padding: 80vw 33.87vw 44vw 8vw;
+    }
   }
   .Title {
     font-family: "Askan DemiBold" !important;
     font-size: 4.2vw;
+    @media (max-width: 768px) {
+      font-size: 9.3vw;
+      width: 41vw;
+      margin-bottom: 4.3vw;
+    }
   }
   .Body {
     font-family: "Askan Regular" !important;
     font-size: 1.3vw;
     padding: 1.3vw 0vw 0vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+    }
   }
 
   .ImageTitle {
     width: 100vw;
     height: 21.6vw;
+    @media (max-width: 768px) {
+      height: 43.2vw;
+    }
   }
 
   .ImgDiv {
     height: 21.6vw;
+    @media (max-width: 768px) {
+      height: 43.2vw;
+      img {
+        width: 100%;
+      }
+    }
   }
 `;
