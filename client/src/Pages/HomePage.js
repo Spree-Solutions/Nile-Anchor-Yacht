@@ -10,6 +10,16 @@ import Error from "./../NewComponents/HomePage/Error";
 import Success from "./../NewComponents/HomePage/Success";
 
 export default function HomePage(props) {
+  if(typeof window !== typeof undefined){
+    const params = new URLSearchParams(window.location && window.location.search) // id=123
+    let operationStatus = params.get('operation_status') // 123 
+    if(operationStatus === "success"){
+      props.setShowSuccess(true);
+    }
+    if(operationStatus === "failed"){
+      props.setShowError(true);
+    }
+  }
   return (
     <div>
       <div>
