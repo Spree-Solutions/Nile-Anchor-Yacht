@@ -315,6 +315,17 @@ export default function Contact(props) {
                     {finalPrice ? `Pay 50% ( EGP ${finalPrice} )` : Data.Button}
                   </div>{" "}
                 </td>
+                { finalPrice >0 && (
+                  <td>
+                  {" "}
+                  <div
+                    className=""
+                    
+                  >
+                    { `Total price EGP${(finalPrice*2).toFixed(2)}`}
+                  </div>{" "}
+                </td>
+                )}
               </tr>
             </tr>
           </tbody>
@@ -601,7 +612,7 @@ const StyledDiv = styled.div`
     }
   }
   .Col3 {
-    width: 28.7vw;
+    width: 14.7vw;
     @media (max-width: 768px) {
       width: 100%;
     }
