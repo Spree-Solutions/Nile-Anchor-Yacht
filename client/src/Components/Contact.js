@@ -202,7 +202,7 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <Selector
-                  list={startHourOptions.map((hour)=> hour>12?(hour===24?"12 AM":`${hour%12} PM`): (hour===12?"12 PM":`${hour} AM`))}
+                  list={startHourOptions.map((hour)=> hour>12?(hour===24?"12 AM":(hour===25?"1 AM":`${hour%12} PM`)): (hour===12?"12 PM":`${hour} AM`))}
                   disabledOption={
                     !props.language
                       ? "Starting hour"
@@ -243,7 +243,7 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <Selector
-                  list={endHourOptions.map((hour)=> hour>12?(hour===24?"12 AM":`${hour%12} PM`): (hour===12?"12 PM":`${hour} AM`))}
+                  list={endHourOptions.map((hour)=> hour>12?(hour===24?"12 AM":(hour===25?"1 AM":`${hour%12} PM`)): (hour===12?"12 PM":`${hour} AM`))}
                   disabledOption={
                     !props.language
                       ? "Ending hour"
