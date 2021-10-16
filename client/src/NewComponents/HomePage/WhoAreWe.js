@@ -93,7 +93,8 @@ const StyledDiv = styled.div`
 
   .Body {
     font-family: "Askan Light" !important;
-    font-size: 1vw;
+    font-size: 1.2vw;
+    text-align: justify;
     width: 53vw;
     padding: 0vw 3.5vw 0vw 7vw;
     line-height: 1.7vw;
@@ -107,7 +108,7 @@ const StyledDiv = styled.div`
   }
 
   .LeftTextAlign {
-    text-align: left;
+    /* text-align: left; */
   }
   .RightTextAlign {
     text-align: right;

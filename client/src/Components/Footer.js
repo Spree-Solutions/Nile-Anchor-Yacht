@@ -28,7 +28,7 @@ export default function Footer(props) {
               <td className="Col1">
                 <img src={Logo} alt="Logo" className="Logo" />
               </td>
-              <td className="Col2">
+              {/* <td className="Col2">
                 {Data.FooterTags.map((item, index) =>
                   item === "Contact Us" ? (
                     <Link className="Item" to="/contact-us">
@@ -38,10 +38,10 @@ export default function Footer(props) {
                     <span className="Item">{item}</span>
                   )
                 )}
-              </td>
+              </td> */}
               <td className="Col3">
                 <img src={fb} alt="fb" className="fb" />
-                <img src={twitter} alt="twitter" className="twitter" />
+                {/* <img src={twitter} alt="twitter" className="twitter" /> */}
                 <img src={whatsapp} alt="whatsapp" className="whatsapp" />
                 <img src={instagram} alt="instagram" className="instagram" />
               </td>
@@ -70,7 +70,7 @@ const StyledDiv = styled.div`
   }
 
   .EnglishComponentPadding {
-    padding: 3.75vw 5.6vw 5vw 3.55vw;
+    padding: 3.75vw 3vw 5vw 3vw;
     @media (max-width: 768px) {
       padding: 7.73vw 30vw 10.4vw 30vw;
     }
@@ -86,6 +86,13 @@ const StyledDiv = styled.div`
     vertical-align: top;
   }
   table {
+    width: 100%;
+    tr {
+      /* width: 100%; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     @media (max-width: 768px) {
       width: 100%;
       tr {
@@ -106,22 +113,7 @@ const StyledDiv = styled.div`
     }
   }
 
-  .Col1 {
-    width: 18.75vw;
-    @media (max-width: 768px) {
-      width: auto;
-    }
-  }
-  .Col2 {
-    width: 19vw;
-    padding: 4.5vw 0vw 0vw 1vw;
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
   .Col3 {
-    width: 28vw;
-    padding: 4.1vw 0vw 2.2vw 5.2vw;
     @media (max-width: 768px) {
       display: flex;
       width: 100%;
@@ -139,7 +131,7 @@ const StyledDiv = styled.div`
     }
   }
   .Col4 {
-    width: 18.5vw;
+    /* width: 18.5vw; */
     font-size: 1.1vw;
     padding: 2vw 0vw 0vw 0vw;
     @media (max-width: 768px) {

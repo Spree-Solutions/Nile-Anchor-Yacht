@@ -28,7 +28,7 @@ export default function VissionAndMission(props) {
 
 const StyledDiv = styled.div`
   color: ${colors.Black};
-  padding: 3.61vw 28.3vw 4.72vw 28.3vw;
+  padding: 3.61vw 8.3vw 4.72vw 8.3vw;
   background-color: ${colors.MainBeige};
   @media (max-width: 768px) {
     padding: 0;
@@ -42,18 +42,19 @@ const StyledDiv = styled.div`
   }
   .Title {
     font-family: "Askan DemiBold" !important;
-    font-size: 2vw;
-    text-align: center;
+    font-size: 2.5vw;
+    /* text-align: left; */
     padding: 0vw 0vw 4vw 0vw;
     @media (max-width: 768px) {
       font-size: 5.9vw;
       padding-top: 16.5vw;
+      text-align: center;
     }
   }
   .Body {
     font-family: "Lato Regular" !important;
-    font-size: 1vw;
-    line-height: 1.3vw;
+    font-size: 1.6vw;
+    line-height: 2.5vw;
     padding: 0vw 0vw 1.4vw 0vw;
     @media (max-width: 768px) {
       width: 85vw;
@@ -67,8 +68,8 @@ const StyledDiv = styled.div`
   }
   .Subtitle {
     font-family: "Lato Bold" !important;
-    font-size: 1vw;
-    line-height: 1.3vw;
+    font-size: 1.6vw;
+    /* line-height: 1.3vw; */
     @media (max-width: 768px) {
       font-size: 3.7vw;
       line-height: 5.3vw;

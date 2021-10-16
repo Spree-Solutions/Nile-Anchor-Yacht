@@ -19,6 +19,7 @@ export default function WeddingsInfo(props) {
         <table className="table-1">
           <tbody>
             <tr>
+              <td>{Data.body1}</td>
               <td>
                 <img
                   src={WeddingsInfo_1}
@@ -30,7 +31,6 @@ export default function WeddingsInfo(props) {
                   }
                 />
               </td>
-              <td>{Data.body1}</td>
             </tr>
           </tbody>
         </table>
@@ -52,7 +52,7 @@ export default function WeddingsInfo(props) {
             </tr>
           </tbody>
         </table>
-        <div>
+        <div className="div-3">
           <img src={WeddingsInfo_3} alt="" className="WeddingsInfo_3" />
         </div>
       </div>
@@ -60,23 +60,35 @@ export default function WeddingsInfo(props) {
   );
 }
 const StyledDiv = styled.div`
-  padding: 7vw 20.6vw 4.86vw 20.6vw;
+  padding: 7.1vw 10.6vw 6.2vw 10.6vw;
   text-align: left;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${WeddingsInfo_Background});
-  font-size: 1vw;
-  line-height: 1.3vw;
+  font-size: 1.8vw;
+  line-height: 2.2vw;
   font-family: "Lato Regular" !important;
   color: ${colors.Black};
+  border-bottom: solid 0.35vw black;
   @media (max-width: 768px) {
     padding: 10.01vw 8.36vw 15.7vw 8.3vw;
     img {
       padding: 0 !important;
     }
   }
+  .div-3 {
+    display: flex;
+    justify-content: flex-end;
+  }
   table {
+    td {
+      &:first-child {
+        padding-right: 9vw;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+    }
     @media (max-width: 768px) {
       font-size: 3.7vw;
       line-height: 5.33vw;
@@ -86,7 +98,7 @@ const StyledDiv = styled.div`
       &.table-1 {
         tr {
           display: flex;
-          flex-direction: column;
+          flex-direction: column-reverse;
         }
       }
       &.table-2 {
@@ -118,7 +130,6 @@ const StyledDiv = styled.div`
   .WeddingsInfo_1_EN {
     width: 36.2vw;
     height: 18.6vw;
-    padding: 0vw 1.4vw 0vw 0vw;
     @media (max-width: 768px) {
       width: 83.4vw;
       width: 100%;
@@ -145,8 +156,8 @@ const StyledDiv = styled.div`
     padding: 0vw 1.6vw 0vw 0vw;
   }
   .WeddingsInfo_3 {
-    width: 58.7vw;
-    height: 25.32vw;
+    width: 35.9vw;
+    height: 19vw;
     @media (max-width: 768px) {
       width: 100%;
       height: 44vw;

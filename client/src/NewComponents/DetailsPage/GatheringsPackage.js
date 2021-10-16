@@ -34,16 +34,24 @@ const StyledDiv = styled.div`
 
   .Title {
     font-family: "Askan DemiBold" !important;
-    font-size: 2vw;
-    padding: 0vw 0vw 3vw 0vw;
+    font-size: 2.2vw;
+    padding: 1vw;
+    /* padding: 0vw 0vw 3vw 0vw; */
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 2vw;
+    border: 0.25vw solid black;
     @media (max-width: 768px) {
+      padding: 3vw;
       font-size: 5.9vw;
+      border: 0.5vw solid black;
+      margin-bottom: 5vw;
     }
   }
   .Body {
     font-family: "Lato Regular" !important;
-    font-size: 1.2vw;
-    line-height: 1.7vw;
+    font-size: 1.5vw;
+    line-height: 2.5vw;
     @media (max-width: 768px) {
       padding: 0;
       width: 84.8vw;
@@ -54,7 +62,7 @@ const StyledDiv = styled.div`
   }
   .End {
     font-family: "Lato Bold" !important;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     line-height: 1.7vw;
     padding: 3.125vw 0vw 0vw 30vw;
     text-align: right;

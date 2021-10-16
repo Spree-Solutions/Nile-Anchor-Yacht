@@ -7,8 +7,8 @@ import { DataArabic } from "../../Data/Arabic/HomePage/Gatherings";
 
 import { colors } from "../../Styles/Colors";
 
-import Kids_Birthday from "../../Images/Kids_Birthday.jpeg";
-import Party_Bags from "../../Images/Party_Bags.jpeg";
+import Birthday from "../../Images/Birthday.png";
+import Party from "../../Images/Party.png";
 import Gatherings_Background from "../../Images/Gatherings_Background.jpeg";
 
 export default function Gatherings(props) {
@@ -27,15 +27,17 @@ export default function Gatherings(props) {
               </div>
             </td>
             <tr className="images-row">
-              <td className={props.language === "EN" ? "ENcol2" : "ARcol2"}>
+              <td>
                 <img
-                  src={Kids_Birthday}
-                  alt="Kids_Birthday"
-                  className="Kids_Birthday"
+                  src={Party}
+                  alt="Party"
+                  className={`Party ${
+                    props.language === "EN" ? "ENcol2" : "ARcol2"
+                  }`}
                 />
               </td>
               <td>
-                <img src={Party_Bags} alt="Party_Bags" className="Party_Bags" />
+                <img src={Birthday} alt="Kids_Birthday" className="Birthday" />
               </td>
             </tr>
           </tr>
@@ -46,14 +48,18 @@ export default function Gatherings(props) {
 }
 
 const StyledDiv = styled.div`
-  padding: 3.96vw 5.6vw 3.6vw 5.63vw;
+  /* padding: 3.96vw 5.6vw 3.6vw 5.63vw; */
+  padding: 2.5vw 3vw 7vw 5.63vw;
+
   color: ${colors.Black};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${Gatherings_Background});
+  height: 15vw;
   @media (max-width: 768px) {
     padding: 8vw;
+    height: auto;
   }
 
   table {
@@ -80,19 +86,23 @@ const StyledDiv = styled.div`
     }
   }
   .TitleBold {
+    width: 13vw;
     font-size: 2.8vw;
     font-family: "Askan Bold" !important;
-    color: ${colors.Pink};
+    color: ${colors.Black};
     @media (max-width: 768px) {
       font-size: 5.9vw;
+      line-height: 6.5vw;
       width: 26.4vw;
     }
   }
   .body {
     font-family: "Lato Regular" !important;
-    font-size: 0.97vw;
-    line-height: 1.4vw;
+    font-size: 1.3vw;
+    line-height: 1.5vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
+    text-align: justify;
+
     @media (max-width: 768px) {
       font-size: 3.2vw;
       line-height: normal;
@@ -112,7 +122,7 @@ const StyledDiv = styled.div`
 
   .ENcol1 {
     width: 52.5vw;
-    padding-right: 23.9vw;
+    padding-right: 19vw;
     @media (max-width: 768px) {
       padding: 0;
       width: 100%;
@@ -137,17 +147,22 @@ const StyledDiv = styled.div`
       padding: 0;
     }
   }
-  .Kids_Birthday {
-    width: 13.68vw;
-    height: 14.7vw;
+  .Birthday {
+    /* width: 13.68vw; */
+    width: 15.5vw;
+    height: 18vw;
+    object-fit: cover;
+
     @media (max-width: 768px) {
       width: 44.8vw;
       height: 31.75vw;
     }
   }
-  .Party_Bags {
-    width: 21.25vw;
-    height: 14.7vw;
+  .Party {
+    /* width: 21.25vw; */
+    width: 27.25vw;
+    height: 18vw;
+    object-fit: cover;
     @media (max-width: 768px) {
       width: 33.9vw;
       height: 31.75vw;

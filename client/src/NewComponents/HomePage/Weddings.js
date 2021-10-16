@@ -50,14 +50,17 @@ export default function Weddings(props) {
   );
 }
 const StyledDiv = styled.div`
-  padding: 3.96vw 5.6vw 3.6vw 5.63vw;
+  padding: 2.5vw 3vw 6vw 5.63vw;
   color: ${colors.Black};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${Wedding_Background});
+  border-bottom: solid 0.35vw black;
+  height: 15vw;
   @media (max-width: 768px) {
     padding: 9.6vw 8vw 12vw 8vw;
+    height: auto;
   }
 
   table {
@@ -84,7 +87,7 @@ const StyledDiv = styled.div`
     }
   }
   .TitleBold {
-    font-size: 2.8vw;
+    font-size: 3vw;
     font-family: "Askan Bold" !important;
     color: ${colors.Pink};
     @media (max-width: 768px) {
@@ -93,9 +96,10 @@ const StyledDiv = styled.div`
   }
   .body {
     font-family: "Lato Regular" !important;
-    font-size: 0.97vw;
-    line-height: 1.4vw;
+    font-size: 1.3vw;
+    line-height: 1.5vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
+    text-align: justify;
     @media (max-width: 768px) {
       font-size: 3.2vw;
       line-height: normal;
@@ -115,7 +119,7 @@ const StyledDiv = styled.div`
 
   .ENcol1 {
     width: 52.5vw;
-    padding-right: 23.9vw;
+    padding-right: 19vw;
     @media (max-width: 768px) {
       padding: 0;
       width: 100%;
@@ -141,16 +145,16 @@ const StyledDiv = styled.div`
     }
   }
   .Wedding_Rings {
-    width: 13.68vw;
-    height: 14.7vw;
+    width: 15.5vw;
+    height: 18vw;
     @media (max-width: 768px) {
       width: 33.9vw;
       height: 31.75vw;
     }
   }
   .Wedding_Setup {
-    width: 21.25vw;
-    height: 14.7vw;
+    width: 27.25vw;
+    height: 18vw;
     @media (max-width: 768px) {
       width: 44.8vw;
       height: 31.75vw;

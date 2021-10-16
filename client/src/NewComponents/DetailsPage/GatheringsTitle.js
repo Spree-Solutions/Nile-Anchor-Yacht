@@ -30,6 +30,8 @@ export default function GatheringsTitle(props) {
 const StyledDiv = styled.div`
   .TitleSection {
     color: ${colors.Black};
+    border-bottom: 0.35vw solid black;
+
     background-color: ${colors.MainBeige};
   }
   .ARRight {
@@ -38,14 +40,20 @@ const StyledDiv = styled.div`
   }
   .ENLeft {
     text-align: left;
-    padding: 12vw 50vw 14vw 5.9vw;
+    /* padding: 12vw 50vw 14vw 5.9vw; */
+    min-height: 35vw;
+    height: calc(100vh - 5vw);
     @media (max-width: 768px) {
-      padding: 80vw 33.87vw 44vw 8vw;
+      height: auto;
+      min-height: 60vw;
+      height: calc(100vh - 20.8vw);
+      /* padding: 80vw 33.87vw 44vw 8vw; */
     }
   }
   .Title {
     font-family: "Askan DemiBold" !important;
     font-size: 4.2vw;
+    padding: 12vw 5.9vw 10vw 5.9vw;
     @media (max-width: 768px) {
       font-size: 9.3vw;
       width: 41vw;
@@ -55,15 +63,22 @@ const StyledDiv = styled.div`
   .Body {
     font-family: "Askan Regular" !important;
     font-size: 1.3vw;
+    width: fit-content;
+    margin: auto;
+    font-size: 2.9vw;
     padding: 1.3vw 0vw 0vw 0vw;
     @media (max-width: 768px) {
       font-size: 3.7vw;
+      padding-left: 3vw;
+      padding-right: 3vw;
     }
   }
 
   .ImageTitle {
-    width: 100vw;
+    width: 100%;
     height: 21.6vw;
+    border-bottom: 0.35vw solid black;
+
     @media (max-width: 768px) {
       height: 43.2vw;
     }
