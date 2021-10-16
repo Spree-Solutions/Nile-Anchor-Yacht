@@ -6,9 +6,12 @@ const https = require('https');
 const http = require('http');
 
 
+const httpsServer = https.createServer({
+  key: fs.readFileSync('/etc/ssl/thenileanchor_privkey.key'),
+  cert: fs.readFileSync('/etc/ssl/thenileanchor_fullchain.pem'),
+});
 
-
-const app = polka();
+const app = polka({server:httpsServer});
 
 // app.use((req,res,next)=>{
 //     console.log(`incoming request on url ${req.originalUrl}`);
@@ -58,19 +61,14 @@ app.use(
       }
     })
   );
+app.listen(444)
 
-const httpServer = http.createServer(app);
 
 
-const httpsServer = https.createServer({
-  key: fs.readFileSync('/etc/ssl/thenileanchor_privkey.key'),
-  cert: fs.readFileSync('/etc/ssl/thenileanchor_fullchain.pem'),
-}, app);
+// httpServer.listen(3001, () => {
+//   console.log('HTTP Server running on port 3001');
+// });
 
-httpServer.listen(3001, () => {
-  console.log('HTTP Server running on port 3001');
-});
-
-httpsServer.listen(444, () => {
-  console.log('HTTPS Server running on port 444');
-});
+// httpsServer.listen(444, () => {
+//   console.log('HTTPS Server running on port 444');
+// });
