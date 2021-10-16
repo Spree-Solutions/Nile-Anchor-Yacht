@@ -202,7 +202,7 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <Selector
-                  list={startHourOptions}
+                  list={startHourOptions.map((hour)=> hour>12?(hour===24?"12 AM":`${hour%12} PM`): (hour===12?"12 PM":`${hour} AM`))}
                   disabledOption={
                     !props.language
                       ? "Starting hour"
@@ -211,12 +211,30 @@ export default function Contact(props) {
                       : "ساعة البداية"
                   }
                   setSelected={(data) => {
+                    let formattedData = data;
+                    if (typeof data === typeof "" && data.length > 2){
+                      let lastElem = data[data.length -1];
+                      if (lastElem === "M"){
+                        if(data === "12 AM"){
+                          formattedData = 24
+                        } else if( data === "12 PM"){
+                          formattedData = 12;
+                        } else if (data === "1 AM"){
+                          formattedData = 25;
+                        } else if(data[data.length-2] === "P"){
+                          formattedData = Number(data.split(' ')[0]) +12 ;
+                        }else {
+                          formattedData = Number(data.split(' ')[0]);
+                        }
+                      }
+
+                    }
                     reservationInstance.notifyEndHour = () => {
                       setEndHourOptions(
                         reservationInstance.getAvailableEndHours()
                       );
                     };
-                    reservationInstance.startingHour = data;
+                    reservationInstance.startingHour = formattedData;
                     console.log("event trigger on start hour", data);
                   }}
                   language={props.language}
@@ -225,7 +243,7 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <Selector
-                  list={endHourOptions}
+                  list={endHourOptions.map((hour)=> hour>12?(hour===24?"12 AM":`${hour%12} PM`): (hour===12?"12 PM":`${hour} AM`))}
                   disabledOption={
                     !props.language
                       ? "Ending hour"
@@ -234,7 +252,26 @@ export default function Contact(props) {
                       : "ساعة النهاية"
                   }
                   setSelected={(data) => {
-                    reservationInstance.endingHour = data;
+                    let formattedData = data;
+                    if (typeof data === typeof "" && data.length > 2){
+                      let lastElem = data[data.length -1];
+                      if (lastElem === "M"){
+                        if(data === "12 AM"){
+                          formattedData = 24
+                        } else if( data === "12 PM"){
+                          formattedData = 12;
+                        } else if (data === "1 AM"){
+                          formattedData = 25;
+                        } else if(data[data.length-2] === "P"){
+                          formattedData = Number(data.split(' ')[0]) +12 ;
+                        } else {
+                          formattedData = Number(data.split(' ')[0]);
+                        }
+                      }
+
+                    }
+                    
+                    reservationInstance.endingHour = formattedData;
                     setFinalPrice(reservationInstance.calculatedFinalPrice);
                     console.log("event trigger on Ending hour", data);
                   }}
