@@ -2,6 +2,10 @@ const polka = require('polka');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const configs = require('./variables');
 const cors = require('cors');
+const https = require('https');
+const http = require('http');
+
+
 
 
 const app = polka();
@@ -55,4 +59,18 @@ app.use(
     })
   );
 
-app.listen(3001);
+const httpServer = http.createServer(app);
+
+
+const httpsServer = https.createServer({
+  key: fs.readFileSync('/etc/ssl/thenileanchor_privkey.key'),
+  cert: fs.readFileSync('/etc/ssl/thenileanchor_fullchain.pem'),
+}, app);
+
+httpServer.listen(3001, () => {
+  console.log('HTTP Server running on port 3001');
+});
+
+httpsServer.listen(444, () => {
+  console.log('HTTPS Server running on port 444');
+});
