@@ -121,8 +121,10 @@ export default function Navbar(props) {
 const StyledDiv = styled.div`
   font-family: "Lato Regular" !important;
   color: ${colors.Black};
-  font-size: 0.97vw;
+  font-size: 1.1vw;
   background-color: ${colors.MainBeige};
+  border-bottom: solid 0.22vw black;
+  height: 5vw;
   @media (max-width: 768px) {
     height: 20.8vw;
   }
@@ -130,7 +132,7 @@ const StyledDiv = styled.div`
   top: 0; */
 
   .EnglishNavComponentPadding {
-    padding: 1.53vw 5.56vw 1.46vw 4vw;
+    padding: 1.23vw 5.56vw 0vw 4vw;
   }
   .ArabicNavComponentPadding {
     padding: 1.53vw 4vw 1.46vw 5.56vw;
@@ -191,8 +193,8 @@ const StyledDiv = styled.div`
     opacity: 0.8;
   }
   .LogoNavBar {
-    width: 11.3vw;
-    height: 2.36vw;
+    width: 14.3vw;
+    /* height: 2.36vw; */
     @media (max-width: 768px) {
       width: 47.7vw;
       height: 9.6vw;

@@ -22,15 +22,21 @@ export default function BusinessInquiries(props) {
   );
 }
 const StyledDiv = styled.div`
+  height: 25vw;
+  @media (max-width: 768px) {
+    height: 75vw;
+  }
+
   color: ${colors.Black};
   background-color: ${colors.MainBeige};
+  /* background-color: ${colors.White}; */
   .ARRight {
     text-align: right;
     padding: 2vw 5.6vw 9vw 51.4vw;
   }
   .ENLeft {
     text-align: left;
-    padding: 2vw 51.4vw 9vw 5.6vw;
+    padding: 2vw 10.4vw 9vw 10vw;
     @media (max-width: 768px) {
       padding: 0;
       width: 84.8vw;
@@ -39,9 +45,13 @@ const StyledDiv = styled.div`
   }
   .Body {
     font-family: "Lato Regular" !important;
-    font-size: 1vw;
-    line-height: 1.5vw;
+    font-size: 1.7vw;
+    line-height: 2.5vw;
     padding: 3.5vw 0vw 0vw 0vw;
+    &:not(:last-child) {
+      text-align: center;
+    }
+
     @media (max-width: 768px) {
       font-size: 3.7vw;
       line-height: 5.33vw;

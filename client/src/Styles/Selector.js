@@ -6,6 +6,8 @@ export default function Selector(props) {
   return (
     <StyledDiv>
       <select
+        id={props.id}
+        style={props.style}
         onChange={(e) => props.setSelected(e.target.value)}
         className={
           props.language === "EN"

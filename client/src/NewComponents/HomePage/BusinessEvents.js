@@ -40,14 +40,18 @@ export default function BusinessEvents(props) {
 }
 
 const StyledDiv = styled.div`
-  padding: 3.6vw 6vw 3.75vw 5.63vw;
+  padding: 2.5vw 3vw 7vw 5.63vw;
   color: ${colors.Black};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${Business_Background});
+  border-bottom: solid 0.35vw black;
+  height: 15vw;
+
   @media (max-width: 768px) {
     padding: 8vw;
+    height: auto;
   }
   table {
     @media (max-width: 768px) {
@@ -66,7 +70,9 @@ const StyledDiv = styled.div`
     }
   }
   .TitleBold {
-    font-size: 2.8vw;
+    width: 2vw;
+    font-size: 3vw;
+    line-height: 3vw;
     font-family: "Askan Bold" !important;
     color: ${colors.White};
     @media (max-width: 768px) {
@@ -77,9 +83,10 @@ const StyledDiv = styled.div`
   }
   .body {
     font-family: "Lato Regular" !important;
-    font-size: 0.97vw;
-    line-height: 1.4vw;
+    font-size: 1.3vw;
+    line-height: 1.5vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
+    text-align: justify;
     @media (max-width: 768px) {
       font-size: 3.2vw;
       line-height: normal;
@@ -98,7 +105,8 @@ const StyledDiv = styled.div`
   }
   .ENcol1 {
     width: 52.4vw;
-    padding-right: 27.4vw;
+    padding-right: 19vw;
+
     @media (max-width: 768px) {
       padding: 0;
       width: 100%;
@@ -109,8 +117,9 @@ const StyledDiv = styled.div`
     padding-left: 27.4vw;
   }
   .Business_Meeting {
-    width: 36vw;
-    height: 19.5vw;
+    width: 44.5vw;
+    height: 19vw;
+    object-fit: cover;
     @media (max-width: 768px) {
       width: 100%;
       height: 43.5vw;

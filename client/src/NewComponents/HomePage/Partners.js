@@ -60,11 +60,11 @@ const StyledDiv = styled.div`
     padding: 1.9vw 0vw 1.5vw 5.5vw;
   }
   .Partner_01 {
-    width: 14vw;
+    width: 9vw;
     padding: 0vw 3.35vw 0vw 3.35vw;
     @media (max-width: 768px) {
-      width: 39.2vw;
-      height: 14.9vw;
+      width: 25vw;
+      /* height: 14.9vw; */
     }
   }
   .Partner_02 {
@@ -95,7 +95,7 @@ const StyledDiv = styled.div`
     }
   }
   .Table {
-    margin: 5.4vw 12.8vw 6.25vw 12.8vw;
+    margin: 5.4vw 10vw 6.25vw 10vw;
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
@@ -117,13 +117,17 @@ const StyledDiv = styled.div`
     }
   }
   .PartnersTitle {
-    font-size: 2.1vw;
+    font-size: 3.1vw;
     font-family: "Askan Regular" !important;
     line-height: 3.8vw;
-    padding: 3vw 0vw 0vw 0vw;
+    padding: 0.5vw 0vw 0.5vw 0vw;
+    background: ${colors.DarkGrey};
+    color: white;
     @media (max-width: 768px) {
       font-size: 5.9vw;
       margin-bottom: 12.82vw;
+      background: none;
+      color: black;
     }
   }
   .PartnersTitleBold {

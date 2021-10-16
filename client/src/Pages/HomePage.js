@@ -10,13 +10,15 @@ import Error from "./../NewComponents/HomePage/Error";
 import Success from "./../NewComponents/HomePage/Success";
 
 export default function HomePage(props) {
-  if(typeof window !== typeof undefined){
-    const params = new URLSearchParams(window.location && window.location.search) // id=123
-    let operationStatus = params.get('operation_status') // 123 
-    if(operationStatus === "success"){
+  if (typeof window !== typeof undefined) {
+    const params = new URLSearchParams(
+      window.location && window.location.search
+    ); // id=123
+    let operationStatus = params.get("operation_status"); // 123
+    if (operationStatus === "success") {
       props.setShowSuccess(true);
     }
-    if(operationStatus === "failed"){
+    if (operationStatus === "failed") {
       props.setShowError(true);
     }
   }
@@ -47,7 +49,7 @@ export default function HomePage(props) {
       <div id="additional-services">
         <Partners language={props.language} />
       </div>
-      <div id="contacts">
+      <div id="booking">
         <Contact language={props.language} />
       </div>
       {/* <Footer language={props.language} /> */}

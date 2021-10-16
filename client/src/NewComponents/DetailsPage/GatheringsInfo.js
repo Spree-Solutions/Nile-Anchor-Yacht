@@ -19,6 +19,7 @@ export default function GatheringsInfo(props) {
         <table className="table-1">
           <tbody>
             <tr>
+              <td>{Data.body1}</td>
               <td>
                 <img
                   src={GatheringsInfo_1}
@@ -30,14 +31,12 @@ export default function GatheringsInfo(props) {
                   }
                 />
               </td>
-              <td>{Data.body1}</td>
             </tr>
           </tbody>
         </table>
         <table className="table-2">
           <tbody>
             <tr>
-              <td>{Data.body2}</td>
               <td>
                 <img
                   src={GatheringsInfo_2}
@@ -49,12 +48,14 @@ export default function GatheringsInfo(props) {
                   }
                 />
               </td>
+              <td>{Data.body2}</td>
             </tr>
           </tbody>
         </table>
         <table className="table-3">
           <tbody>
             <tr>
+              <td>{Data.body3}</td>
               <td>
                 <img
                   src={GatheringsInfo_3}
@@ -66,7 +67,6 @@ export default function GatheringsInfo(props) {
                   }
                 />
               </td>
-              <td>{Data.body3}</td>
             </tr>
           </tbody>
         </table>
@@ -75,16 +75,18 @@ export default function GatheringsInfo(props) {
   );
 }
 const StyledDiv = styled.div`
-  padding: 7vw 20.6vw 5.9vw 20.6vw;
+  padding: 7.1vw 10.6vw 6.2vw 10.6vw;
   text-align: left;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${GatheringsInfo_Background});
-  font-size: 1vw;
-  line-height: 1.3vw;
+  font-size: 1.5vw;
+  line-height: 2.5vw;
   font-family: "Lato Regular" !important;
   color: ${colors.Black};
+  border-bottom: solid 0.35vw black;
+
   @media (max-width: 768px) {
     padding: 10.01vw 8.36vw 15.7vw 8.3vw;
     img {

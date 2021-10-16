@@ -7,6 +7,7 @@ import Gallery_Background from "../../Images/Gallery_Background.jpeg";
 import Liberty_Light from "../../Images/Liberty_Light.png";
 import Bella_Light from "../../Images/Bella_Light.png";
 import CarouselComponent from "./Carousel";
+import logo from "../../Images/White_Logo.png";
 
 export default function Gallery(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -15,6 +16,7 @@ export default function Gallery(props) {
       <div
         className={props.language === "EN" ? "LeftTextAlign" : "RightTextAlign"}
       >
+        <div className="vertical-line"></div>
         <div
           className={
             props.language === "EN"
@@ -22,7 +24,8 @@ export default function Gallery(props) {
               : "ARTitle gallery-title"
           }
         >
-          {Data.Title}
+          <p>{Data.Title}</p>
+          <img src={logo} alt="logo" />
         </div>
         <div className={props.language === "EN" ? "ENTable" : "ARTable"}>
           <table>
@@ -52,7 +55,8 @@ export default function Gallery(props) {
           <CarouselComponent language={props.language} />
         </div>
         <div className="Title">
-          {Data.ServicesTitle} {Data.ServicesTitleBold}
+          {Data.ServicesTitle}{" "}
+          <span className="Bold-Title"> {Data.ServicesTitleBold}</span>
         </div>
       </div>
     </StyledDiv>
@@ -60,6 +64,7 @@ export default function Gallery(props) {
 }
 
 const StyledDiv = styled.div`
+  position: relative;
   padding: 0vw 0vw 0vw 0vw;
   font-family: "Askan Regular" !important;
   background-image: url(${Gallery_Background});
@@ -67,6 +72,18 @@ const StyledDiv = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   color: ${colors.White};
+  border-bottom: solid 0.35vw black;
+  .vertical-line {
+    position: absolute;
+    left: 46vw;
+    top: 25vw;
+    height: 30vw;
+    width: 0.05vw;
+    background: white;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 
   .LeftTextAlign {
     text-align: left;
@@ -78,19 +95,31 @@ const StyledDiv = styled.div`
     vertical-align: top;
   }
   .gallery-title {
-    font-size: 2.1vw;
+    font-size: 3.1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      margin: 0;
+    }
+    img {
+      width: 5vw;
+    }
     @media (max-width: 768px) {
       height: 16vw;
       font-size: 6vw;
       display: flex;
       align-items: center;
+      img {
+        width: 13vw;
+      }
     }
   }
   .ENTitle {
     background-color: ${colors.DarkBrown};
     font-family: "Merriweather Regular";
     line-height: 3vw;
-    padding: 1.9vw 0vw 1.5vw 5.5vw;
+    padding: 1.9vw 5.5vw 1.5vw 5.5vw;
   }
   .ARTitle {
     background-color: ${colors.DarkBrown};
@@ -101,8 +130,9 @@ const StyledDiv = styled.div`
   .ENTable {
     padding: 0vw 0vw 6.95vw 5.5vw;
     font-family: "Lato Regular";
-    font-size: 0.97vw;
-    line-height: 1.4vw;
+    font-size: 1.3vw;
+    line-height: 1.8vw;
+    text-align: justify;
     background: rgba(37, 28, 21, 0.7);
   }
   .ARTable {
@@ -144,21 +174,39 @@ const StyledDiv = styled.div`
     padding: 0vw 8.9vw 0vw 0vw;
   }
   .LibertyImage {
-    width: 9.17vw;
-    height: 3.9vw;
+    width: 13vw;
+    /* height: 3.9vw; */
     padding: 4.6vw 0vw 2.36vw 0vw;
+    @media (max-width: 768px) {
+      width: 35vw;
+    }
   }
   .BellaImage {
-    width: 8.54vw;
-    height: 3.2vw;
+    width: 12vw;
+    /* height: 3.2vw; */
     padding: 5.3vw 0vw 2.36vw 0vw;
+    @media (max-width: 768px) {
+      width: 35vw;
+    }
   }
   .Title {
     background: rgba(0, 0, 0, 0.7);
     font-family: "Merriweather Regular";
-    font-size: 2.1vw;
+    font-size: 3.1vw;
     line-height: 3vw;
     padding: 1.9vw 0vw 1.5vw 5.5vw;
     margin: 3.7vw 0vw 0vw 0vw;
+    @media (max-width: 768px) {
+      height: 14vw;
+      font-size: 6vw;
+      display: flex;
+      align-items: center;
+      .Bold-Title {
+        margin-left: 1vw;
+      }
+    }
+    .Bold-Title {
+      font-family: "Merriweather Bold";
+    }
   }
 `;

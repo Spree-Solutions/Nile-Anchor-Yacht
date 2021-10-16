@@ -33,15 +33,36 @@ export default function OurYachts(props) {
                   <div> {Data.Title}</div>
                 </td>
                 <td className="links">
-                  <p>LIBERTY</p>
-                  <p>|</p>
-                  <p>BELLA</p>
-                  {/* <img src={BellaYellow} alt="Bella" className="Bella_Mobile" />
-                  <img
-                    src={Liberty_Image}
-                    alt="Liberty"
-                    className="Liberty_Dark_Mobile"
-                  /> */}
+                  {Data.Options.map((yacht, index) => {
+                    if (index !== 0) {
+                      return (
+                        <span style={{ marginLeft: "0.7vw" }}>
+                          {" | "}
+                          <span
+                            onClick={() => setChosenYacht(yacht)}
+                            className={
+                              chosenYacht === yacht
+                                ? "chosenButton"
+                                : "clickable"
+                            }
+                          >
+                            {yacht}
+                          </span>
+                        </span>
+                      );
+                    } else {
+                      return (
+                        <span
+                          onClick={() => setChosenYacht(yacht)}
+                          className={
+                            chosenYacht === yacht ? "chosenButton" : "clickable"
+                          }
+                        >
+                          {yacht}
+                        </span>
+                      );
+                    }
+                  })}
                 </td>
               </tr>
             </tbody>
@@ -58,16 +79,30 @@ export default function OurYachts(props) {
               <tbody>
                 <tr>
                   <td className="ImageCol">
-                    <div className="Liberty_Light_Background">
+                    <div
+                      className={
+                        chosenYacht === "Liberty"
+                          ? "Liberty_Light_Background"
+                          : "Bella_Light_Background"
+                      }
+                    >
                       <img
-                        src={Liberty_Light}
+                        src={
+                          chosenYacht === "Liberty"
+                            ? Liberty_Light
+                            : BellaYellow
+                        }
                         alt="Liberty"
                         className="Liberty_Light_Mobile"
                       />
                     </div>
                   </td>
                   <td>
-                    <div className="body_Mobile">{Data.LibertyBody}</div>
+                    <div className="body_Mobile">
+                      {chosenYacht === "Liberty"
+                        ? Data.LibertyBody
+                        : Data.BellaBody}
+                    </div>
                     {/* <div className="bodyBold_Mobile">{Data.bodyBold}</div> */}
                   </td>
                 </tr>
@@ -87,7 +122,10 @@ export default function OurYachts(props) {
                 >
                   <rect width="1.3vw" height="1.3vw" fill={colors.Black} />
                 </svg>
-                <span> {item}</span>
+                <a href={`${index === 0 ? "/#gallery" : "/#booking"}`}>
+                  {" "}
+                  {item}
+                </a>
               </span>
             ))}
           </div>
@@ -102,7 +140,7 @@ export default function OurYachts(props) {
             <tbody>
               <tr>
                 <td className="Col1 Title">
-                  <div> {Data.TitleBold}</div>
+                  <div className="Title"> {Data.TitleBold}</div>
                   <div className="TitleRegular"> {Data.Title}</div>
                   {Data.List.map((item, index) => (
                     <div className="ListItem">
@@ -121,18 +159,10 @@ export default function OurYachts(props) {
                           height="0.7vw"
                           fill={colors.Black}
                         />
-                      </svg>
-
-                      <span
-                        onClick={() => {
-                          index === 0
-                            ? props.executeScroll(props.References.GalleryRef)
-                            : props.executeScroll(props.References.ContactRef);
-                        }}
-                      >
-                        {" "}
+                      </svg>{" "}
+                      <a href={`${index === 0 ? "/#gallery" : "/#booking"}`}>
                         {item}
-                      </span>
+                      </a>
                     </div>
                   ))}
                 </td>
@@ -211,7 +241,7 @@ export default function OurYachts(props) {
                               ? Data.LibertyBody
                               : Data.BellaBody}
                           </div>
-                          <div className="bodyBold">{Data.ReadMore}</div>
+                          {/* <div className="bodyBold">{Data.ReadMore}</div> */}
                         </td>
                       </tr>
                     </tbody>
@@ -249,8 +279,8 @@ const StyledDiv = styled.div`
   }
   .Title {
     font-family: "Askan DemiBold" !important;
-    font-size: 2vw;
-    line-height: 2.2vw;
+    font-size: 4vw;
+    line-height: 3.5vw;
   }
   .TitleRegular {
     font-family: "Askan Light" !important;
@@ -258,15 +288,19 @@ const StyledDiv = styled.div`
   }
   .ListItem {
     font-family: "Askan DemiBold" !important;
-    font-size: 1.1vw;
-    line-height: 1.35vw;
+    font-size: 1.8vw;
+    line-height: 1.8vw;
     padding-bottom: 0.76vw;
-    cursor: pointer;
+    /* cursor: pointer; */
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
   .body {
     font-family: "Askan Light" !important;
-    font-size: 1vw;
-    line-height: 1.2vw;
+    font-size: 1.4vw;
+    line-height: 2vw;
     padding: 1.875vw 0vw 1.32vw 0vw;
   }
   .bodyBold {
@@ -364,6 +398,9 @@ const StyledDiv = styled.div`
     line-height: 6.7vw;
     text-align: left;
     margin-bottom: 4.5vw;
+    .TitleBold {
+      font-weight: 600;
+    }
   }
   .Liberty_Image_Mobile {
     width: 84vw;
@@ -392,6 +429,10 @@ const StyledDiv = styled.div`
     font-size: 3.2vw;
     line-height: 3.6vw;
     margin: 0vw 4.54vw 0vw 0vw;
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
   .bullet_Mobile {
     margin: 0vw 2.2vw 0vw 0vw;

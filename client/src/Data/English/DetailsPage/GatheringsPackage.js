@@ -8,7 +8,7 @@ const DataEnglish = {
     "Karaoke",
     "Lighting System",
   ],
-  title: "All Packages Include:",
+  title: "All Packages Include",
   end: "For inquires, call: 01211140222",
 };
 module.exports = {

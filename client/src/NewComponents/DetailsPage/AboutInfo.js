@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import bluegradient from "../../Images/bluegradient.png";
 
 import { DataArabic } from "../../Data/Arabic/DetailsPage/AboutInfo";
 import { DataEnglish } from "../../Data/English/DetailsPage/AboutInfo";
@@ -21,13 +22,16 @@ export default function AboutInfo(props) {
 
 const StyledDiv = styled.div`
   color: ${colors.White};
-  padding: 7.2vw 28.3vw 6.04vw 28.4vw;
-  text-align: left;
-  background: linear-gradient(
+  padding: 7.2vw 8vw 6.04vw 8vw;
+
+  /* text-align: left; */
+  /* background: linear-gradient(
     180deg,
     rgba(0, 136, 171, 0.9) 0%,
     rgba(0, 51, 66, 0.9) 100%
-  );
+  ); */
+  background-image: url(${bluegradient});
+  background-size: cover;
   @media (max-width: 768px) {
     padding: 0;
     display: flex;
@@ -37,8 +41,10 @@ const StyledDiv = styled.div`
 
   .Body {
     font-family: "Askan Regular" !important;
-    font-size: 1vw;
-    line-height: 1.3vw;
+    font-size: 1.6vw;
+    line-height: 2.2vw;
+    text-align: justify;
+    text-align-last: center;
     padding: 0vw 0vw 2.6vw 0vw;
     display: flex;
     flex-direction: column;
@@ -54,8 +60,8 @@ const StyledDiv = styled.div`
     }
   }
   .ImageAboutInfo {
-    width: 43.75vw;
-    height: 24.65vw;
+    width: 60vw;
+    height: 32vw;
     padding: 0vw 0vw 1vw 0vw;
     @media (max-width: 768px) {
       width: 85.1vw;
@@ -67,13 +73,14 @@ const StyledDiv = styled.div`
   }
   .Label {
     font-family: "Askan Regular" !important;
-    font-size: 1vw;
-    text-align: right;
+    font-size: 2vw;
+    margin-top: 1vw;
+    text-align: center;
     @media (max-width: 768px) {
       font-family: "Lato Regular" !important;
       font-size: 3.7vw;
       align-self: flex-end;
-      margin-right: 7.5vw;
+      margin: auto;
       margin-top: 4.5vw;
       padding-bottom: 5.3vw;
       font-weight: 400;

@@ -16,7 +16,7 @@ import egyptian_flag from "../Images/egyptian_flag.png";
 
 export default function Contact(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
-  const options = [ "Liberty"];
+  const options = ["Liberty"];
   // eslint-disable-next-line no-unused-vars
   const [selected, setSelected] = useState(options[0]);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
@@ -112,7 +112,7 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <TextField
-                  width={"20.9vw"}
+                  width={"39.2vw"}
                   placeholder={Data.FormInput[0]}
                   language={props.language}
                   handleChange={(event) => {
@@ -124,6 +124,7 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <Selector
+                  style={{ width: "39.2vw" }}
                   list={Data.FormSelect.Boats}
                   setSelected={(value) => {
                     reservationInstance.setYacht(value);
@@ -158,7 +159,7 @@ export default function Contact(props) {
                       <td>
                         <TextField
                           id="special-text"
-                          width={"13.6vw"}
+                          width={"32vw"}
                           placeholder={Data.FormInput[1]}
                           handleChange={(event) => {
                             console.log(
@@ -203,6 +204,8 @@ export default function Contact(props) {
                 {" "}
                 <Selector
                   list={startHourOptions.map((hour)=> hour>12?(hour===24?"12 AM":(hour===25?"1 AM":`${hour%12} PM`)): (hour===12?"12 PM":`${hour} AM`))}
+                  id="start-hour"
+                  // style={{ width: "39.2vw" }}
                   disabledOption={
                     !props.language
                       ? "Starting hour"
@@ -244,6 +247,7 @@ export default function Contact(props) {
                 {" "}
                 <Selector
                   list={endHourOptions.map((hour)=> hour>12?(hour===24?"12 AM":(hour===25?"1 AM":`${hour%12} PM`)): (hour===12?"12 PM":`${hour} AM`))}
+                  style={{ width: "39.2vw" }}
                   disabledOption={
                     !props.language
                       ? "Ending hour"
@@ -283,7 +287,7 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <TextField
-                  width={"20.9vw"}
+                  width={"39.2vw"}
                   placeholder={Data.FormInput[2]}
                   handleChange={(event) => {
                     console.log(
@@ -298,6 +302,7 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <Selector
+                  style={{ width: "39.2vw" }}
                   list={Data.FormSelect["Event Type"]}
                   disabledOption="Event type"
                   setSelected={(data) => {
@@ -353,16 +358,13 @@ export default function Contact(props) {
                     {finalPrice ? `Pay 50% ( EGP ${finalPrice} )` : Data.Button}
                   </div>{" "}
                 </td>
-                { finalPrice >0 && (
+                {finalPrice > 0 && (
                   <td>
-                  {" "}
-                  <div
-                    className=""
-                    
-                  >
-                    { `Total price EGP${(finalPrice*2).toFixed(2)}`}
-                  </div>{" "}
-                </td>
+                    {" "}
+                    <div className="">
+                      {`Total price EGP${(finalPrice * 2).toFixed(2)}`}
+                    </div>{" "}
+                  </td>
                 )}
               </tr>
             </tr>
@@ -374,11 +376,14 @@ export default function Contact(props) {
 }
 
 const StyledDiv = styled.div`
-  padding: 4vw 27vw 4.3vw 27vw;
+  padding: 4vw 5vw 4.3vw 5vw;
   background-color: ${colors.DarkGrey};
   color: ${colors.White};
   font-family: "Askan Light" !important;
   font-size: 1vw;
+  .action-table-booking {
+    margin: auto;
+  }
   @media (max-width: 768px) {
     * {
       /* margin: 0; */
@@ -417,6 +422,7 @@ const StyledDiv = styled.div`
   }
 
   .ActionTable {
+    margin: auto;
     padding-bottom: 2.1vw;
   }
   .TitleBold {
@@ -542,6 +548,15 @@ const StyledDiv = styled.div`
     }
   }
   .form-table {
+    margin: auto;
+    #start-hour {
+      width: 40.5vw;
+
+      /* Opposite query */
+      @media (max-width: 768px) {
+        width: 39.2vw;
+      }
+    }
     @media (max-width: 768px) {
       width: 100%;
       font-size: 2.4vw !important;
@@ -553,10 +568,10 @@ const StyledDiv = styled.div`
       }
       td {
         .custom-selector {
-          width: 100%;
+          /* width: 100%; */
           font-size: 2.4vw;
         }
-        width: 100%;
+        /* width: 100%; */
         & > * {
           height: 8.8vw;
           width: 100%;
