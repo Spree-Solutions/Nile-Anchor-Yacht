@@ -55,7 +55,7 @@ function App() {
                   language={language}
                   setLanguage={setLanguage}
                   showError={showError}
-                  setShowError={setShowSuccess}
+                  setShowError={setShowError}
                   setShowSuccess={setShowSuccess}
                   showSuccess={showSuccess}
                 />

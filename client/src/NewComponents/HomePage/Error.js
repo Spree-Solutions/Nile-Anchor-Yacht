@@ -19,7 +19,7 @@ export default function Error(props) {
             src={cross}
             alt=""
             className="cross"
-            onClick={() => props.setShowError(false)}
+            onClick={() => {props.setShowError(false); window.location.href = "/";}}
           />
         </div>
         <div>

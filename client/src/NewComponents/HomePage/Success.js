@@ -18,7 +18,7 @@ export default function Error(props) {
             src={cross}
             alt=""
             className="cross"
-            onClick={() => props.setShowSuccess(false)}
+            onClick={() => {props.setShowSuccess(false); window.location.href = "/";}}
           />
         </div>
         <div className="DataBodyBold">{Data.BodyBold}</div>

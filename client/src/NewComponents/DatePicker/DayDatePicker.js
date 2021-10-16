@@ -69,9 +69,15 @@ export const DatePickerComponent = (props) => {
     setStartDate(date);
   };
 
+  let todayDate = new Date(Date.now());
+  let threeMonthMilliseconds = 3*28*24*60*60*1000;
+  let threeMonthFromNow = new Date(Date.now()+threeMonthMilliseconds);
+
   return (
     <React.Fragment>
       <DatePicker
+        minDate={todayDate}
+        maxDate={threeMonthFromNow}
         wrapperClassName="hideOverflow"
         className={`DatePicker fullWidth ${
           language === "AR" ? "ARDatePicker" : ""

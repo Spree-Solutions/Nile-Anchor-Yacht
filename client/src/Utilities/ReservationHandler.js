@@ -324,11 +324,11 @@ export class ReservationHandler {
                            
                            
                     });
+                    this.clearStorage();
                     if(confirmationResponse.data && confirmationResponse.data.failed_records_count){
-                        alert(`Reservation is not successfull please contact admin and give them the payment code, ${response.data.merchant_reference_id}`);
+                        window.location.href = "/?operation_status=failed";
                     }else if(confirmationResponse.data && confirmationResponse.data.saved_records){
-                        alert("Reservation is successfull");
-                        this.clearStorage();
+                        window.location.href = "/?operation_status=success";
                     }
                     console.log("this is confirmation Response",confirmationResponse);
                 }
