@@ -262,6 +262,7 @@ export default function Contact(props) {
                 {" "}
                 <Selector
                   list={Data.FormSelect["Event Type"]}
+                  disabledOption="Event type"
                   setSelected={(data) => {
                     console.log("event trigger on event type input", data);
                     reservationInstance.serviceName = data;
