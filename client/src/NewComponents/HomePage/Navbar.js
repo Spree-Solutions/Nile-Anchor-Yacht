@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { DataEnglish } from "../../Data/English/HomePage/NavBar";
@@ -8,14 +8,20 @@ import { colors } from "../../Styles/Colors";
 import Main_Logo from "../../Images/Main_Logo.png";
 import { Link } from "react-router-dom";
 import feather from "../../Icons/search.svg";
+import { useLocation } from "react-router-dom";
 
 export default function Navbar(props) {
   const history = useHistory();
+  const location = useLocation();
   console.log(history);
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   const { language, setLanguage } = props;
   // eslint-disable-next-line no-unused-vars
   const [selectedTag, setSelectedTag] = useState("whoWeAre");
+  const [navVisible, setNavvisible] = useState(true);
+  useEffect(() => {
+    setNavvisible(false);
+  }, [location]);
   const changeToAR = () => {
     if (language !== "AR") {
       setLanguage("AR");
@@ -57,7 +63,46 @@ export default function Navbar(props) {
                 <Link to="/">
                   <img src={Main_Logo} alt="logo" className="LogoNavBar" />
                 </Link>
-                <img className="feather-icon" src={feather} />
+                <div className="mobile-nav">
+                  <img
+                    className={`feather-icon  ${
+                      navVisible ? "rotated-feather" : ""
+                    }`}
+                    src={feather}
+                    onClick={() => setNavvisible(!navVisible)}
+                  />
+                  <div
+                    className={`mobile-nav-list ${
+                      navVisible ? "" : "hidden-nav"
+                    }`}
+                  >
+                    <a href="/About" className="NavSpan">
+                      {Data.NavTags[0]}{" "}
+                    </a>
+                    <a href="/#our-yachts" className="NavSpan">
+                      {Data.NavTags[1]}{" "}
+                    </a>
+                    <a href="/#gallery" className="NavSpan">
+                      {Data.NavTags[2]}{" "}
+                    </a>
+                    <a
+                      href="/#our-services"
+                      className={
+                        language === "EN"
+                          ? "NavSpan"
+                          : "OurServices CenterTextAlign"
+                      }
+                    >
+                      {Data.NavTags[3]}{" "}
+                    </a>
+                    <a href="/#additional-services" className="NavSpan">
+                      {Data.NavTags[4]}{" "}
+                    </a>
+                    <a href="/#contacts" className="NavSpan">
+                      {Data.NavTags[5]}{" "}
+                    </a>
+                  </div>
+                </div>
               </td>
 
               <td
@@ -148,12 +193,54 @@ const StyledDiv = styled.div`
         padding: 5.33vw 0vw 5.9vw 0vw;
       }
     }
-    .feather-icon {
-      display: none;
-      @media (max-width: 768px) {
-        display: unset;
-        width: 8.5vw;
-        height: 8.9vw;
+    .mobile-nav {
+      position: relative;
+      .feather-icon {
+        display: none;
+        cursor: pointer;
+        @media (max-width: 768px) {
+          transition: transform 0.2s ease-in;
+          &.rotated-feather {
+            transform: rotate(-90deg);
+          }
+          display: unset;
+          width: 8.5vw;
+          height: 8.9vw;
+        }
+      }
+      .mobile-nav-list {
+        display: none;
+        transition: all 0.2s ease-in;
+
+        * {
+          transition: all 0.5s ease-in;
+        }
+        @media (max-width: 768px) {
+          &.hidden-nav {
+            /* display: none; */
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+            a {
+              opacity: 0;
+            }
+          }
+          width: 70vw;
+          height: 25vh;
+          padding: 2vw;
+          background: ${colors.MainBeige};
+          display: flex;
+          flex-direction: column;
+          font-size: 4vw;
+          position: absolute;
+          right: 0;
+          top: 15vw;
+          a {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2.2vw;
+          }
+        }
       }
     }
   }
