@@ -226,7 +226,7 @@ const StyledDiv = styled.div`
             }
           }
           width: 70vw;
-          height: 25vh;
+          height: 50vw;
           padding: 2vw;
           background: ${colors.MainBeige};
           display: flex;
