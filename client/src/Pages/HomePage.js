@@ -46,9 +46,9 @@ export default function HomePage(props) {
       <div id="our-services">
         <OurServices language={props.language} />
       </div>
-      <div id="additional-services">
+      {/* <div id="additional-services">
         <Partners language={props.language} />
-      </div>
+      </div> */}
       <div id="booking">
         <Contact language={props.language} />
       </div>
