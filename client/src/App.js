@@ -15,6 +15,7 @@ import ScrollTop from "./Components/ScrollTop";
 import ContactUs from "./Pages/ContactUs";
 import Navbar from "./NewComponents/HomePage/Navbar";
 import Footer from "./Components/Footer";
+import SideSlider from "./NewComponents/SideSlider";
 function App() {
   const [language, setLanguage] = useState("EN");
   const References = {
@@ -47,6 +48,7 @@ function App() {
               setLanguage={setLanguage}
               language={language}
             />
+            <SideSlider />
             <Switch>
               <Route exact path="/">
                 <HomePage

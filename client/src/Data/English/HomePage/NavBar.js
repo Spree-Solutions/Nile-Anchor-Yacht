@@ -5,7 +5,7 @@ const DataEnglish = {
     "Gallery",
     "Our Services",
     "Additional Services",
-    "Contacts",
+    "Contact Us",
   ],
 };
 module.exports = {
