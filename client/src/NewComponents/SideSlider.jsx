@@ -29,7 +29,7 @@ const StyledSlider = styled.div`
   right: 0vw;
   z-index: 100;
   @media (max-width: 768px) {
-    top: 20vw;
+    top: 21.5vw;
   }
   .whatsapp {
     a {

@@ -211,7 +211,6 @@ const StyledDiv = styled.div`
       .mobile-nav-list {
         display: none;
         transition: all 0.2s ease-in;
-
         * {
           transition: all 0.5s ease-in;
         }
@@ -221,6 +220,8 @@ const StyledDiv = styled.div`
             height: 0;
             padding: 0;
             overflow: hidden;
+            box-shadow: none;
+
             a {
               opacity: 0;
             }
@@ -235,6 +236,7 @@ const StyledDiv = styled.div`
           position: absolute;
           right: 0;
           top: 15vw;
+          box-shadow: 0vw 0vw 2vw 0.5vw #525252;
           a {
             width: 100%;
             text-align: center;

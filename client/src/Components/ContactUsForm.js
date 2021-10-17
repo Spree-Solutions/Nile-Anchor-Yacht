@@ -122,10 +122,34 @@ const StyledContainer = styled.div`
     margin: 0;
   }
   background-color: ${colors.DarkGrey};
-  padding: calc(100vh - 34vw) 0vw;
+  padding: calc(25vh) 0vw;
   form {
     width: 40vw;
     margin: auto;
+    @media (max-width: 768px) {
+      width: 90%;
+      select {
+        height: 10vw !important;
+        font-size: 5vw !important;
+        margin-top: 4vw !important;
+      }
+      input {
+        height: 10vw !important;
+        font-size: 5vw !important;
+        margin-top: 4vw !important;
+      }
+      textarea {
+        height: 20vw !important;
+        font-size: 5vw !important;
+        margin-top: 4vw !important;
+      }
+      button {
+        height: 10vw;
+        width: 50vw !important;
+        margin-top: 4vw !important;
+        font-size: 5vw !important;
+      }
+    }
     textarea {
       width: 100%;
       margin-top: 1vw;

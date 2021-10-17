@@ -6,7 +6,7 @@ import { DataArabic } from "../../Data/Arabic/DetailsPage/ContactUsTitle";
 import { colors } from "../../Styles/Colors";
 import WeddingsTitleImg from "../../Images/WeddingsTitle.jpeg";
 
-export default function WeddingsTitle(props) {
+export default function ContactUsTitle(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
 
   return (
@@ -19,11 +19,8 @@ export default function WeddingsTitle(props) {
         }
       >
         <div className="Title">{Data.Title}</div>
-        <div className="Body">{Data.body}</div>
+        {/* <div className="Body">{Data.body}</div> */}
       </div>
-      {/* <div className="ImgDiv">
-        <img src={WeddingsTitleImg} alt="" className="ImageTitle" />
-      </div> */}
     </StyledDiv>
   );
 }
@@ -38,16 +35,37 @@ const StyledDiv = styled.div`
   }
   .ENLeft {
     text-align: left;
-    padding: 12vw 50vw 14vw 5.9vw;
+    /* padding: 12vw 50vw 14vw 5.9vw; */
+    min-height: 35vw;
+    height: calc(100vh - 5vw);
+    @media (max-width: 768px) {
+      height: auto;
+      min-height: 60vw;
+      height: calc(100vh - 20.8vw);
+      /* padding: 80vw 33.87vw 44vw 8vw; */
+    }
   }
   .Title {
     font-family: "Askan DemiBold" !important;
     font-size: 4.2vw;
+    padding: 12vw 5.9vw 10vw 5.9vw;
+    @media (max-width: 768px) {
+      font-size: 9.3vw;
+      width: 49vw;
+      margin-bottom: 4.3vw;
+    }
   }
   .Body {
     font-family: "Askan Regular" !important;
-    font-size: 1.3vw;
+    width: fit-content;
+    margin: auto;
+    font-size: 2.9vw;
     padding: 1.3vw 0vw 0vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+      padding-left: 3vw;
+      padding-right: 3vw;
+    }
   }
 
   .ImageTitle {
