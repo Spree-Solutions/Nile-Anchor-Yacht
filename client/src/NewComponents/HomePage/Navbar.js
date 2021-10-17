@@ -98,7 +98,7 @@ export default function Navbar(props) {
                     <a href="/#additional-services" className="NavSpan">
                       {Data.NavTags[4]}{" "}
                     </a>
-                    <a href="/#contacts" className="NavSpan">
+                    <a href="/contact-us" className="NavSpan">
                       {Data.NavTags[5]}{" "}
                     </a>
                   </div>
@@ -134,7 +134,7 @@ export default function Navbar(props) {
                 <a href="/#additional-services" className="NavSpan">
                   {Data.NavTags[4]}{" "}
                 </a>
-                <a href="/#contacts" className="NavSpan">
+                <a href="/contact-us" className="NavSpan">
                   {Data.NavTags[5]}{" "}
                 </a>
                 {/* Changing language is commented out, pending arabic content */}

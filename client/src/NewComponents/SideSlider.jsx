@@ -7,7 +7,7 @@ const SideSlider = () => {
   return (
     <StyledSlider>
       <div className="whatsapp">
-        <a href="http://whatsapp.com">
+        <a target="__blank" href="https://wa.me/+201211140222">
           <img src={whatsapp} alt="" />
         </a>
       </div>
