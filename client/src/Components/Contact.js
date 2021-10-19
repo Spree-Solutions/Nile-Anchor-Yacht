@@ -106,35 +106,50 @@ export default function Contact(props) {
             </tr>
           </tbody>
         </table>
-        <table className="form-table">
-          <tbody>
-            <tr className="RowMargin">
-              <td>
-                {" "}
-                <TextField
-                  placeholder={Data.FormInput[0]}
-                  language={props.language}
-                  handleChange={(event) => {
-                    let name = event.target.value;
-                    reservationInstance.username = name;
-                  }}
-                />
-              </td>
-              <td>
-                {" "}
-                <Selector
-                  list={Data.FormSelect.Boats}
-                  setSelected={(value) => {
-                    reservationInstance.setYacht(value);
-                    setSelected(value);
-                  }}
-                  language={props.language}
-                />
-              </td>
-            </tr>
-            <tr className="RowMargin">
-              <td className="flag-td">
-                {/* <div
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            reservationInstance.reserve().then((result) => {
+              if (result.error) {
+                // handle error
+                console.log("error returned from reserve()", result);
+              } else {
+                console.log("reserved successfully", result);
+              }
+            });
+          }}
+        >
+          <table className="form-table">
+            <tbody>
+              <tr className="RowMargin">
+                <td>
+                  {" "}
+                  <TextField
+                    required={true}
+                    placeholder={Data.FormInput[0]}
+                    language={props.language}
+                    handleChange={(event) => {
+                      let name = event.target.value;
+                      reservationInstance.username = name;
+                    }}
+                  />
+                </td>
+                <td>
+                  {" "}
+                  <Selector
+                    required={true}
+                    list={Data.FormSelect.Boats}
+                    setSelected={(value) => {
+                      reservationInstance.setYacht(value);
+                      setSelected(value);
+                    }}
+                    language={props.language}
+                  />
+                </td>
+              </tr>
+              <tr className="RowMargin">
+                <td className="flag-td">
+                  {/* <div
                   className={
                     props.language === "EN" ? "Flag ENflag" : "Flag ARflag"
                   }
@@ -142,224 +157,229 @@ export default function Contact(props) {
                   {" "}
                   <img src={egyptian_flag} alt="lag" className="EgyptianFlag" />
                 </div> */}
-                <TextField
-                  placeholder={Data.FormInput[1]}
-                  handleChange={(event) => {
-                    console.log("phone number input debug", event.target.value);
-                    reservationInstance.phoneNumber = event.target.value;
-                  }}
-                  language={props.language}
-                />
-              </td>
-              <td style={{ verticalAlign: "baseline", paddingTop: "4px" }}>
-                {" "}
-                <DatePickerComponent
-                  onChange={(date) => {
-                    date.setHours(8);
-                    let formattedDate = date;
-                    reservationInstance.reservationDate = formattedDate;
-                    reservationInstance.notifyStartHour = () => {
+                  <TextField
+                    required={true}
+                    placeholder={Data.FormInput[1]}
+                    handleChange={(event) => {
                       console.log(
-                        "notify start hours was called",
-                        reservationInstance.availableStartHours
+                        "phone number input debug",
+                        event.target.value
                       );
-                      setStartHourOptions(
-                        reservationInstance.availableStartHours
-                      );
-                    };
-                    console.log("tanawy is testing", { date });
-                    window.tanawyTestingVar = date;
-                  }}
-                  language={props.language}
-                />
-              </td>
-            </tr>
-            <tr className="RowMargin">
-              <td>
-                {" "}
-                <Selector
-                  list={startHourOptions.map((hour) =>
-                    hour > 12
-                      ? hour === 24
-                        ? "12 AM"
-                        : hour === 25
-                        ? "1 AM"
-                        : `${hour % 12} PM`
-                      : hour === 12
-                      ? "12 PM"
-                      : `${hour} AM`
-                  )}
-                  id="start-hour"
-                  // style={{ width: "39.2vw" }}
-                  disabledOption={
-                    !props.language
-                      ? "Starting hour"
-                      : props.language === "EN"
-                      ? "Starting hour"
-                      : "ساعة البداية"
-                  }
-                  setSelected={(data) => {
-                    let formattedData = data;
-                    if (typeof data === typeof "" && data.length > 2) {
-                      let lastElem = data[data.length - 1];
-                      if (lastElem === "M") {
-                        if (data === "12 AM") {
-                          formattedData = 24;
-                        } else if (data === "12 PM") {
-                          formattedData = 12;
-                        } else if (data === "1 AM") {
-                          formattedData = 25;
-                        } else if (data[data.length - 2] === "P") {
-                          formattedData = Number(data.split(" ")[0]) + 12;
-                        } else {
-                          formattedData = Number(data.split(" ")[0]);
-                        }
-                      }
-                    }
-                    reservationInstance.notifyEndHour = () => {
-                      setEndHourOptions(
-                        reservationInstance.getAvailableEndHours()
-                      );
-                    };
-                    reservationInstance.startingHour = formattedData;
-                    console.log("event trigger on start hour", data);
-                  }}
-                  language={props.language}
-                />
-              </td>
-              <td>
-                {" "}
-                <Selector
-                  list={endHourOptions.map((hour) =>
-                    hour > 12
-                      ? hour === 24
-                        ? "12 AM"
-                        : hour === 25
-                        ? "1 AM"
-                        : `${hour % 12} PM`
-                      : hour === 12
-                      ? "12 PM"
-                      : `${hour} AM`
-                  )}
-                  disabledOption={
-                    !props.language
-                      ? "Ending hour"
-                      : props.language === "EN"
-                      ? "Ending hour"
-                      : "ساعة النهاية"
-                  }
-                  setSelected={(data) => {
-                    let formattedData = data;
-                    if (typeof data === typeof "" && data.length > 2) {
-                      let lastElem = data[data.length - 1];
-                      if (lastElem === "M") {
-                        if (data === "12 AM") {
-                          formattedData = 24;
-                        } else if (data === "12 PM") {
-                          formattedData = 12;
-                        } else if (data === "1 AM") {
-                          formattedData = 25;
-                        } else if (data[data.length - 2] === "P") {
-                          formattedData = Number(data.split(" ")[0]) + 12;
-                        } else {
-                          formattedData = Number(data.split(" ")[0]);
-                        }
-                      }
-                    }
-
-                    reservationInstance.endingHour = formattedData;
-                    setFinalPrice(reservationInstance.calculatedFinalPrice);
-                    console.log("event trigger on Ending hour", data);
-                  }}
-                  language={props.language}
-                />
-              </td>
-            </tr>
-            <tr className="RowMargin">
-              <td>
-                {" "}
-                <TextField
-                  placeholder={Data.FormInput[2]}
-                  handleChange={(event) => {
-                    console.log(
-                      "event trigger on email input",
-                      event.target.value
-                    );
-                    reservationInstance.email = event.target.value;
-                  }}
-                  language={props.language}
-                />
-              </td>
-              <td>
-                {" "}
-                <Selector
-                  list={Data.FormSelect["Event Type"]}
-                  disabledOption="Event type"
-                  setSelected={(data) => {
-                    console.log("event trigger on event type input", data);
-                    reservationInstance.serviceName = data;
-                    setSelected(data);
-                  }}
-                  language={props.language}
-                />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table className="action-table-booking">
-          <tbody>
-            <tr>
-              <td className="Col0"></td>
-              {/* <tr className="special-row-check"> */}
-              <td className="Col1">
-                <label class="container">
-                  <span class="checkmark">
-                    <input
-                      type="checkbox"
-                      checked={checkboxStatus}
-                      onClick={() => setCheckboxStatus(!checkboxStatus)}
-                    />
-                  </span>
-                </label>
-              </td>
-              <td className="Col2">
-                <span onClick={() => setCheckboxStatus(!checkboxStatus)}>
-                  {Data.CheckBox}
-                </span>
-              </td>
-              {/* </tr> */}
-              <tr>
-                <td className="Col3">
-                  {" "}
-                  <div
-                    className="Button"
-                    onClick={(e) => {
-                      reservationInstance.reserve().then((result) => {
-                        if (result.error) {
-                          // handle error
-                          console.log("error returned from reserve()", result);
-                        } else {
-                          console.log("reserved successfully", result);
-                        }
-                      });
+                      reservationInstance.phoneNumber = event.target.value;
                     }}
-                  >
-                    {finalPrice ? `Pay 50% ( EGP ${finalPrice} )` : Data.Button}
-                  </div>{" "}
+                    language={props.language}
+                  />
                 </td>
-                {finalPrice > 0 && (
-                  <td>
-                    {" "}
-                    <div className="">
-                      {`Total price EGP${(finalPrice * 2).toFixed(2)}`}
-                    </div>{" "}
-                  </td>
-                )}
+                <td style={{ verticalAlign: "baseline", paddingTop: "4px" }}>
+                  {" "}
+                  <DatePickerComponent
+                    onChange={(date) => {
+                      date.setHours(8);
+                      let formattedDate = date;
+                      reservationInstance.reservationDate = formattedDate;
+                      reservationInstance.notifyStartHour = () => {
+                        console.log(
+                          "notify start hours was called",
+                          reservationInstance.availableStartHours
+                        );
+                        setStartHourOptions(
+                          reservationInstance.availableStartHours
+                        );
+                      };
+                      console.log("tanawy is testing", { date });
+                      window.tanawyTestingVar = date;
+                    }}
+                    language={props.language}
+                  />
+                </td>
               </tr>
-            </tr>
-          </tbody>
-        </table>
+              <tr className="RowMargin">
+                <td>
+                  {" "}
+                  <Selector
+                    required={true}
+                    list={startHourOptions.map((hour) =>
+                      hour > 12
+                        ? hour === 24
+                          ? "12 AM"
+                          : hour === 25
+                          ? "1 AM"
+                          : `${hour % 12} PM`
+                        : hour === 12
+                        ? "12 PM"
+                        : `${hour} AM`
+                    )}
+                    id="start-hour"
+                    // style={{ width: "39.2vw" }}
+                    disabledOption={
+                      !props.language
+                        ? "Starting hour"
+                        : props.language === "EN"
+                        ? "Starting hour"
+                        : "ساعة البداية"
+                    }
+                    setSelected={(data) => {
+                      let formattedData = data;
+                      if (typeof data === typeof "" && data.length > 2) {
+                        let lastElem = data[data.length - 1];
+                        if (lastElem === "M") {
+                          if (data === "12 AM") {
+                            formattedData = 24;
+                          } else if (data === "12 PM") {
+                            formattedData = 12;
+                          } else if (data === "1 AM") {
+                            formattedData = 25;
+                          } else if (data[data.length - 2] === "P") {
+                            formattedData = Number(data.split(" ")[0]) + 12;
+                          } else {
+                            formattedData = Number(data.split(" ")[0]);
+                          }
+                        }
+                      }
+                      reservationInstance.notifyEndHour = () => {
+                        setEndHourOptions(
+                          reservationInstance.getAvailableEndHours()
+                        );
+                      };
+                      reservationInstance.startingHour = formattedData;
+                      console.log("event trigger on start hour", data);
+                    }}
+                    language={props.language}
+                  />
+                </td>
+                <td>
+                  {" "}
+                  <Selector
+                    required={true}
+                    list={endHourOptions.map((hour) =>
+                      hour > 12
+                        ? hour === 24
+                          ? "12 AM"
+                          : hour === 25
+                          ? "1 AM"
+                          : `${hour % 12} PM`
+                        : hour === 12
+                        ? "12 PM"
+                        : `${hour} AM`
+                    )}
+                    disabledOption={
+                      !props.language
+                        ? "Ending hour"
+                        : props.language === "EN"
+                        ? "Ending hour"
+                        : "ساعة النهاية"
+                    }
+                    setSelected={(data) => {
+                      let formattedData = data;
+                      if (typeof data === typeof "" && data.length > 2) {
+                        let lastElem = data[data.length - 1];
+                        if (lastElem === "M") {
+                          if (data === "12 AM") {
+                            formattedData = 24;
+                          } else if (data === "12 PM") {
+                            formattedData = 12;
+                          } else if (data === "1 AM") {
+                            formattedData = 25;
+                          } else if (data[data.length - 2] === "P") {
+                            formattedData = Number(data.split(" ")[0]) + 12;
+                          } else {
+                            formattedData = Number(data.split(" ")[0]);
+                          }
+                        }
+                      }
+
+                      reservationInstance.endingHour = formattedData;
+                      setFinalPrice(reservationInstance.calculatedFinalPrice);
+                      console.log("event trigger on Ending hour", data);
+                    }}
+                    language={props.language}
+                  />
+                </td>
+              </tr>
+              <tr className="RowMargin">
+                <td>
+                  {" "}
+                  <TextField
+                    required={true}
+                    placeholder={Data.FormInput[2]}
+                    handleChange={(event) => {
+                      console.log(
+                        "event trigger on email input",
+                        event.target.value
+                      );
+                      reservationInstance.email = event.target.value;
+                    }}
+                    language={props.language}
+                  />
+                </td>
+                <td>
+                  {" "}
+                  <Selector
+                    required={true}
+                    list={Data.FormSelect["Event Type"]}
+                    disabledOption="Event type"
+                    setSelected={(data) => {
+                      console.log("event trigger on event type input", data);
+                      reservationInstance.serviceName = data;
+                      setSelected(data);
+                    }}
+                    language={props.language}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table className="action-table-booking">
+            <tbody>
+              <tr>
+                <td className="Col0"></td>
+                {/* <tr className="special-row-check"> */}
+                <td className="Col1">
+                  <label class="container">
+                    <span class="checkmark">
+                      <input
+                        type="checkbox"
+                        checked={checkboxStatus}
+                        onClick={() => setCheckboxStatus(!checkboxStatus)}
+                      />
+                    </span>
+                  </label>
+                </td>
+                <td className="Col2">
+                  <span onClick={() => setCheckboxStatus(!checkboxStatus)}>
+                    {Data.CheckBox}
+                  </span>
+                </td>
+                {/* </tr> */}
+                <tr>
+                  <td className="Col3">
+                    {" "}
+                    <button
+                      type="submit"
+                      // disabled={!finalPrice}
+                      className={`Button ${
+                        !finalPrice ? "ButtonDisabled" : ""
+                      }`}
+                    >
+                      {finalPrice
+                        ? `Pay 50% ( EGP ${finalPrice} )`
+                        : Data.Button}
+                    </button>{" "}
+                  </td>
+                  {finalPrice > 0 && (
+                    <td>
+                      {" "}
+                      <div className="final-message">
+                        {`Total price EGP${(finalPrice * 2).toFixed(2)}`}
+                      </div>{" "}
+                    </td>
+                  )}
+                </tr>
+              </tr>
+            </tbody>
+          </table>
+        </form>
       </div>
     </StyledDiv>
   );
@@ -515,7 +535,16 @@ const StyledDiv = styled.div`
       margin-top: 2.4vw;
     }
   }
-
+  .ButtonDisabled {
+    background: grey;
+  }
+  .final-message {
+    font-size: 1vw;
+    @media (max-width: 768px) {
+      font-size: 2.4vw;
+      margin-top: 2vw;
+    }
+  }
   /* The container */
   .container {
     position: relative;
