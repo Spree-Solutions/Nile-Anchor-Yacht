@@ -621,10 +621,12 @@ const StyledDiv = styled.div`
           margin-bottom: 0;
           td {
             width: 100% !important;
-            margin-bottom: 4vw;
-            height: 8.8vw;
-            * {
-              height: 100%;
+            margin: 0 !important;
+            padding: 0 !important;
+            margin-bottom: 4vw !important;
+            input,
+            select {
+              height: 8.8vw !important;
             }
           }
         }

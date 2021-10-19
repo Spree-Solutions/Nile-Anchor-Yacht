@@ -19,8 +19,8 @@ const DatePickerWrapperStyles = createGlobalStyle`
   cursor: pointer;
   background-color: ${colors.Merino} !important;
   @media (max-width: 768px) {
-      /* height: 8.8vw; */
-      font-size: 2.4vw;
+      height: 8.8vw;
+    font-size: 2.4vw;
   }
 }
 .fullWidth {
