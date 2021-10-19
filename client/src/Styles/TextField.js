@@ -3,12 +3,14 @@ import styled from "styled-components";
 import { colors } from "../Styles/Colors";
 
 export default function TextField(props) {
-  console.log("width", props.width);
   return (
     <StyledDiv>
       <input
-        style={{ width: props.width }}
-        className={props.language === "EN" ? "Input ENInput" : "Input ARInput"}
+        className={
+          props.language === "EN"
+            ? `${props.className || ""}Input ENInput`
+            : "Input ARInput"
+        }
         placeholder={props.placeholder}
         type="text"
         value={props.value}
@@ -23,10 +25,11 @@ export default function TextField(props) {
 }
 
 const StyledDiv = styled.div`
-  margin-bottom: 1.4vw;
+  width: 100%;
   .Input,
   .Input:hover,
   .Input:active {
+    width: 100%;
     text-align-last: left;
     padding: 0.4vw 0.6vw 0.4vw 0.6vw;
     font-family: "Askan Light" !important;
@@ -37,12 +40,12 @@ const StyledDiv = styled.div`
     cursor: pointer;
     background-color: ${colors.Merino} !important;
     @media (max-width: 768px) {
-      height: 100%;
       font-size: 2.4vw;
     }
   }
   .ENInput {
-    margin-right: 1.6vw;
+    /* margin-right: 1.6vw; */
+    box-sizing: border-box;
     @media (max-width: 768px) {
       margin: 0;
     }

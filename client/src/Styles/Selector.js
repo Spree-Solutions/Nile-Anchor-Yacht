@@ -34,11 +34,11 @@ export default function Selector(props) {
 }
 
 const StyledDiv = styled.div`
-  margin-bottom: 1.4vw;
   .SelectorEN,
   .SelectorEN:hover,
   .SelectorEN:active {
-    width: 21.4vw;
+    width: 100%;
+
     text-align-last: left;
     padding: 0.4vw 0vw 0.4vw 0.6vw;
     font-family: "Askan Light" !important;
@@ -78,6 +78,7 @@ const StyledDiv = styled.div`
       /* background-position-x: 17vw !important; */
       background-position-y: 50% !important;
       height: 100%;
+      font-size: 2.4vw;
     }
   }
 

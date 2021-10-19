@@ -112,7 +112,6 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <TextField
-                  width={"39.2vw"}
                   placeholder={Data.FormInput[0]}
                   language={props.language}
                   handleChange={(event) => {
@@ -124,7 +123,6 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <Selector
-                  style={{ width: "39.2vw" }}
                   list={Data.FormSelect.Boats}
                   setSelected={(value) => {
                     reservationInstance.setYacht(value);
@@ -135,46 +133,23 @@ export default function Contact(props) {
               </td>
             </tr>
             <tr className="RowMargin">
-              <td>
-                {" "}
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div
-                          className={
-                            props.language === "EN"
-                              ? "Flag ENflag"
-                              : "Flag ARflag"
-                          }
-                        >
-                          {" "}
-                          <img
-                            src={egyptian_flag}
-                            alt="lag"
-                            className="EgyptianFlag"
-                          />
-                        </div>
-                      </td>
-                      <td>
-                        <TextField
-                          id="special-text"
-                          width={"32vw"}
-                          placeholder={Data.FormInput[1]}
-                          handleChange={(event) => {
-                            console.log(
-                              "phone number input debug",
-                              event.target.value
-                            );
-                            reservationInstance.phoneNumber =
-                              event.target.value;
-                          }}
-                          language={props.language}
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+              <td className="flag-td">
+                {/* <div
+                  className={
+                    props.language === "EN" ? "Flag ENflag" : "Flag ARflag"
+                  }
+                >
+                  {" "}
+                  <img src={egyptian_flag} alt="lag" className="EgyptianFlag" />
+                </div> */}
+                <TextField
+                  placeholder={Data.FormInput[1]}
+                  handleChange={(event) => {
+                    console.log("phone number input debug", event.target.value);
+                    reservationInstance.phoneNumber = event.target.value;
+                  }}
+                  language={props.language}
+                />
               </td>
               <td style={{ verticalAlign: "baseline", paddingTop: "4px" }}>
                 {" "}
@@ -203,7 +178,17 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <Selector
-                  list={startHourOptions.map((hour)=> hour>12?(hour===24?"12 AM":(hour===25?"1 AM":`${hour%12} PM`)): (hour===12?"12 PM":`${hour} AM`))}
+                  list={startHourOptions.map((hour) =>
+                    hour > 12
+                      ? hour === 24
+                        ? "12 AM"
+                        : hour === 25
+                        ? "1 AM"
+                        : `${hour % 12} PM`
+                      : hour === 12
+                      ? "12 PM"
+                      : `${hour} AM`
+                  )}
                   id="start-hour"
                   // style={{ width: "39.2vw" }}
                   disabledOption={
@@ -215,22 +200,21 @@ export default function Contact(props) {
                   }
                   setSelected={(data) => {
                     let formattedData = data;
-                    if (typeof data === typeof "" && data.length > 2){
-                      let lastElem = data[data.length -1];
-                      if (lastElem === "M"){
-                        if(data === "12 AM"){
-                          formattedData = 24
-                        } else if( data === "12 PM"){
+                    if (typeof data === typeof "" && data.length > 2) {
+                      let lastElem = data[data.length - 1];
+                      if (lastElem === "M") {
+                        if (data === "12 AM") {
+                          formattedData = 24;
+                        } else if (data === "12 PM") {
                           formattedData = 12;
-                        } else if (data === "1 AM"){
+                        } else if (data === "1 AM") {
                           formattedData = 25;
-                        } else if(data[data.length-2] === "P"){
-                          formattedData = Number(data.split(' ')[0]) +12 ;
-                        }else {
-                          formattedData = Number(data.split(' ')[0]);
+                        } else if (data[data.length - 2] === "P") {
+                          formattedData = Number(data.split(" ")[0]) + 12;
+                        } else {
+                          formattedData = Number(data.split(" ")[0]);
                         }
                       }
-
                     }
                     reservationInstance.notifyEndHour = () => {
                       setEndHourOptions(
@@ -246,8 +230,17 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <Selector
-                  list={endHourOptions.map((hour)=> hour>12?(hour===24?"12 AM":(hour===25?"1 AM":`${hour%12} PM`)): (hour===12?"12 PM":`${hour} AM`))}
-                  style={{ width: "39.2vw" }}
+                  list={endHourOptions.map((hour) =>
+                    hour > 12
+                      ? hour === 24
+                        ? "12 AM"
+                        : hour === 25
+                        ? "1 AM"
+                        : `${hour % 12} PM`
+                      : hour === 12
+                      ? "12 PM"
+                      : `${hour} AM`
+                  )}
                   disabledOption={
                     !props.language
                       ? "Ending hour"
@@ -257,24 +250,23 @@ export default function Contact(props) {
                   }
                   setSelected={(data) => {
                     let formattedData = data;
-                    if (typeof data === typeof "" && data.length > 2){
-                      let lastElem = data[data.length -1];
-                      if (lastElem === "M"){
-                        if(data === "12 AM"){
-                          formattedData = 24
-                        } else if( data === "12 PM"){
+                    if (typeof data === typeof "" && data.length > 2) {
+                      let lastElem = data[data.length - 1];
+                      if (lastElem === "M") {
+                        if (data === "12 AM") {
+                          formattedData = 24;
+                        } else if (data === "12 PM") {
                           formattedData = 12;
-                        } else if (data === "1 AM"){
+                        } else if (data === "1 AM") {
                           formattedData = 25;
-                        } else if(data[data.length-2] === "P"){
-                          formattedData = Number(data.split(' ')[0]) +12 ;
+                        } else if (data[data.length - 2] === "P") {
+                          formattedData = Number(data.split(" ")[0]) + 12;
                         } else {
-                          formattedData = Number(data.split(' ')[0]);
+                          formattedData = Number(data.split(" ")[0]);
                         }
                       }
-
                     }
-                    
+
                     reservationInstance.endingHour = formattedData;
                     setFinalPrice(reservationInstance.calculatedFinalPrice);
                     console.log("event trigger on Ending hour", data);
@@ -287,7 +279,6 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <TextField
-                  width={"39.2vw"}
                   placeholder={Data.FormInput[2]}
                   handleChange={(event) => {
                     console.log(
@@ -302,7 +293,6 @@ export default function Contact(props) {
               <td>
                 {" "}
                 <Selector
-                  style={{ width: "39.2vw" }}
                   list={Data.FormSelect["Event Type"]}
                   disabledOption="Event type"
                   setSelected={(data) => {
@@ -386,7 +376,6 @@ const StyledDiv = styled.div`
   }
   @media (max-width: 768px) {
     * {
-      /* margin: 0; */
       padding: 0;
       box-sizing: border-box;
     }
@@ -486,45 +475,24 @@ const StyledDiv = styled.div`
   .Whatsapp {
     width: 7vw;
   }
-  .Flag {
-    width: 0px;
-    background-color: ${colors.Merino} !important;
-    height: unset;
-    margin-bottom: 1.4vw;
-    @media (max-width: 768px) {
+  /* .FlagTable {
+    margin: 0;
+    padding: 0;
+    tbody {
+    }
+    tr {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 8.9vw !important;
-      margin: 0;
+      justify-content: space-between;
+      .Number {
+        width: 80%;
+        .ENInput {
+          padding: 0.4vw 0;
+          margin: 0;
+        }
+      }
     }
-  }
-  .ENflag {
-    margin-right: 1vw;
-    padding: 0.2vw 5vw 0.15vw 0.8vw;
-    @media (max-width: 768px) {
-      margin: 0;
-      padding: 0;
-    }
-  }
-  .ARflag {
-    margin-left: 1vw;
-    padding: 0.2vw 0.8vw 0.15vw 5vw;
-    @media (max-width: 768px) {
-      margin: 0;
-      padding: 0;
-    }
-  }
-  .EgyptianFlag {
-    width: 1.8vw;
-    height: 1.25vw;
-    padding-top: 0.15vw;
-    @media (max-width: 768px) {
-      width: 80%;
-      height: 4.8vw;
-      padding: 0;
-    }
-  }
+  } */
+
   .Button {
     width: 13.6vw;
     padding: 0.4vw 0vw 0.4vw 0vw;
@@ -547,39 +515,7 @@ const StyledDiv = styled.div`
       margin-top: 2.4vw;
     }
   }
-  .form-table {
-    margin: auto;
-    #start-hour {
-      width: 40.5vw;
 
-      /* Opposite query */
-      @media (max-width: 768px) {
-        width: 39.2vw;
-      }
-    }
-    @media (max-width: 768px) {
-      width: 100%;
-      font-size: 2.4vw !important;
-      margin-bottom: 6.4vw;
-      tr {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2.7vw;
-      }
-      td {
-        .custom-selector {
-          /* width: 100%; */
-          font-size: 2.4vw;
-        }
-        /* width: 100%; */
-        & > * {
-          height: 8.8vw;
-          width: 100%;
-          /* width: 100%; */
-        }
-      }
-    }
-  }
   /* The container */
   .container {
     position: relative;
@@ -668,6 +604,47 @@ const StyledDiv = styled.div`
     width: 14.7vw;
     @media (max-width: 768px) {
       width: 100%;
+    }
+  }
+
+  .form-table {
+    margin: auto;
+    width: 80%;
+
+    tbody {
+      tr {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1vw;
+        @media screen and (max-width: 786px) {
+          flex-direction: column;
+          margin-bottom: 0;
+          td {
+            width: 100% !important;
+            margin-bottom: 4vw;
+            height: 8.8vw;
+            * {
+              height: 100%;
+            }
+          }
+        }
+        td {
+          width: 47%;
+          &.flag-td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .Flag {
+              width: 10%;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;

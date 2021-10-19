@@ -5,7 +5,7 @@ import { createGlobalStyle } from "styled-components";
 import "react-datepicker/dist/react-datepicker.css";
 
 const DatePickerWrapperStyles = createGlobalStyle`
-margin-bottom: 1.4vw;
+/* margin-bottom: 1.4vw; */
 .DatePicker,
 .DatePicker:hover,
 .DatePicker:active {
@@ -19,7 +19,7 @@ margin-bottom: 1.4vw;
   cursor: pointer;
   background-color: ${colors.Merino} !important;
   @media (max-width: 768px) {
-      height: 8.8vw;
+      /* height: 8.8vw; */
       font-size: 2.4vw;
   }
 }
@@ -30,7 +30,7 @@ margin-bottom: 1.4vw;
     overflow: hidden;
 }
 .ENDatePicker {
-  margin-right: 1.6vw;
+  /* margin-right: 1.6vw; */
 }
 
 .ARDatePicker {
@@ -70,8 +70,8 @@ export const DatePickerComponent = (props) => {
   };
 
   let todayDate = new Date(Date.now());
-  let threeMonthMilliseconds = 3*28*24*60*60*1000;
-  let threeMonthFromNow = new Date(Date.now()+threeMonthMilliseconds);
+  let threeMonthMilliseconds = 3 * 28 * 24 * 60 * 60 * 1000;
+  let threeMonthFromNow = new Date(Date.now() + threeMonthMilliseconds);
 
   return (
     <React.Fragment>
