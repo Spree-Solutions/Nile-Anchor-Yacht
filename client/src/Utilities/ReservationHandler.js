@@ -217,7 +217,20 @@ export class ReservationHandler {
 
         this.selectedYacht = yachtCode;
     }
+    isReserveReady(){
+        if(!this.selectedEndingTime || !this._selectedReservationDay || this.calculatedFinalPrice === 0){
+            return false
+        }
+        if (this.isLoading){
+            return false;
+        }
+        return true;
+    }
     async reserve(){
+        
+        if(!this.isReserveReady()){
+            return {result:{error:true}}
+        }
         this.isLoading = true;
         let params = {
             customer_name: this.username,
@@ -269,6 +282,7 @@ export class ReservationHandler {
         if(failedRecords){
             this.isLoading = false;
             let returnValue = {error:true};
+            window.location.href = "/?operation_status=failed";
             return returnValue;
         }
         this._rentalRequestCode = reservationResponse.data.saved_records.RARentalRequest[0].code;
@@ -280,6 +294,8 @@ export class ReservationHandler {
             this.toLocalStorage();
         }else {
             this._transactionState = TRANSACTION_UNINITIALIZED;
+            this.isLoading= false;
+            window.location.href = "/?operation_status=failed";
         }
         this.isLoading = false;
         return response;

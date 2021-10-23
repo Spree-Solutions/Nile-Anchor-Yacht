@@ -109,6 +109,9 @@ export default function Contact(props) {
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            if(!reservationInstance.isReserveReady()){
+              return
+            }
             reservationInstance.reserve().then((result) => {
               if (result.error) {
                 // handle error
