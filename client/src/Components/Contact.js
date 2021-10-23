@@ -345,6 +345,9 @@ export default function Contact(props) {
                   <div
                     className="Button"
                     onClick={(e) => {
+                      if(!reservationInstance.isReserveReady()){
+                        return
+                      }
                       reservationInstance.reserve().then((result) => {
                         if (result.error) {
                           // handle error

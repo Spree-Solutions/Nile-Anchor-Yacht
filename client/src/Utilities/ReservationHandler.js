@@ -217,9 +217,19 @@ export class ReservationHandler {
 
         this.selectedYacht = yachtCode;
     }
-    async reserve(){
+    isReserveReady(){
+        if(!this.selectedEndingTime || !this._selectedReservationDay || this.calculatedFinalPrice === 0){
+            return false
+        }
         if (this.isLoading){
-            return
+            return false;
+        }
+        return true;
+    }
+    async reserve(){
+        
+        if(!this.isReserveReady()){
+            return {result:{error:true}}
         }
         this.isLoading = true;
         let params = {
