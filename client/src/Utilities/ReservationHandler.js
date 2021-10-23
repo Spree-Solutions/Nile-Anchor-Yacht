@@ -218,6 +218,9 @@ export class ReservationHandler {
         this.selectedYacht = yachtCode;
     }
     async reserve(){
+        if (this.isLoading){
+            return
+        }
         this.isLoading = true;
         let params = {
             customer_name: this.username,
@@ -269,6 +272,7 @@ export class ReservationHandler {
         if(failedRecords){
             this.isLoading = false;
             let returnValue = {error:true};
+            window.location.href = "/?operation_status=failed";
             return returnValue;
         }
         this._rentalRequestCode = reservationResponse.data.saved_records.RARentalRequest[0].code;
@@ -280,6 +284,8 @@ export class ReservationHandler {
             this.toLocalStorage();
         }else {
             this._transactionState = TRANSACTION_UNINITIALIZED;
+            this.isLoading= false;
+            window.location.href = "/?operation_status=failed";
         }
         this.isLoading = false;
         return response;
