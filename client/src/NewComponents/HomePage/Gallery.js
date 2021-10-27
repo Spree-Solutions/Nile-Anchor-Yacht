@@ -27,7 +27,7 @@ export default function Gallery(props) {
           <p>{Data.Title}</p>
           <img src={logo} alt="logo" />
         </div>
-        <div className={props.language === "EN" ? "ENTable" : "ARTable"}>
+        {/* <div className={props.language === "EN" ? "ENTable" : "ARTable"}>
           <table>
             <tr>
               <td className="Col1 top">
@@ -50,7 +50,7 @@ export default function Gallery(props) {
               </td>
             </tr>
           </table>
-        </div>
+        </div> */}
         <div>
           <CarouselComponent language={props.language} />
         </div>
@@ -67,11 +67,11 @@ const StyledDiv = styled.div`
   position: relative;
   padding: 0vw 0vw 0vw 0vw;
   font-family: "Askan Regular" !important;
-  background-image: url(${Gallery_Background});
+  /* background-image: url(${Gallery_Background}); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: ${colors.White};
+  color: ${colors.Navy};
   border-bottom: solid 0.35vw black;
   .vertical-line {
     position: absolute;
@@ -116,10 +116,10 @@ const StyledDiv = styled.div`
     }
   }
   .ENTitle {
-    background-color: ${colors.DarkBrown};
+    background-color: ${colors.MainBeige};
     font-family: "Merriweather Regular";
     line-height: 3vw;
-    padding: 1.9vw 5.5vw 1.5vw 5.5vw;
+    padding: 0.2vw 5.5vw 0.2vw 5.5vw;
   }
   .ARTitle {
     background-color: ${colors.DarkBrown};

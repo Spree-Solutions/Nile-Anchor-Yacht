@@ -281,6 +281,7 @@ const StyledDiv = styled.div`
     font-family: "Askan DemiBold" !important;
     font-size: 4vw;
     line-height: 3.5vw;
+    color: grey;
   }
   .TitleRegular {
     font-family: "Askan Light" !important;
