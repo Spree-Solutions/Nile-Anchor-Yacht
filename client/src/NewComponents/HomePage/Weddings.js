@@ -148,16 +148,16 @@ const StyledDiv = styled.div`
     }
   }
   .Wedding_Rings {
-    width: 15.5vw;
-    height: 18vw;
+    /* width: 18.5vw; */
+    height: 19vw;
     @media (max-width: 768px) {
       width: 33.9vw;
       height: 31.75vw;
     }
   }
   .Wedding_Setup {
-    width: 27.25vw;
-    height: 18vw;
+    /* width: 27.25vw; */
+    height: 19vw;
     @media (max-width: 768px) {
       width: 44.8vw;
       height: 31.75vw;

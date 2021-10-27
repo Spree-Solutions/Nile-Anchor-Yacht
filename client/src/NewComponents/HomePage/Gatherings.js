@@ -152,8 +152,8 @@ const StyledDiv = styled.div`
   }
   .Birthday {
     /* width: 13.68vw; */
-    width: 15.5vw;
-    height: 18vw;
+    width: 17.7vw;
+    height: 19vw;
     object-fit: cover;
 
     @media (max-width: 768px) {
@@ -163,8 +163,8 @@ const StyledDiv = styled.div`
   }
   .Party {
     /* width: 21.25vw; */
-    width: 27.25vw;
-    height: 18vw;
+    width: 27vw;
+    height: 19vw;
     object-fit: cover;
     @media (max-width: 768px) {
       width: 33.9vw;

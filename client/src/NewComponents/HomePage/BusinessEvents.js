@@ -121,7 +121,7 @@ const StyledDiv = styled.div`
     padding-left: 27.4vw;
   }
   .Business_Meeting {
-    width: 44.5vw;
+    width: 46.8vw;
     height: 19vw;
     object-fit: cover;
     @media (max-width: 768px) {
