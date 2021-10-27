@@ -4,7 +4,7 @@ import { DataEnglish } from "../../Data/English/DetailsPage/AboutTitle";
 import { DataArabic } from "../../Data/Arabic/DetailsPage/AboutTitle";
 
 import { colors } from "../../Styles/Colors";
-import AboutTitleImg from "../../Images/AboutTitle.jpeg";
+import AboutTitleImg from "../../Images/bee.jpg";
 
 export default function AboutTitle(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -88,6 +88,7 @@ const StyledDiv = styled.div`
   .ImageTitle {
     width: 100%;
     height: 21.6vw;
+    object-fit: cover;
     @media (max-width: 768px) {
       height: 43.2vw;
     }

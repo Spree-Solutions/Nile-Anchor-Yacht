@@ -9,9 +9,9 @@ import { colors } from "../Styles/Colors";
 import Selector from "../Styles/Selector";
 import TextField from "../Styles/TextField";
 
-import call from "../Images/call.png";
-import newsletter from "../Images/newsletter.png";
-import whatsapp_white from "../Images/whatsapp_white.png";
+import call from "../Images/Phone.png";
+import newsletter from "../Images/Email.png";
+import whatsapp_white from "../Images/Whatsaap.png";
 import egyptian_flag from "../Images/egyptian_flag.png";
 
 export default function Contact(props) {

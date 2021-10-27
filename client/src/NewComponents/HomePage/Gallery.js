@@ -7,7 +7,7 @@ import Gallery_Background from "../../Images/Gallery_Background.jpeg";
 import Liberty_Light from "../../Images/Liberty_Light.png";
 import Bella_Light from "../../Images/Bella_Light.png";
 import CarouselComponent from "./Carousel";
-import logo from "../../Images/White_Logo.png";
+import logo from "../../Images/navylogo.png";
 
 export default function Gallery(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

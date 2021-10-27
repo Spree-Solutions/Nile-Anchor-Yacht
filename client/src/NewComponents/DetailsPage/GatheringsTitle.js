@@ -4,7 +4,7 @@ import { DataEnglish } from "../../Data/English/DetailsPage/GatheringsTitle";
 import { DataArabic } from "../../Data/Arabic/DetailsPage/GatheringsTitle";
 
 import { colors } from "../../Styles/Colors";
-import GatheringsTitleImg from "../../Images/GatheringsTitle.jpeg";
+import GatheringsTitleImg from "../../Images/gp.jpg";
 
 export default function GatheringsTitle(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -88,6 +88,7 @@ const StyledDiv = styled.div`
   .ImageTitle {
     width: 100%;
     height: 21.6vw;
+    object-fit: cover;
     border-bottom: 0.7vw solid ${colors.DarkGrey};
 
     @media (max-width: 768px) {
