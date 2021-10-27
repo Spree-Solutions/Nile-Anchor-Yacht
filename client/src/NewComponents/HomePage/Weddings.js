@@ -51,12 +51,12 @@ export default function Weddings(props) {
 }
 const StyledDiv = styled.div`
   padding: 2.5vw 3vw 6vw 5.63vw;
-  color: ${colors.Black};
+  color: ${colors.DarkGrey};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${Wedding_Background});
-  border-bottom: solid 0.35vw black;
+  /* background-image: url(${Wedding_Background}); */
+  /* border-bottom: solid 0.35vw black; */
   height: 15vw;
   @media (max-width: 768px) {
     padding: 9.6vw 8vw 12vw 8vw;
@@ -89,7 +89,7 @@ const StyledDiv = styled.div`
   .TitleBold {
     font-size: 3vw;
     font-family: "Askan Bold" !important;
-    color: ${colors.Pink};
+    /* color: ${colors.Pink}; */
     @media (max-width: 768px) {
       font-size: 5.9vw;
     }
@@ -99,7 +99,7 @@ const StyledDiv = styled.div`
     font-size: 1.3vw;
     line-height: 1.5vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
-    text-align: justify;
+    /* text-align: justify; */
     @media (max-width: 768px) {
       font-size: 3.2vw;
       line-height: normal;
@@ -111,6 +111,9 @@ const StyledDiv = styled.div`
     font-family: "Lato Bold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;
+    a {
+      color: ${colors.DarkGrey};
+    }
     @media (max-width: 768px) {
       font-size: 3.2vw;
       line-height: normal;

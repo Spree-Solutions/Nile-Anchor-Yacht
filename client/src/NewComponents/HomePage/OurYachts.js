@@ -281,11 +281,12 @@ const StyledDiv = styled.div`
     font-family: "Askan DemiBold" !important;
     font-size: 4vw;
     line-height: 3.5vw;
-    color: grey;
+    color: #404040;
   }
   .TitleRegular {
     font-family: "Askan Light" !important;
     padding-bottom: 6.5vw;
+    color: #404040;
   }
   .ListItem {
     font-family: "Askan DemiBold" !important;

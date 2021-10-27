@@ -43,7 +43,7 @@ export default function WeddingsPackage(props) {
   );
 }
 const StyledDiv = styled.div`
-  color: ${colors.Black};
+  color: ${colors.DarkGrey};
   padding: 3.47vw 5.6vw 0vw 5.6vw;
   background-color: ${colors.White};
   text-align: center;
@@ -71,14 +71,14 @@ const StyledDiv = styled.div`
   }
 
   .Title {
-    font-family: "Askan DemiBold" !important;
-    font-size: 2vw;
-    padding: 1vw;
+    font-family: "Lato Regular" !important;
+    font-size: 2.3vw;
+    padding: 0.4vw;
     /* padding: 0vw 0vw 3vw 0vw; */
     width: fit-content;
     margin: auto;
     margin-bottom: 2vw;
-    border: 0.25vw solid black;
+    border: 0.25vw solid ${colors.DarkGrey};
     @media (max-width: 768px) {
       padding: 3vw;
       font-size: 5.9vw;
@@ -88,7 +88,7 @@ const StyledDiv = styled.div`
   }
   .Body {
     font-family: "Lato Regular" !important;
-    font-size: 1.3vw;
+    font-size: 1.9vw;
     line-height: 2.5vw;
     @media (max-width: 768px) {
       padding: 0;

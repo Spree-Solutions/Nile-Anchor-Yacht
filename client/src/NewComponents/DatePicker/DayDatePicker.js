@@ -17,7 +17,7 @@ const DatePickerWrapperStyles = createGlobalStyle`
   font-size: 1vw;
   color: ${colors.Black};
   cursor: pointer;
-  background-color: ${colors.Merino} !important;
+  background-color: ${colors.White} !important;
   @media (max-width: 768px) {
       height: 8.8vw;
     font-size: 2.4vw;

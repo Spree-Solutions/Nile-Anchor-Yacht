@@ -16,7 +16,6 @@ export default function Gallery(props) {
       <div
         className={props.language === "EN" ? "LeftTextAlign" : "RightTextAlign"}
       >
-        <div className="vertical-line"></div>
         <div
           className={
             props.language === "EN"
@@ -72,7 +71,7 @@ const StyledDiv = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   color: ${colors.Navy};
-  border-bottom: solid 0.35vw black;
+  /* border-bottom: solid 0.35vw black; */
   .vertical-line {
     position: absolute;
     left: 46vw;
@@ -190,11 +189,12 @@ const StyledDiv = styled.div`
     }
   }
   .Title {
-    background: rgba(0, 0, 0, 0.7);
+    background: ${colors.MainBeige};
     font-family: "Merriweather Regular";
     font-size: 3.1vw;
     line-height: 3vw;
-    padding: 1.9vw 0vw 1.5vw 5.5vw;
+    /* padding: 1.9vw 0vw 1.5vw 5.5vw; */
+    padding: 0.2vw 5.5vw 0.2vw 5.5vw;
     margin: 3.7vw 0vw 0vw 0vw;
     @media (max-width: 768px) {
       height: 14vw;

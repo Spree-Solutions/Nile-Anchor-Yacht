@@ -109,8 +109,8 @@ export default function Contact(props) {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            if(!reservationInstance.isReserveReady()){
-              return
+            if (!reservationInstance.isReserveReady()) {
+              return;
             }
             reservationInstance.reserve().then((result) => {
               if (result.error) {
@@ -336,9 +336,9 @@ export default function Contact(props) {
           <table className="action-table-booking">
             <tbody>
               <tr>
-                <td className="Col0"></td>
+                {/* <td className="Col0"></td> */}
                 {/* <tr className="special-row-check"> */}
-                <td className="Col1">
+                {/* <td className="Col1">
                   <label class="container">
                     <span class="checkmark">
                       <input
@@ -348,12 +348,12 @@ export default function Contact(props) {
                       />
                     </span>
                   </label>
-                </td>
-                <td className="Col2">
+                </td> */}
+                {/* <td className="Col2">
                   <span onClick={() => setCheckboxStatus(!checkboxStatus)}>
                     {Data.CheckBox}
                   </span>
-                </td>
+                </td> */}
                 {/* </tr> */}
                 <tr>
                   <td className="Col3">
@@ -390,8 +390,8 @@ export default function Contact(props) {
 
 const StyledDiv = styled.div`
   padding: 4vw 5vw 4.3vw 5vw;
-  background-color: ${colors.DarkGrey};
-  color: ${colors.White};
+  background-color: ${colors.MainBeige};
+  color: ${colors.Navy};
   font-family: "Askan Light" !important;
   font-size: 1vw;
   .action-table-booking {
