@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Liberty_Image from "../../Images/Liberty_Image.png";
+import Bella_Image from "../../Images/bella-image.jpeg";
 import { colors } from "../../Styles/Colors";
 import BellaYellow from "../../Images/BellaYellow.png";
 import Liberty_Dark from "../../Images/libDark.png";
@@ -14,7 +15,10 @@ const OurYachtsNewDesign = () => {
           <h1>Yacht</h1>
           <h1>Collection</h1>
         </div>
-        <img src={Liberty_Image} alt="" />
+        <img
+          src={selectedYacht === "liberty" ? Liberty_Image : Bella_Image}
+          alt=""
+        />
         <a href="/#booking">- Book Now</a>
       </div>
       <div className="column column-2">
@@ -99,6 +103,8 @@ const StyledSection = styled.div`
     img {
       width: 30vw;
       width: 90%;
+      height: 23vw;
+      object-fit: cover;
       margin-top: 4vw;
     }
     a {
@@ -125,11 +131,14 @@ const StyledSection = styled.div`
         }
         &:not(:nth-of-type(2)) {
           cursor: pointer;
-          text-decoration: underline;
+          font-weight: 600;
+
+          /* text-decoration: underline; */
         }
         &.selected {
-          font-weight: 600;
-          text-decoration: none;
+          font-weight: 400;
+          /* text-decoration: none; */
+          text-decoration: underline;
         }
       }
       .separator {
