@@ -157,7 +157,7 @@ const StyledSection = styled.div`
     .text {
       margin-top: 5vw;
       font-size: 1.5vw;
-      font-weight: 600;
+      font-weight: 500;
       text-align: left;
     }
   }
