@@ -5,6 +5,7 @@ import { DataArabic } from "../../Data/Arabic/DetailsPage/WeddingsPackage";
 
 import { colors } from "../../Styles/Colors";
 import WeddingsPackages from "../../Images/WeddingsPackages.png";
+import Label from "../Label";
 
 export default function WeddingsPackage(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -31,14 +32,17 @@ export default function WeddingsPackage(props) {
                 }
               />
             </td>
-            <td>
+            {/* <td>
               <div className={props.language === "EN" ? "End_EN" : "End_AR"}>
                 {Data.end}
               </div>
-            </td>
+            </td> */}
           </tr>
         </tbody>
       </table>
+      <div className="label">
+        <Label />
+      </div>
     </StyledDiv>
   );
 }
@@ -47,6 +51,7 @@ const StyledDiv = styled.div`
   padding: 3.47vw 5.6vw 0vw 5.6vw;
   background-color: ${colors.White};
   text-align: center;
+  position: relative;
   @media (max-width: 768px) {
     padding-top: 13.33vw;
     padding-bottom: 0vw;

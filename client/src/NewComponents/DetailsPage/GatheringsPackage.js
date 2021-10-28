@@ -4,6 +4,7 @@ import { DataEnglish } from "../../Data/English/DetailsPage/GatheringsPackage";
 import { DataArabic } from "../../Data/Arabic/DetailsPage/GatheringsPackage";
 
 import { colors } from "../../Styles/Colors";
+import Label from "../Label";
 
 export default function GatheringsPackage(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -16,11 +17,13 @@ export default function GatheringsPackage(props) {
           return <div>{item}</div>;
         })}
       </div>
-      <div className="End">{Data.end}</div>
+      {/* <div className="End">{Data.end}</div> */}
+      <Label />
     </StyledDiv>
   );
 }
 const StyledDiv = styled.div`
+  position: relative;
   color: ${colors.DarkGrey};
   padding: 3.47vw 5.6vw 2.3vw 5.6vw;
   background-color: ${colors.White};
