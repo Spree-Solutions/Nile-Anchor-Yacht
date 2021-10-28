@@ -4,12 +4,25 @@ import { DataEnglish } from "../../Data/English/HomePage/Gallery";
 import { DataArabic } from "../../Data/Arabic/HomePage/Gallery";
 import { colors } from "../../Styles/Colors";
 import Gallery_Background from "../../Images/Gallery_Background.jpeg";
-import Liberty_Light from "../../Images/Liberty_Light.png";
-import Bella_Light from "../../Images/Bella_Light.png";
+import Liberty_Dark from "../../Images/Liberty_Dark.png";
+import Bella_Dark from "../../Images/Bella_Dark.png";
 import CarouselComponent from "./Carousel";
 import logo from "../../Images/navylogo.png";
 
+import CustomCarousel from "../CustomCarousel";
+import Bella1 from "../../Images/Bella1.jpeg";
+import Bella2 from "../../Images/Bella2.jpeg";
+import Bella3 from "../../Images/Bella3.jpeg";
+import Bella4 from "../../Images/Bella4.jpeg";
+import Liberty1 from "../../Images/Liberty1.jpeg";
+import Liberty2 from "../../Images/Liberty2.jpeg";
+import Liberty3 from "../../Images/Liberty3.jpeg";
+import Liberty4 from "../../Images/Liberty4.jpeg";
+
 export default function Gallery(props) {
+  const bellaImages = [Bella1, Bella2, Bella3, Bella4];
+  const libertyImages = [Liberty1, Liberty2, Liberty3, Liberty4];
+  const [selectedYacht, setSelectedYacht] = useState(libertyImages);
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
@@ -26,32 +39,21 @@ export default function Gallery(props) {
           <p>{Data.Title}</p>
           <img src={logo} alt="logo" />
         </div>
-        {/* <div className={props.language === "EN" ? "ENTable" : "ARTable"}>
-          <table>
-            <tr>
-              <td className="Col1 top">
-                <div>
-                  <img src={Liberty_Light} alt="" className="LibertyImage" />
-                </div>
-                <div> {Data.LibertyBody} </div>
-              </td>
-
-              <td
-                className={
-                  props.language === "EN" ? "ENCol2 top" : "ARCol2 top"
-                }
-              >
-                <div>
-                  {" "}
-                  <img src={Bella_Light} alt="" className="BellaImage" />
-                </div>
-                <div>{Data.BellaBody}</div>
-              </td>
-            </tr>
-          </table>
-        </div> */}
-        <div>
-          <CarouselComponent language={props.language} />
+        <div className="heading-section">
+          <img
+            src={Liberty_Dark}
+            alt="liberty"
+            onClick={() => setSelectedYacht(libertyImages)}
+          />
+          <div className="separator"></div>
+          <img
+            src={Bella_Dark}
+            alt="bella"
+            onClick={() => setSelectedYacht(bellaImages)}
+          />
+        </div>
+        <div className="carousel-section">
+          <CustomCarousel imagesArray={selectedYacht} />
         </div>
         <div className="Title">
           {Data.ServicesTitle}{" "}
@@ -72,17 +74,6 @@ const StyledDiv = styled.div`
   background-size: cover;
   color: ${colors.Navy};
   /* border-bottom: solid 0.35vw black; */
-  .vertical-line {
-    position: absolute;
-    left: 46vw;
-    top: 25vw;
-    height: 30vw;
-    width: 0.05vw;
-    background: white;
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
 
   .LeftTextAlign {
     text-align: left;
@@ -207,6 +198,33 @@ const StyledDiv = styled.div`
     }
     .Bold-Title {
       font-family: "Merriweather Bold";
+    }
+  }
+  .heading-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 26vw;
+    margin: auto;
+    padding: 3vw;
+    @media (max-width: 768px) {
+      width: 50vw;
+      justify-content: space-around;
+    }
+    img {
+      width: 10vw;
+      @media (max-width: 768px) {
+        width: 20vw;
+      }
+    }
+    .separator {
+      height: 4vw;
+      width: 0.2vw;
+      background: ${colors.Navy};
+      @media (max-width: 768px) {
+        height: 12vw;
+        width: 0.4vw;
+      }
     }
   }
 `;
