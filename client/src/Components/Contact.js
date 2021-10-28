@@ -43,7 +43,7 @@ export default function Contact(props) {
     window.TanawyComponentTest = reservationInstance;
   }
   return (
-    <StyledDiv>
+    <StyledDiv id="booking">
       <div
         className={
           props.language === "EN"

@@ -12,7 +12,7 @@ const SideSlider = () => {
         </a>
       </div>
       <div className="book-now">
-        <a href="/#booking">Book Now</a>
+        <a href="#booking">Book Now</a>
       </div>
     </StyledSlider>
   );
