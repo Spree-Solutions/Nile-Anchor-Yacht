@@ -131,12 +131,12 @@ const StyledSection = styled.div`
         }
         &:not(:nth-of-type(2)) {
           cursor: pointer;
-          font-weight: 600;
+          font-weight: 400;
 
           /* text-decoration: underline; */
         }
         &.selected {
-          font-weight: 400;
+          font-weight: 600;
           /* text-decoration: none; */
           text-decoration: underline;
         }

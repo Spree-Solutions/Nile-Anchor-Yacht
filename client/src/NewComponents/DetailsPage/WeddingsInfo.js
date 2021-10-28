@@ -66,7 +66,7 @@ const StyledDiv = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${WeddingsInfo_Background});
+  /* background-image: url(${WeddingsInfo_Background}); */
   font-size: 1.8vw;
   line-height: 2.2vw;
   font-family: "Lato Regular" !important;

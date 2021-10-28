@@ -4,7 +4,7 @@ import { DataEnglish } from "../../Data/English/HomePage/Gallery";
 import { DataArabic } from "../../Data/Arabic/HomePage/Gallery";
 import { colors } from "../../Styles/Colors";
 import Gallery_Background from "../../Images/Gallery_Background.jpeg";
-import Liberty_Dark from "../../Images/Liberty_Dark.png";
+import Liberty_Dark2 from "../../Images/Liberty_Dark2.png";
 import Bella_Dark from "../../Images/Bella_Dark.png";
 import CarouselComponent from "./Carousel";
 import logo from "../../Images/navylogo.png";
@@ -41,7 +41,7 @@ export default function Gallery(props) {
         </div>
         <div className="heading-section">
           <img
-            src={Liberty_Dark}
+            src={Liberty_Dark2}
             alt="liberty"
             onClick={() => setSelectedYacht(libertyImages)}
           />

@@ -59,7 +59,7 @@ const StyledDiv = styled.div`
     padding: 0vw 0vw 4vw 0vw;
     @media (max-width: 768px) {
       font-size: 5.9vw;
-      padding-top: 16.5vw;
+      margin-top: 15vw;
       text-align: center;
     }
   }

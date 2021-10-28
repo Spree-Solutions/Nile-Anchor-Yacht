@@ -104,7 +104,9 @@ const StyledDiv = styled.div`
       font-size: 1.3vw;
     }
     @media (max-width: 768px) {
-      font-size: 3.2vw;
+      a {
+        font-size: 3.2vw;
+      }
       margin-bottom: 9vw;
     }
   }
