@@ -87,7 +87,7 @@ const StyledDiv = styled.div`
   }
   .TitleBold {
     width: 13vw;
-    font-size: 2.8vw;
+    font-size: 3vw;
     font-family: "Askan Bold" !important;
     /* color: ${colors.Black}; */
     @media (max-width: 768px) {
@@ -101,8 +101,6 @@ const StyledDiv = styled.div`
     font-size: 1.3vw;
     line-height: 1.5vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
-    text-align: justify;
-
     @media (max-width: 768px) {
       font-size: 3.2vw;
       line-height: normal;
@@ -116,6 +114,7 @@ const StyledDiv = styled.div`
     line-height: 1.4vw;
     a {
       color: ${colors.DarkGrey};
+      font-size: 1.3vw;
     }
     @media (max-width: 768px) {
       font-size: 3.2vw;
@@ -125,7 +124,7 @@ const StyledDiv = styled.div`
 
   .ENcol1 {
     width: 52.5vw;
-    padding-right: 19vw;
+    padding-right: 17vw;
     @media (max-width: 768px) {
       padding: 0;
       width: 100%;

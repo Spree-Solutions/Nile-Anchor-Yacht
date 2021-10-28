@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import imageOne from "../../Images/Gatherings_Background.jpeg";
-import imageTwo from "../../Images/Business_Background.jpeg";
-import imageThree from "../../Images/Party_Bags.jpeg";
-import imageFour from "../../Images/Business_Coffee.jpeg";
+import Bella1 from "../../Images/Bella1.jpeg";
+import Bella2 from "../../Images/Bella2.jpeg";
+import Bella3 from "../../Images/Bella3.jpeg";
+import Bella4 from "../../Images/Bella4.jpeg";
+import Liberty1 from "../../Images/Liberty1.jpeg";
+import Liberty2 from "../../Images/Liberty2.jpeg";
+import Liberty3 from "../../Images/Liberty3.jpeg";
+import Liberty4 from "../../Images/Liberty4.jpeg";
 
 import left_button from "../../Icons/left_button.svg";
 import right_button from "../../Icons/right_button.svg";
@@ -12,17 +16,24 @@ import { colors } from "../../Styles/Colors";
 
 export default function CarouselComponent(props) {
   const [value, setValue] = useState(0);
-  const [slides, setSlides] = useState([
-    <img src={imageOne} alt="" className="image" />,
-    <img src={imageTwo} alt="" className="image" />,
-    <img src={imageThree} alt="" className="image" />,
-    <img src={imageFour} alt="" className="image" />,
-  ]);
+  const bellaImages = [
+    <img src={Bella1} alt="" className="image" />,
+    <img src={Bella2} alt="" className="image" />,
+    <img src={Bella3} alt="" className="image" />,
+    <img src={Bella4} alt="" className="image" />,
+  ];
+  const libertyImages = [
+    <img src={Liberty1} alt="" className="image" />,
+    <img src={Liberty2} alt="" className="image" />,
+    <img src={Liberty3} alt="" className="image" />,
+    <img src={Liberty4} alt="" className="image" />,
+  ];
+  const [slides, setSlides] = useState(bellaImages);
   const [main, setMain] = useState([
-    <img src={imageOne} alt="" className="main" />,
-    <img src={imageTwo} alt="" className="main" />,
-    <img src={imageThree} alt="" className="main" />,
-    <img src={imageFour} alt="" className="main" />,
+    <img src={Bella1} alt="" className="main" />,
+    <img src={Bella2} alt="" className="main" />,
+    <img src={Bella3} alt="" className="main" />,
+    <img src={Bella4} alt="" className="main" />,
   ]);
   const [render, setRender] = useState([0, 1, 2, 3]);
 

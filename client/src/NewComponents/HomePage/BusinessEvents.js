@@ -72,7 +72,7 @@ const StyledDiv = styled.div`
   }
   .TitleBold {
     width: 2vw;
-    font-size: 3vw;
+    font-size: 3.5vw;
     line-height: 3vw;
     font-family: "Askan Bold" !important;
     /* color: ${colors.White}; */
@@ -101,6 +101,7 @@ const StyledDiv = styled.div`
     line-height: 1.4vw;
     a {
       color: ${colors.Navy};
+      font-size: 1.3vw;
     }
     @media (max-width: 768px) {
       font-size: 3.2vw;
@@ -109,7 +110,7 @@ const StyledDiv = styled.div`
   }
   .ENcol1 {
     width: 52.4vw;
-    padding-right: 19vw;
+    padding-right: 17vw;
 
     @media (max-width: 768px) {
       padding: 0;
