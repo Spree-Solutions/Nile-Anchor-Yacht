@@ -21,7 +21,7 @@ export default function AboutInfo(props) {
 }
 
 const StyledDiv = styled.div`
-  color: ${colors.White};
+  color: ${colors.Navy};
   padding: 7.2vw 8vw 6.04vw 8vw;
 
   /* text-align: left; */
@@ -30,7 +30,7 @@ const StyledDiv = styled.div`
     rgba(0, 136, 171, 0.9) 0%,
     rgba(0, 51, 66, 0.9) 100%
   ); */
-  background-image: url(${bluegradient});
+  /* background-image: url(${bluegradient}); */
   background-size: cover;
   @media (max-width: 768px) {
     padding: 0;
@@ -43,8 +43,8 @@ const StyledDiv = styled.div`
     font-family: "Askan Regular" !important;
     font-size: 1.6vw;
     line-height: 2.2vw;
-    text-align: justify;
-    text-align-last: center;
+    /* text-align: justify; */
+    /* text-align-last: center; */
     padding: 0vw 0vw 2.6vw 0vw;
     display: flex;
     flex-direction: column;
@@ -76,6 +76,7 @@ const StyledDiv = styled.div`
     font-size: 2vw;
     margin-top: 1vw;
     text-align: center;
+    text-decoration: underline;
     @media (max-width: 768px) {
       font-family: "Lato Regular" !important;
       font-size: 3.7vw;

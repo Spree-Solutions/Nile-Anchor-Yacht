@@ -4,7 +4,7 @@ import { DataEnglish } from "../../Data/English/DetailsPage/GatheringsTitle";
 import { DataArabic } from "../../Data/Arabic/DetailsPage/GatheringsTitle";
 
 import { colors } from "../../Styles/Colors";
-import GatheringsTitleImg from "../../Images/GatheringsTitle.jpeg";
+import GatheringsTitleImg from "../../Images/gp.jpg";
 
 export default function GatheringsTitle(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -18,7 +18,9 @@ export default function GatheringsTitle(props) {
             : "TitleSection ARRight"
         }
       >
-        <div className="Title">{Data.Title}</div>
+        <div className="Title">
+          <p>{Data.Title}</p>
+        </div>
         <div className="Body">{Data.body}</div>
       </div>
       <div className="ImgDiv">
@@ -29,10 +31,10 @@ export default function GatheringsTitle(props) {
 }
 const StyledDiv = styled.div`
   .TitleSection {
-    color: ${colors.Black};
-    border-bottom: 0.35vw solid black;
+    color: ${colors.Navy};
+    border-bottom: 0.7vw solid ${colors.DarkGrey};
 
-    background-color: ${colors.MainBeige};
+    /* background-color: ${colors.MainBeige}; */
   }
   .ARRight {
     text-align: right;
@@ -53,7 +55,15 @@ const StyledDiv = styled.div`
   .Title {
     font-family: "Askan DemiBold" !important;
     font-size: 4.2vw;
-    padding: 12vw 5.9vw 10vw 5.9vw;
+    padding: 12vw 5.9vw 10vw 0vw;
+    p {
+      margin: 0;
+      padding: 0;
+      background: ${colors.MainBeige};
+      width: fit-content;
+      padding-left: 12vw;
+      padding-right: 1vw;
+    }
     @media (max-width: 768px) {
       font-size: 9.3vw;
       width: 41vw;
@@ -61,12 +71,13 @@ const StyledDiv = styled.div`
     }
   }
   .Body {
-    font-family: "Askan Regular" !important;
+    font-family: "Lato Regular" !important;
     font-size: 1.3vw;
     width: fit-content;
     margin: auto;
     font-size: 2.9vw;
     padding: 1.3vw 0vw 0vw 0vw;
+    color: ${colors.DarkGrey2};
     @media (max-width: 768px) {
       font-size: 3.7vw;
       padding-left: 3vw;
@@ -77,7 +88,8 @@ const StyledDiv = styled.div`
   .ImageTitle {
     width: 100%;
     height: 21.6vw;
-    border-bottom: 0.35vw solid black;
+    object-fit: cover;
+    border-bottom: 0.7vw solid ${colors.DarkGrey};
 
     @media (max-width: 768px) {
       height: 43.2vw;

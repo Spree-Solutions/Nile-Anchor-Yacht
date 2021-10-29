@@ -9,6 +9,7 @@ import WeddingsInfo_1 from "../../Images/WeddingsInfo_1.jpeg";
 import WeddingsInfo_2 from "../../Images/WeddingsInfo_2.jpeg";
 import WeddingsInfo_3 from "../../Images/WeddingsInfo_3.jpeg";
 import WeddingsInfo_Background from "../../Images/WeddingsInfo_Background.jpeg";
+import Label from "../Label";
 
 export default function WeddingsInfo(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -65,7 +66,7 @@ const StyledDiv = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${WeddingsInfo_Background});
+  /* background-image: url(${WeddingsInfo_Background}); */
   font-size: 1.8vw;
   line-height: 2.2vw;
   font-family: "Lato Regular" !important;

@@ -36,9 +36,9 @@ const StyledDiv = styled.div`
     border: none;
     outline: none;
     font-size: 1vw;
-    color: ${colors.Black};
+    color: ${colors.Navy};
     cursor: pointer;
-    background-color: ${colors.Merino} !important;
+    background-color: ${colors.White} !important;
     @media (max-width: 768px) {
       font-size: 2.4vw;
     }

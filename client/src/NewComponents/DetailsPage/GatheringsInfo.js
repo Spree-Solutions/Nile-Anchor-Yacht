@@ -75,18 +75,17 @@ export default function GatheringsInfo(props) {
   );
 }
 const StyledDiv = styled.div`
-  padding: 7.1vw 10.6vw 6.2vw 10.6vw;
+  padding: 7.1vw 7.6vw 6.2vw 7.6vw;
   text-align: left;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${GatheringsInfo_Background});
+  /* background-image: url(${GatheringsInfo_Background}); */
   font-size: 1.5vw;
   line-height: 2.5vw;
   font-family: "Lato Regular" !important;
   color: ${colors.Black};
-  border-bottom: solid 0.35vw black;
-
+  border-bottom: solid 0.4vw ${colors.DarkGrey};
   @media (max-width: 768px) {
     padding: 10.01vw 8.36vw 15.7vw 8.3vw;
     img {

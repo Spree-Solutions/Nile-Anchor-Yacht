@@ -18,7 +18,9 @@ export default function ContactUsTitle(props) {
             : "TitleSection ARRight"
         }
       >
-        <div className="Title">{Data.Title}</div>
+        <div className="Title">
+          <p>{Data.Title}</p>
+        </div>
         {/* <div className="Body">{Data.body}</div> */}
       </div>
     </StyledDiv>
@@ -26,8 +28,8 @@ export default function ContactUsTitle(props) {
 }
 const StyledDiv = styled.div`
   .TitleSection {
-    color: ${colors.Black};
-    background-color: ${colors.MainBeige};
+    color: ${colors.Navy};
+    /* background-color: ${colors.MainBeige}; */
   }
   .ARRight {
     text-align: right;
@@ -48,7 +50,15 @@ const StyledDiv = styled.div`
   .Title {
     font-family: "Askan DemiBold" !important;
     font-size: 4.2vw;
-    padding: 12vw 5.9vw 10vw 5.9vw;
+    padding: 12vw 5.9vw 10vw 0vw;
+    p {
+      margin: 0;
+      padding: 0;
+      background: ${colors.MainBeige};
+      width: fit-content;
+      padding-left: 12vw;
+      padding-right: 1vw;
+    }
     @media (max-width: 768px) {
       font-size: 9.3vw;
       width: 49vw;
