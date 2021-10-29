@@ -40,10 +40,22 @@ export default function Footer(props) {
                 )}
               </td> */}
               <td className="Col3">
-                <img src={fb} alt="fb" className="fb" />
+                <a
+                  target="__blank"
+                  href="https://www.facebook.com/Thenileanchor"
+                >
+                  <img src={fb} alt="fb" className="fb" />
+                </a>
                 {/* <img src={twitter} alt="twitter" className="twitter" /> */}
-                <img src={whatsapp} alt="whatsapp" className="whatsapp" />
-                <img src={instagram} alt="instagram" className="instagram" />
+                <a target="__blank" href="https://wa.me/+201211140222">
+                  <img src={whatsapp} alt="whatsapp" className="whatsapp" />
+                </a>
+                <a
+                  target="__blank"
+                  href="https://www.instagram.com/thenileanchor"
+                >
+                  <img src={instagram} alt="instagram" className="instagram" />
+                </a>
               </td>
               <td className="Col4">
                 <div>{Data.body1}</div>
@@ -62,8 +74,8 @@ export default function Footer(props) {
 const StyledDiv = styled.div`
   font-family: "Askan Light" !important;
   font-size: 1.25vw;
-  color: ${colors.Black};
-  background-color: ${colors.Merino};
+  color: ${colors.DarkGrey};
+  /* background-color: ${colors.Merino}; */
   a {
     text-decoration: none;
     color: black;

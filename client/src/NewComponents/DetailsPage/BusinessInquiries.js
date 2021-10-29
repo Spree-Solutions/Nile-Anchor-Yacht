@@ -11,7 +11,7 @@ export default function BusinessInquiries(props) {
   return (
     <StyledDiv>
       <div className={props.language === "EN" ? "ENLeft" : "ARRight"}>
-        <div className="Body">{Data.body1}</div>
+        <div className="Body Body1">{Data.body1}</div>
         <div className="Body">
           <div>{Data.body2}</div>
           <div>{Data.body3}</div>
@@ -28,7 +28,7 @@ const StyledDiv = styled.div`
   }
 
   color: ${colors.Black};
-  background-color: ${colors.MainBeige};
+  /* background-color: ${colors.MainBeige}; */
   /* background-color: ${colors.White}; */
   .ARRight {
     text-align: right;
@@ -36,7 +36,7 @@ const StyledDiv = styled.div`
   }
   .ENLeft {
     text-align: left;
-    padding: 2vw 10.4vw 9vw 10vw;
+    padding: 2vw 0vw 9vw 0vw;
     @media (max-width: 768px) {
       padding: 0;
       width: 84.8vw;
@@ -48,6 +48,20 @@ const StyledDiv = styled.div`
     font-size: 1.7vw;
     line-height: 2.5vw;
     padding: 3.5vw 0vw 0vw 0vw;
+    color: ${colors.DarkGrey};
+    &.Body1 {
+      padding-left: 13vw;
+      padding-right: 13vw;
+    }
+    div {
+      width: fit-content;
+      padding-left: 3vw;
+      padding-right: 1vw;
+      color: ${colors.DarkGrey2};
+      :first-child {
+        background: ${colors.MainBeige};
+      }
+    }
     &:not(:last-child) {
       text-align: center;
     }
