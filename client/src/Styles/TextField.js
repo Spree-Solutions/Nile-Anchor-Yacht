@@ -26,6 +26,9 @@ export default function TextField(props) {
 
 const StyledDiv = styled.div`
   width: 100%;
+  Input::placeholder { 
+    color: ${colors.Navy};
+  }
   .Input,
   .Input:hover,
   .Input:active {
