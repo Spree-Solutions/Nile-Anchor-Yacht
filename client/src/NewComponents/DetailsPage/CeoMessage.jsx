@@ -7,7 +7,7 @@ import illustration from "../../Images/illust.png";
 const CeoMessage = () => {
   return (
     <StyledSection>
-      <h1>CEO's Message</h1>
+      <h1>CEO's Message.</h1>
       <p>
         “For thousands of years the Nile River has been bestowing its generosity
         to Egyptians through its everlasting water and never ending greenery. It
@@ -31,7 +31,7 @@ const StyledSection = styled.div`
   border-bottom: 0.3vw solid ${colors.DarkGrey};
   overflow-y: hidden;
   /* height: 90vh; */
-  padding: 2vw 2.5vw;
+  padding: 2vw 0vw;
   padding-bottom: 0;
   font-family: "Lato Regular";
   color: ${colors.DarkGrey};
@@ -40,12 +40,18 @@ const StyledSection = styled.div`
     padding-bottom: 0;
   }
   h1 {
-    font-size: 4.2vw;
+    font-size: 2.5vw;
     font-family: "Askan DemiBold";
+    margin: 0;
+    padding: 0;
+    background: ${colors.MainBeige};
+    width: fit-content;
+    padding-left: 12vw;
+    padding-right: 1vw;
   }
   p {
-    font-size: 2vw;
-    padding: 0 vw;
+    font-size: 1.6vw;
+    padding: 0 2.5vw;
     text-align: justify;
     @media (max-width: 768px) {
       font-size: 3.7vw;
@@ -56,7 +62,7 @@ const StyledSection = styled.div`
     justify-content: flex-start;
     align-items: flex-end;
     margin-top: 4vw;
-    padding: 0;
+    padding: 0 2.5vw;
     transform: translateY(1vw);
     @media (max-width: 768px) {
       justify-content: center;

@@ -18,28 +18,7 @@ export default function WeddingsPackage(props) {
           return <div>{item}</div>;
         })}
       </div>
-      <table className="cta-table">
-        <tbody>
-          <tr className="cta-row">
-            <td>
-              <img
-                src={WeddingsPackages}
-                alt=""
-                className={
-                  props.language === "EN"
-                    ? "WeddingsPackages_EN"
-                    : "WeddingsPackages_AR"
-                }
-              />
-            </td>
-            {/* <td>
-              <div className={props.language === "EN" ? "End_EN" : "End_AR"}>
-                {Data.end}
-              </div>
-            </td> */}
-          </tr>
-        </tbody>
-      </table>
+
       <div className="label">
         <Label />
       </div>
@@ -48,7 +27,7 @@ export default function WeddingsPackage(props) {
 }
 const StyledDiv = styled.div`
   color: ${colors.DarkGrey};
-  padding: 3.47vw 5.6vw 0vw 5.6vw;
+  padding: 3.47vw 5.6vw 10vw 5.6vw;
   background-color: ${colors.White};
   text-align: center;
   position: relative;

@@ -23,6 +23,7 @@ export default function Gallery(props) {
   const bellaImages = [Bella1, Bella2, Bella3, Bella4];
   const libertyImages = [Liberty1, Liberty2, Liberty3, Liberty4];
   const [selectedYacht, setSelectedYacht] = useState(libertyImages);
+  const [selectedYachtName, setSelectedYachtName] = useState("liberty");
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
@@ -43,13 +44,22 @@ export default function Gallery(props) {
           <img
             src={Liberty_Dark2}
             alt="liberty"
-            onClick={() => setSelectedYacht(libertyImages)}
+            onClick={() => {
+              setSelectedYacht(libertyImages);
+              setSelectedYachtName("liberty");
+            }}
+            className={`${selectedYachtName === "liberty" ? "selected" : ""}`}
           />
           <div className="separator"></div>
           <img
             src={Bella_Dark}
+            id="bella"
             alt="bella"
-            onClick={() => setSelectedYacht(bellaImages)}
+            onClick={() => {
+              setSelectedYacht(bellaImages);
+              setSelectedYachtName("bella");
+            }}
+            className={`${selectedYachtName === "bella" ? "selected" : ""}`}
           />
         </div>
         <div className="carousel-section">
@@ -212,7 +222,15 @@ const StyledDiv = styled.div`
       justify-content: space-around;
     }
     img {
+      cursor: pointer;
       width: 10vw;
+      padding-bottom: 0.2vw;
+      &#bella {
+        margin-top: 0.5vw;
+      }
+      &.selected {
+        border-bottom: solid 0.1vw ${colors.Navy};
+      }
       @media (max-width: 768px) {
         width: 20vw;
       }
