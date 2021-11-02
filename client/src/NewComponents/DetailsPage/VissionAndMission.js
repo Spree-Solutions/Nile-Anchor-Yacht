@@ -81,7 +81,8 @@ const StyledDiv = styled.div`
   }
   .Subtitle {
     font-family: "Lato Bold" !important;
-    font-size: 1.6vw;
+    font-size: 1.9vw;
+    margin-right: 0.6vw;
     /* line-height: 1.3vw; */
     @media (max-width: 768px) {
       font-size: 3.7vw;
