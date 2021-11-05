@@ -95,7 +95,7 @@ const StyledDiv = styled.div`
   .Body {
     font-family: "Askan Light" !important;
     font-size: 1.2vw;
-    text-align: justify;
+    text-align: center;
     width: 53vw;
     padding: 0vw 3.5vw 0vw 7vw;
     line-height: 1.7vw;

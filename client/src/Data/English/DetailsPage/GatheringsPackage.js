@@ -3,7 +3,7 @@ const DataEnglish = {
     "2 Hour Yacht Cruise (Basic)",
     "Unlimited soft and Warm Drinks",
     "Table Setup",
-    "Sound System (Boss), DJ and Microphone",
+    "Sound System (Bose), DJ and Microphone",
     "Waiter Services",
     "Karaoke",
     "Lighting System",
