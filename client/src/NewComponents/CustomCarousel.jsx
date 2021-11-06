@@ -61,6 +61,7 @@ const CustomCarousel = ({ imagesArray }) => {
     </StyledCarousel>
   );
 };
+// img changed to contain instead of cover
 const StyledCarousel = styled.div`
   * {
     all: unset;
@@ -93,7 +94,7 @@ const StyledCarousel = styled.div`
     img {
       min-width: 100%;
       max-width: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
   .bullets {

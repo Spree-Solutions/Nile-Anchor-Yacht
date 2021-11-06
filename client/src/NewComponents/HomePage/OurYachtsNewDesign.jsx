@@ -104,7 +104,7 @@ const StyledSection = styled.div`
       width: 30vw;
       width: 90%;
       height: 23vw;
-      object-fit: cover;
+      object-fit: contain;
       margin-top: 4vw;
     }
     a {
