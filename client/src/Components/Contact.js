@@ -374,7 +374,7 @@ export default function Contact(props) {
                     <td>
                       {" "}
                       <div className="final-message">
-                        {`Total price EGP${(finalPrice * 2).toFixed(2)}`}
+                        {`Initial price EGP${(finalPrice * 2).toFixed(2)}`}
                       </div>{" "}
                     </td>
                   )}
