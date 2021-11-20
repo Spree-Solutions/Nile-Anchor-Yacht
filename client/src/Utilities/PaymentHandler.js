@@ -89,7 +89,7 @@ class CowpayService {
             amount: params.amount,
             hash: this.merchant_hash
         })
-        return axios.post('iframe/token', {
+        return axios.post("payment", {
             merchant_reference_id: params.merchant_reference_id,
             customer_merchant_profile_id: params.customer_merchant_profile_id,
             customer_name: params.customer_name,
