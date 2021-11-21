@@ -70,8 +70,10 @@ export default function Contact(props) {
                   props.language === "EN" ? "Action ENcall" : "Action ARcall"
                 }
               >
-                <div className="ButtonLabel">{Data.ButtonLabel[0]}</div>
-                <div>{Data.ButtonAction[0]}</div>
+                <div className="ButtonLabel">Contact Us</div>
+                <div>
+                  <a href="tel:+201211140222">01211140222</a>
+                </div>
               </td>
               <td className="Icons">
                 <img
@@ -88,8 +90,15 @@ export default function Contact(props) {
                 }
               >
                 {" "}
-                <div className="ButtonLabel">{Data.ButtonLabel[1]}</div>
-                <div>{Data.ButtonAction[1]}</div>
+                <div className="ButtonLabel">E-mail</div>
+                <div>
+                  <a
+                    href="mailto:Info@thenileanchor.com
+"
+                  >
+                    Info@thenileanchor.com
+                  </a>
+                </div>
               </td>
               <td className="Icons">
                 <img
@@ -100,8 +109,12 @@ export default function Contact(props) {
               </td>
               <td className="Action Whatsapp">
                 {" "}
-                <div className="ButtonLabel">{Data.ButtonLabel[2]}</div>
-                <div>{Data.ButtonAction[2]}</div>
+                <div className="ButtonLabel">Whatsapp</div>
+                <div>
+                  <a target="__blank" href="https://wa.me/+201211140222">
+                    01211140222
+                  </a>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -482,6 +495,10 @@ const StyledDiv = styled.div`
   .ENcall {
     padding-right: 4.4vw;
     width: 9.1vw;
+    a {
+      text-decoration: none;
+      color: ${colors.Navy};
+    }
   }
   .ARcall {
     padding-left: 4.4vw;
@@ -490,6 +507,10 @@ const StyledDiv = styled.div`
   .ENnewsletter {
     padding-right: 3vw;
     width: 9vw;
+    a {
+      text-decoration: none;
+      color: ${colors.Navy};
+    }
   }
   .ARnewsletter {
     padding-left: 3vw;
@@ -497,6 +518,10 @@ const StyledDiv = styled.div`
   }
   .Whatsapp {
     width: 7vw;
+    a {
+      text-decoration: none;
+      color: ${colors.Navy};
+    }
   }
   /* .FlagTable {
     margin: 0;

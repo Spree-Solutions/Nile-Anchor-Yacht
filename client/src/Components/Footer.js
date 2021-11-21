@@ -60,8 +60,14 @@ export default function Footer(props) {
               <td className="Col4">
                 <div>{Data.body1}</div>
                 <div>{Data.body2}</div>
-                <div>{Data.body3}</div>
-                <div>{Data.body4}</div>
+                <div>
+                  Tel: <a href="tel:+201211140222">01211140222</a>
+                </div>
+                <div>
+                  <a href="mailto:Info@thenileanchor.com">
+                    Info@thenileanchor.com
+                  </a>
+                </div>
                 <div>{Data.body5}</div>
               </td>
             </tr>
