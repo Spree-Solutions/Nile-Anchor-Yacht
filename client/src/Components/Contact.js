@@ -109,10 +109,10 @@ export default function Contact(props) {
               </td>
               <td className="Action Whatsapp">
                 {" "}
-                <div className="ButtonLabel">Whatsapp</div>
+                <div className="ButtonLabel">Chat with us on</div>
                 <div>
                   <a target="__blank" href="https://wa.me/+201211140222">
-                    01211140222
+                    WhatsApp
                   </a>
                 </div>
               </td>
