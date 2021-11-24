@@ -23,9 +23,7 @@ export default function AboutTitle(props) {
         </div>
         <div className="Body">{Data.body}</div>
       </div>
-      <div className="ImgDiv">
-        <img src={AboutTitleImg} alt="" className="ImageTitle" />
-      </div>
+
     </StyledDiv>
   );
 }
