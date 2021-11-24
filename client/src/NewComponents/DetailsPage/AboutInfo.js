@@ -14,7 +14,9 @@ export default function AboutInfo(props) {
   return (
     <StyledDiv>
       <div className="Body">{Data.body}</div>
-      <img src={AboutTitle} alt="" className="ImageAboutInfo" />
+      <iframe width="1000" height="530"
+        src="https://www.youtube.com/embed/IZOxeMSrkPE?autoplay=1&mute=1">
+      </iframe>
       <div className="Label">{Data.label}</div>
     </StyledDiv>
   );

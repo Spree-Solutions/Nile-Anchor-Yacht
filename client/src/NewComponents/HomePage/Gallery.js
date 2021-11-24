@@ -21,10 +21,13 @@ import Liberty4 from "../../Images/Liberty4.jpeg";
 import Liberty5 from "../../Images/Liberty5.jpeg";
 import Liberty6 from "../../Images/Liberty6.jpeg";
 import Liberty7 from "../../Images/Liberty7.jpeg";
+import Liberty8 from "../../Images/Liberty8.jpeg";
+import Liberty9 from "../../Images/Liberty9.jpeg";
+import Liberty10 from "../../Images/Liberty10.jpeg";
 
 export default function Gallery(props) {
   const bellaImages = [Bella1, Bella2, Bella3, Bella4];
-  const libertyImages = [Liberty1, Liberty2, Liberty3, Liberty4, Liberty5, Liberty6, Liberty7];
+  const libertyImages = [Liberty1, Liberty2, Liberty3, Liberty4, Liberty5, Liberty6, Liberty7, Liberty8, Liberty9, Liberty10];
   const [selectedYacht, setSelectedYacht] = useState(libertyImages);
   const [selectedYachtName, setSelectedYachtName] = useState("liberty");
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
