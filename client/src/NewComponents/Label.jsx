@@ -7,7 +7,7 @@ const Label = () => {
   return (
     <Styled>
       <div>
-        <p>HOTLINE : 012 1114 0222</p>
+        <p>Call On : 012 1114 0222</p>
       </div>
     </Styled>
   );

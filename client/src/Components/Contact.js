@@ -93,10 +93,10 @@ export default function Contact(props) {
                 <div className="ButtonLabel">E-mail</div>
                 <div>
                   <a
-                    href="mailto:Info@thenileanchor.com
+                    href="mailto:Reservation@thenileanchor.com
 "
                   >
-                    Info@thenileanchor.com
+                    Reservation@thenileanchor.com
                   </a>
                 </div>
               </td>
@@ -387,7 +387,7 @@ export default function Contact(props) {
                     <td>
                       {" "}
                       <div className="final-message">
-                        {`Initial price EGP${(finalPrice * 2).toFixed(2)}`}
+                        {`Initial price EGP  ${(finalPrice * 2).toFixed(2)}`}
                       </div>{" "}
                     </td>
                   )}
