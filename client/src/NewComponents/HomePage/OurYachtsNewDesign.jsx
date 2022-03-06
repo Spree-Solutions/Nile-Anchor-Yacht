@@ -60,7 +60,7 @@ const OurYachtsNewDesign = () => {
               overall look. Smaller than the liberty yacht in size yet
               stands-out elegantly as it cruises throughout Cairo’s Nile River.
               The yacht offers three decks with a classic high- end interior and
-              exterior design with the capacity to cater around 40 passengers.
+              exterior design with the capacity to cater around 30 passengers.
               The upper deck comes with tinted windows and a 360-degree
               panoramic view, giving our delightful guests the chance to
               privately experience Cairo’s Nile River.

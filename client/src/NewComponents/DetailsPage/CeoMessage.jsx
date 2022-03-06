@@ -34,7 +34,7 @@ const StyledSection = styled.div`
   padding: 2vw 0vw;
   padding-bottom: 0;
   font-family: "Lato Regular";
-  color: ${colors.DarkGrey};
+  color: ${colors.DarkGrey2};
   @media (max-width: 768px) {
     padding: 8vw 7.5vw;
     padding-bottom: 0;

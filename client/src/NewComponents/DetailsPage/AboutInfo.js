@@ -23,7 +23,6 @@ export default function AboutInfo(props) {
 }
 
 const StyledDiv = styled.div`
-  color: ${colors.Navy};
   padding: 7.2vw 8vw 6.04vw 8vw;
 
   /* text-align: left; */
@@ -42,6 +41,7 @@ const StyledDiv = styled.div`
   }
 
   .Body {
+    color: ${colors.DarkGrey2};
     font-family: "Askan Regular" !important;
     font-size: 1.6vw;
     line-height: 2.2vw;
