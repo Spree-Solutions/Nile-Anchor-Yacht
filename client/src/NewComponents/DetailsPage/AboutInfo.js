@@ -14,9 +14,11 @@ export default function AboutInfo(props) {
   return (
     <StyledDiv>
       <div className="Body">{Data.body}</div>
-      <iframe width="1000" height="530"
-        src="https://www.youtube.com/embed/IZOxeMSrkPE?rel=0&mute=1">
-      </iframe>
+      <iframe
+        width="1000"
+        height="530"
+        src="https://www.youtube.com/embed/IZOxeMSrkPE?rel=0&mute=1"
+      ></iframe>
       <div className="Label">{Data.label}</div>
     </StyledDiv>
   );
@@ -43,8 +45,8 @@ const StyledDiv = styled.div`
   .Body {
     color: ${colors.DarkGrey2};
     font-family: "Askan Regular" !important;
-    font-size: 1.6vw;
-    line-height: 2.2vw;
+    font-size: 1.9vw;
+    line-height: 2.5vw;
     /* text-align: justify; */
     /* text-align-last: center; */
     padding: 0vw 0vw 2.6vw 0vw;

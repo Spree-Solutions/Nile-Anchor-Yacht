@@ -50,7 +50,8 @@ const StyledSection = styled.div`
     padding-right: 1vw;
   }
   p {
-    font-size: 1.6vw;
+    font-size: 1.9vw;
+    line-height: 2.5vw;
     padding: 0 2.5vw;
     text-align: justify;
     @media (max-width: 768px) {
