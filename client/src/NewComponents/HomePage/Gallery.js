@@ -10,10 +10,13 @@ import CarouselComponent from "./Carousel";
 import logo from "../../Images/navylogo.png";
 
 import CustomCarousel from "../CustomCarousel";
+import Bella0 from "../../Images/Bella0.jpeg";
 import Bella1 from "../../Images/Bella1.jpeg";
 import Bella2 from "../../Images/Bella2.jpeg";
 import Bella3 from "../../Images/Bella3.jpeg";
 import Bella4 from "../../Images/Bella4.jpeg";
+import Bella5 from "../../Images/Bella5.jpeg";
+import Bella6 from "../../Images/Bella6.jpg";
 import Liberty1 from "../../Images/Liberty1.jpeg";
 import Liberty2 from "../../Images/Liberty2.jpeg";
 import Liberty3 from "../../Images/Liberty3.jpeg";
@@ -26,8 +29,19 @@ import Liberty9 from "../../Images/Liberty9.jpeg";
 import Liberty10 from "../../Images/Liberty10.jpeg";
 
 export default function Gallery(props) {
-  const bellaImages = [Bella1, Bella2, Bella3, Bella4];
-  const libertyImages = [Liberty1, Liberty2, Liberty3, Liberty4, Liberty5, Liberty6, Liberty7, Liberty8, Liberty9, Liberty10];
+  const bellaImages = [Bella0, Bella1, Bella2, Bella3, Bella4, Bella5, Bella6];
+  const libertyImages = [
+    Liberty1,
+    Liberty2,
+    Liberty3,
+    Liberty4,
+    Liberty5,
+    Liberty6,
+    Liberty7,
+    Liberty8,
+    Liberty9,
+    Liberty10,
+  ];
   const [selectedYacht, setSelectedYacht] = useState(libertyImages);
   const [selectedYachtName, setSelectedYachtName] = useState("liberty");
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
