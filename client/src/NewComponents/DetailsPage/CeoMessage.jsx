@@ -20,7 +20,8 @@ const CeoMessage = () => {
         <img src={ceo} alt="ceo" className="ceo" />
         <div className="illustration">
           <img src={illustration} alt="" />
-          <p>- Bassel El Batouty CEO</p>
+          <p>Bassel El Batouty</p>
+          <p>Chief Executive Officer</p>
         </div>
       </div>
     </StyledSection>
@@ -36,7 +37,7 @@ const StyledSection = styled.div`
   font-family: "Lato Regular";
   color: ${colors.DarkGrey2};
   @media (max-width: 768px) {
-    padding: 8vw 7.5vw;
+    padding: 8vw 0vw;
     padding-bottom: 0;
   }
   h1 {
@@ -48,6 +49,9 @@ const StyledSection = styled.div`
     width: fit-content;
     padding-left: 12vw;
     padding-right: 1vw;
+    @media (max-width: 768px) {
+      font-size: 5.9vw;
+    }
   }
   p {
     font-size: 1.9vw;
@@ -56,6 +60,7 @@ const StyledSection = styled.div`
     text-align: justify;
     @media (max-width: 768px) {
       font-size: 3.7vw;
+      line-height: 5.3vw;
     }
   }
   .ceo-image {
@@ -85,15 +90,28 @@ const StyledSection = styled.div`
       }
       p {
         position: absolute;
-        top: 8vw;
+        top: 9vw;
         left: 20vw;
-        margin: 0;
-        font-size: 2vw;
-        font-weight: 700;
-        font-family: "Askan DemiBold";
-
+        font-size: 1vw;
+        opacity: 0.8;
         @media (max-width: 768px) {
-          top: 13vw;
+          top: 15vw;
+          font-size: 2.5vw;
+          left: 0;
+        }
+
+        &:first-of-type {
+          opacity: 1;
+          top: 8vw;
+          /* left: 6vw; */
+          margin: 0;
+          font-size: 2vw;
+          font-weight: 700;
+          font-family: "Askan DemiBold";
+          @media (max-width: 768px) {
+            top: 13vw;
+            font-size: 5vw;
+          }
         }
       }
     }
