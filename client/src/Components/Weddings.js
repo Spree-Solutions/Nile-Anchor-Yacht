@@ -5,8 +5,8 @@ import { colors } from "../Styles/Colors";
 
 // import { isMobileOnly } from "react-device-detect";
 
-import Wedding_Rings from "../Images/Wedding_Rings.png";
-import Wedding_Setup from "../Images/Wedding_Setup.png";
+import Wedding_Rings from "../Images/Wedding_Rings.jpeg";
+import Wedding_Setup from "../Images/Wedding_Setup.jpeg";
 
 export default function Weddings(props) {
   return (

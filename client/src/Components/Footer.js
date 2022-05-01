@@ -9,6 +9,7 @@ import fb from "../Icons/fb.svg";
 import instagram from "../Icons/instagram.svg";
 import twitter from "../Icons/twitter.svg";
 import whatsapp from "../Icons/whatsapp.svg";
+import { Link } from "react-router-dom";
 
 export default function Footer(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -27,22 +28,46 @@ export default function Footer(props) {
               <td className="Col1">
                 <img src={Logo} alt="Logo" className="Logo" />
               </td>
-              <td className="Col2">
-                {Data.FooterTags.map((item, index) => (
-                  <span className="Item">{item}</span>
-                ))}
-              </td>
+              {/* <td className="Col2">
+                {Data.FooterTags.map((item, index) =>
+                  item === "Contact Us" ? (
+                    <Link className="Item" to="/contact-us">
+                      {item}
+                    </Link>
+                  ) : (
+                    <span className="Item">{item}</span>
+                  )
+                )}
+              </td> */}
               <td className="Col3">
-                <img src={fb} alt="fb" className="fb" />
-                <img src={twitter} alt="twitter" className="twitter" />
-                <img src={whatsapp} alt="whatsapp" className="whatsapp" />
-                <img src={instagram} alt="instagram" className="instagram" />
+                <a
+                  target="__blank"
+                  href="https://www.facebook.com/Thenileanchor"
+                >
+                  <img src={fb} alt="fb" className="fb" />
+                </a>
+                {/* <img src={twitter} alt="twitter" className="twitter" /> */}
+                <a target="__blank" href="https://wa.me/+201211140222">
+                  <img src={whatsapp} alt="whatsapp" className="whatsapp" />
+                </a>
+                <a
+                  target="__blank"
+                  href="https://www.instagram.com/thenileanchor"
+                >
+                  <img src={instagram} alt="instagram" className="instagram" />
+                </a>
               </td>
               <td className="Col4">
                 <div>{Data.body1}</div>
                 <div>{Data.body2}</div>
-                <div>{Data.body3}</div>
-                <div>{Data.body4}</div>
+                <div>
+                  Tel: <a href="tel:+201211140222">01211140222</a>
+                </div>
+                <div>
+                  <a href="mailto:Info@thenileanchor.com">
+                    Info@thenileanchor.com
+                  </a>
+                </div>
                 <div>{Data.body5}</div>
               </td>
             </tr>
@@ -55,11 +80,18 @@ export default function Footer(props) {
 const StyledDiv = styled.div`
   font-family: "Askan Light" !important;
   font-size: 1.25vw;
-  color: ${colors.Black};
-  background-color: ${colors.Merino};
+  color: ${colors.DarkGrey};
+  /* background-color: ${colors.Merino}; */
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   .EnglishComponentPadding {
-    padding: 3.75vw 5.6vw 5vw 3.55vw;
+    padding: 3.75vw 3vw 5vw 3vw;
+    @media (max-width: 768px) {
+      padding: 7.73vw 30vw 10.4vw 30vw;
+    }
     text-align: left;
   }
   .ArabicComponentPadding {
@@ -71,27 +103,60 @@ const StyledDiv = styled.div`
   td {
     vertical-align: top;
   }
+  table {
+    width: 100%;
+    tr {
+      /* width: 100%; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      tr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 
   .Logo {
     width: 14.6vw;
     height: 8vw;
+    @media (max-width: 768px) {
+      width: 26.1vw;
+      height: 14.13vw;
+    }
   }
 
-  .Col1 {
-    width: 18.75vw;
-  }
-  .Col2 {
-    width: 19vw;
-    padding: 4.5vw 0vw 0vw 1vw;
-  }
   .Col3 {
-    width: 28vw;
-    padding: 4.1vw 0vw 2.2vw 5.2vw;
+    @media (max-width: 768px) {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding-top: 12.8vw;
+      padding-left: 0;
+      padding-right: 0;
+      margin: auto;
+      & > * {
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
   }
   .Col4 {
-    width: 18.5vw;
+    /* width: 18.5vw; */
     font-size: 1.1vw;
     padding: 2vw 0vw 0vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 3.2vw;
+      width: 38.7vw;
+      padding-top: 9.1vw;
+    }
   }
 
   .Item {
@@ -105,20 +170,32 @@ const StyledDiv = styled.div`
     width: 2.43vw;
     margin-right: 3.75vw;
     cursor: pointer;
+    @media (max-width: 768px) {
+      width: 4.5vw;
+    }
   }
   .twitter {
     width: 2.43vw;
     margin-right: 3.75vw;
     cursor: pointer;
+    @media (max-width: 768px) {
+      width: 4.5vw;
+    }
   }
   .whatsapp {
     width: 2.43vw;
     margin-right: 3.75vw;
     cursor: pointer;
+    @media (max-width: 768px) {
+      width: 4.5vw;
+    }
   }
   .instagram {
     width: 2.43vw;
     margin-right: 3.75vw;
     cursor: pointer;
+    @media (max-width: 768px) {
+      width: 4.5vw;
+    }
   }
 `;

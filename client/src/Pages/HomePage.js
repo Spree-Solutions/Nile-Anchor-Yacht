@@ -10,42 +10,49 @@ import Error from "./../NewComponents/HomePage/Error";
 import Success from "./../NewComponents/HomePage/Success";
 
 export default function HomePage(props) {
+  if (typeof window !== typeof undefined) {
+    const params = new URLSearchParams(
+      window.location && window.location.search
+    ); // id=123
+    let operationStatus = params.get("operation_status"); // 123
+    if (operationStatus === "success") {
+      props.setShowSuccess(true);
+    }
+    if (operationStatus === "failed") {
+      props.setShowError(true);
+    }
+  }
   return (
     <div>
-      <div ref={props.References.AboutUsRef}>
-        <Navbar
-          executeScroll={props.executeScroll}
-          References={props.References}
-          setLanguage={props.setLanguage}
-          language={props.language}
-        />
+      <div>
         <Welcome
+          id="about-us"
           executeScroll={props.executeScroll}
           References={props.References}
           setLanguage={props.setLanguage}
           language={props.language}
         />
       </div>
-      <div ref={props.References.OurYachtsRef}>
+      <div id="our-yachts">
         <OurYachts
           language={props.language}
           executeScroll={props.executeScroll}
           References={props.References}
         />
       </div>
-      <div ref={props.References.GalleryRef}>
+      <div id="gallery">
         <Gallery language={props.language} />
       </div>
-      <div ref={props.References.OurServicesRef}>
+      <div id="our-services">
         <OurServices language={props.language} />
       </div>
-      <div ref={props.References.AdditionalServicesRef}>
+      {/* <div id="additional-services">
         <Partners language={props.language} />
-      </div>
-      <div ref={props.References.ContactRef}>
+      </div> */}
+      <div id="booking">
         <Contact language={props.language} />
       </div>
-      <Footer language={props.language} />
+      {/* <Footer language={props.language} /> */}
       <Error
         language={props.language}
         showError={props.showError}

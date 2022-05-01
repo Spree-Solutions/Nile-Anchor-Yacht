@@ -27,30 +27,66 @@ export default function VissionAndMission(props) {
 }
 
 const StyledDiv = styled.div`
-  color: ${colors.Black};
-  padding: 3.61vw 28.3vw 4.72vw 28.3vw;
-  background-color: ${colors.MainBeige};
+  color: ${colors.DarkGrey};
+  /* background-color: ${colors.MainBeige}; */
+  padding: 3.61vw 0vw 4.72vw 0vw;
+  /* padding: 3.61vw 8.3vw 4.72vw 8.3vw; */
+  @media (max-width: 768px) {
+    padding: 0;
+    padding-bottom: 36.3vw;
+  }
   .ARRight {
     text-align: right;
   }
   .ENLeft {
     text-align: left;
+    div {
+      &:first-child {
+        background: ${colors.MainBeige};
+        padding-right: 1vw;
+        padding-bottom: 0;
+        margin-bottom: 4vw;
+        width: fit-content;
+      }
+      padding-left: 8.3vw;
+      padding-right: 8.3vw;
+    }
   }
   .Title {
     font-family: "Askan DemiBold" !important;
-    font-size: 2vw;
-    text-align: center;
+    font-size: 2.5vw;
+    /* text-align: left; */
     padding: 0vw 0vw 4vw 0vw;
+    @media (max-width: 768px) {
+      font-size: 5.9vw;
+      margin-top: 15vw;
+      text-align: center;
+    }
   }
   .Body {
     font-family: "Lato Regular" !important;
-    font-size: 1vw;
-    line-height: 1.3vw;
+    font-size: 1.9vw;
+    line-height: 2.5vw;
     padding: 0vw 0vw 1.4vw 0vw;
+    color: ${colors.DarkGrey2};
+    @media (max-width: 768px) {
+      width: 85vw;
+      font-size: 3.7vw;
+      line-height: 5.3vw;
+      margin: auto;
+      &:not(:first-child) {
+        margin-top: 8vw;
+      }
+    }
   }
   .Subtitle {
     font-family: "Lato Bold" !important;
-    font-size: 1vw;
-    line-height: 1.3vw;
+    font-size: 1.9vw;
+    margin-right: 0.6vw;
+    /* line-height: 1.3vw; */
+    @media (max-width: 768px) {
+      font-size: 3.7vw;
+      line-height: 5.3vw;
+    }
   }
 `;

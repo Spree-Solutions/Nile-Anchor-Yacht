@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { DataEnglish } from "../Data/English/OurYachts";
 import { DataArabic } from "../Data/Arabic/OurYachts";
 import { colors } from "../Styles/Colors";
-import Bella_Dark from "../Images/Bella_Dark.png";
+import Bella_Dark from "../Images/Bella_Dark.jpeg";
 import Liberty_Dark from "../Images/Liberty_Dark.png";
 import Liberty_Light from "../Images/Liberty_Light.png";
 import Liberty_Image from "../Images/Liberty_Image.png";

@@ -1,3 +1,6 @@
+* {
+  scroll-behavior: smooth;
+}
 .App {
   text-align: center;
   cursor: default;
@@ -27,6 +30,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.DatePicker {
+  color : #183F5E !important;
 }
 
 @keyframes App-logo-spin {

@@ -1,12 +1,16 @@
 const DataEnglish = {
   body: [
-    "2 Hour Yacht Cruise (Basic)",
-    "Unlimited soft and Warm Drinks",
-    "Table Setup",
-    "Sound System (Boss), DJ and Microphone",
-    "Waiter Services",
-    "Karaoke",
+    "2 Hours Yacht Cruise",
+    "Soft and Hot Drinks",
+    "Sound System, DJ and Microphone",
+    "Waitering Services",
     "Lighting System  ",
+    "Zafaa Speed Boat (Per Request)",
+    "Kosha (Per Request)",
+    "Catering (Per Request)",
+    "Photography (Per Request)",
+    "Decoration (Per Request)",
+
   ],
   title: "Every Wedding Package Includes:",
   end: "For inquires, call: 01211140222",

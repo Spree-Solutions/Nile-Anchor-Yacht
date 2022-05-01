@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import {colors } from "../../Styles/Colors";
-import {createGlobalStyle} from 'styled-components';
+import { colors } from "../../Styles/Colors";
+import { createGlobalStyle } from "styled-components";
 import "react-datepicker/dist/react-datepicker.css";
 
 const DatePickerWrapperStyles = createGlobalStyle`
-margin-bottom: 1.4vw;
+/* margin-bottom: 1.4vw; */
 .DatePicker,
 .DatePicker:hover,
 .DatePicker:active {
@@ -17,7 +17,11 @@ margin-bottom: 1.4vw;
   font-size: 1vw;
   color: ${colors.Black};
   cursor: pointer;
-  background-color: ${colors.Merino} !important;
+  background-color: ${colors.White} !important;
+  @media (max-width: 768px) {
+      height: 8.8vw;
+    font-size: 2.4vw;
+  }
 }
 .fullWidth {
     width: 100%;
@@ -26,7 +30,7 @@ margin-bottom: 1.4vw;
     overflow: hidden;
 }
 .ENDatePicker {
-  margin-right: 1.6vw;
+  /* margin-right: 1.6vw; */
 }
 
 .ARDatePicker {
@@ -42,37 +46,47 @@ margin-bottom: 1.4vw;
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export const DatePickerComponent = (props) => {
+  let initialValue = null;
+  if (typeof props.initialValue === typeof initialValue) {
+    initialValue = props.initialValue;
+  } else {
+    initialValue = null;
+  }
+  const [startDate, setStartDate] = useState(initialValue);
 
-    let initialValue =null;
-    if (typeof props.initialValue === typeof initialValue){
-        initialValue = props.initialValue;
-    } else {
-        initialValue = null;
-    }
-    const [startDate, setStartDate] = useState(initialValue);
+  let initialText = "Select a date";
+  let language = "EN";
+  if (props.language && props.language === "AR") {
+    initialText = "اختار اليوم";
+    language = "AR";
+  }
 
-    
-    let initialText = "Select a date";
-    let language = "EN";
-    if(props.language && props.language === "AR"){
-        initialText = "اختار اليوم";
-        language = "AR"
-    }
-
-
-    const onChangeHandler = (date)=>{
-        if(props.onChange != undefined && typeof props.onChange == "function"  ){
-            props.onChange(date);
-        }
-
-        setStartDate(date);
+  const onChangeHandler = (date) => {
+    if (props.onChange != undefined && typeof props.onChange == "function") {
+      props.onChange(date);
     }
 
-    return (
-        <React.Fragment>
+    setStartDate(date);
+  };
 
-            <DatePicker wrapperClassName="hideOverflow" className={`DatePicker fullWidth ${language==="AR"?"ARDatePicker":""}`} value={!startDate?initialText:undefined} selected={startDate? startDate:undefined} onChange={onChangeHandler} />
-            <DatePickerWrapperStyles />
-        </React.Fragment>
-    );
+  let todayDate = new Date(Date.now());
+  let threeMonthMilliseconds = 3 * 28 * 24 * 60 * 60 * 1000;
+  let threeMonthFromNow = new Date(Date.now() + threeMonthMilliseconds);
+
+  return (
+    <React.Fragment>
+      <DatePicker
+        minDate={todayDate}
+        maxDate={threeMonthFromNow}
+        wrapperClassName="hideOverflow"
+        className={`DatePicker fullWidth ${
+          language === "AR" ? "ARDatePicker" : ""
+        }`}
+        value={!startDate ? initialText : undefined}
+        selected={startDate ? startDate : undefined}
+        onChange={onChangeHandler}
+      />
+      <DatePickerWrapperStyles />
+    </React.Fragment>
+  );
 };

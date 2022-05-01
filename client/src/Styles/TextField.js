@@ -6,8 +6,11 @@ export default function TextField(props) {
   return (
     <StyledDiv>
       <input
-        style={{ width: props.width }}
-        className={props.language === "EN" ? "Input ENInput" : "Input ARInput"}
+        className={
+          props.language === "EN"
+            ? `${props.className || ""}Input ENInput`
+            : "Input ARInput"
+        }
         placeholder={props.placeholder}
         type="text"
         value={props.value}
@@ -15,31 +18,46 @@ export default function TextField(props) {
         name={props.name}
         required={props.required}
         pattern={props.pattern}
+        id={props.id}
       />
     </StyledDiv>
   );
 }
 
 const StyledDiv = styled.div`
-  margin-bottom: 1.4vw;
+  width: 100%;
+  Input::placeholder { 
+    color: ${colors.Navy};
+  }
   .Input,
   .Input:hover,
   .Input:active {
+    width: 100%;
     text-align-last: left;
     padding: 0.4vw 0.6vw 0.4vw 0.6vw;
     font-family: "Askan Light" !important;
     border: none;
     outline: none;
     font-size: 1vw;
-    color: ${colors.Black};
+    color: ${colors.Navy};
     cursor: pointer;
-    background-color: ${colors.Merino} !important;
+    background-color: ${colors.White} !important;
+    @media (max-width: 768px) {
+      font-size: 2.4vw;
+    }
   }
   .ENInput {
-    margin-right: 1.6vw;
+    /* margin-right: 1.6vw; */
+    box-sizing: border-box;
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
 
   .ARInput {
     margin-left: 1.6vw;
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
 `;

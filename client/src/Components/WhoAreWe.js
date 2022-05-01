@@ -4,7 +4,7 @@ import { DataEnglish } from "../Data/English/WhoAreWe";
 import { DataArabic } from "../Data/Arabic/WhoAreWe";
 
 import { colors } from "../Styles/Colors";
-import Blacked_Area_Welcome from "../Images/Blacked_Area_Welcome.png";
+import Blacked_Area_Welcome from "../Images/Blacked_Area_Welcome.jpeg";
 import White_Logo from "../Images/White_Logo.png";
 
 import { isMobileOnly } from "react-device-detect";

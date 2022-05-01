@@ -18,13 +18,13 @@ export class ReservationHandler {
     phoneNumber="";
     email="";
     serviceName="Wedding";
-    selectedYacht=YACHT_BELLA;
+    selectedYacht=YACHT_LIBERTY;
     _selectedReservationDay=null;
     selectedStartingTime=null;
     selectedEndingTime=null;
     calculatedFinalPrice=0;
     isLoading=false;
-    availableYachts=["Bella", "Liberty"];
+    availableYachts=[ "Liberty"];
     availableEvents=["Wedding", "Corporate", "Individual"];
     priceSegments=[];
     availableHourSegments=[]; // type []{startTime:"hh:mm",endTime:"hh:mm"}
@@ -157,7 +157,7 @@ export class ReservationHandler {
     }
 
     calculateAvailablity(){
-        let hoursArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+        let hoursArray = [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
         // sort reservation earlier first
         let reservations = this.existingReservations.sort(((hoursA,hoursB)=> Number((new Date(hoursA.fromHours)).getHours())- Number((new Date(hoursB.fromHours)).getHours())))
         let startHour;
@@ -217,7 +217,20 @@ export class ReservationHandler {
 
         this.selectedYacht = yachtCode;
     }
+    isReserveReady(){
+        if(!this.selectedEndingTime || !this._selectedReservationDay || this.calculatedFinalPrice === 0){
+            return false
+        }
+        if (this.isLoading){
+            return false;
+        }
+        return true;
+    }
     async reserve(){
+        
+        if(!this.isReserveReady()){
+            return {result:{error:true}}
+        }
         this.isLoading = true;
         let params = {
             customer_name: this.username,
@@ -233,6 +246,7 @@ export class ReservationHandler {
         this._transactionState = TRANSACTION_PENDING_CONFIRMATION;
         // let reservationDateArray = this._selectedReservationDay.split('T')[0].split('-').reverse().join('-');
         let formattedReservationDate = this._selectedReservationDay.toISOString().split('T')[0].split('-').reverse().join('-');
+        let formattedNextDate = (new Date(this._selectedReservationDay.getTime()+24*60*60*1000)).toISOString().split('T')[0].split('-').reverse().join('-');
         let timestamp = new Date().getTime();
         this._customerCode = `${this.phoneNumber}-${timestamp}`;
         let startHour = this.selectedStartingTime >9?`${this.selectedStartingTime}`:`0${this.selectedStartingTime}`;
@@ -255,10 +269,10 @@ export class ReservationHandler {
                 "payDate" : (new Date()).toISOString().split('T')[0].split('-').reverse().join('-'),
                 "rentalAsset" : this.selectedYacht,
                 "priceClassifier1" : this.priceClassifier,
-                "fromDate" : formattedReservationDate,
-                "fromTime" : `${startHour}:00`,
-                "toDate" : formattedReservationDate,
-                "toTime" : `${endHour}:00`
+                "fromDate" : (startHour>=24)?formattedNextDate:formattedReservationDate,
+                "fromTime" : `${(startHour>23?startHour%24:startHour)}:00`,
+                "toDate" : (endHour>=24)?formattedNextDate:formattedReservationDate,
+                "toTime" : `${(endHour>23?endHour%24:endHour)}:00`
               } ]
              
              
@@ -268,6 +282,7 @@ export class ReservationHandler {
         if(failedRecords){
             this.isLoading = false;
             let returnValue = {error:true};
+            window.location.href = "/?operation_status=failed";
             return returnValue;
         }
         this._rentalRequestCode = reservationResponse.data.saved_records.RARentalRequest[0].code;
@@ -279,6 +294,8 @@ export class ReservationHandler {
             this.toLocalStorage();
         }else {
             this._transactionState = TRANSACTION_UNINITIALIZED;
+            this.isLoading= false;
+            window.location.href = "/?operation_status=failed";
         }
         this.isLoading = false;
         return response;
@@ -324,11 +341,11 @@ export class ReservationHandler {
                            
                            
                     });
+                    this.clearStorage();
                     if(confirmationResponse.data && confirmationResponse.data.failed_records_count){
-                        alert(`Reservation is not successfull please contact admin and give them the payment code, ${response.data.merchant_reference_id}`);
+                        window.location.href = "/?operation_status=failed";
                     }else if(confirmationResponse.data && confirmationResponse.data.saved_records){
-                        alert("Reservation is successfull");
-                        this.clearStorage();
+                        window.location.href = "/?operation_status=success";
                     }
                     console.log("this is confirmation Response",confirmationResponse);
                 }

@@ -1,6 +1,6 @@
 const DataEnglish = {
   Title: "Business Events",
-  body: "Experiences Come From Events, Opportunities Come From Moments",
+  body: "For Us, Your Event Is Our Event",
 };
 module.exports = {
   DataEnglish,

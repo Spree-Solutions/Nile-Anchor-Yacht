@@ -1,5 +1,5 @@
 const DataEnglish = {
-  Title: "About Us",
+  Title: "About Us.",
   body: "A Journey Full of Surprises, Worth A Thousand Words ",
 };
 module.exports = {

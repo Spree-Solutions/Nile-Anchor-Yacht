@@ -4,7 +4,7 @@ import { DataEnglish } from "../Data/English/WhoAreWe";
 import { DataArabic } from "../Data/Arabic/WhoAreWe";
 
 import { colors } from "../Styles/Colors";
-import Background_Welcome from "../Images/Background_Welcome.png";
+import Background_Welcome from "../Images/Background_Welcome.jpeg";
 import WhoAreWe from "./WhoAreWe";
 import NavBar from "./NavBar";
 

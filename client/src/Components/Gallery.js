@@ -9,8 +9,8 @@ import Liberty_Light from "../Images/Liberty_Light.png";
 import Love_Story_Light from "../Images/Love_Story_Light.png";
 
 import Liberty_Image from "../Images/Liberty_Image.png";
-import Liberty_Image1 from "../Images/Liberty_Image1.png";
-import Liberty_Image2 from "../Images/Liberty_Image2.png";
+import Liberty_Image1 from "../Images/Liberty_Image1.jpeg";
+import Liberty_Image2 from "../Images/Liberty_Image2.jpeg";
 
 import { isMobileOnly } from "react-device-detect";
 
