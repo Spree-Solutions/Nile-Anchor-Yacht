@@ -32,9 +32,6 @@ export default function GatheringsTitle(props) {
 const StyledDiv = styled.div`
   .TitleSection {
     color: ${colors.Navy};
-    border-bottom: 0.7vw solid ${colors.DarkGrey};
-
-    /* background-color: ${colors.MainBeige}; */
   }
   .ARRight {
     text-align: right;
@@ -42,14 +39,12 @@ const StyledDiv = styled.div`
   }
   .ENLeft {
     text-align: left;
-    /* padding: 12vw 50vw 14vw 5.9vw; */
     min-height: 25vw;
     height: calc(50vh - 5vw);
     @media (max-width: 768px) {
       height: auto;
       min-height: calc(50vh - 20.8vw);
       height: calc(50vh - 20.8vw);
-      /* padding: 80vw 33.87vw 44vw 8vw; */
     }
   }
   .Title {
@@ -88,8 +83,6 @@ const StyledDiv = styled.div`
     width: 100%;
     height: 21.6vw;
     object-fit: cover;
-    border-bottom: 0.7vw solid ${colors.DarkGrey};
-
     @media (max-width: 768px) {
       height: 43.2vw;
     }

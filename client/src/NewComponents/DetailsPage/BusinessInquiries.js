@@ -15,7 +15,7 @@ export default function BusinessInquiries(props) {
         <div className="Body">
           <div>{Data.body2}</div>
           <div>{Data.body3}</div>
-          <div>{Data.body4}</div>
+          {/* <div>{Data.body4}</div> */}
         </div>
       </div>
     </StyledDiv>

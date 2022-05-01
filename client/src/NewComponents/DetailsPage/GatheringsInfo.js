@@ -19,7 +19,7 @@ export default function GatheringsInfo(props) {
         <table className="table-1">
           <tbody>
             <tr>
-              <td>{Data.body1}</td>
+              <td className="text">{Data.body1}</td>
               <td>
                 <img
                   src={GatheringsInfo_1}
@@ -48,14 +48,14 @@ export default function GatheringsInfo(props) {
                   }
                 />
               </td>
-              <td>{Data.body2}</td>
+              <td className="text-inv">{Data.body2}</td>
             </tr>
           </tbody>
         </table>
         <table className="table-3">
           <tbody>
             <tr>
-              <td>{Data.body3}</td>
+              <td className="text">{Data.body3}</td>
               <td>
                 <img
                   src={GatheringsInfo_3}
@@ -81,11 +81,12 @@ const StyledDiv = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   /* background-image: url(${GatheringsInfo_Background}); */
-  font-size: 1.5vw;
+  font-size: 1.8vw;
   line-height: 2.5vw;
   font-family: "Lato Regular" !important;
   color: ${colors.Black};
   border-bottom: solid 0.4vw ${colors.DarkGrey};
+
   @media (max-width: 768px) {
     padding: 10.01vw 8.36vw 15.7vw 8.3vw;
     img {
@@ -93,6 +94,20 @@ const StyledDiv = styled.div`
     }
   }
   table {
+    td.text {
+      padding-right: 9vw;
+      text-align: justify;
+      @media (max-width: 768px) {
+        padding: 0;
+      }
+    }
+    td.text-inv {
+      padding-left: 9vw;
+      text-align: justify;
+      @media (max-width: 768px) {
+        padding: 0;
+      }
+    }
     @media (max-width: 768px) {
       font-size: 3.7vw;
       line-height: 5.33vw;

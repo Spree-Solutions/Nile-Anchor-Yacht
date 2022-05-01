@@ -7,7 +7,7 @@ import illustration from "../../Images/illust.png";
 const CeoMessage = () => {
   return (
     <StyledSection>
-      <h1>CEO's Message.</h1>
+      <h1>CEO's Message</h1>
       <p>
         “For thousands of years the Nile River has been bestowing its generosity
         to Egyptians through its everlasting water and never ending greenery. It
@@ -74,7 +74,7 @@ const StyledSection = styled.div`
       justify-content: center;
     }
     .ceo {
-      width: 15vw;
+      width: 20vw;
       @media (max-width: 768px) {
         width: 30vw;
       }
