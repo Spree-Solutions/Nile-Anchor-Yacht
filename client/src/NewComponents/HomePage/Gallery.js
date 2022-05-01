@@ -16,7 +16,7 @@ import Bella2 from "../../Images/Bella2.jpeg";
 import Bella3 from "../../Images/Bella3.jpeg";
 import Bella4 from "../../Images/Bella4.jpeg";
 import Bella5 from "../../Images/Bella5.jpeg";
-import Bella6 from "../../Images/Bella6.jpg";
+import Bella6 from "../../Images/Bella6.jpeg";
 import Liberty1 from "../../Images/Liberty1.jpeg";
 import Liberty2 from "../../Images/Liberty2.jpeg";
 import Liberty3 from "../../Images/Liberty3.jpeg";

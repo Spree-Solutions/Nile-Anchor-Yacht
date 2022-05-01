@@ -45,14 +45,7 @@ const OurYachtsNewDesign = () => {
         <div className="text">
           {selectedYacht === "liberty" ? (
             <p>
-              Liberty - Liberating one’s self to a moment of happiness. The
-              two-story yacht is designed to comfortably accommodate guests who
-              seek to host large; events, celebrations, marriage ceremonies,
-              wedding parties, corporate outings and private meetings on Cairo’s
-              Nile River. The yacht’s exterior and interior design is
-              exquisitely designed to give our delightful guests the feeling of
-              luxury, with a touch of class following a sensible feeling of
-              “where Europe meets the Nile”.
+              Liberty - Liberating one’s self to a moment of happiness. The two-story yacht is designed to comfortably accommodate guests who seek to host large; events, celebrations, marriage ceremonies, wedding parties, corporate outings and private meetings on Cairo’s Nile River. The yacht’s exterior and interior design is exquisitely designed to provide our guests with a sense of European luxury on the Nile.
             </p>
           ) : (
             <p>

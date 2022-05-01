@@ -7,7 +7,7 @@ import { colors } from "../../Styles/Colors";
 
 import WeddingsInfo_1 from "../../Images/WeddingsInfo_1.jpeg";
 import WeddingsInfo_2 from "../../Images/WeddingsInfo_2.jpeg";
-import WeddingsInfo_3 from "../../Images/WeddingsInfo_3.jpeg";
+//import WeddingsInfo_3 from "../../Images/WeddingsInfo_3.jpeg";
 import WeddingsInfo_Background from "../../Images/WeddingsInfo_Background.jpeg";
 import Label from "../Label";
 
@@ -53,9 +53,6 @@ export default function WeddingsInfo(props) {
             </tr>
           </tbody>
         </table>
-        <div className="div-3">
-          <img src={WeddingsInfo_3} alt="" className="WeddingsInfo_3" />
-        </div>
       </div>
     </StyledDiv>
   );
