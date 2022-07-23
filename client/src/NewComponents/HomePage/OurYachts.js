@@ -6,7 +6,7 @@ import { colors } from "../../Styles/Colors";
 import Liberty_Light from "../../Images/Liberty_Light.png";
 import Liberty_Image from "../../Images/Liberty_Image.png";
 import BellaYellow from "../../Images/BellaYellow.png";
-import OurYachtsNewDesign from "./OurYachtsNewDesign";
+import OurYachtsNewDesign, { yachts } from "./OurYachtsNewDesign";
 
 export default function OurYachts(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -47,7 +47,7 @@ export default function OurYachts(props) {
                                 : "clickable"
                             }
                           >
-                            {yacht}
+                            {yachts[yacht].displayName}
                           </span>
                         </span>
                       );
@@ -59,7 +59,7 @@ export default function OurYachts(props) {
                             chosenYacht === yacht ? "chosenButton" : "clickable"
                           }
                         >
-                          {yacht}
+                          {yachts[yacht].displayName}
                         </span>
                       );
                     }
@@ -70,7 +70,7 @@ export default function OurYachts(props) {
           </table>
           <div>
             <img
-              src={Liberty_Image}
+              src={yachts[chosenYacht].image}
               alt="Liberty"
               className="Liberty_Image_Mobile"
             />
@@ -82,17 +82,15 @@ export default function OurYachts(props) {
                   <td className="ImageCol">
                     <div
                       className={
-                        chosenYacht === "Liberty"
-                          ? "Liberty_Light_Background"
-                          : "Bella_Light_Background"
+                        chosenYacht === "liberty" || chosenYacht === "bella"
+                          ? chosenYacht === "liberty"
+                            ? "Liberty_Light_Background"
+                            : "Bella_Light_Background"
+                          : ""
                       }
                     >
                       <img
-                        src={
-                          chosenYacht === "Liberty"
-                            ? Liberty_Light
-                            : BellaYellow
-                        }
+                        src={yachts[chosenYacht].logo}
                         alt="Liberty"
                         className="Liberty_Light_Mobile"
                       />
@@ -100,9 +98,7 @@ export default function OurYachts(props) {
                   </td>
                   <td>
                     <div className="body_Mobile">
-                      {chosenYacht === "Liberty"
-                        ? Data.LibertyBody
-                        : Data.BellaBody}
+                      {yachts[chosenYacht].description}
                     </div>
                     {/* <div className="bodyBold_Mobile">{Data.bodyBold}</div> */}
                   </td>

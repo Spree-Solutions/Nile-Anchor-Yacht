@@ -4,8 +4,33 @@ import Liberty_Image from "../../Images/Liberty_Image.png";
 import Bella_Image from "../../Images/bella-image.jpeg";
 import { colors } from "../../Styles/Colors";
 import BellaYellow from "../../Images/BellaYellow.png";
+import vidaLogo from "../../Images/vida-1.png";
 import Liberty_Dark from "../../Images/libDark.png";
+import vidaImage from "../../Images/Bella4.jpeg";
 
+export const yachts = {
+  bella: {
+    displayName: "BELLA",
+    logo: BellaYellow,
+    image: Bella_Image,
+    description:
+      " Bella – Italian for beauty, an inner reflection of the yacht’s overall look. Smaller than the liberty yacht in size yetstands-out elegantly as it cruises throughout Cairo’s Nile River. The yacht offers three decks with a classic high- end interior andß exterior design with the capacity to cater around 30 passengers.ßThe upper deck comes with tinted windows and a 360-degreeß panoramic view, giving our delightful guests the chance toß privately experience Cairo’s Nile River.",
+  },
+  liberty: {
+    displayName: "LIBERTY",
+    logo: Liberty_Dark,
+    image: Liberty_Image,
+    description:
+      "Liberty - Liberating one’s self to a moment of happiness. The two-story yacht is designed to comfortably accommodate guests who seek to host large; events, celebrations, marriage ceremonies, wedding parties, corporate outings and private meetings on Cairo’s Nile River. The yacht’s exterior and interior design is exquisitely designed to provide our guests with a sense of European luxury on the Nile.",
+  },
+  vida1: {
+    displayName: "VIDA I",
+    logo: vidaLogo,
+    image: vidaImage,
+    description:
+      "Vida; Spanish for “life” Our smallest yacht, designed for a family gathering or cozy friends’ get-together.The yacht takes up to 20 people. Fully equipped, with a friendly crew to ensure a pleasurable trip on board",
+  },
+};
 const OurYachtsNewDesign = () => {
   const [selectedYacht, setSelectedYacht] = useState("liberty");
   return (
@@ -15,51 +40,36 @@ const OurYachtsNewDesign = () => {
           <h1>Yacht</h1>
           <h1>Collection</h1>
         </div>
-        <img
-          src={selectedYacht === "liberty" ? Liberty_Image : Bella_Image}
-          alt=""
-        />
+        <img src={yachts[selectedYacht].image} alt="" />
         <a href="/#booking">- Book Now</a>
       </div>
       <div className="column column-2">
         <div className="heading">
-          <p
-            onClick={() => setSelectedYacht("liberty")}
-            className={`${selectedYacht === "liberty" ? "selected" : ""}`}
-          >
-            LIBERTY
-          </p>
-          <p>|</p>
-          <p
-            onClick={() => setSelectedYacht("bella")}
-            className={`${selectedYacht === "bella" ? "selected" : ""}`}
-          >
-            BELLA
-          </p>
+          <div className="yacht-buttons">
+            <p
+              onClick={() => setSelectedYacht("liberty")}
+              className={`${selectedYacht === "liberty" ? "selected" : ""}`}
+            >
+              LIBERTY
+            </p>
+            <p>|</p>
+            <p
+              onClick={() => setSelectedYacht("bella")}
+              className={`${selectedYacht === "bella" ? "selected" : ""}`}
+            >
+              BELLA
+            </p>
+            <p
+              onClick={() => setSelectedYacht("vida1")}
+              className={`${selectedYacht === "vida1" ? "selected" : ""}`}
+            >
+              VIDA I
+            </p>
+          </div>
           <div className="separator"></div>
-          <img
-            src={selectedYacht === "bella" ? BellaYellow : Liberty_Dark}
-            alt="logo"
-          />
+          <img src={yachts[selectedYacht].logo} alt="logo" />
         </div>
-        <div className="text">
-          {selectedYacht === "liberty" ? (
-            <p>
-              Liberty - Liberating one’s self to a moment of happiness. The two-story yacht is designed to comfortably accommodate guests who seek to host large; events, celebrations, marriage ceremonies, wedding parties, corporate outings and private meetings on Cairo’s Nile River. The yacht’s exterior and interior design is exquisitely designed to provide our guests with a sense of European luxury on the Nile.
-            </p>
-          ) : (
-            <p>
-              Bella – Italian for beauty, an inner reflection of the yacht’s
-              overall look. Smaller than the liberty yacht in size yet
-              stands-out elegantly as it cruises throughout Cairo’s Nile River.
-              The yacht offers three decks with a classic high- end interior and
-              exterior design with the capacity to cater around 30 passengers.
-              The upper deck comes with tinted windows and a 360-degree
-              panoramic view, giving our delightful guests the chance to
-              privately experience Cairo’s Nile River.
-            </p>
-          )}
-        </div>
+        <div className="text">{yachts[selectedYacht].description}</div>
       </div>
     </StyledSection>
   );
@@ -117,6 +127,11 @@ const StyledSection = styled.div`
       justify-content: flex-start;
       align-items: center;
       margin-top: 3vw;
+      .yacht-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
       p {
         font-size: 2vw;
         &:not(:first-of-type) {

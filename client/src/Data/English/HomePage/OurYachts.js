@@ -7,7 +7,7 @@ const DataEnglish = {
   BellaBody:
     "Bella – Italian for beauty, an inner reflection of the yacht’s overall look.  Smaller than the liberty yacht in size yet stands-out elegantly as it cruises throughout Cairo’s Nile River. ",
   ReadMore: "Read More",
-  Options: ["Liberty", "Bella"],
+  Options: ["liberty", "bella", "vida1"],
 };
 module.exports = {
   DataEnglish,
