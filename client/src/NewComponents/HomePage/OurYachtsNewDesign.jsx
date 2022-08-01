@@ -6,7 +6,7 @@ import { colors } from "../../Styles/Colors";
 import BellaYellow from "../../Images/BellaYellow.png";
 import vidaLogo from "../../Images/vida-1.png";
 import Liberty_Dark from "../../Images/libDark.png";
-import vidaImage from "../../Images/Bella4.jpeg";
+import vidaImage from "../../Images/Vida Yacht-1.jpg";
 
 export const yachts = {
   bella: {
