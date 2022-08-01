@@ -18,7 +18,7 @@ export default function GatheringsPackage(props) {
         })}
       </div>
       {/* <div className="End">{Data.end}</div> */}
-      <Label />
+      {/* <Label /> */}
     </StyledDiv>
   );
 }

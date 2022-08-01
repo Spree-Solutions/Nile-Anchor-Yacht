@@ -8,6 +8,7 @@ import Liberty_Dark2 from "../../Images/Liberty_Dark2.png";
 import Bella_Dark from "../../Images/Bella_Dark.png";
 import CarouselComponent from "./Carousel";
 import logo from "../../Images/navylogo.png";
+import logoVida from "../../Images/vida1logo.png";
 
 import CustomCarousel from "../CustomCarousel";
 import Bella0 from "../../Images/Bella0.jpeg";
@@ -17,6 +18,7 @@ import Bella3 from "../../Images/Bella3.jpeg";
 import Bella4 from "../../Images/Bella4.jpeg";
 import Bella5 from "../../Images/Bella5.jpeg";
 import Bella6 from "../../Images/Bella6.jpeg";
+
 import Liberty1 from "../../Images/Liberty1.jpeg";
 import Liberty2 from "../../Images/Liberty2.jpeg";
 import Liberty3 from "../../Images/Liberty3.jpeg";
@@ -27,6 +29,17 @@ import Liberty7 from "../../Images/Liberty7.jpeg";
 import Liberty8 from "../../Images/Liberty8.jpeg";
 import Liberty9 from "../../Images/Liberty9.jpeg";
 import Liberty10 from "../../Images/Liberty10.jpeg";
+
+import Vida1 from "../../Images/Vida Yacht-1.jpg";
+import Vida2 from "../../Images/Vida Yacht-2.jpg";
+import Vida3 from "../../Images/Vida Yacht-3.jpg";
+import Vida4 from "../../Images/Vida Yacht-4.jpg";
+import Vida5 from "../../Images/Vida Yacht-5.jpg";
+import Vida6 from "../../Images/Vida Yacht-6.jpg";
+import Vida7 from "../../Images/Vida Yacht-7.jpg";
+import Vida8 from "../../Images/Vida Yacht-8.jpg";
+import Vida9 from "../../Images/Vida Yacht-9.jpg";
+import Vida10 from "../../Images/Vida Yacht-10.jpg";
 
 export default function Gallery(props) {
   const bellaImages = [Bella0, Bella1, Bella2, Bella3, Bella4, Bella5, Bella6];
@@ -41,6 +54,18 @@ export default function Gallery(props) {
     Liberty8,
     Liberty9,
     Liberty10,
+  ];
+  const vidaImages = [
+    Vida1,
+    Vida2,
+    Vida3,
+    Vida4,
+    Vida5,
+    Vida6,
+    Vida7,
+    Vida8,
+    Vida9,
+    Vida10,
   ];
   const [selectedYacht, setSelectedYacht] = useState(libertyImages);
   const [selectedYachtName, setSelectedYachtName] = useState("liberty");
@@ -80,6 +105,17 @@ export default function Gallery(props) {
               setSelectedYachtName("bella");
             }}
             className={`${selectedYachtName === "bella" ? "selected" : ""}`}
+          />
+          <div className="separator"></div>
+          <img
+            src={logoVida}
+            id="bella"
+            alt="bella"
+            onClick={() => {
+              setSelectedYacht(vidaImages);
+              setSelectedYachtName("vida1");
+            }}
+            className={`${selectedYachtName === "vida1" ? "selected" : ""}`}
           />
         </div>
         <div className="carousel-section">
@@ -234,11 +270,11 @@ const StyledDiv = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 26vw;
+    width: 40vw;
     margin: auto;
     padding: 3vw;
     @media (max-width: 768px) {
-      width: 50vw;
+      width: 80vw;
       justify-content: space-around;
     }
     img {
