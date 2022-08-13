@@ -30,16 +30,17 @@ import Liberty8 from "../../Images/Liberty8.jpeg";
 import Liberty9 from "../../Images/Liberty9.jpeg";
 import Liberty10 from "../../Images/Liberty10.jpeg";
 
-import Vida1 from "../../Images/Vida Yacht-1.jpg";
-import Vida2 from "../../Images/Vida Yacht-2.jpg";
-import Vida3 from "../../Images/Vida Yacht-3.jpg";
-import Vida4 from "../../Images/Vida Yacht-4.jpg";
-import Vida5 from "../../Images/Vida Yacht-5.jpg";
-import Vida6 from "../../Images/Vida Yacht-6.jpg";
-import Vida7 from "../../Images/Vida Yacht-7.jpg";
-import Vida8 from "../../Images/Vida Yacht-8.jpg";
-import Vida9 from "../../Images/Vida Yacht-9.jpg";
-import Vida10 from "../../Images/Vida Yacht-10.jpg";
+
+import Vida1 from "../../Images/Vida Yacht-6.jpg";
+import Vida2 from "../../Images/Vida Yacht-7.jpg";
+import Vida3 from "../../Images/Vida Yacht-1.jpg";
+import Vida4 from "../../Images/Vida Yacht-2.jpg";
+import Vida5 from "../../Images/Vida Yacht-3.jpg";
+import Vida6 from "../../Images/Vida Yacht-4.jpg";
+import Vida7 from "../../Images/Vida Yacht-8.jpg";
+import Vida8 from "../../Images/Vida Yacht-9.jpg";
+import Vida9 from "../../Images/Vida Yacht-10.jpg";
+// import Vida5 from "../../Images/Vida Yacht-5.jpg";
 
 export default function Gallery(props) {
   const bellaImages = [Bella0, Bella1, Bella2, Bella3, Bella4, Bella5, Bella6];
@@ -65,7 +66,6 @@ export default function Gallery(props) {
     Vida7,
     Vida8,
     Vida9,
-    Vida10,
   ];
   const [selectedYacht, setSelectedYacht] = useState(libertyImages);
   const [selectedYachtName, setSelectedYachtName] = useState("liberty");

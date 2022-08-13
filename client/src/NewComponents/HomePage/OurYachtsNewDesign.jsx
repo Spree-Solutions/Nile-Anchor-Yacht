@@ -24,7 +24,7 @@ export const yachts = {
       "Liberty - Liberating one’s self to a moment of happiness. The two-story yacht is designed to comfortably accommodate guests who seek to host large; events, celebrations, marriage ceremonies, wedding parties, corporate outings and private meetings on Cairo’s Nile River. The yacht’s exterior and interior design is exquisitely designed to provide our guests with a sense of European luxury on the Nile.",
   },
   vida1: {
-    displayName: "VIDA I",
+    displayName: "VIDA",
     logo: vidaLogo,
     image: vidaImage,
     description:
@@ -63,7 +63,7 @@ const OurYachtsNewDesign = () => {
               onClick={() => setSelectedYacht("vida1")}
               className={`${selectedYacht === "vida1" ? "selected" : ""}`}
             >
-              VIDA I
+              VIDA
             </p>
           </div>
           <div className="separator"></div>
