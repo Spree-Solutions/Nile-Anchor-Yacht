@@ -184,7 +184,7 @@ export default function Gallery(props) {
 const StyledDiv = styled.div`
   background-color: ${colors.DarkGrey};
   color: ${colors.White};
-  font-family: "Askan Regular" !important;
+  // font-family: "Askan Regular" !important;
 
   tr,
   td {
@@ -201,12 +201,12 @@ const StyledDiv = styled.div`
   }
 
   .Title {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 3.75vw;
     line-height: 3.75vw;
   }
   .TitleBold {
-    font-family: "Askan DemiBold" !important;
+    // font-family: "Askan DemiBold" !important;
     font-size: 3.75vw;
     line-height: 3.75vw;
     padding-bottom: 7vw;
@@ -252,14 +252,14 @@ const StyledMobileDiv = styled.div`
   background-color: ${colors.DarkBlack};
   text-align: left;
   color: ${colors.Merino};
-  font-family: "Askan Regular" !important;
+  // font-family: "Askan Regular" !important;
 
   .TitleMobile {
     font-size: 6.7vw;
     line-height: 6.7vw;
   }
   .TitleBoldMobile {
-    font-family: "Askan DemiBold" !important;
+    // font-family: "Askan DemiBold" !important;
     font-size: 6.7vw;
     line-height: 6.7vw;
     padding-bottom: 4.53vw;

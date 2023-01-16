@@ -78,7 +78,7 @@ export default function Footer(props) {
   );
 }
 const StyledDiv = styled.div`
-  font-family: "Askan Light" !important;
+  // font-family: "Askan Light" !important;
   font-size: 1.25vw;
   color: ${colors.DarkGrey};
   /* background-color: ${colors.Merino}; */
@@ -161,7 +161,7 @@ const StyledDiv = styled.div`
 
   .Item {
     margin-left: 1.4vw;
-    font-family: "Askan Regular" !important;
+    // font-family: "Askan Regular" !important;
     font-size: 1.25vw;
     cursor: pointer;
   }

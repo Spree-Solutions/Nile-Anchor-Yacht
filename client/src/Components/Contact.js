@@ -405,7 +405,7 @@ const StyledDiv = styled.div`
   padding: 4vw 5vw 4.3vw 5vw;
   background-color: ${colors.MainBeige};
   color: ${colors.Navy};
-  font-family: "Askan Light" !important;
+  // font-family: "Askan Light" !important;
   font-size: 1vw;
   .action-table-booking {
     margin: auto;
@@ -451,7 +451,7 @@ const StyledDiv = styled.div`
     padding-bottom: 2.1vw;
   }
   .TitleBold {
-    font-family: "Askan DemiBold" !important;
+    // font-family: "Askan DemiBold" !important;
     padding-bottom: 7vw;
   }
   .Titles {
@@ -544,7 +544,7 @@ const StyledDiv = styled.div`
   .Button {
     width: 13.6vw;
     padding: 0.4vw 0vw 0.4vw 0vw;
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     border: none;
     outline: none;
     font-size: 1vw;
