@@ -88,7 +88,7 @@ const StyledDiv = styled.div`
   .TitleBold {
     width: 13vw;
     font-size: 3vw;
-    font-family: "Askan Bold" !important;
+    // font-family: "Askan Bold" !important;
     /* color: ${colors.Black}; */
     @media (max-width: 768px) {
       font-size: 5.9vw;
@@ -97,7 +97,7 @@ const StyledDiv = styled.div`
     }
   }
   .body {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.3vw;
     line-height: 1.5vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
@@ -109,7 +109,7 @@ const StyledDiv = styled.div`
     }
   }
   .bodyBold {
-    font-family: "Lato Bold" !important;
+    // font-family: "Lato Bold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;
     a {

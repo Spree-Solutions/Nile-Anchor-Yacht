@@ -51,7 +51,7 @@ export default function OurServices(props) {
 const StyledDiv = styled.div`
   background-color: ${colors.Merino};
   color: ${colors.Black};
-  font-family: "Askan Light" !important;
+  // font-family: "Askan Light" !important;
   font-size: 3.75vw;
   line-height: 3.75vw;
   tr,
@@ -60,7 +60,7 @@ const StyledDiv = styled.div`
     border: none;
   }
   .TitleBold {
-    font-family: "Askan DemiBold" !important;
+    // font-family: "Askan DemiBold" !important;
   }
   .Titles {
     text-align: left;

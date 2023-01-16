@@ -82,7 +82,7 @@ const StyledDiv = styled.div`
   }
 
   .DataBody {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1vw;
     padding: 3vw 0vw 2vw 0vw;
     @media (max-width: 768px) {
@@ -93,7 +93,7 @@ const StyledDiv = styled.div`
     }
   }
   .DataBodyBold {
-    font-family: "Lato Bold" !important;
+    // font-family: "Lato Bold" !important;
     font-size: 1vw;
     padding: 0vw 0vw 3vw 0vw;
     @media (max-width: 768px) {

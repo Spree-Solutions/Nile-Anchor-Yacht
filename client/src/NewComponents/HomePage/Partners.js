@@ -45,7 +45,7 @@ export default function Partners(props) {
 
 const StyledDiv = styled.div`
   padding: 0vw 0vw 0vw 0vw;
-  font-family: "Askan Regular" !important;
+  // font-family: "Askan Regular" !important;
   background-color: ${colors.White};
   color: ${colors.Black};
   @media (max-width: 768px) {
@@ -54,7 +54,7 @@ const StyledDiv = styled.div`
 
   .Title {
     background-color: ${colors.DarkBrown};
-    font-family: "Merriweather Regular";
+    // font-family: "Merriweather Regular";
     font-size: 2.1vw;
     line-height: 3vw;
     padding: 1.9vw 0vw 1.5vw 5.5vw;
@@ -118,7 +118,7 @@ const StyledDiv = styled.div`
   }
   .PartnersTitle {
     font-size: 3.1vw;
-    font-family: "Askan Regular" !important;
+    // font-family: "Askan Regular" !important;
     line-height: 3.8vw;
     padding: 0.5vw 0vw 0.5vw 0vw;
     background: ${colors.DarkGrey};
@@ -131,6 +131,6 @@ const StyledDiv = styled.div`
     }
   }
   .PartnersTitleBold {
-    font-family: "Askan Bold" !important;
+    // font-family: "Askan Bold" !important;
   }
 `;

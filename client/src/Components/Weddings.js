@@ -52,17 +52,17 @@ const StyledDiv = styled.div`
   .TitleBold {
     font-size: 3.75vw;
     line-height: 3.75vw;
-    font-family: "Askan DemiBold" !important;
+    // font-family: "Askan DemiBold" !important;
     padding-top: 1.1vw;
   }
   .body {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;
     padding: 1.6vw 0vw 1.6vw 0vw;
   }
   .bodyBold {
-    font-family: "Askan DemiBold" !important;
+    // font-family: "Askan DemiBold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;
   }

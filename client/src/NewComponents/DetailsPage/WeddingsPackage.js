@@ -55,7 +55,7 @@ const StyledDiv = styled.div`
   }
 
   .Title {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 2.3vw;
     padding: 0.4vw;
     /* padding: 0vw 0vw 3vw 0vw; */
@@ -71,7 +71,7 @@ const StyledDiv = styled.div`
     }
   }
   .Body {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.9vw;
     line-height: 2.5vw;
     @media (max-width: 768px) {
@@ -83,7 +83,7 @@ const StyledDiv = styled.div`
     }
   }
   .End_EN {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.2vw;
     line-height: 1.7vw;
     padding: 17vw 0vw 2.3vw 20vw;
@@ -96,7 +96,7 @@ const StyledDiv = styled.div`
     }
   }
   .End_AR {
-    font-family: "Lato Bold" !important;
+    // font-family: "Lato Bold" !important;
     font-size: 1.2vw;
     line-height: 1.7vw;
     padding: 17vw 22vw 2.3vw 0vw;

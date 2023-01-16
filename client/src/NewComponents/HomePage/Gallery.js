@@ -133,7 +133,7 @@ export default function Gallery(props) {
 const StyledDiv = styled.div`
   position: relative;
   padding: 0vw 0vw 0vw 0vw;
-  font-family: "Askan Regular" !important;
+  // font-family: "Askan Regular" !important;
   /* background-image: url(${Gallery_Background}); */
   background-position: center;
   background-repeat: no-repeat;
@@ -173,19 +173,19 @@ const StyledDiv = styled.div`
   }
   .ENTitle {
     background-color: ${colors.MainBeige};
-    font-family: "Merriweather Regular";
+    // font-family: "Merriweather Regular";
     line-height: 3vw;
     padding: 0.2vw 5.5vw 0.2vw 5.5vw;
   }
   .ARTitle {
     background-color: ${colors.DarkBrown};
-    font-family: "Merriweather Regular";
+    // font-family: "Merriweather Regular";
     line-height: 3vw;
     padding: 1.9vw 05.5vw 1.5vw 0vw;
   }
   .ENTable {
     padding: 0vw 0vw 6.95vw 5.5vw;
-    font-family: "Lato Regular";
+    // font-family: "Lato Regular";
     font-size: 1.3vw;
     line-height: 1.8vw;
     text-align: justify;
@@ -193,7 +193,7 @@ const StyledDiv = styled.div`
   }
   .ARTable {
     padding: 0vw 5.5vw 6.95vw 0vw;
-    font-family: "Lato Regular";
+    // font-family: "Lato Regular";
     font-size: 0.97vw;
     line-height: 1.4vw;
     background: rgba(37, 28, 21, 0.7);
@@ -247,7 +247,7 @@ const StyledDiv = styled.div`
   }
   .Title {
     background: ${colors.MainBeige};
-    font-family: "Merriweather Regular";
+    // font-family: "Merriweather Regular";
     font-size: 3.1vw;
     line-height: 3vw;
     /* padding: 1.9vw 0vw 1.5vw 5.5vw; */
@@ -263,7 +263,7 @@ const StyledDiv = styled.div`
       }
     }
     .Bold-Title {
-      font-family: "Merriweather Bold";
+      // font-family: "Merriweather Bold";
     }
   }
   .heading-section {

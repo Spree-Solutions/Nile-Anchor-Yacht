@@ -164,7 +164,7 @@ export default function Navbar(props) {
   );
 }
 const StyledDiv = styled.div`
-  font-family: "Lato Regular" !important;
+  // font-family: "Lato Regular" !important;
   color: ${colors.Black};
   font-size: 1.1vw;
   background-color: white;
@@ -276,10 +276,10 @@ const StyledDiv = styled.div`
     cursor: pointer;
   }
   .BoldText {
-    font-family: "Lato Bold" !important;
+    // font-family: "Lato Bold" !important;
   }
   .NormalText {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     opacity: 0.8;
   }
   .LogoNavBar {

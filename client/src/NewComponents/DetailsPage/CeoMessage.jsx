@@ -34,7 +34,7 @@ const StyledSection = styled.div`
   /* height: 90vh; */
   padding: 2vw 0vw;
   padding-bottom: 0;
-  font-family: "Lato Regular";
+  // font-family: "Lato Regular";
   color: ${colors.DarkGrey2};
   @media (max-width: 768px) {
     padding: 8vw 0vw;
@@ -42,7 +42,7 @@ const StyledSection = styled.div`
   }
   h1 {
     font-size: 2.5vw;
-    font-family: "Askan DemiBold";
+    // font-family: "Askan DemiBold";
     margin: 0;
     padding: 0;
     background: ${colors.MainBeige};
@@ -107,7 +107,7 @@ const StyledSection = styled.div`
           margin: 0;
           font-size: 2vw;
           font-weight: 700;
-          font-family: "Askan DemiBold";
+          // font-family: "Askan DemiBold";
           @media (max-width: 768px) {
             top: 13vw;
             font-size: 5vw;

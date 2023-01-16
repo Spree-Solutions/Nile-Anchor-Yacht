@@ -44,7 +44,7 @@ const StyledDiv = styled.div`
 
   .Body {
     color: ${colors.DarkGrey2};
-    font-family: "Askan Regular" !important;
+    // font-family: "Askan Regular" !important;
     font-size: 1.9vw;
     line-height: 2.5vw;
     /* text-align: justify; */
@@ -53,7 +53,7 @@ const StyledDiv = styled.div`
     display: flex;
     flex-direction: column;
     @media (max-width: 768px) {
-      font-family: "Lato Regular" !important;
+      // font-family: "Lato Regular" !important;
       font-size: 3.7vw;
       line-height: 5.3vw;
       width: 85.1vw;
@@ -76,13 +76,13 @@ const StyledDiv = styled.div`
     }
   }
   .Label {
-    font-family: "Askan Regular" !important;
+    // font-family: "Askan Regular" !important;
     font-size: 2vw;
     margin-top: 1vw;
     text-align: center;
     text-decoration: underline;
     @media (max-width: 768px) {
-      font-family: "Lato Regular" !important;
+      // font-family: "Lato Regular" !important;
       font-size: 3.7vw;
       align-self: flex-end;
       margin: auto;

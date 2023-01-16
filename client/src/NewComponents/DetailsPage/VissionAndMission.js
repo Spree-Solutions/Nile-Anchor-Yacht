@@ -53,7 +53,7 @@ const StyledDiv = styled.div`
     }
   }
   .Title {
-    font-family: "Askan DemiBold" !important;
+    // font-family: "Askan DemiBold" !important;
     font-size: 2.5vw;
     /* text-align: left; */
     padding: 0vw 0vw 4vw 0vw;
@@ -64,7 +64,7 @@ const StyledDiv = styled.div`
     }
   }
   .Body {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.9vw;
     line-height: 2.5vw;
     padding: 0vw 0vw 1.4vw 0vw;
@@ -80,7 +80,7 @@ const StyledDiv = styled.div`
     }
   }
   .Subtitle {
-    font-family: "Lato Bold" !important;
+    // font-family: "Lato Bold" !important;
     font-size: 1.9vw;
     margin-right: 0.6vw;
     /* line-height: 1.3vw; */

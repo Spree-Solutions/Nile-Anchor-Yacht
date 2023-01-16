@@ -125,7 +125,7 @@ export default function NavBar(props) {
   );
 }
 const StyledDiv = styled.div`
-  font-family: "Askan Regular" !important;
+  // font-family: "Askan Regular" !important;
   color: ${colors.Black};
   font-size: 1.25vw;
 
@@ -187,10 +187,10 @@ const StyledDiv = styled.div`
     cursor: pointer;
   }
   .BoldText {
-    font-family: "Askan DemiBold" !important;
+    // font-family: "Askan DemiBold" !important;
   }
   .NormalText {
-    font-family: "Askan Regular" !important;
+    // font-family: "Askan Regular" !important;
     opacity: 0.8;
   }
   .LogoNavBar {

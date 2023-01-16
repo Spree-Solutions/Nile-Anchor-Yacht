@@ -77,7 +77,7 @@ const OurYachtsNewDesign = () => {
 const StyledSection = styled.div`
   display: flex;
   color: ${colors.Navy};
-  font-family: "Lato Regular";
+  // font-family: "Lato Regular";
   width: 100%;
   justify-content: space-between;
 
@@ -93,12 +93,12 @@ const StyledSection = styled.div`
   .column-1 {
     width: 50%;
     .title {
-      font-family: "Askan Light";
+      // font-family: "Askan Light";
       font-size: 2vw;
       line-height: 3.5vw;
       h1:first-child {
         font-weight: 700;
-        font-family: "Askan Bold";
+        // font-family: "Askan Bold";
       }
       text-align: left;
       color: ${colors.DarkGrey2};

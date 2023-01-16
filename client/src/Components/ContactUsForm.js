@@ -190,7 +190,7 @@ const StyledContainer = styled.div`
       }
     }
     .form-item {
-      font-family: "Lato Regular";
+      // font-family: "Lato Regular";
       font-size: 1vw;
       display: flex;
       flex-direction: column;
@@ -214,7 +214,7 @@ const StyledContainer = styled.div`
         border: none;
         border-bottom: 0.2vw solid ${colors.DarkGrey};
         outline: none;
-        font-family: "Lato Regular";
+        // font-family: "Lato Regular";
         font-size: 1vw;
         @media (max-width: 768px) {
           font-size: 3vw;
@@ -237,7 +237,7 @@ const StyledContainer = styled.div`
         height: 15vw;
         font-size: 1vw;
         border: solid 0.2vw ${colors.DarkGrey};
-        font-family: "Lato Regular";
+        // font-family: "Lato Regular";
 
         @media (max-width: 768px) {
           height: 30vw;
