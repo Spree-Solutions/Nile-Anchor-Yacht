@@ -440,5 +440,8 @@ const StyledDiv = styled.div`
   .ListItems_Mobile {
     margin: 8vw 0vw 0vw 0vw;
     text-align: center;
+    a{
+      font-weight : Bold;
+    }
   }
 `;
