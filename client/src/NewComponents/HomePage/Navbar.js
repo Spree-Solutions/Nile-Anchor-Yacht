@@ -167,7 +167,7 @@ const StyledDiv = styled.div`
   // font-family: "Lato Regular" !important;
   color: ${colors.Black};
   font-size: 1.1vw;
-  background-color: white;
+  background-color: #E6E1D6;
   // border-bottom: solid 0.22vw black;
   height: 5vw;
   @media (max-width: 768px) {
