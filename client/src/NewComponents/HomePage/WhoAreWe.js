@@ -22,8 +22,8 @@ export default function WhoAreWe(props) {
                     : "SubTitle RightTextAlign title"
                 }
               >
-                <div> {Data.SubTitle}</div>
-                <div className="SubTitleBold"> {Data.SubTitleBold} </div>
+                <div className="SubTitleBold"> {Data.SubTitleBold}</div>
+                <div className="SubTitleNormal"> {Data.SubTitle} </div>
               </td>
               <td
                 className={
@@ -85,7 +85,10 @@ const StyledDiv = styled.div`
       margin-top: 11.5vw;
     }
   }
-  .SubTitleBold {
+  .SubTitleBold{
+    font-weight : 700;
+  }
+  .SubTitleNormal {
     // font-family: "Askan Bold" !important;
     @media (max-width: 768px) {
       margin-left: 1vw;

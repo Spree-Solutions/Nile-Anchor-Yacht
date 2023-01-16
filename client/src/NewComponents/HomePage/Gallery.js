@@ -251,10 +251,13 @@ const StyledDiv = styled.div`
     font-size: 3.1vw;
     line-height: 3vw;
     /* padding: 1.9vw 0vw 1.5vw 5.5vw; */
-    padding: 0.2vw 5.5vw 0.2vw 5.5vw;
+    padding: 0vw 5.5vw;
     margin: 3.7vw 0vw 0vw 0vw;
+    display:flex;
+    align-items:center;
+    height : 5.626vw;
     @media (max-width: 768px) {
-      height: 14vw;
+      height: 16.393vw;
       font-size: 6vw;
       display: flex;
       align-items: center;
