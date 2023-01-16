@@ -168,7 +168,7 @@ const StyledDiv = styled.div`
   color: ${colors.Black};
   font-size: 1.1vw;
   background-color: white;
-  border-bottom: solid 0.22vw black;
+  // border-bottom: solid 0.22vw black;
   height: 5vw;
   @media (max-width: 768px) {
     height: 20.8vw;
