@@ -415,7 +415,11 @@ const StyledDiv = styled.div`
       padding: 0;
       box-sizing: border-box;
     }
-    padding: 8vw;
+    padding-left: 0;
+    padding-right : 0;
+    form {
+      padding : 0 8vw;
+    }
     .Input:not(#special-text) {
       width: 100% !important;
     }
@@ -451,6 +455,7 @@ const StyledDiv = styled.div`
     padding-bottom: 2.1vw;
   }
   .TitleBold {
+    font-weight: Bold;
     // font-family: "Askan DemiBold" !important;
     padding-bottom: 7vw;
   }
@@ -481,7 +486,7 @@ const StyledDiv = styled.div`
   .Action {
     font-size: 1.4vw;
     @media (max-width: 768px) {
-      font-size: 2.4vw;
+      font-size: 2vw;
       width: 15.2vw;
     }
   }
@@ -517,7 +522,7 @@ const StyledDiv = styled.div`
     width: 9vw;
   }
   .Whatsapp {
-    width: 7vw;
+    width: 8vw;
     a {
       text-decoration: none;
       color: ${colors.Navy};
