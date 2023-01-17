@@ -64,6 +64,7 @@ const StyledDiv = styled.div`
     }
   }
   .End {
+    font-weight : Bold;
     // font-family: "Lato Bold" !important;
     font-size: 1.5vw;
     line-height: 1.7vw;

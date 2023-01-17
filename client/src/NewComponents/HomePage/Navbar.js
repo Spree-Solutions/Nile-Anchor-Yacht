@@ -276,6 +276,7 @@ const StyledDiv = styled.div`
     cursor: pointer;
   }
   .BoldText {
+    font-weight : Bold;
     // font-family: "Lato Bold" !important;
   }
   .NormalText {

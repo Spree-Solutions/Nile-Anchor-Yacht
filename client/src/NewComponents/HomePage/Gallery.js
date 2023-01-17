@@ -122,7 +122,7 @@ export default function Gallery(props) {
           <CustomCarousel imagesArray={selectedYacht} />
         </div>
         <div className="Title">
-          {Data.ServicesTitle}{" "}
+          {Data.ServicesTitle}&nbsp;
           <span className="Bold-Title"> {Data.ServicesTitleBold}</span>
         </div>
       </div>
@@ -266,6 +266,7 @@ const StyledDiv = styled.div`
       }
     }
     .Bold-Title {
+      font-weight : Bold;
       // font-family: "Merriweather Bold";
     }
   }

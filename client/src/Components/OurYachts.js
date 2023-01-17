@@ -220,6 +220,7 @@ const StyledDiv = styled.div`
     line-height: 3.75vw;
   }
   .TitleBold {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     padding-bottom: 4.8vw;
   }
@@ -236,6 +237,7 @@ const StyledDiv = styled.div`
     padding: 1.18vw 0vw 1.32vw 0.7vw;
   }
   .bodyBold {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;
@@ -334,6 +336,7 @@ const StyledDiv = styled.div`
     padding: 0vw 0vw 0.7vw 5vw;
   }
   .bodyBold_Mobile {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     font-size: 3.2vw;
     line-height: 3.6vw;

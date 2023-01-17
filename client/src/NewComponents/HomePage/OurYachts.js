@@ -276,6 +276,7 @@ const StyledDiv = styled.div`
     margin: 0.3vw 0vw 0.2vw 0.5vw;
   }
   .Title {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     font-size: 4vw;
     line-height: 3.5vw;
@@ -287,6 +288,7 @@ const StyledDiv = styled.div`
     color: #404040;
   }
   .ListItem {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     font-size: 1.8vw;
     line-height: 1.8vw;
@@ -304,6 +306,7 @@ const StyledDiv = styled.div`
     padding: 1.875vw 0vw 1.32vw 0vw;
   }
   .bodyBold {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     font-size: 1.1vw;
     line-height: 1.35vw;
@@ -343,6 +346,7 @@ const StyledDiv = styled.div`
     // font-family: "Askan Light" !important;
   }
   .chosenButton {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     text-decoration-line: underline;
     cursor: pointer;
@@ -420,6 +424,7 @@ const StyledDiv = styled.div`
     text-align: left;
   }
   .bodyBold_Mobile {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     font-size: 3.2vw;
     line-height: 3.6vw;

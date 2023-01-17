@@ -187,6 +187,7 @@ const StyledDiv = styled.div`
     cursor: pointer;
   }
   .BoldText {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
   }
   .NormalText {

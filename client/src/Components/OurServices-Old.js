@@ -60,6 +60,7 @@ const StyledDiv = styled.div`
     border: none;
   }
   .TitleBold {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
   }
   .Titles {

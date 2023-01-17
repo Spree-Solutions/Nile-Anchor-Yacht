@@ -42,6 +42,7 @@ const StyledSection = styled.div`
   }
   h1 {
     font-size: 2.5vw;
+    font-weight : Bold;
     // font-family: "Askan DemiBold";
     margin: 0;
     padding: 0;
@@ -107,6 +108,7 @@ const StyledSection = styled.div`
           margin: 0;
           font-size: 2vw;
           font-weight: 700;
+          font-weight : Bold;
           // font-family: "Askan DemiBold";
           @media (max-width: 768px) {
             top: 13vw;

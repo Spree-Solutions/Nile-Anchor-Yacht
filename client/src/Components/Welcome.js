@@ -85,6 +85,7 @@ const StyledDiv = styled.div`
     line-height: 4.4vw;
   }
   .TitleBold {
+    font-weight : Bold;
     // font-family: "Askan Bold" !important;
     padding-bottom: 11.5vw;
     font-size: 7.4vw;
@@ -99,6 +100,7 @@ const StyledDiv = styled.div`
     padding-top: 57vw;
   }
   .TitleBoldMobile {
+    font-weight : Bold;
     // font-family: "Askan Bold" !important;
     font-size: 18.7vw;
     line-height: 21vw;

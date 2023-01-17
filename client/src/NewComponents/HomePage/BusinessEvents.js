@@ -74,6 +74,7 @@ const StyledDiv = styled.div`
     width: 2vw;
     font-size: 3.5vw;
     line-height: 3vw;
+    font-weight : Bold;
     // font-family: "Askan Bold" !important;
     /* color: ${colors.White}; */
     @media (max-width: 768px) {
@@ -96,6 +97,7 @@ const StyledDiv = styled.div`
     }
   }
   .bodyBold {
+    font-weight : Bold;
     // font-family: "Lato Bold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;

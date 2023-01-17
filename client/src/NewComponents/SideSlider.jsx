@@ -58,6 +58,7 @@ const StyledSlider = styled.div`
       color: black;
       writing-mode: tb-rl;
       transform: rotate(-180deg);
+      font-weight : Bold;
       // font-family: "Askan Bold" !important;
       font-size: 0.8vw;
       @media (max-width: 768px) {

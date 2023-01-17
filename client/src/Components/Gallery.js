@@ -206,6 +206,7 @@ const StyledDiv = styled.div`
     line-height: 3.75vw;
   }
   .TitleBold {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     font-size: 3.75vw;
     line-height: 3.75vw;
@@ -259,6 +260,7 @@ const StyledMobileDiv = styled.div`
     line-height: 6.7vw;
   }
   .TitleBoldMobile {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     font-size: 6.7vw;
     line-height: 6.7vw;

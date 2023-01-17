@@ -51,6 +51,7 @@ const StyledDiv = styled.div`
     }
   }
   .Title {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     font-size: 4.2vw;
     /* padding-top: 12vw; */

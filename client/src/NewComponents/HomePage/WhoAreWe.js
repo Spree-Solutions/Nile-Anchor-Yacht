@@ -89,7 +89,7 @@ const StyledDiv = styled.div`
     font-weight : 700;
   }
   .SubTitleNormal {
-    // font-family: "Askan Bold" !important;
+
     @media (max-width: 768px) {
       margin-left: 1vw;
     }

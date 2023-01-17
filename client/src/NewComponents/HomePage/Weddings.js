@@ -88,6 +88,7 @@ const StyledDiv = styled.div`
   }
   .TitleBold {
     font-size: 3.5vw;
+    font-weight : Bold;
     // font-family: "Askan Bold" !important;
     /* color: ${colors.Pink}; */
     @media (max-width: 768px) {
@@ -108,6 +109,7 @@ const StyledDiv = styled.div`
     }
   }
   .bodyBold {
+    font-weight : Bold;
     // font-family: "Lato Bold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;

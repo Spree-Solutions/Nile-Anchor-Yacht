@@ -131,6 +131,7 @@ const StyledDiv = styled.div`
     }
   }
   .PartnersTitleBold {
+    font-weight : Bold;
     // font-family: "Askan Bold" !important;
   }
 `;

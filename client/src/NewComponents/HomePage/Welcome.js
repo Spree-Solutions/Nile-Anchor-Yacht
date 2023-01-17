@@ -79,13 +79,15 @@ const StyledDiv = styled.div`
     }
   }
   .TitleBold {
+    font-weight : Bold;
     // font-family: "Askan Bold" !important;
     padding-bottom: 11.9vw;
     font-size: 6.67vw;
     line-height: 6.9vw;
     @media (max-width: 768px) {
+      font-weight : Bold;
       // font-family: "Askan Bold" !important;
-      font-size: 18.7vw;
+      font-size: 16vw;
       line-height: 21vw;
       padding-bottom: 99vw;
     }
@@ -99,6 +101,7 @@ const StyledDiv = styled.div`
     padding-top: 57vw;
   } */
   .TitleBoldMobile {
+    font-weight : Bold;
     // font-family: "Askan Bold" !important;
     font-size: 18.7vw;
     line-height: 21vw;

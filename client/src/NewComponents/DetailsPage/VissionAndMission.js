@@ -53,6 +53,7 @@ const StyledDiv = styled.div`
     }
   }
   .Title {
+    font-weight : Bold;
     // font-family: "Askan DemiBold" !important;
     font-size: 2.5vw;
     /* text-align: left; */
@@ -80,6 +81,7 @@ const StyledDiv = styled.div`
     }
   }
   .Subtitle {
+    font-weight : Bold;
     // font-family: "Lato Bold" !important;
     font-size: 1.9vw;
     margin-right: 0.6vw;

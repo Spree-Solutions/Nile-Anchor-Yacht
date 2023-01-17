@@ -96,6 +96,7 @@ const StyledDiv = styled.div`
     }
   }
   .End_AR {
+    font-weight : Bold;
     // font-family: "Lato Bold" !important;
     font-size: 1.2vw;
     line-height: 1.7vw;

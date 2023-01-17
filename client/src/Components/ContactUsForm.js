@@ -248,7 +248,7 @@ const StyledContainer = styled.div`
     }
     button {
       margin-top: 3vw;
-      width: 10vw;
+      width: 12vw;
       height: 2vw;
       background: ${colors.MainBeige};
       color: ${colors.Navy};

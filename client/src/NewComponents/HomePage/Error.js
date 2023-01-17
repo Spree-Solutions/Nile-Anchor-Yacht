@@ -93,6 +93,7 @@ const StyledDiv = styled.div`
     }
   }
   .DataBodyBold {
+    font-weight : Bold;
     // font-family: "Lato Bold" !important;
     font-size: 1vw;
     padding: 0vw 0vw 3vw 0vw;
