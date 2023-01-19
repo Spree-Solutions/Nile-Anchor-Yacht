@@ -7,8 +7,9 @@ import { DataArabic } from "../../Data/Arabic/HomePage/Gatherings";
 
 import { colors } from "../../Styles/Colors";
 
-import Birthday from "../../Images/Birthday.png";
-import Party from "../../Images/Party.png";
+
+import party1 from "../../Images/new-gatherings/party1.JPG"
+import party2 from "../../Images/new-gatherings/party2.JPG"
 import Gatherings_Background from "../../Images/Gatherings_Background.jpeg";
 
 export default function Gatherings(props) {
@@ -29,7 +30,7 @@ export default function Gatherings(props) {
             <tr className="images-row">
               <td>
                 <img
-                  src={Party}
+                  src={party1}
                   alt="Party"
                   className={`Party ${
                     props.language === "EN" ? "ENcol2" : "ARcol2"
@@ -37,7 +38,7 @@ export default function Gatherings(props) {
                 />
               </td>
               <td>
-                <img src={Birthday} alt="Kids_Birthday" className="Birthday" />
+                <img src={party2} alt="Party" className="Birthday" />
               </td>
             </tr>
           </tr>
