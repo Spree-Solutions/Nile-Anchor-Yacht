@@ -88,14 +88,15 @@ const StyledDiv = styled.div`
   }
   .TitleBold {
     font-size: 3.5vw;
-    font-family: "Askan Bold" !important;
+    font-weight : Bold;
+    // font-family: "Askan Bold" !important;
     /* color: ${colors.Pink}; */
     @media (max-width: 768px) {
       font-size: 5.9vw;
     }
   }
   .body {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.3vw;
     line-height: 1.5vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
@@ -108,7 +109,8 @@ const StyledDiv = styled.div`
     }
   }
   .bodyBold {
-    font-family: "Lato Bold" !important;
+    font-weight : Bold;
+    // font-family: "Lato Bold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;
     a {

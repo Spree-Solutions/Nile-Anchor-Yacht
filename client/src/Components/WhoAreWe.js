@@ -55,7 +55,7 @@ export default function WhoAreWe(props) {
 
 const StyledDiv = styled.div`
   padding: 0vw 5.6vw 0vw 5.1vw;
-  font-family: "Askan Regular" !important;
+  // font-family: "Askan Regular" !important;
   color: ${colors.White};
   background-image: url(${Blacked_Area_Welcome});
   background-position: center;
@@ -63,7 +63,7 @@ const StyledDiv = styled.div`
   background-size: cover;
 
   .SubTitle {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 4.16vw;
     width: 15.2vw;
     padding: 0vw 0vw 1.25vw 0vw;
@@ -71,7 +71,7 @@ const StyledDiv = styled.div`
   }
 
   .Body {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 1.15vw;
     width: 43.7vw;
     padding: 0vw 8.9vw 0vw 7.3vw;
@@ -94,11 +94,11 @@ const StyledDiv = styled.div`
 
 const StyledMobileDiv = styled.div`
   padding: 6.4vw 14.7vw 8vw 8vw;
-  font-family: "Askan Regular" !important;
+  // font-family: "Askan Regular" !important;
   color: ${colors.White};
   background-color: ${colors.DarkBlack};
   text-align: left;
-  font-family: "Askan Light" !important;
+  // font-family: "Askan Light" !important;
 
   .SubTitleMobile {
     font-size: 6.7vw;

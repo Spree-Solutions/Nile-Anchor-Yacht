@@ -48,7 +48,8 @@ const StyledDiv = styled.div`
     }
   }
   .Title {
-    font-family: "Askan DemiBold" !important;
+    font-weight : Bold;
+    // font-family: "Askan DemiBold" !important;
     font-size: 4.2vw;
     padding: 6vw 5.9vw 6vw 0vw;
     p {
@@ -66,7 +67,7 @@ const StyledDiv = styled.div`
     }
   }
   .Body {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.3vw;
     width: fit-content;
     margin: auto;

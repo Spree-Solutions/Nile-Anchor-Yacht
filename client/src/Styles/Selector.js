@@ -41,7 +41,7 @@ const StyledDiv = styled.div`
 
     text-align-last: left;
     padding: 0.4vw 0vw 0.4vw 0.6vw;
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     border-color: ${colors.Merino}!important;
     border-radius: 0px;
     outline: none;
@@ -88,7 +88,7 @@ const StyledDiv = styled.div`
     width: 21.4vw;
     text-align-last: right;
     padding: 0.4vw 0.6vw 0.4vw 0vw;
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     border-color: ${colors.Merino}!important;
     outline: none;
     font-size: 1vw;

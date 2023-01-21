@@ -28,7 +28,7 @@ const StyledDiv = styled.div`
   .Input:active {
     text-align-last: left;
     padding: 0.4vw 0.6vw 0.4vw 0.6vw;
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     border: none;
     outline: none;
     font-size: 1vw;

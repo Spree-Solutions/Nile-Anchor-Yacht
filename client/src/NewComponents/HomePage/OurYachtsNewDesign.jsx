@@ -3,22 +3,22 @@ import styled from "styled-components";
 import Liberty_Image from "../../Images/Liberty_Image.png";
 import Bella_Image from "../../Images/bella-image.jpeg";
 import { colors } from "../../Styles/Colors";
-import BellaYellow from "../../Images/BellaYellow.png";
-import vidaLogo from "../../Images/vida-1.png";
-import Liberty_Dark from "../../Images/libDark.png";
+import BellaDark from "../../Images/Bella_Dark.png";
+import vidaLogo from "../../Images/vida1logo.png";
+import Liberty_Dark2 from "../../Images/Liberty_Dark2.png";
 import vidaImage from "../../Images/Vida Yacht-1.jpg";
 
 export const yachts = {
   bella: {
     displayName: "BELLA",
-    logo: BellaYellow,
+    logo: BellaDark,
     image: Bella_Image,
     description:
       " Bella – Italian for beauty, an inner reflection of the yacht’s overall look. Smaller than the liberty yacht in size yetstands-out elegantly as it cruises throughout Cairo’s Nile River. The yacht offers three decks with a classic high- end interior andß exterior design with the capacity to cater around 30 passengers.ßThe upper deck comes with tinted windows and a 360-degreeß panoramic view, giving our delightful guests the chance toß privately experience Cairo’s Nile River.",
   },
   liberty: {
     displayName: "LIBERTY",
-    logo: Liberty_Dark,
+    logo: Liberty_Dark2,
     image: Liberty_Image,
     description:
       "Liberty - Liberating one’s self to a moment of happiness. The two-story yacht is designed to comfortably accommodate guests who seek to host large; events, celebrations, marriage ceremonies, wedding parties, corporate outings and private meetings on Cairo’s Nile River. The yacht’s exterior and interior design is exquisitely designed to provide our guests with a sense of European luxury on the Nile.",
@@ -77,7 +77,7 @@ const OurYachtsNewDesign = () => {
 const StyledSection = styled.div`
   display: flex;
   color: ${colors.Navy};
-  font-family: "Lato Regular";
+  // font-family: "Lato Regular";
   width: 100%;
   justify-content: space-between;
 
@@ -93,12 +93,12 @@ const StyledSection = styled.div`
   .column-1 {
     width: 50%;
     .title {
-      font-family: "Askan Light";
+      // font-family: "Askan Light";
       font-size: 2vw;
       line-height: 3.5vw;
       h1:first-child {
         font-weight: 700;
-        font-family: "Askan Bold";
+        // font-family: "Askan Bold";
       }
       text-align: left;
       color: ${colors.DarkGrey2};
@@ -116,6 +116,7 @@ const StyledSection = styled.div`
       margin-top: 2vw;
       color: ${colors.Navy};
       font-size: 2vw;
+      font-weight : Bold;
     }
   }
   .column-2 {

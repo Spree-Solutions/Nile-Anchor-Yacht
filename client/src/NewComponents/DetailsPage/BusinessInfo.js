@@ -83,7 +83,7 @@ const StyledDiv = styled.div`
   /* background-image: url(${BusinessInfo_Background}); */
   font-size: 1.8vw;
   line-height: 2.5vw;
-  font-family: "Lato Regular" !important;
+  // font-family: "Lato Regular" !important;
   border-bottom: solid 0.4vw ${colors.DarkGrey};
   @media (max-width: 768px) {
     padding: 10.01vw 8.36vw 15.7vw 8.3vw;

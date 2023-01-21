@@ -22,8 +22,8 @@ export default function WhoAreWe(props) {
                     : "SubTitle RightTextAlign title"
                 }
               >
-                <div> {Data.SubTitle}</div>
-                <div className="SubTitleBold"> {Data.SubTitleBold} </div>
+                <div className="SubTitleBold"> {Data.SubTitleBold}</div>
+                <div className="SubTitleNormal"> {Data.SubTitle} </div>
               </td>
               <td
                 className={
@@ -47,7 +47,7 @@ export default function WhoAreWe(props) {
 
 const StyledDiv = styled.div`
   padding: 2.3vw 7.3vw 2.3vw 5.9vw;
-  font-family: "Askan Regular" !important;
+  // font-family: "Askan Regular" !important;
   color: ${colors.White};
   background-image: url(${Blacked_Area_Welcome});
   background-position: center;
@@ -73,7 +73,7 @@ const StyledDiv = styled.div`
   }
 
   .SubTitle {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 3.32vw;
     width: 16vw;
     padding: 0vw 0vw 0vw 0vw;
@@ -85,15 +85,18 @@ const StyledDiv = styled.div`
       margin-top: 11.5vw;
     }
   }
-  .SubTitleBold {
-    font-family: "Askan Bold" !important;
+  .SubTitleBold{
+    font-weight : 700;
+  }
+  .SubTitleNormal {
+
     @media (max-width: 768px) {
       margin-left: 1vw;
     }
   }
 
   .Body {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 1.2vw;
     text-align: center;
     width: 53vw;

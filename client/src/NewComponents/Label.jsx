@@ -17,7 +17,7 @@ const Styled = styled.div`
   bottom: 0;
   right: 0;
   div {
-    font-family: "Lato Regular";
+    // font-family: "Lato Regular";
     font-size: 2vw;
     position: relative;
     background: ${colors.Navy};

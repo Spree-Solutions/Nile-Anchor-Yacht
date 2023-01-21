@@ -7,8 +7,9 @@ import { DataArabic } from "../../Data/Arabic/HomePage/Gatherings";
 
 import { colors } from "../../Styles/Colors";
 
-import Birthday from "../../Images/Birthday.png";
-import Party from "../../Images/Party.png";
+
+import party1 from "../../Images/new-gatherings/party1.JPG"
+import party2 from "../../Images/new-gatherings/party2.JPG"
 import Gatherings_Background from "../../Images/Gatherings_Background.jpeg";
 
 export default function Gatherings(props) {
@@ -29,7 +30,7 @@ export default function Gatherings(props) {
             <tr className="images-row">
               <td>
                 <img
-                  src={Party}
+                  src={party1}
                   alt="Party"
                   className={`Party ${
                     props.language === "EN" ? "ENcol2" : "ARcol2"
@@ -37,7 +38,7 @@ export default function Gatherings(props) {
                 />
               </td>
               <td>
-                <img src={Birthday} alt="Kids_Birthday" className="Birthday" />
+                <img src={party2} alt="Party" className="Birthday" />
               </td>
             </tr>
           </tr>
@@ -86,9 +87,10 @@ const StyledDiv = styled.div`
     }
   }
   .TitleBold {
-    width: 13vw;
+    width: 16vw;
     font-size: 3vw;
-    font-family: "Askan Bold" !important;
+    font-weight : Bold;
+    // font-family: "Askan Bold" !important;
     /* color: ${colors.Black}; */
     @media (max-width: 768px) {
       font-size: 5.9vw;
@@ -97,7 +99,7 @@ const StyledDiv = styled.div`
     }
   }
   .body {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.3vw;
     line-height: 1.5vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
@@ -109,7 +111,8 @@ const StyledDiv = styled.div`
     }
   }
   .bodyBold {
-    font-family: "Lato Bold" !important;
+    font-weight : Bold;
+    // font-family: "Lato Bold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;
     a {

@@ -66,7 +66,7 @@ const StyledDiv = styled.div`
   /* background-image: url(${WeddingsInfo_Background}); */
   font-size: 1.8vw;
   line-height: 2.2vw;
-  font-family: "Lato Regular" !important;
+  // font-family: "Lato Regular" !important;
   color: ${colors.Black};
   border-bottom: solid 0.35vw black;
   @media (max-width: 768px) {

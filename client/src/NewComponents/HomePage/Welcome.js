@@ -66,12 +66,12 @@ const StyledDiv = styled.div`
   }
 
   .Title {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     padding-top: 16vw;
     font-size: 3.75vw;
     line-height: 4vw;
     @media (max-width: 768px) {
-      font-family: "Askan Light" !important;
+      // font-family: "Askan Light" !important;
       text-align: left;
       font-size: 10.7vw;
       line-height: 12vw;
@@ -79,27 +79,30 @@ const StyledDiv = styled.div`
     }
   }
   .TitleBold {
-    font-family: "Askan Bold" !important;
+    font-weight : Bold;
+    // font-family: "Askan Bold" !important;
     padding-bottom: 11.9vw;
     font-size: 6.67vw;
     line-height: 6.9vw;
     @media (max-width: 768px) {
-      font-family: "Askan Bold" !important;
-      font-size: 18.7vw;
+      font-weight : Bold;
+      // font-family: "Askan Bold" !important;
+      font-size: 16vw;
       line-height: 21vw;
       padding-bottom: 99vw;
     }
   }
 
   /* .TitleMobile {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     text-align: left;
     font-size: 10.7vw;
     line-height: 12vw;
     padding-top: 57vw;
   } */
   .TitleBoldMobile {
-    font-family: "Askan Bold" !important;
+    font-weight : Bold;
+    // font-family: "Askan Bold" !important;
     font-size: 18.7vw;
     line-height: 21vw;
     padding-bottom: 99vw;

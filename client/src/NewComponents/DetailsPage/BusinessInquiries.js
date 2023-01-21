@@ -44,7 +44,7 @@ const StyledDiv = styled.div`
     }
   }
   .Body {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.7vw;
     line-height: 2.5vw;
     padding: 3.5vw 0vw 0vw 0vw;
