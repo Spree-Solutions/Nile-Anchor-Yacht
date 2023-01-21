@@ -1,5 +1,5 @@
 const DataEnglish = {
-  Title: "Contact Us",
+  Title: "Contact Us.",
   body: "To be edited ",
 };
 module.exports = {

@@ -4,19 +4,87 @@ import { DataEnglish } from "../../Data/English/HomePage/Gallery";
 import { DataArabic } from "../../Data/Arabic/HomePage/Gallery";
 import { colors } from "../../Styles/Colors";
 import Gallery_Background from "../../Images/Gallery_Background.jpeg";
-import Liberty_Light from "../../Images/Liberty_Light.png";
-import Bella_Light from "../../Images/Bella_Light.png";
+import Liberty_Dark2 from "../../Images/Liberty_Dark2.png";
+import Bella_Dark from "../../Images/Bella_Dark.png";
 import CarouselComponent from "./Carousel";
-import logo from "../../Images/White_Logo.png";
+import logo from "../../Images/navylogo.png";
+import logoVida from "../../Images/vida1logo.png";
+
+import CustomCarousel from "../CustomCarousel";
+import Bella0 from "../../Images/new-bella/Bella-1.jpg";
+import Bella1 from "../../Images/new-bella/Bella-2.JPG";
+import Bella2 from "../../Images/new-bella/Bella-3.JPG";
+import Bella3 from "../../Images/new-bella/Bella-4.JPG";
+import Bella4 from "../../Images/new-bella/Bella-5.JPG";
+import Bella5 from "../../Images/new-bella/Bella-6.JPG";
+import Bella6 from "../../Images/new-bella/Bella-7.JPG";
+import Bella7 from "../../Images/new-bella/Bella-8.JPG";
+import Bella8 from "../../Images/new-bella/Bella-9.jpg";
+import Bella9 from "../../Images/new-bella/Bella-10.jpg";
+
+
+import Liberty1 from "../../Images/new-liberty/Liberty1.JPG";
+import Liberty2 from "../../Images/new-liberty/Liberty2.JPG";
+import Liberty3 from "../../Images/new-liberty/Liberty3.jpg";
+import Liberty4 from "../../Images/new-liberty/Liberty4.jpg";
+import Liberty5 from "../../Images/new-liberty/Liberty5.JPG";
+import Liberty6 from "../../Images/new-liberty/Liberty6.jpg";
+import Liberty7 from "../../Images/new-liberty/Liberty7.JPG";
+import Liberty8 from "../../Images/new-liberty/Liberty8.JPG";
+import Liberty9 from "../../Images/new-liberty/Liberty9.JPG";
+import Liberty10 from "../../Images/new-liberty/Liberty10.jpg";
+import Liberty11 from "../../Images/new-liberty/Liberty11.JPG";
+import Liberty12 from "../../Images/new-liberty/Liberty12.JPG";
+import Liberty13 from "../../Images/new-liberty/Liberty13.jpg";
+
+import Vida1 from "../../Images/Vida Yacht-6.jpg";
+import Vida2 from "../../Images/Vida Yacht-7.jpg";
+import Vida3 from "../../Images/Vida Yacht-1.jpg";
+import Vida4 from "../../Images/Vida Yacht-2.jpg";
+import Vida5 from "../../Images/Vida Yacht-3.jpg";
+import Vida6 from "../../Images/Vida Yacht-4.jpg";
+import Vida7 from "../../Images/Vida Yacht-8.jpg";
+import Vida8 from "../../Images/Vida Yacht-9.jpg";
+import Vida9 from "../../Images/Vida Yacht-10.jpg";
+// import Vida5 from "../../Images/Vida Yacht-5.jpg";
 
 export default function Gallery(props) {
+  const bellaImages = [Bella0, Bella1, Bella2, Bella3, Bella4, Bella5, Bella6, Bella7, Bella8, Bella9];
+  const libertyImages = [
+    Liberty1,
+    Liberty2,
+    Liberty3,
+    Liberty4,
+    Liberty5,
+    Liberty6,
+    Liberty7,
+    Liberty8,
+    Liberty9,
+    Liberty10,
+    Liberty11,
+    Liberty12,
+    Liberty13, 
+
+  ];
+  const vidaImages = [
+    Vida1,
+    Vida2,
+    Vida3,
+    Vida4,
+    Vida5,
+    Vida6,
+    Vida7,
+    Vida8,
+    Vida9,
+  ];
+  const [selectedYacht, setSelectedYacht] = useState(libertyImages);
+  const [selectedYachtName, setSelectedYachtName] = useState("liberty");
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
       <div
         className={props.language === "EN" ? "LeftTextAlign" : "RightTextAlign"}
       >
-        <div className="vertical-line"></div>
         <div
           className={
             props.language === "EN"
@@ -27,35 +95,44 @@ export default function Gallery(props) {
           <p>{Data.Title}</p>
           <img src={logo} alt="logo" />
         </div>
-        <div className={props.language === "EN" ? "ENTable" : "ARTable"}>
-          <table>
-            <tr>
-              <td className="Col1 top">
-                <div>
-                  <img src={Liberty_Light} alt="" className="LibertyImage" />
-                </div>
-                <div> {Data.LibertyBody} </div>
-              </td>
-
-              <td
-                className={
-                  props.language === "EN" ? "ENCol2 top" : "ARCol2 top"
-                }
-              >
-                <div>
-                  {" "}
-                  <img src={Bella_Light} alt="" className="BellaImage" />
-                </div>
-                <div>{Data.BellaBody}</div>
-              </td>
-            </tr>
-          </table>
+        <div className="heading-section">
+          <img
+            src={Liberty_Dark2}
+            alt="liberty"
+            onClick={() => {
+              setSelectedYacht(libertyImages);
+              setSelectedYachtName("liberty");
+            }}
+            className={`${selectedYachtName === "liberty" ? "selected" : ""}`}
+          />
+          <div className="separator"></div>
+          <img
+            src={Bella_Dark}
+            id="bella"
+            alt="bella"
+            onClick={() => {
+              setSelectedYacht(bellaImages);
+              setSelectedYachtName("bella");
+            }}
+            className={`${selectedYachtName === "bella" ? "selected" : ""}`}
+          />
+          <div className="separator"></div>
+          <img
+            src={logoVida}
+            id="bella"
+            alt="bella"
+            onClick={() => {
+              setSelectedYacht(vidaImages);
+              setSelectedYachtName("vida1");
+            }}
+            className={`${selectedYachtName === "vida1" ? "selected" : ""}`}
+          />
         </div>
-        <div>
-          <CarouselComponent language={props.language} />
+        <div className="carousel-section">
+          <CustomCarousel imagesArray={selectedYacht} />
         </div>
         <div className="Title">
-          {Data.ServicesTitle}{" "}
+          {Data.ServicesTitle}&nbsp;
           <span className="Bold-Title"> {Data.ServicesTitleBold}</span>
         </div>
       </div>
@@ -66,24 +143,13 @@ export default function Gallery(props) {
 const StyledDiv = styled.div`
   position: relative;
   padding: 0vw 0vw 0vw 0vw;
-  font-family: "Askan Regular" !important;
-  background-image: url(${Gallery_Background});
+  // font-family: "Askan Regular" !important;
+  /* background-image: url(${Gallery_Background}); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: ${colors.White};
-  border-bottom: solid 0.35vw black;
-  .vertical-line {
-    position: absolute;
-    left: 46vw;
-    top: 25vw;
-    height: 30vw;
-    width: 0.05vw;
-    background: white;
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
+  color: ${colors.Navy};
+  /* border-bottom: solid 0.35vw black; */
 
   .LeftTextAlign {
     text-align: left;
@@ -116,20 +182,20 @@ const StyledDiv = styled.div`
     }
   }
   .ENTitle {
-    background-color: ${colors.DarkBrown};
-    font-family: "Merriweather Regular";
+    background-color: ${colors.MainBeige};
+    // font-family: "Merriweather Regular";
     line-height: 3vw;
-    padding: 1.9vw 5.5vw 1.5vw 5.5vw;
+    padding: 0.2vw 5.5vw 0.2vw 5.5vw;
   }
   .ARTitle {
     background-color: ${colors.DarkBrown};
-    font-family: "Merriweather Regular";
+    // font-family: "Merriweather Regular";
     line-height: 3vw;
     padding: 1.9vw 05.5vw 1.5vw 0vw;
   }
   .ENTable {
     padding: 0vw 0vw 6.95vw 5.5vw;
-    font-family: "Lato Regular";
+    // font-family: "Lato Regular";
     font-size: 1.3vw;
     line-height: 1.8vw;
     text-align: justify;
@@ -137,7 +203,7 @@ const StyledDiv = styled.div`
   }
   .ARTable {
     padding: 0vw 5.5vw 6.95vw 0vw;
-    font-family: "Lato Regular";
+    // font-family: "Lato Regular";
     font-size: 0.97vw;
     line-height: 1.4vw;
     background: rgba(37, 28, 21, 0.7);
@@ -190,14 +256,18 @@ const StyledDiv = styled.div`
     }
   }
   .Title {
-    background: rgba(0, 0, 0, 0.7);
-    font-family: "Merriweather Regular";
+    background: ${colors.MainBeige};
+    // font-family: "Merriweather Regular";
     font-size: 3.1vw;
     line-height: 3vw;
-    padding: 1.9vw 0vw 1.5vw 5.5vw;
+    /* padding: 1.9vw 0vw 1.5vw 5.5vw; */
+    padding: 0vw 5.5vw;
     margin: 3.7vw 0vw 0vw 0vw;
+    display:flex;
+    align-items:center;
+    height : 5.626vw;
     @media (max-width: 768px) {
-      height: 14vw;
+      height: 16.393vw;
       font-size: 6vw;
       display: flex;
       align-items: center;
@@ -206,7 +276,43 @@ const StyledDiv = styled.div`
       }
     }
     .Bold-Title {
-      font-family: "Merriweather Bold";
+      font-weight : Bold;
+      // font-family: "Merriweather Bold";
+    }
+  }
+  .heading-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40vw;
+    margin: auto;
+    padding: 3vw;
+    @media (max-width: 768px) {
+      width: 80vw;
+      justify-content: space-around;
+    }
+    img {
+      cursor: pointer;
+      width: 10vw;
+      padding-bottom: 0.2vw;
+      &#bella {
+        margin-top: 0.5vw;
+      }
+      &.selected {
+        border-bottom: solid 0.1vw ${colors.Navy};
+      }
+      @media (max-width: 768px) {
+        width: 20vw;
+      }
+    }
+    .separator {
+      height: 4vw;
+      width: 0.2vw;
+      background: ${colors.Navy};
+      @media (max-width: 768px) {
+        height: 12vw;
+        width: 0.4vw;
+      }
     }
   }
 `;

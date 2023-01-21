@@ -12,7 +12,7 @@ const SideSlider = () => {
         </a>
       </div>
       <div className="book-now">
-        <a href="/#booking">Book Now</a>
+        <a href="#booking">Book Now</a>
       </div>
     </StyledSlider>
   );
@@ -48,7 +48,7 @@ const StyledSlider = styled.div`
   }
   .book-now {
     padding: 0.25vw 0vw;
-    background: white;
+    background: ${colors.MainBeige};
     @media (max-width: 768px) {
       padding: 0.75vw 0vw;
     }
@@ -58,7 +58,8 @@ const StyledSlider = styled.div`
       color: black;
       writing-mode: tb-rl;
       transform: rotate(-180deg);
-      font-family: "Askan Bold" !important;
+      font-weight : Bold;
+      // font-family: "Askan Bold" !important;
       font-size: 0.8vw;
       @media (max-width: 768px) {
         font-size: 3.2vw;

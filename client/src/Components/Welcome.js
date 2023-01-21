@@ -78,28 +78,30 @@ const StyledDiv = styled.div`
   }
 
   .Title {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     padding-top: 18vw;
     padding-left: 0.5vw;
     font-size: 4.4vw;
     line-height: 4.4vw;
   }
   .TitleBold {
-    font-family: "Askan Bold" !important;
+    font-weight : Bold;
+    // font-family: "Askan Bold" !important;
     padding-bottom: 11.5vw;
     font-size: 7.4vw;
     line-height: 7.4vw;
   }
 
   .TitleMobile {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     text-align: left;
     font-size: 10.7vw;
     line-height: 12vw;
     padding-top: 57vw;
   }
   .TitleBoldMobile {
-    font-family: "Askan Bold" !important;
+    font-weight : Bold;
+    // font-family: "Askan Bold" !important;
     font-size: 18.7vw;
     line-height: 21vw;
     padding-bottom: 99vw;

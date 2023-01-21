@@ -41,12 +41,13 @@ export default function BusinessEvents(props) {
 
 const StyledDiv = styled.div`
   padding: 2.5vw 3vw 7vw 5.63vw;
-  color: ${colors.Black};
+  color: ${colors.Navy};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${Business_Background});
-  border-bottom: solid 0.35vw black;
+  background: ${colors.MainBeige};
+  /* background-image: url(${Business_Background}); */
+  /* border-bottom: solid 0.35vw black; */
   height: 15vw;
 
   @media (max-width: 768px) {
@@ -71,10 +72,11 @@ const StyledDiv = styled.div`
   }
   .TitleBold {
     width: 2vw;
-    font-size: 3vw;
+    font-size: 3.5vw;
     line-height: 3vw;
-    font-family: "Askan Bold" !important;
-    color: ${colors.White};
+    font-weight : Bold;
+    // font-family: "Askan Bold" !important;
+    /* color: ${colors.White}; */
     @media (max-width: 768px) {
       font-size: 5.9vw;
       width: 26.4vw;
@@ -82,11 +84,11 @@ const StyledDiv = styled.div`
     }
   }
   .body {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.3vw;
     line-height: 1.5vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
-    text-align: justify;
+    /* text-align: justify; */
     @media (max-width: 768px) {
       font-size: 3.2vw;
       line-height: normal;
@@ -95,17 +97,24 @@ const StyledDiv = styled.div`
     }
   }
   .bodyBold {
-    font-family: "Lato Bold" !important;
+    font-weight : Bold;
+    // font-family: "Lato Bold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;
+    a {
+      color: ${colors.Navy};
+      font-size: 1.3vw;
+    }
     @media (max-width: 768px) {
-      font-size: 3.2vw;
+      a {
+        font-size: 3.2vw;
+      }
       margin-bottom: 9vw;
     }
   }
   .ENcol1 {
     width: 52.4vw;
-    padding-right: 19vw;
+    padding-right: 17vw;
 
     @media (max-width: 768px) {
       padding: 0;
@@ -117,7 +126,7 @@ const StyledDiv = styled.div`
     padding-left: 27.4vw;
   }
   .Business_Meeting {
-    width: 44.5vw;
+    width: 46.8vw;
     height: 19vw;
     object-fit: cover;
     @media (max-width: 768px) {

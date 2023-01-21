@@ -40,16 +40,34 @@ export default function Footer(props) {
                 )}
               </td> */}
               <td className="Col3">
-                <img src={fb} alt="fb" className="fb" />
+                <a
+                  target="__blank"
+                  href="https://www.facebook.com/Thenileanchor"
+                >
+                  <img src={fb} alt="fb" className="fb" />
+                </a>
                 {/* <img src={twitter} alt="twitter" className="twitter" /> */}
-                <img src={whatsapp} alt="whatsapp" className="whatsapp" />
-                <img src={instagram} alt="instagram" className="instagram" />
+                <a target="__blank" href="https://wa.me/+201211140222">
+                  <img src={whatsapp} alt="whatsapp" className="whatsapp" />
+                </a>
+                <a
+                  target="__blank"
+                  href="https://www.instagram.com/thenileanchor"
+                >
+                  <img src={instagram} alt="instagram" className="instagram" />
+                </a>
               </td>
               <td className="Col4">
                 <div>{Data.body1}</div>
                 <div>{Data.body2}</div>
-                <div>{Data.body3}</div>
-                <div>{Data.body4}</div>
+                <div>
+                  Tel: <a href="tel:+201211140222">01211140222</a>
+                </div>
+                <div>
+                  <a href="mailto:Info@thenileanchor.com">
+                    Info@thenileanchor.com
+                  </a>
+                </div>
                 <div>{Data.body5}</div>
               </td>
             </tr>
@@ -60,10 +78,10 @@ export default function Footer(props) {
   );
 }
 const StyledDiv = styled.div`
-  font-family: "Askan Light" !important;
+  // font-family: "Askan Light" !important;
   font-size: 1.25vw;
-  color: ${colors.Black};
-  background-color: ${colors.Merino};
+  color: ${colors.DarkGrey};
+  /* background-color: ${colors.Merino}; */
   a {
     text-decoration: none;
     color: black;
@@ -143,7 +161,7 @@ const StyledDiv = styled.div`
 
   .Item {
     margin-left: 1.4vw;
-    font-family: "Askan Regular" !important;
+    // font-family: "Askan Regular" !important;
     font-size: 1.25vw;
     cursor: pointer;
   }

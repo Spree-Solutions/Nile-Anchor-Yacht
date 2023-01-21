@@ -26,19 +26,22 @@ export default function TextField(props) {
 
 const StyledDiv = styled.div`
   width: 100%;
+  Input::placeholder { 
+    color: ${colors.Navy};
+  }
   .Input,
   .Input:hover,
   .Input:active {
     width: 100%;
     text-align-last: left;
     padding: 0.4vw 0.6vw 0.4vw 0.6vw;
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     border: none;
     outline: none;
     font-size: 1vw;
-    color: ${colors.Black};
+    color: ${colors.Navy};
     cursor: pointer;
-    background-color: ${colors.Merino} !important;
+    background-color: ${colors.White} !important;
     @media (max-width: 768px) {
       font-size: 2.4vw;
     }

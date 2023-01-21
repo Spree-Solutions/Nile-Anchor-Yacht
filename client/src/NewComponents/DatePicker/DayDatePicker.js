@@ -11,13 +11,13 @@ const DatePickerWrapperStyles = createGlobalStyle`
 .DatePicker:active {
   text-align-last: left;
   padding: 0.4vw 0.6vw 0.4vw 0.6vw;
-  font-family: "Askan Light" !important;
+  // font-family: "Askan Light" !important;
   border: none;
   outline: none;
   font-size: 1vw;
   color: ${colors.Black};
   cursor: pointer;
-  background-color: ${colors.Merino} !important;
+  background-color: ${colors.White} !important;
   @media (max-width: 768px) {
       height: 8.8vw;
     font-size: 2.4vw;

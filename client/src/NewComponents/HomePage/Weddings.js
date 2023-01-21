@@ -51,12 +51,12 @@ export default function Weddings(props) {
 }
 const StyledDiv = styled.div`
   padding: 2.5vw 3vw 6vw 5.63vw;
-  color: ${colors.Black};
+  color: ${colors.DarkGrey};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${Wedding_Background});
-  border-bottom: solid 0.35vw black;
+  /* background-image: url(${Wedding_Background}); */
+  /* border-bottom: solid 0.35vw black; */
   height: 15vw;
   @media (max-width: 768px) {
     padding: 9.6vw 8vw 12vw 8vw;
@@ -87,19 +87,20 @@ const StyledDiv = styled.div`
     }
   }
   .TitleBold {
-    font-size: 3vw;
-    font-family: "Askan Bold" !important;
-    color: ${colors.Pink};
+    font-size: 3.5vw;
+    font-weight : Bold;
+    // font-family: "Askan Bold" !important;
+    /* color: ${colors.Pink}; */
     @media (max-width: 768px) {
       font-size: 5.9vw;
     }
   }
   .body {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.3vw;
     line-height: 1.5vw;
     padding: 1.88vw 0vw 1.88vw 0vw;
-    text-align: justify;
+    /* text-align: justify; */
     @media (max-width: 768px) {
       font-size: 3.2vw;
       line-height: normal;
@@ -108,18 +109,25 @@ const StyledDiv = styled.div`
     }
   }
   .bodyBold {
-    font-family: "Lato Bold" !important;
+    font-weight : Bold;
+    // font-family: "Lato Bold" !important;
     font-size: 1.1vw;
     line-height: 1.4vw;
+    a {
+      color: ${colors.DarkGrey};
+      font-size: 1.3vw;
+    }
     @media (max-width: 768px) {
-      font-size: 3.2vw;
+      a {
+        font-size: 3.2vw;
+      }
       line-height: normal;
     }
   }
 
   .ENcol1 {
     width: 52.5vw;
-    padding-right: 19vw;
+    padding-right: 17vw;
     @media (max-width: 768px) {
       padding: 0;
       width: 100%;
@@ -145,16 +153,16 @@ const StyledDiv = styled.div`
     }
   }
   .Wedding_Rings {
-    width: 15.5vw;
-    height: 18vw;
+    /* width: 18.5vw; */
+    height: 19vw;
     @media (max-width: 768px) {
       width: 33.9vw;
       height: 31.75vw;
     }
   }
   .Wedding_Setup {
-    width: 27.25vw;
-    height: 18vw;
+    /* width: 27.25vw; */
+    height: 19vw;
     @media (max-width: 768px) {
       width: 44.8vw;
       height: 31.75vw;

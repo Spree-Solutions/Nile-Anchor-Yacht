@@ -4,6 +4,7 @@ import { DataEnglish } from "../../Data/English/DetailsPage/GatheringsPackage";
 import { DataArabic } from "../../Data/Arabic/DetailsPage/GatheringsPackage";
 
 import { colors } from "../../Styles/Colors";
+import Label from "../Label";
 
 export default function GatheringsPackage(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -16,14 +17,16 @@ export default function GatheringsPackage(props) {
           return <div>{item}</div>;
         })}
       </div>
-      <div className="End">{Data.end}</div>
+      {/* <div className="End">{Data.end}</div> */}
+      {/* <Label /> */}
     </StyledDiv>
   );
 }
 const StyledDiv = styled.div`
-  color: ${colors.Black};
+  position: relative;
+  color: ${colors.DarkGrey};
   padding: 3.47vw 5.6vw 2.3vw 5.6vw;
-  background-color: ${colors.MainBeige};
+  background-color: ${colors.White};
   text-align: center;
   @media (max-width: 768px) {
     padding-top: 13.33vw;
@@ -33,14 +36,14 @@ const StyledDiv = styled.div`
   }
 
   .Title {
-    font-family: "Askan DemiBold" !important;
-    font-size: 2.2vw;
-    padding: 1vw;
+    // font-family: "Lato Regular" !important;
+    font-size: 2.3vw;
+    padding: 0.4vw;
     /* padding: 0vw 0vw 3vw 0vw; */
     width: fit-content;
     margin: auto;
     margin-bottom: 2vw;
-    border: 0.25vw solid black;
+    border: 0.25vw solid ${colors.DarkGrey};
     @media (max-width: 768px) {
       padding: 3vw;
       font-size: 5.9vw;
@@ -49,8 +52,8 @@ const StyledDiv = styled.div`
     }
   }
   .Body {
-    font-family: "Lato Regular" !important;
-    font-size: 1.5vw;
+    // font-family: "Lato Regular" !important;
+    font-size: 1.9vw;
     line-height: 2.5vw;
     @media (max-width: 768px) {
       padding: 0;
@@ -61,7 +64,8 @@ const StyledDiv = styled.div`
     }
   }
   .End {
-    font-family: "Lato Bold" !important;
+    font-weight : Bold;
+    // font-family: "Lato Bold" !important;
     font-size: 1.5vw;
     line-height: 1.7vw;
     padding: 3.125vw 0vw 0vw 30vw;

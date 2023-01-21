@@ -6,6 +6,7 @@ import { colors } from "../../Styles/Colors";
 import Liberty_Light from "../../Images/Liberty_Light.png";
 import Liberty_Image from "../../Images/Liberty_Image.png";
 import BellaYellow from "../../Images/BellaYellow.png";
+import OurYachtsNewDesign, { yachts } from "./OurYachtsNewDesign";
 
 export default function OurYachts(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -46,7 +47,7 @@ export default function OurYachts(props) {
                                 : "clickable"
                             }
                           >
-                            {yacht}
+                            {yachts[yacht].displayName}
                           </span>
                         </span>
                       );
@@ -58,7 +59,7 @@ export default function OurYachts(props) {
                             chosenYacht === yacht ? "chosenButton" : "clickable"
                           }
                         >
-                          {yacht}
+                          {yachts[yacht].displayName}
                         </span>
                       );
                     }
@@ -69,7 +70,7 @@ export default function OurYachts(props) {
           </table>
           <div>
             <img
-              src={Liberty_Image}
+              src={yachts[chosenYacht].image}
               alt="Liberty"
               className="Liberty_Image_Mobile"
             />
@@ -81,17 +82,15 @@ export default function OurYachts(props) {
                   <td className="ImageCol">
                     <div
                       className={
-                        chosenYacht === "Liberty"
-                          ? "Liberty_Light_Background"
-                          : "Bella_Light_Background"
+                        chosenYacht === "liberty" || chosenYacht === "bella"
+                          ? chosenYacht === "liberty"
+                            ? "Liberty_Light_Background"
+                            : "Bella_Light_Background"
+                          : ""
                       }
                     >
                       <img
-                        src={
-                          chosenYacht === "Liberty"
-                            ? Liberty_Light
-                            : BellaYellow
-                        }
+                        src={yachts[chosenYacht].logo}
                         alt="Liberty"
                         className="Liberty_Light_Mobile"
                       />
@@ -99,9 +98,7 @@ export default function OurYachts(props) {
                   </td>
                   <td>
                     <div className="body_Mobile">
-                      {chosenYacht === "Liberty"
-                        ? Data.LibertyBody
-                        : Data.BellaBody}
+                      {yachts[chosenYacht].description}
                     </div>
                     {/* <div className="bodyBold_Mobile">{Data.bodyBold}</div> */}
                   </td>
@@ -131,126 +128,127 @@ export default function OurYachts(props) {
           </div>
         </div>
       ) : (
-        <div
-          className={
-            props.language === "EN" ? "LeftTextAlign" : "RightTextAlign"
-          }
-        >
-          <table>
-            <tbody>
-              <tr>
-                <td className="Col1 Title">
-                  <div className="Title"> {Data.TitleBold}</div>
-                  <div className="TitleRegular"> {Data.Title}</div>
-                  {Data.List.map((item, index) => (
-                    <div className="ListItem">
-                      <svg
-                        width="0.7vw"
-                        height="0.7vw"
-                        viewBox="0 0 0.7vw 0.7vw"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={
-                          props.language === "EN" ? "ENbullet" : "ARbullet"
-                        }
-                      >
-                        <rect
-                          width="0.7vw"
-                          height="0.7vw"
-                          fill={colors.Black}
-                        />
-                      </svg>{" "}
-                      <a href={`${index === 0 ? "/#gallery" : "/#booking"}`}>
-                        {item}
-                      </a>
-                    </div>
-                  ))}
-                </td>
-                <td>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td>
-                          {" "}
-                          <div className="Col2">
-                            <img
-                              src={Liberty_Image}
-                              alt="Liberty"
-                              className="Liberty_Image"
-                            />
-                          </div>
-                        </td>
-                        <td className="Col3">
-                          <div className="buttons">
-                            {Data.Options.map((yacht, index) => {
-                              if (index !== 0) {
-                                return (
-                                  <span>
-                                    {" | "}
-                                    <span
-                                      onClick={() => setChosenYacht(yacht)}
-                                      className={
-                                        chosenYacht === yacht
-                                          ? "chosenButton"
-                                          : "clickable"
-                                      }
-                                    >
-                                      {yacht}
-                                    </span>
-                                  </span>
-                                );
-                              } else {
-                                return (
-                                  <span
-                                    onClick={() => setChosenYacht(yacht)}
-                                    className={
-                                      chosenYacht === yacht
-                                        ? "chosenButton"
-                                        : "clickable"
-                                    }
-                                  >
-                                    {yacht}
-                                  </span>
-                                );
-                              }
-                            })}
-                          </div>
-                          <div
-                            className={
-                              chosenYacht === "Liberty"
-                                ? "Liberty_Light_Background"
-                                : "Bella_Light_Background"
-                            }
-                          >
-                            {chosenYacht === "Liberty" ? (
-                              <img
-                                src={Liberty_Light}
-                                alt="Liberty"
-                                className="Liberty_Light"
-                              />
-                            ) : (
-                              <img
-                                src={BellaYellow}
-                                alt="Bella"
-                                className="BellaYellow"
-                              />
-                            )}
-                          </div>
-                          <div className="body">
-                            {chosenYacht === "Liberty"
-                              ? Data.LibertyBody
-                              : Data.BellaBody}
-                          </div>
-                          {/* <div className="bodyBold">{Data.ReadMore}</div> */}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <OurYachtsNewDesign />
+        // <div
+        //   className={
+        //     props.language === "EN" ? "LeftTextAlign" : "RightTextAlign"
+        //   }
+        // >
+        //   <table>
+        //     <tbody>
+        //       <tr>
+        //         <td className="Col1 Title">
+        //           <div className="Title"> {Data.TitleBold}</div>
+        //           <div className="TitleRegular"> {Data.Title}</div>
+        //           {Data.List.map((item, index) => (
+        //             <div className="ListItem">
+        //               <svg
+        //                 width="0.7vw"
+        //                 height="0.7vw"
+        //                 viewBox="0 0 0.7vw 0.7vw"
+        //                 fill="none"
+        //                 xmlns="http://www.w3.org/2000/svg"
+        //                 className={
+        //                   props.language === "EN" ? "ENbullet" : "ARbullet"
+        //                 }
+        //               >
+        //                 <rect
+        //                   width="0.7vw"
+        //                   height="0.7vw"
+        //                   fill={colors.Black}
+        //                 />
+        //               </svg>{" "}
+        //               <a href={`${index === 0 ? "/#gallery" : "/#booking"}`}>
+        //                 {item}
+        //               </a>
+        //             </div>
+        //           ))}
+        //         </td>
+        //         <td>
+        //           <table>
+        //             <tbody>
+        //               <tr>
+        //                 <td>
+        //                   {" "}
+        //                   <div className="Col2">
+        //                     <img
+        //                       src={Liberty_Image}
+        //                       alt="Liberty"
+        //                       className="Liberty_Image"
+        //                     />
+        //                   </div>
+        //                 </td>
+        //                 <td className="Col3">
+        //                   <div className="buttons">
+        //                     {Data.Options.map((yacht, index) => {
+        //                       if (index !== 0) {
+        //                         return (
+        //                           <span>
+        //                             {" | "}
+        //                             <span
+        //                               onClick={() => setChosenYacht(yacht)}
+        //                               className={
+        //                                 chosenYacht === yacht
+        //                                   ? "chosenButton"
+        //                                   : "clickable"
+        //                               }
+        //                             >
+        //                               {yacht}
+        //                             </span>
+        //                           </span>
+        //                         );
+        //                       } else {
+        //                         return (
+        //                           <span
+        //                             onClick={() => setChosenYacht(yacht)}
+        //                             className={
+        //                               chosenYacht === yacht
+        //                                 ? "chosenButton"
+        //                                 : "clickable"
+        //                             }
+        //                           >
+        //                             {yacht}
+        //                           </span>
+        //                         );
+        //                       }
+        //                     })}
+        //                   </div>
+        //                   <div
+        //                     className={
+        //                       chosenYacht === "Liberty"
+        //                         ? "Liberty_Light_Background"
+        //                         : "Bella_Light_Background"
+        //                     }
+        //                   >
+        //                     {chosenYacht === "Liberty" ? (
+        //                       <img
+        //                         src={Liberty_Light}
+        //                         alt="Liberty"
+        //                         className="Liberty_Light"
+        //                       />
+        //                     ) : (
+        //                       <img
+        //                         src={BellaYellow}
+        //                         alt="Bella"
+        //                         className="BellaYellow"
+        //                       />
+        //                     )}
+        //                   </div>
+        //                   <div className="body">
+        //                     {chosenYacht === "Liberty"
+        //                       ? Data.LibertyBody
+        //                       : Data.BellaBody}
+        //                   </div>
+        //                   {/* <div className="bodyBold">{Data.ReadMore}</div> */}
+        //                 </td>
+        //               </tr>
+        //             </tbody>
+        //           </table>
+        //         </td>
+        //       </tr>
+        //     </tbody>
+        //   </table>
+        // </div>
       )}
     </StyledDiv>
   );
@@ -260,7 +258,7 @@ const StyledDiv = styled.div`
   padding: 3.7vw 5.7vw 5.8vw 5.5vw;
   background-color: ${colors.White};
   color: ${colors.Navy};
-  font-family: "Askan Regular" !important;
+  // font-family: "Askan Regular" !important;
   .LeftTextAlign {
     text-align: left;
   }
@@ -278,16 +276,20 @@ const StyledDiv = styled.div`
     margin: 0.3vw 0vw 0.2vw 0.5vw;
   }
   .Title {
-    font-family: "Askan DemiBold" !important;
+    font-weight : Bold;
+    // font-family: "Askan DemiBold" !important;
     font-size: 4vw;
     line-height: 3.5vw;
+    color: #404040;
   }
   .TitleRegular {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     padding-bottom: 6.5vw;
+    color: #404040;
   }
   .ListItem {
-    font-family: "Askan DemiBold" !important;
+    font-weight : Bold;
+    // font-family: "Askan DemiBold" !important;
     font-size: 1.8vw;
     line-height: 1.8vw;
     padding-bottom: 0.76vw;
@@ -298,13 +300,14 @@ const StyledDiv = styled.div`
     }
   }
   .body {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 1.4vw;
     line-height: 2vw;
     padding: 1.875vw 0vw 1.32vw 0vw;
   }
   .bodyBold {
-    font-family: "Askan DemiBold" !important;
+    font-weight : Bold;
+    // font-family: "Askan DemiBold" !important;
     font-size: 1.1vw;
     line-height: 1.35vw;
     cursor: pointer;
@@ -340,10 +343,11 @@ const StyledDiv = styled.div`
     font-size: 1.4vw;
     line-height: 1.8vw;
     text-transform: uppercase;
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
   }
   .chosenButton {
-    font-family: "Askan DemiBold" !important;
+    font-weight : Bold;
+    // font-family: "Askan DemiBold" !important;
     text-decoration-line: underline;
     cursor: pointer;
   }
@@ -393,7 +397,7 @@ const StyledDiv = styled.div`
     padding-top: 5.1vw;
   }
   .Title_Mobile {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 6.7vw;
     line-height: 6.7vw;
     text-align: left;
@@ -413,14 +417,15 @@ const StyledDiv = styled.div`
     margin: 3.6vw 3.1vw 3.68vw 3.3vw;
   }
   .body_Mobile {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 3.2vw;
     line-height: 6vw;
     padding: 0vw 0vw 0.7vw 5vw;
     text-align: left;
   }
   .bodyBold_Mobile {
-    font-family: "Askan DemiBold" !important;
+    font-weight : Bold;
+    // font-family: "Askan DemiBold" !important;
     font-size: 3.2vw;
     line-height: 3.6vw;
     padding-left: 5vw;
@@ -440,5 +445,8 @@ const StyledDiv = styled.div`
   .ListItems_Mobile {
     margin: 8vw 0vw 0vw 0vw;
     text-align: center;
+    a{
+      font-weight : Bold;
+    }
   }
 `;

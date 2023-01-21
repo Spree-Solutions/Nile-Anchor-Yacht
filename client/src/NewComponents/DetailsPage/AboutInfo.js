@@ -14,14 +14,17 @@ export default function AboutInfo(props) {
   return (
     <StyledDiv>
       <div className="Body">{Data.body}</div>
-      <img src={AboutTitle} alt="" className="ImageAboutInfo" />
+      <iframe
+        width="1000"
+        height="530"
+        src="https://www.youtube.com/embed/IZOxeMSrkPE?rel=0&mute=1"
+      ></iframe>
       <div className="Label">{Data.label}</div>
     </StyledDiv>
   );
 }
 
 const StyledDiv = styled.div`
-  color: ${colors.White};
   padding: 7.2vw 8vw 6.04vw 8vw;
 
   /* text-align: left; */
@@ -30,7 +33,7 @@ const StyledDiv = styled.div`
     rgba(0, 136, 171, 0.9) 0%,
     rgba(0, 51, 66, 0.9) 100%
   ); */
-  background-image: url(${bluegradient});
+  /* background-image: url(${bluegradient}); */
   background-size: cover;
   @media (max-width: 768px) {
     padding: 0;
@@ -40,16 +43,17 @@ const StyledDiv = styled.div`
   }
 
   .Body {
-    font-family: "Askan Regular" !important;
-    font-size: 1.6vw;
-    line-height: 2.2vw;
-    text-align: justify;
-    text-align-last: center;
+    color: ${colors.DarkGrey2};
+    // font-family: "Askan Regular" !important;
+    font-size: 1.9vw;
+    line-height: 2.5vw;
+    /* text-align: justify; */
+    /* text-align-last: center; */
     padding: 0vw 0vw 2.6vw 0vw;
     display: flex;
     flex-direction: column;
     @media (max-width: 768px) {
-      font-family: "Lato Regular" !important;
+      // font-family: "Lato Regular" !important;
       font-size: 3.7vw;
       line-height: 5.3vw;
       width: 85.1vw;
@@ -72,12 +76,13 @@ const StyledDiv = styled.div`
     }
   }
   .Label {
-    font-family: "Askan Regular" !important;
+    // font-family: "Askan Regular" !important;
     font-size: 2vw;
     margin-top: 1vw;
     text-align: center;
+    text-decoration: underline;
     @media (max-width: 768px) {
-      font-family: "Lato Regular" !important;
+      // font-family: "Lato Regular" !important;
       font-size: 3.7vw;
       align-self: flex-end;
       margin: auto;

@@ -16,12 +16,14 @@ import GatheringsTitle from "./../NewComponents/DetailsPage/GatheringsTitle";
 import GatheringsInfo from "./../NewComponents/DetailsPage/GatheringsInfo";
 import GatheringsPackage from "./../NewComponents/DetailsPage/GatheringsPackage";
 import Contact from "./../Components/Contact";
+import CeoMessage from "../NewComponents/DetailsPage/CeoMessage";
 
 export default function AboutPage(props) {
   return (
     <div>
       <AboutTitle language={props.language} />
       <AboutInfo language={props.language} />
+      <CeoMessage />
       <VissionAndMission language={props.language} />
       <Contact language={props.language} />
     </div>

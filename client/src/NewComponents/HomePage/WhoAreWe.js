@@ -22,8 +22,8 @@ export default function WhoAreWe(props) {
                     : "SubTitle RightTextAlign title"
                 }
               >
-                <div> {Data.SubTitle}</div>
-                <div className="SubTitleBold"> {Data.SubTitleBold} </div>
+                <div className="SubTitleBold"> {Data.SubTitleBold}</div>
+                <div className="SubTitleNormal"> {Data.SubTitle} </div>
               </td>
               <td
                 className={
@@ -46,8 +46,8 @@ export default function WhoAreWe(props) {
 }
 
 const StyledDiv = styled.div`
-  padding: 0vw 7.3vw 2.3vw 5.9vw;
-  font-family: "Askan Regular" !important;
+  padding: 2.3vw 7.3vw 2.3vw 5.9vw;
+  // font-family: "Askan Regular" !important;
   color: ${colors.White};
   background-image: url(${Blacked_Area_Welcome});
   background-position: center;
@@ -58,7 +58,7 @@ const StyledDiv = styled.div`
   }
 
   .tableContent {
-    vertical-align: bottom;
+    /* vertical-align: bottom; */
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
@@ -73,28 +73,32 @@ const StyledDiv = styled.div`
   }
 
   .SubTitle {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 3.32vw;
     width: 16vw;
     padding: 0vw 0vw 0vw 0vw;
     line-height: 3.5vw;
+    text-align: left;
     @media (max-width: 768px) {
       width: fit-content;
       font-size: 6.67vw;
       margin-top: 11.5vw;
     }
   }
-  .SubTitleBold {
-    font-family: "Askan Bold" !important;
+  .SubTitleBold{
+    font-weight : 700;
+  }
+  .SubTitleNormal {
+
     @media (max-width: 768px) {
       margin-left: 1vw;
     }
   }
 
   .Body {
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     font-size: 1.2vw;
-    text-align: justify;
+    text-align: center;
     width: 53vw;
     padding: 0vw 3.5vw 0vw 7vw;
     line-height: 1.7vw;
@@ -115,9 +119,9 @@ const StyledDiv = styled.div`
   }
 
   .ImageLogo {
-    width: 9.86vw;
-    height: 10.4vw;
-    padding: 1.7vw 0vw 0vw 0vw;
+    width: 11.86vw;
+    /* height: 10.4vw; */
+    padding: 0vw 0vw 0vw 0vw;
     @media (max-width: 768px) {
       display: none;
     }

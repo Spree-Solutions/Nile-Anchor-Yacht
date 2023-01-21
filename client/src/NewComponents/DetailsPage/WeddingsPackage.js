@@ -5,6 +5,7 @@ import { DataArabic } from "../../Data/Arabic/DetailsPage/WeddingsPackage";
 
 import { colors } from "../../Styles/Colors";
 import WeddingsPackages from "../../Images/WeddingsPackages.png";
+import Label from "../Label";
 
 export default function WeddingsPackage(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -17,36 +18,19 @@ export default function WeddingsPackage(props) {
           return <div>{item}</div>;
         })}
       </div>
-      <table className="cta-table">
-        <tbody>
-          <tr className="cta-row">
-            <td>
-              <img
-                src={WeddingsPackages}
-                alt=""
-                className={
-                  props.language === "EN"
-                    ? "WeddingsPackages_EN"
-                    : "WeddingsPackages_AR"
-                }
-              />
-            </td>
-            <td>
-              <div className={props.language === "EN" ? "End_EN" : "End_AR"}>
-                {Data.end}
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+      <div className="label">
+        <Label />
+      </div>
     </StyledDiv>
   );
 }
 const StyledDiv = styled.div`
-  color: ${colors.Black};
-  padding: 3.47vw 5.6vw 0vw 5.6vw;
+  color: ${colors.DarkGrey};
+  padding: 3.47vw 5.6vw 10vw 5.6vw;
   background-color: ${colors.White};
   text-align: center;
+  position: relative;
   @media (max-width: 768px) {
     padding-top: 13.33vw;
     padding-bottom: 0vw;
@@ -71,14 +55,14 @@ const StyledDiv = styled.div`
   }
 
   .Title {
-    font-family: "Askan DemiBold" !important;
-    font-size: 2vw;
-    padding: 1vw;
+    // font-family: "Lato Regular" !important;
+    font-size: 2.3vw;
+    padding: 0.4vw;
     /* padding: 0vw 0vw 3vw 0vw; */
     width: fit-content;
     margin: auto;
     margin-bottom: 2vw;
-    border: 0.25vw solid black;
+    border: 0.25vw solid ${colors.DarkGrey};
     @media (max-width: 768px) {
       padding: 3vw;
       font-size: 5.9vw;
@@ -87,8 +71,8 @@ const StyledDiv = styled.div`
     }
   }
   .Body {
-    font-family: "Lato Regular" !important;
-    font-size: 1.3vw;
+    // font-family: "Lato Regular" !important;
+    font-size: 1.9vw;
     line-height: 2.5vw;
     @media (max-width: 768px) {
       padding: 0;
@@ -99,7 +83,7 @@ const StyledDiv = styled.div`
     }
   }
   .End_EN {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     font-size: 1.2vw;
     line-height: 1.7vw;
     padding: 17vw 0vw 2.3vw 20vw;
@@ -112,7 +96,8 @@ const StyledDiv = styled.div`
     }
   }
   .End_AR {
-    font-family: "Lato Bold" !important;
+    font-weight : Bold;
+    // font-family: "Lato Bold" !important;
     font-size: 1.2vw;
     line-height: 1.7vw;
     padding: 17vw 22vw 2.3vw 0vw;

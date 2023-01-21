@@ -89,7 +89,7 @@ class CowpayService {
             amount: params.amount,
             hash: this.merchant_hash
         })
-        return axios.post('iframe/token', {
+        return axios.post("payment", {
             merchant_reference_id: params.merchant_reference_id,
             customer_merchant_profile_id: params.customer_merchant_profile_id,
             customer_name: params.customer_name,
@@ -147,9 +147,9 @@ class CowpayService {
     }
 }
 
-let merchantCode = "V02VyLcfG2Fb"
-let merchantHash = "$2y$10$r/j7PFijgHhI0NWRbb0z.O/RFhfqe0QFZfcsJeFz.TRAmozEQRP5i"
-let merchantToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODUyZGFiMzZjMDQzYTI0YzczNzhmMGVmNDg3YThkOWQyZmUzNDI3YzA3NTkyNDcyMzRkODAyMjE3OTJiNjM2NjM3ZGE3MjQ3NjQwM2UzMWMiLCJpYXQiOiIxNjMyNzUzMDA5LjMzNDEwMCIsIm5iZiI6IjE2MzI3NTMwMDkuMzM0MTA2IiwiZXhwIjoiNDc4ODQyNjYwOS4yNDgyODMiLCJzdWIiOiI2NzEiLCJzY29wZXMiOltdfQ.jVjjo0YQ1ytGj9XpBDKFwLb771vnr-RAJVIueA39P5CkS438F_FCTYPrbRR6FDlAC7mbl6MfJ57pCepUe_LcNA"
+let merchantCode = "UWOqD04ZL8yH"
+let merchantHash = "$2y$10$2AigGsNEdWSIOcJgI2d/WO4GccuxsgJk42F0EQu3mekg4bBjgru6m"
+let merchantToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMzIxZTQ2OWYyMDg0OGI2OGQwNTNlZTQxZjRmMjFiNDJiYTc3MGQ2MDFjNjljNWU4NTk4NGJiZWZlODNmZmU0NTY4YmRlNGY5ZjI5N2NkOGQiLCJpYXQiOjE2MzU4NzIzOTMuMDMwNTA4LCJuYmYiOjE2MzU4NzIzOTMuMDMwNTEyLCJleHAiOjQ3OTE1NDU5OTMuMDAzOTg5LCJzdWIiOiI4ODciLCJzY29wZXMiOltdfQ.IZID6jLzWNIhqpGRzUqfWXD9PWgoAmScMMm4cVRBeIvwonJw4yRTq1bmYCyOWCBdSIevel3Zjv6cbZr2lA1vtw"
 
 const CowPayInstance = new CowpayService(merchantCode,merchantHash,merchantToken);
 

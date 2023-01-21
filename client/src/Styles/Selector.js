@@ -41,17 +41,17 @@ const StyledDiv = styled.div`
 
     text-align-last: left;
     padding: 0.4vw 0vw 0.4vw 0.6vw;
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     border-color: ${colors.Merino}!important;
     border-radius: 0px;
     outline: none;
     font-size: 1vw;
-    color: ${colors.Black};
+    color: ${colors.Navy};
     cursor: pointer;
 
     /* adding new arrow    */
 
-    background: ${colors.Merino}
+    background: ${colors.White}
       url('data:image/svg+xml;utf8,<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0H15.5L8 8L0 0Z" fill="%234D4D4F"/></g></svg>')
       no-repeat;
     background-position-x: 95% !important;
@@ -88,7 +88,7 @@ const StyledDiv = styled.div`
     width: 21.4vw;
     text-align-last: right;
     padding: 0.4vw 0.6vw 0.4vw 0vw;
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     border-color: ${colors.Merino}!important;
     outline: none;
     font-size: 1vw;

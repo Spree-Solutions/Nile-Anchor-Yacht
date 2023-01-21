@@ -9,9 +9,9 @@ import { colors } from "../Styles/Colors";
 import Selector from "../Styles/Selector";
 import TextField from "../Styles/TextField";
 
-import call from "../Images/call.png";
-import newsletter from "../Images/newsletter.png";
-import whatsapp_white from "../Images/whatsapp_white.png";
+import call from "../Images/Phone.png";
+import newsletter from "../Images/Email.png";
+import whatsapp_white from "../Images/Whatsaap.png";
 import egyptian_flag from "../Images/egyptian_flag.png";
 
 export default function Contact(props) {
@@ -43,7 +43,7 @@ export default function Contact(props) {
     window.TanawyComponentTest = reservationInstance;
   }
   return (
-    <StyledDiv>
+    <StyledDiv id="booking">
       <div
         className={
           props.language === "EN"
@@ -70,8 +70,10 @@ export default function Contact(props) {
                   props.language === "EN" ? "Action ENcall" : "Action ARcall"
                 }
               >
-                <div className="ButtonLabel">{Data.ButtonLabel[0]}</div>
-                <div>{Data.ButtonAction[0]}</div>
+                <div className="ButtonLabel">Contact Us</div>
+                <div>
+                  <a href="tel:+201211140222">01211140222</a>
+                </div>
               </td>
               <td className="Icons">
                 <img
@@ -88,8 +90,15 @@ export default function Contact(props) {
                 }
               >
                 {" "}
-                <div className="ButtonLabel">{Data.ButtonLabel[1]}</div>
-                <div>{Data.ButtonAction[1]}</div>
+                <div className="ButtonLabel">E-mail</div>
+                <div>
+                  <a
+                    href="mailto:Reservation@thenileanchor.com
+"
+                  >
+                    Reservation@thenileanchor.com
+                  </a>
+                </div>
               </td>
               <td className="Icons">
                 <img
@@ -100,8 +109,12 @@ export default function Contact(props) {
               </td>
               <td className="Action Whatsapp">
                 {" "}
-                <div className="ButtonLabel">{Data.ButtonLabel[2]}</div>
-                <div>{Data.ButtonAction[2]}</div>
+                <div className="ButtonLabel">Chat with us on</div>
+                <div>
+                  <a target="__blank" href="https://wa.me/+201211140222">
+                    WhatsApp
+                  </a>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -109,8 +122,8 @@ export default function Contact(props) {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            if(!reservationInstance.isReserveReady()){
-              return
+            if (!reservationInstance.isReserveReady()) {
+              return;
             }
             reservationInstance.reserve().then((result) => {
               if (result.error) {
@@ -336,9 +349,9 @@ export default function Contact(props) {
           <table className="action-table-booking">
             <tbody>
               <tr>
-                <td className="Col0"></td>
+                {/* <td className="Col0"></td> */}
                 {/* <tr className="special-row-check"> */}
-                <td className="Col1">
+                {/* <td className="Col1">
                   <label class="container">
                     <span class="checkmark">
                       <input
@@ -348,12 +361,12 @@ export default function Contact(props) {
                       />
                     </span>
                   </label>
-                </td>
-                <td className="Col2">
+                </td> */}
+                {/* <td className="Col2">
                   <span onClick={() => setCheckboxStatus(!checkboxStatus)}>
                     {Data.CheckBox}
                   </span>
-                </td>
+                </td> */}
                 {/* </tr> */}
                 <tr>
                   <td className="Col3">
@@ -374,7 +387,7 @@ export default function Contact(props) {
                     <td>
                       {" "}
                       <div className="final-message">
-                        {`Total price EGP${(finalPrice * 2).toFixed(2)}`}
+                        {`Initial price EGP  ${(finalPrice * 2).toFixed(2)}`}
                       </div>{" "}
                     </td>
                   )}
@@ -390,9 +403,9 @@ export default function Contact(props) {
 
 const StyledDiv = styled.div`
   padding: 4vw 5vw 4.3vw 5vw;
-  background-color: ${colors.DarkGrey};
-  color: ${colors.White};
-  font-family: "Askan Light" !important;
+  background-color: ${colors.MainBeige};
+  color: ${colors.Navy};
+  // font-family: "Askan Light" !important;
   font-size: 1vw;
   .action-table-booking {
     margin: auto;
@@ -402,7 +415,11 @@ const StyledDiv = styled.div`
       padding: 0;
       box-sizing: border-box;
     }
-    padding: 8vw;
+    padding-left: 0;
+    padding-right : 0;
+    form {
+      padding : 0 8vw;
+    }
     .Input:not(#special-text) {
       width: 100% !important;
     }
@@ -438,7 +455,8 @@ const StyledDiv = styled.div`
     padding-bottom: 2.1vw;
   }
   .TitleBold {
-    font-family: "Askan DemiBold" !important;
+    font-weight: Bold;
+    // font-family: "Askan DemiBold" !important;
     padding-bottom: 7vw;
   }
   .Titles {
@@ -468,7 +486,7 @@ const StyledDiv = styled.div`
   .Action {
     font-size: 1.4vw;
     @media (max-width: 768px) {
-      font-size: 2.4vw;
+      font-size: 2vw;
       width: 15.2vw;
     }
   }
@@ -482,6 +500,10 @@ const StyledDiv = styled.div`
   .ENcall {
     padding-right: 4.4vw;
     width: 9.1vw;
+    a {
+      text-decoration: none;
+      color: ${colors.Navy};
+    }
   }
   .ARcall {
     padding-left: 4.4vw;
@@ -490,13 +512,21 @@ const StyledDiv = styled.div`
   .ENnewsletter {
     padding-right: 3vw;
     width: 9vw;
+    a {
+      text-decoration: none;
+      color: ${colors.Navy};
+    }
   }
   .ARnewsletter {
     padding-left: 3vw;
     width: 9vw;
   }
   .Whatsapp {
-    width: 7vw;
+    width: 8vw;
+    a {
+      text-decoration: none;
+      color: ${colors.Navy};
+    }
   }
   /* .FlagTable {
     margin: 0;
@@ -519,7 +549,7 @@ const StyledDiv = styled.div`
   .Button {
     width: 13.6vw;
     padding: 0.4vw 0vw 0.4vw 0vw;
-    font-family: "Askan Light" !important;
+    // font-family: "Askan Light" !important;
     border: none;
     outline: none;
     font-size: 1vw;

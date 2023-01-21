@@ -164,11 +164,11 @@ export default function Navbar(props) {
   );
 }
 const StyledDiv = styled.div`
-  font-family: "Lato Regular" !important;
+  // font-family: "Lato Regular" !important;
   color: ${colors.Black};
   font-size: 1.1vw;
-  background-color: ${colors.MainBeige};
-  border-bottom: solid 0.22vw black;
+  background-color: #E6E1D6;
+  // border-bottom: solid 0.22vw black;
   height: 5vw;
   @media (max-width: 768px) {
     height: 20.8vw;
@@ -177,7 +177,7 @@ const StyledDiv = styled.div`
   top: 0; */
 
   .EnglishNavComponentPadding {
-    padding: 1.23vw 5.56vw 0vw 4vw;
+    padding: 0.18vw 5.56vw 0vw 4vw;
   }
   .ArabicNavComponentPadding {
     padding: 1.53vw 4vw 1.46vw 5.56vw;
@@ -254,7 +254,8 @@ const StyledDiv = styled.div`
   }
   .NavCell {
     width: 68vw;
-    padding-top: 1vw;
+    padding-top: 1.5vw;
+    font-weight: 700;
     @media (max-width: 768px) {
       display: none;
     }
@@ -275,14 +276,15 @@ const StyledDiv = styled.div`
     cursor: pointer;
   }
   .BoldText {
-    font-family: "Lato Bold" !important;
+    font-weight : Bold;
+    // font-family: "Lato Bold" !important;
   }
   .NormalText {
-    font-family: "Lato Regular" !important;
+    // font-family: "Lato Regular" !important;
     opacity: 0.8;
   }
   .LogoNavBar {
-    width: 14.3vw;
+    width: 16.5vw;
     /* height: 2.36vw; */
     @media (max-width: 768px) {
       width: 47.7vw;
