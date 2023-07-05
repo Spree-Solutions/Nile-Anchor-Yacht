@@ -3,22 +3,24 @@ import styled from "styled-components";
 import Liberty_Image from "../../Images/Liberty_Image.png";
 import Bella_Image from "../../Images/bella-image.jpeg";
 import { colors } from "../../Styles/Colors";
-import BellaDark from "../../Images/Bella_Dark.png";
-import vidaLogo from "../../Images/vida1logo.png";
-import Liberty_Dark2 from "../../Images/Liberty_Dark2.png";
+import BellaYellow from "../../Images/BellaYellow.png";
+import vidaLogo from "../../Images/vida-1.png";
+import Liberty_Dark from "../../Images/libDark.png";
 import vidaImage from "../../Images/Vida Yacht-1.jpg";
+import zeinLogo from "../../Images/zein-logo.png";
+import zeinImage from "../../Images/zein-1.jpg";
 
 export const yachts = {
   bella: {
     displayName: "BELLA",
-    logo: BellaDark,
+    logo: BellaYellow,
     image: Bella_Image,
     description:
       " Bella – Italian for beauty, an inner reflection of the yacht’s overall look. Smaller than the liberty yacht in size yetstands-out elegantly as it cruises throughout Cairo’s Nile River. The yacht offers three decks with a classic high- end interior andß exterior design with the capacity to cater around 30 passengers.ßThe upper deck comes with tinted windows and a 360-degreeß panoramic view, giving our delightful guests the chance toß privately experience Cairo’s Nile River.",
   },
   liberty: {
     displayName: "LIBERTY",
-    logo: Liberty_Dark2,
+    logo: Liberty_Dark,
     image: Liberty_Image,
     description:
       "Liberty - Liberating one’s self to a moment of happiness. The two-story yacht is designed to comfortably accommodate guests who seek to host large; events, celebrations, marriage ceremonies, wedding parties, corporate outings and private meetings on Cairo’s Nile River. The yacht’s exterior and interior design is exquisitely designed to provide our guests with a sense of European luxury on the Nile.",
@@ -29,6 +31,12 @@ export const yachts = {
     image: vidaImage,
     description:
       "Vida; Spanish for “life” Our smallest yacht, designed for a family gathering or cozy friends’ get-together.The yacht takes up to 20 people. Fully equipped, with a friendly crew to ensure a pleasurable trip on board",
+  },
+  zein: {
+    displayName: "ZEIN",
+    logo: zeinLogo,
+    image: zeinImage,
+    description: `Arabic for "beauty", Zein is the newest addition to our yacht collection. The yacht has a cozy indoor first floor and a spacious outdoor second level with a stacked bar and panoramic views of the Nile. The yacht also has the advantage of passing under all bridges and being able to explore all parts of the Nile.`,
   },
 };
 const OurYachtsNewDesign = () => {
@@ -46,28 +54,52 @@ const OurYachtsNewDesign = () => {
       <div className="column column-2">
         <div className="heading">
           <div className="yacht-buttons">
-            <p
-              onClick={() => setSelectedYacht("liberty")}
-              className={`${selectedYacht === "liberty" ? "selected" : ""}`}
-            >
-              LIBERTY
-            </p>
-            <p>|</p>
-            <p
-              onClick={() => setSelectedYacht("bella")}
-              className={`${selectedYacht === "bella" ? "selected" : ""}`}
-            >
-              BELLA
-            </p>
-            <p
-              onClick={() => setSelectedYacht("vida1")}
-              className={`${selectedYacht === "vida1" ? "selected" : ""}`}
-            >
-              VIDA
-            </p>
+            <div>
+              <p
+                onClick={() => setSelectedYacht("liberty")}
+                className={`y-name ${
+                  selectedYacht === "liberty" ? "selected" : ""
+                }`}
+              >
+                LIBERTY
+              </p>
+              <p>|</p>
+              <p
+                onClick={() => setSelectedYacht("bella")}
+                className={`y-name ${
+                  selectedYacht === "bella" ? "selected" : ""
+                }`}
+              >
+                BELLA
+              </p>
+            </div>
+            <div>
+              <p
+                onClick={() => setSelectedYacht("vida1")}
+                className={`y-name ${
+                  selectedYacht === "vida1" ? "selected" : ""
+                }`}
+              >
+                VIDA
+              </p>
+              <p>|</p>
+              <p
+                onClick={() => setSelectedYacht("zein")}
+                className={`y-name ${
+                  selectedYacht === "zein" ? "selected" : ""
+                }`}
+              >
+                ZEIN
+              </p>
+            </div>
           </div>
           <div className="separator"></div>
-          <img src={yachts[selectedYacht].logo} alt="logo" />
+          <img
+            src={yachts[selectedYacht].logo}
+            alt="logo"
+            key={yachts[selectedYacht].logo}
+            className={`${selectedYacht === "zein" ? "zein-logo" : ""}`}
+          />
         </div>
         <div className="text">{yachts[selectedYacht].description}</div>
       </div>
@@ -77,7 +109,7 @@ const OurYachtsNewDesign = () => {
 const StyledSection = styled.div`
   display: flex;
   color: ${colors.Navy};
-  // font-family: "Lato Regular";
+  font-family: "Lato Regular";
   width: 100%;
   justify-content: space-between;
 
@@ -93,12 +125,12 @@ const StyledSection = styled.div`
   .column-1 {
     width: 50%;
     .title {
-      // font-family: "Askan Light";
+      font-family: "Askan Light";
       font-size: 2vw;
       line-height: 3.5vw;
       h1:first-child {
         font-weight: 700;
-        // font-family: "Askan Bold";
+        font-family: "Askan Bold";
       }
       text-align: left;
       color: ${colors.DarkGrey2};
@@ -116,7 +148,6 @@ const StyledSection = styled.div`
       margin-top: 2vw;
       color: ${colors.Navy};
       font-size: 2vw;
-      font-weight : Bold;
     }
   }
   .column-2 {
@@ -130,8 +161,15 @@ const StyledSection = styled.div`
       margin-top: 3vw;
       .yacht-buttons {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        div {
+          display: flex;
+          // text-align: left;
+        }
+        // flex-wrap: wrap;
+        .y-name {
+          width: 8.333vw;
+        }
       }
       p {
         font-size: 2vw;
@@ -162,6 +200,9 @@ const StyledSection = styled.div`
       height: 6.5vw;
       object-fit: cover;
       margin-left: 2vw;
+    }
+    .zein-logo {
+      object-fit: contain;
     }
     .text {
       margin-top: 5vw;

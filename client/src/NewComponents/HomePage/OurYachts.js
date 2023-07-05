@@ -33,6 +33,9 @@ export default function OurYachts(props) {
                   <div className="TitleBold"> {Data.TitleBold}</div>
                   <div> {Data.Title}</div>
                 </td>
+              </tr>
+              <tr>
+                <td></td>
                 <td className="links">
                   {Data.Options.map((yacht, index) => {
                     if (index !== 0) {
@@ -92,7 +95,9 @@ export default function OurYachts(props) {
                       <img
                         src={yachts[chosenYacht].logo}
                         alt="Liberty"
-                        className="Liberty_Light_Mobile"
+                        className={`Liberty_Light_Mobile ${
+                          chosenYacht === "zein" ? "zein-logo" : ""
+                        }`}
                       />
                     </div>
                   </td>
@@ -258,7 +263,7 @@ const StyledDiv = styled.div`
   padding: 3.7vw 5.7vw 5.8vw 5.5vw;
   background-color: ${colors.White};
   color: ${colors.Navy};
-  // font-family: "Askan Regular" !important;
+  font-family: "Askan Regular" !important;
   .LeftTextAlign {
     text-align: left;
   }
@@ -276,20 +281,18 @@ const StyledDiv = styled.div`
     margin: 0.3vw 0vw 0.2vw 0.5vw;
   }
   .Title {
-    font-weight : Bold;
-    // font-family: "Askan DemiBold" !important;
+    font-family: "Askan DemiBold" !important;
     font-size: 4vw;
     line-height: 3.5vw;
     color: #404040;
   }
   .TitleRegular {
-    // font-family: "Askan Light" !important;
+    font-family: "Askan Light" !important;
     padding-bottom: 6.5vw;
     color: #404040;
   }
   .ListItem {
-    font-weight : Bold;
-    // font-family: "Askan DemiBold" !important;
+    font-family: "Askan DemiBold" !important;
     font-size: 1.8vw;
     line-height: 1.8vw;
     padding-bottom: 0.76vw;
@@ -300,14 +303,13 @@ const StyledDiv = styled.div`
     }
   }
   .body {
-    // font-family: "Askan Light" !important;
+    font-family: "Askan Light" !important;
     font-size: 1.4vw;
     line-height: 2vw;
     padding: 1.875vw 0vw 1.32vw 0vw;
   }
   .bodyBold {
-    font-weight : Bold;
-    // font-family: "Askan DemiBold" !important;
+    font-family: "Askan DemiBold" !important;
     font-size: 1.1vw;
     line-height: 1.35vw;
     cursor: pointer;
@@ -343,11 +345,10 @@ const StyledDiv = styled.div`
     font-size: 1.4vw;
     line-height: 1.8vw;
     text-transform: uppercase;
-    // font-family: "Askan Light" !important;
+    font-family: "Askan Light" !important;
   }
   .chosenButton {
-    font-weight : Bold;
-    // font-family: "Askan DemiBold" !important;
+    font-family: "Askan DemiBold" !important;
     text-decoration-line: underline;
     cursor: pointer;
   }
@@ -397,7 +398,7 @@ const StyledDiv = styled.div`
     padding-top: 5.1vw;
   }
   .Title_Mobile {
-    // font-family: "Askan Light" !important;
+    font-family: "Askan Light" !important;
     font-size: 6.7vw;
     line-height: 6.7vw;
     text-align: left;
@@ -416,16 +417,19 @@ const StyledDiv = styled.div`
     height: 11.8vw;
     margin: 3.6vw 3.1vw 3.68vw 3.3vw;
   }
+  .zein-logo{
+    width: 28.5vw;
+    height: 28.5vw;
+  }
   .body_Mobile {
-    // font-family: "Askan Light" !important;
+    font-family: "Askan Light" !important;
     font-size: 3.2vw;
     line-height: 6vw;
     padding: 0vw 0vw 0.7vw 5vw;
     text-align: left;
   }
   .bodyBold_Mobile {
-    font-weight : Bold;
-    // font-family: "Askan DemiBold" !important;
+    font-family: "Askan DemiBold" !important;
     font-size: 3.2vw;
     line-height: 3.6vw;
     padding-left: 5vw;
@@ -445,8 +449,5 @@ const StyledDiv = styled.div`
   .ListItems_Mobile {
     margin: 8vw 0vw 0vw 0vw;
     text-align: center;
-    a{
-      font-weight : Bold;
-    }
   }
 `;
