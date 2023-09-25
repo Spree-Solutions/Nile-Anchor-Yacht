@@ -57,9 +57,16 @@ export default function Footer(props) {
                   <img src={instagram} alt="instagram" className="instagram" />
                 </a>
               </td>
+
               <td className="Col4">
-                <div>{Data.body1}</div>
-                <div>{Data.body2}</div>
+                <a
+                  href="https://maps.app.goo.gl/H9gLHWJKUEoDYUcY6"
+                  target="_blank"
+                  style={{ color: "blue" }}
+                >
+                  <div>{Data.body1}</div>
+                  <div>{Data.body2}</div>
+                </a>
                 <div>
                   Tel: <a href="tel:+201211140222">01211140222</a>
                 </div>
