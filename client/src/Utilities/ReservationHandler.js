@@ -251,7 +251,7 @@ export class ReservationHandler {
         this._customerCode = `${this.phoneNumber}-${timestamp}`;
         let startHour = this.selectedStartingTime >9?`${this.selectedStartingTime}`:`0${this.selectedStartingTime}`;
         let endHour = this.selectedEndingTime >9?`${this.selectedEndingTime}`:`0${this.selectedEndingTime}`;
-        let reservationResponse = await axios.post(`${configs.BACKEND_API_ALIAS}?integrator=reservations&user=WS&pass=WebSite123`,{
+        let reservationResponse = await axios.post(`${configs.BACKEND_API_BASE_URL}?integrator=reservations&user=WS&pass=WebSite123`,{
             
                 "Customer" : [ {
                 "group" : "Customer$#C",
@@ -311,7 +311,7 @@ export class ReservationHandler {
             if(response.status === 200){
                 let orderStatus = response.data.order_status;
                 if(orderStatus === "PAID"){
-                    let confirmationResponse = await axios.post(`${configs.BACKEND_API_ALIAS}?integrator=reservations&user=WS&pass=WebSite123`,{
+                    let confirmationResponse = await axios.post(`${configs.BACKEND_API_BASE_URL}?integrator=reservations&user=WS&pass=WebSite123`,{
                         
                             "ReceiptVoucher" : [ {
                               "book" : "ReceiptVoucher$#RVV",
@@ -395,7 +395,7 @@ export class ReservationHandler {
 
         // send availability request
         let response = await axios.get(
-            `${configs.BACKEND_API_ALIAS}?type=assetTimes&user=WS&pass=WebSite123&assetCode=${this.selectedYacht}&onDate=${dayDate}`);
+            `${configs.BACKEND_API_BASE_URL}?type=assetTimes&user=WS&pass=WebSite123&assetCode=${this.selectedYacht}&onDate=${dayDate}`);
 
             console.log("availability response", response);
             if(response.data.reservations){
