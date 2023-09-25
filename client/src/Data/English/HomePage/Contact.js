@@ -5,7 +5,7 @@ const DataEnglish = {
   ButtonAction: ["Free Call-back", "Newsletter", "Whatsapp"],
   FormInput: ["Your Name", "+02", "Your Email"],
   FormSelect: {
-    Boats: [ "Liberty", "Bella", "Vida"],
+    Boats: [ "Liberty", "Bella", "Vida", "Zein"],
     Time: ["Time"],
     "Event Type": ["Wedding", "Corporate", "Individual"],
   },
