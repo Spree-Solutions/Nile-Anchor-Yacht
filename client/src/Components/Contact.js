@@ -405,7 +405,7 @@ const StyledDiv = styled.div`
   padding: 4vw 5vw 4.3vw 5vw;
   background-color: ${colors.MainBeige};
   color: ${colors.Navy};
-  // font-family: "Askan Light" !important;
+  font-family: "Askan Light" !important;
   font-size: 1vw;
   .action-table-booking {
     margin: auto;
@@ -415,11 +415,7 @@ const StyledDiv = styled.div`
       padding: 0;
       box-sizing: border-box;
     }
-    padding-left: 0;
-    padding-right : 0;
-    form {
-      padding : 0 8vw;
-    }
+    padding: 8vw 0;
     .Input:not(#special-text) {
       width: 100% !important;
     }
@@ -453,6 +449,9 @@ const StyledDiv = styled.div`
   .ActionTable {
     margin: auto;
     padding-bottom: 2.1vw;
+    @media (max-width: 768px) {
+      width: 100vw;
+    }
   }
   .TitleBold {
     font-weight: Bold;
@@ -486,7 +485,7 @@ const StyledDiv = styled.div`
   .Action {
     font-size: 1.4vw;
     @media (max-width: 768px) {
-      font-size: 2vw;
+      font-size: 2.4vw;
       width: 15.2vw;
     }
   }
@@ -522,7 +521,7 @@ const StyledDiv = styled.div`
     width: 9vw;
   }
   .Whatsapp {
-    width: 8vw;
+    width: 7vw;
     a {
       text-decoration: none;
       color: ${colors.Navy};
@@ -549,7 +548,7 @@ const StyledDiv = styled.div`
   .Button {
     width: 13.6vw;
     padding: 0.4vw 0vw 0.4vw 0vw;
-    // font-family: "Askan Light" !important;
+    font-family: "Askan Light" !important;
     border: none;
     outline: none;
     font-size: 1vw;

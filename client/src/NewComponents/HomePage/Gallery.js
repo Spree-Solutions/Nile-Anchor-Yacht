@@ -9,33 +9,27 @@ import Bella_Dark from "../../Images/Bella_Dark.png";
 import CarouselComponent from "./Carousel";
 import logo from "../../Images/navylogo.png";
 import logoVida from "../../Images/vida1logo.png";
+import zeinLogo from "../../Images/zein-logo.png";
 
 import CustomCarousel from "../CustomCarousel";
-import Bella0 from "../../Images/new-bella/Bella-1.jpg";
-import Bella1 from "../../Images/new-bella/Bella-2.JPG";
-import Bella2 from "../../Images/new-bella/Bella-3.JPG";
-import Bella3 from "../../Images/new-bella/Bella-4.JPG";
-import Bella4 from "../../Images/new-bella/Bella-5.JPG";
-import Bella5 from "../../Images/new-bella/Bella-6.JPG";
-import Bella6 from "../../Images/new-bella/Bella-7.JPG";
-import Bella7 from "../../Images/new-bella/Bella-8.JPG";
-import Bella8 from "../../Images/new-bella/Bella-9.jpg";
-import Bella9 from "../../Images/new-bella/Bella-10.jpg";
+import Bella0 from "../../Images/Bella0.jpeg";
+import Bella1 from "../../Images/Bella1.jpeg";
+import Bella2 from "../../Images/Bella2.jpeg";
+import Bella3 from "../../Images/Bella3.jpeg";
+import Bella4 from "../../Images/Bella4.jpeg";
+import Bella5 from "../../Images/Bella5.jpeg";
+import Bella6 from "../../Images/Bella6.jpeg";
 
-
-import Liberty1 from "../../Images/new-liberty/Liberty1.JPG";
-import Liberty2 from "../../Images/new-liberty/Liberty2.JPG";
-import Liberty3 from "../../Images/new-liberty/Liberty3.jpg";
-import Liberty4 from "../../Images/new-liberty/Liberty4.jpg";
-import Liberty5 from "../../Images/new-liberty/Liberty5.JPG";
-import Liberty6 from "../../Images/new-liberty/Liberty6.jpg";
-import Liberty7 from "../../Images/new-liberty/Liberty7.JPG";
-import Liberty8 from "../../Images/new-liberty/Liberty8.JPG";
-import Liberty9 from "../../Images/new-liberty/Liberty9.JPG";
-import Liberty10 from "../../Images/new-liberty/Liberty10.jpg";
-import Liberty11 from "../../Images/new-liberty/Liberty11.JPG";
-import Liberty12 from "../../Images/new-liberty/Liberty12.JPG";
-import Liberty13 from "../../Images/new-liberty/Liberty13.jpg";
+import Liberty1 from "../../Images/Liberty1.jpeg";
+import Liberty2 from "../../Images/Liberty2.jpeg";
+import Liberty3 from "../../Images/Liberty3.jpeg";
+import Liberty4 from "../../Images/Liberty4.jpeg";
+import Liberty5 from "../../Images/Liberty5.jpeg";
+import Liberty6 from "../../Images/Liberty6.jpeg";
+import Liberty7 from "../../Images/Liberty7.jpeg";
+import Liberty8 from "../../Images/Liberty8.jpeg";
+import Liberty9 from "../../Images/Liberty9.jpeg";
+import Liberty10 from "../../Images/Liberty10.jpeg";
 
 import Vida1 from "../../Images/Vida Yacht-6.jpg";
 import Vida2 from "../../Images/Vida Yacht-7.jpg";
@@ -48,8 +42,15 @@ import Vida8 from "../../Images/Vida Yacht-9.jpg";
 import Vida9 from "../../Images/Vida Yacht-10.jpg";
 // import Vida5 from "../../Images/Vida Yacht-5.jpg";
 
+import Zein1 from "../../Images/zein-1.jpg";
+import Zein2 from "../../Images/zein-2.JPEG";
+import Zein3 from "../../Images/zein-3.jpg";
+import Zein4 from "../../Images/zein-4.jpg";
+import Zein5 from "../../Images/zein-5.jpg";
+import Zein6 from "../../Images/zein-6.jpg";
+
 export default function Gallery(props) {
-  const bellaImages = [Bella0, Bella1, Bella2, Bella3, Bella4, Bella5, Bella6, Bella7, Bella8, Bella9];
+  const bellaImages = [Bella0, Bella1, Bella2, Bella3, Bella4, Bella5, Bella6];
   const libertyImages = [
     Liberty1,
     Liberty2,
@@ -61,10 +62,6 @@ export default function Gallery(props) {
     Liberty8,
     Liberty9,
     Liberty10,
-    Liberty11,
-    Liberty12,
-    Liberty13, 
-
   ];
   const vidaImages = [
     Vida1,
@@ -77,6 +74,8 @@ export default function Gallery(props) {
     Vida8,
     Vida9,
   ];
+
+  const zeinImages = [Zein1, Zein2, Zein3, Zein4, Zein5, Zein6];
   const [selectedYacht, setSelectedYacht] = useState(libertyImages);
   const [selectedYachtName, setSelectedYachtName] = useState("liberty");
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -127,12 +126,25 @@ export default function Gallery(props) {
             }}
             className={`${selectedYachtName === "vida1" ? "selected" : ""}`}
           />
+          <div className="separator"></div>
+          <img
+            src={zeinLogo}
+            id="zein"
+            alt="zein"
+            onClick={() => {
+              setSelectedYacht(zeinImages);
+              setSelectedYachtName("zein");
+            }}
+            className={`zein-logo ${
+              selectedYachtName === "zein" ? "selected" : ""
+            }`}
+          />
         </div>
         <div className="carousel-section">
           <CustomCarousel imagesArray={selectedYacht} />
         </div>
         <div className="Title">
-          {Data.ServicesTitle}&nbsp;
+          {Data.ServicesTitle}{" "}
           <span className="Bold-Title"> {Data.ServicesTitleBold}</span>
         </div>
       </div>
@@ -143,7 +155,7 @@ export default function Gallery(props) {
 const StyledDiv = styled.div`
   position: relative;
   padding: 0vw 0vw 0vw 0vw;
-  // font-family: "Askan Regular" !important;
+  font-family: "Askan Regular" !important;
   /* background-image: url(${Gallery_Background}); */
   background-position: center;
   background-repeat: no-repeat;
@@ -183,19 +195,19 @@ const StyledDiv = styled.div`
   }
   .ENTitle {
     background-color: ${colors.MainBeige};
-    // font-family: "Merriweather Regular";
+    font-family: "Merriweather Regular";
     line-height: 3vw;
     padding: 0.2vw 5.5vw 0.2vw 5.5vw;
   }
   .ARTitle {
     background-color: ${colors.DarkBrown};
-    // font-family: "Merriweather Regular";
+    font-family: "Merriweather Regular";
     line-height: 3vw;
     padding: 1.9vw 05.5vw 1.5vw 0vw;
   }
   .ENTable {
     padding: 0vw 0vw 6.95vw 5.5vw;
-    // font-family: "Lato Regular";
+    font-family: "Lato Regular";
     font-size: 1.3vw;
     line-height: 1.8vw;
     text-align: justify;
@@ -203,7 +215,7 @@ const StyledDiv = styled.div`
   }
   .ARTable {
     padding: 0vw 5.5vw 6.95vw 0vw;
-    // font-family: "Lato Regular";
+    font-family: "Lato Regular";
     font-size: 0.97vw;
     line-height: 1.4vw;
     background: rgba(37, 28, 21, 0.7);
@@ -257,17 +269,14 @@ const StyledDiv = styled.div`
   }
   .Title {
     background: ${colors.MainBeige};
-    // font-family: "Merriweather Regular";
+    font-family: "Merriweather Regular";
     font-size: 3.1vw;
     line-height: 3vw;
     /* padding: 1.9vw 0vw 1.5vw 5.5vw; */
-    padding: 0vw 5.5vw;
+    padding: 0.2vw 5.5vw 0.2vw 5.5vw;
     margin: 3.7vw 0vw 0vw 0vw;
-    display:flex;
-    align-items:center;
-    height : 5.626vw;
     @media (max-width: 768px) {
-      height: 16.393vw;
+      height: 14vw;
       font-size: 6vw;
       display: flex;
       align-items: center;
@@ -276,19 +285,18 @@ const StyledDiv = styled.div`
       }
     }
     .Bold-Title {
-      font-weight : Bold;
-      // font-family: "Merriweather Bold";
+      font-family: "Merriweather Bold";
     }
   }
   .heading-section {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 40vw;
+    width: 55vw;
     margin: auto;
-    padding: 3vw;
+    padding: 3vw 0;
     @media (max-width: 768px) {
-      width: 80vw;
+      width: 100vw;
       justify-content: space-around;
     }
     img {
@@ -303,6 +311,13 @@ const StyledDiv = styled.div`
       }
       @media (max-width: 768px) {
         width: 20vw;
+      }
+    }
+    .zein-logo {
+      height: 7vw;
+      object-fit: contain;
+      @media (max-width: 768px) {
+        height: 15vw;
       }
     }
     .separator {
