@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import Navbar from "./../NewComponents/HomePage/Navbar";
 import Welcome from "./../NewComponents/HomePage/Welcome";
 import OurYachts from "./../NewComponents/HomePage/OurYachts";
@@ -8,6 +9,7 @@ import Contact from "./../Components/Contact";
 import Footer from "./../Components/Footer";
 import Error from "./../NewComponents/HomePage/Error";
 import Success from "./../NewComponents/HomePage/Success";
+import RemoteContext from "../RemoteContext";
 
 export default function HomePage(props) {
   if (typeof window !== typeof undefined) {
@@ -22,6 +24,8 @@ export default function HomePage(props) {
       props.setShowError(true);
     }
   }
+  const data = useContext(RemoteContext);
+
   return (
     <div>
       <div>

@@ -16,8 +16,10 @@ import ContactUs from "./Pages/ContactUs";
 import Navbar from "./NewComponents/HomePage/Navbar";
 import Footer from "./Components/Footer";
 import SideSlider from "./NewComponents/SideSlider";
+import { DataProvider } from "./RemoteContext";
 function App() {
   const [language, setLanguage] = useState("EN");
+
   const References = {
     AboutUsRef: useRef(null),
     OurYachtsRef: useRef(null),
@@ -39,76 +41,78 @@ function App() {
       <DirectionProvider
         direction={language === "EN" ? DIRECTIONS.LTR : DIRECTIONS.RTL}
       >
-        <div>
-          <BrowserRouter>
-            <ScrollTop />
-            <Navbar
-              executeScroll={executeScroll}
-              References={References}
-              setLanguage={setLanguage}
-              language={language}
-            />
-            <SideSlider />
-            <Switch>
-              <Route exact path="/">
-                <HomePage
-                  References={References}
-                  executeScroll={executeScroll}
-                  language={language}
-                  setLanguage={setLanguage}
-                  showError={showError}
-                  setShowError={setShowError}
-                  setShowSuccess={setShowSuccess}
-                  showSuccess={showSuccess}
-                />
-              </Route>
-              <Route exact path="/About">
-                <AboutPage
-                  References={References}
-                  executeScroll={executeScroll}
-                  language={language}
-                  setLanguage={setLanguage}
-                />
-              </Route>
-              <Route exact path="/Wedding">
-                {" "}
-                <WeddingPage
-                  References={References}
-                  executeScroll={executeScroll}
-                  language={language}
-                  setLanguage={setLanguage}
-                />
-              </Route>
-              <Route exact path="/Business">
-                <BusinessPage
-                  References={References}
-                  executeScroll={executeScroll}
-                  language={language}
-                  setLanguage={setLanguage}
-                />
-              </Route>
-              <Route exact path="/Gathering">
-                <GatheringsPage
-                  References={References}
-                  executeScroll={executeScroll}
-                  language={language}
-                  setLanguage={setLanguage}
-                />
-              </Route>
-              <Route exact path="/contact-us">
-                <ContactUs
-                  References={References}
-                  executeScroll={executeScroll}
-                  language={language}
-                  setLanguage={setLanguage}
-                />
-              </Route>
-              {/* Route with no  exact path incase user enters incorrect url, he gets directed to dashboard*/}
-              <Route render={() => <Redirect to="/" />} />
-            </Switch>
-            <Footer language={language} />
-          </BrowserRouter>
-        </div>
+        <DataProvider>
+          <div>
+            <BrowserRouter>
+              <ScrollTop />
+              <Navbar
+                executeScroll={executeScroll}
+                References={References}
+                setLanguage={setLanguage}
+                language={language}
+              />
+              <SideSlider />
+              <Switch>
+                <Route exact path="/">
+                  <HomePage
+                    References={References}
+                    executeScroll={executeScroll}
+                    language={language}
+                    setLanguage={setLanguage}
+                    showError={showError}
+                    setShowError={setShowError}
+                    setShowSuccess={setShowSuccess}
+                    showSuccess={showSuccess}
+                  />
+                </Route>
+                <Route exact path="/About">
+                  <AboutPage
+                    References={References}
+                    executeScroll={executeScroll}
+                    language={language}
+                    setLanguage={setLanguage}
+                  />
+                </Route>
+                <Route exact path="/Wedding">
+                  {" "}
+                  <WeddingPage
+                    References={References}
+                    executeScroll={executeScroll}
+                    language={language}
+                    setLanguage={setLanguage}
+                  />
+                </Route>
+                <Route exact path="/Business">
+                  <BusinessPage
+                    References={References}
+                    executeScroll={executeScroll}
+                    language={language}
+                    setLanguage={setLanguage}
+                  />
+                </Route>
+                <Route exact path="/Gathering">
+                  <GatheringsPage
+                    References={References}
+                    executeScroll={executeScroll}
+                    language={language}
+                    setLanguage={setLanguage}
+                  />
+                </Route>
+                <Route exact path="/contact-us">
+                  <ContactUs
+                    References={References}
+                    executeScroll={executeScroll}
+                    language={language}
+                    setLanguage={setLanguage}
+                  />
+                </Route>
+                {/* Route with no  exact path incase user enters incorrect url, he gets directed to dashboard*/}
+                <Route render={() => <Redirect to="/" />} />
+              </Switch>
+              <Footer language={language} />
+            </BrowserRouter>
+          </div>
+        </DataProvider>
       </DirectionProvider>
     </div>
   );
