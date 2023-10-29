@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Navbar from "./../NewComponents/HomePage/Navbar";
 import Welcome from "./../NewComponents/HomePage/Welcome";
 import OurYachts from "./../NewComponents/HomePage/OurYachts";
@@ -24,7 +24,6 @@ export default function HomePage(props) {
       props.setShowError(true);
     }
   }
-  const data = useContext(RemoteContext);
 
   return (
     <div>

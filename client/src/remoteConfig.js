@@ -23,8 +23,6 @@ remoteConfig.settings.minimumFetchIntervalMillis = 0;
 const fetchRemoteConfig = async (keys) => {
   try {
     await fetchAndActivate(remoteConfig);
-
-    console.log("Fetched remote config");
     const config = {};
 
     keys.forEach((key) => {

@@ -4,9 +4,14 @@ import useFetchRemoteConfig from "./useFetchRemoteConfig";
 const RemoteContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [remote_data, isLoading] = useFetchRemoteConfig(["spree_home_ar"]);
+  const [remote_data, isLoading] = useFetchRemoteConfig([
+    "nile_anchor_footer",
+    "nile_anchor_gallery",
+    "nile_anchor_yacht_collection",
+  ]);
+
   return (
-    <RemoteContext.Provider remote_data={remote_data} isLoading={isLoading}>
+    <RemoteContext.Provider value={{ remote_data, isLoading }}>
       {children}
     </RemoteContext.Provider>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { DataEnglish } from "../Data/English/HomePage/Footer";
 import { DataArabic } from "../Data/Arabic/HomePage/Footer";
@@ -10,9 +10,31 @@ import instagram from "../Icons/instagram.svg";
 import twitter from "../Icons/twitter.svg";
 import whatsapp from "../Icons/whatsapp.svg";
 import { Link } from "react-router-dom";
+import RemoteContext from "../RemoteContext";
 
 export default function Footer(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
+  const { remote_data, isLoading } = useContext(RemoteContext);
+  let {
+    fb_link,
+    fb_icon,
+    whatsapp_link,
+    whatsapp_icon,
+    instagram_link,
+    instagram_icon,
+    address,
+    address_link,
+    tel,
+    tel_link,
+    email,
+    email_link,
+    copy_right,
+  } = remote_data?.nile_anchor_footer || {};
+
+  if (isLoading) {
+    return "";
+  }
+
   return (
     <StyledDiv>
       <div
@@ -42,40 +64,67 @@ export default function Footer(props) {
               <td className="Col3">
                 <a
                   target="__blank"
-                  href="https://www.facebook.com/Thenileanchor"
+                  href={fb_link || "https://www.facebook.com/Thenileanchor"}
                 >
-                  <img src={fb} alt="fb" className="fb" />
+                  <img src={fb_icon || fb} alt="fb" className="fb" />
                 </a>
                 {/* <img src={twitter} alt="twitter" className="twitter" /> */}
-                <a target="__blank" href="https://wa.me/+201211140222">
-                  <img src={whatsapp} alt="whatsapp" className="whatsapp" />
+                <a
+                  target="__blank"
+                  href={whatsapp_link || "https://wa.me/+201211140222"}
+                >
+                  <img
+                    src={whatsapp_icon || whatsapp}
+                    alt="whatsapp"
+                    className="whatsapp"
+                  />
                 </a>
                 <a
                   target="__blank"
-                  href="https://www.instagram.com/thenileanchor"
+                  href={
+                    instagram_link || "https://www.instagram.com/thenileanchor"
+                  }
                 >
-                  <img src={instagram} alt="instagram" className="instagram" />
+                  <img
+                    src={instagram_icon || instagram}
+                    alt="instagram"
+                    className="instagram"
+                  />
                 </a>
               </td>
 
               <td className="Col4">
                 <a
-                  href="https://maps.app.goo.gl/H9gLHWJKUEoDYUcY6"
+                  href={
+                    address_link || "https://maps.app.goo.gl/H9gLHWJKUEoDYUcY6"
+                  }
                   target="_blank"
                   style={{ color: "blue" }}
                 >
-                  <div>{Data.body1}</div>
-                  <div>{Data.body2}</div>
+                  {address ? (
+                    <>
+                      <div>{address.line1}</div>
+                      <div>{address.line2}</div>
+                    </>
+                  ) : (
+                    <>
+                      <div>{Data.body1}</div>
+                      <div>{Data.body2}</div>
+                    </>
+                  )}
                 </a>
                 <div>
-                  Tel: <a href="tel:+201211140222">01211140222</a>
-                </div>
-                <div>
-                  <a href="mailto:Info@thenileanchor.com">
-                    Info@thenileanchor.com
+                  Tel:{" "}
+                  <a href={tel_link || "tel:+201211140222"}>
+                    {tel || "01211140222"}
                   </a>
                 </div>
-                <div>{Data.body5}</div>
+                <div>
+                  <a href={email_link || "mailto:Info@thenileanchor.com"}>
+                    {email || "Info@thenileanchor.com"}
+                  </a>
+                </div>
+                <div>{copy_right || Data.body5}</div>
               </td>
             </tr>
           </tbody>

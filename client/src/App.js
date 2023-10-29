@@ -16,7 +16,7 @@ import ContactUs from "./Pages/ContactUs";
 import Navbar from "./NewComponents/HomePage/Navbar";
 import Footer from "./Components/Footer";
 import SideSlider from "./NewComponents/SideSlider";
-import { DataProvider } from "./RemoteContext";
+import RemoteContext, { DataProvider } from "./RemoteContext";
 function App() {
   const [language, setLanguage] = useState("EN");
 
@@ -35,13 +35,12 @@ function App() {
   }
   const [showError, setShowError] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-
   return (
     <div className="App">
-      <DirectionProvider
-        direction={language === "EN" ? DIRECTIONS.LTR : DIRECTIONS.RTL}
-      >
-        <DataProvider>
+      <DataProvider>
+        <DirectionProvider
+          direction={language === "EN" ? DIRECTIONS.LTR : DIRECTIONS.RTL}
+        >
           <div>
             <BrowserRouter>
               <ScrollTop />
@@ -109,11 +108,15 @@ function App() {
                 {/* Route with no  exact path incase user enters incorrect url, he gets directed to dashboard*/}
                 <Route render={() => <Redirect to="/" />} />
               </Switch>
-              <Footer language={language} />
+
+              <Footer
+                language={language}
+                // data={remote_data?.nile_anchor_footer}
+              />
             </BrowserRouter>
           </div>
-        </DataProvider>
-      </DirectionProvider>
+        </DirectionProvider>
+      </DataProvider>
     </div>
   );
 }
