@@ -3,14 +3,12 @@ import styled from "styled-components";
 import { DataEnglish } from "../../Data/English/HomePage/OurYachts";
 import { DataArabic } from "../../Data/Arabic/HomePage/OurYachts";
 import { colors } from "../../Styles/Colors";
-import Liberty_Light from "../../Images/Liberty_Light.png";
-import Liberty_Image from "../../Images/Liberty_Image.png";
-import BellaYellow from "../../Images/BellaYellow.png";
-import OurYachtsNewDesign, { yachts } from "./OurYachtsNewDesign";
 
-export default function OurYachts(props) {
+import OurYachtsNewDesign from "./OurYachtsNewDesign";
+
+export default function OurYachts({ yachts, ...props }) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
-  const [chosenYacht, setChosenYacht] = useState(Data.Options[0]);
+  const [chosenYacht, setChosenYacht] = useState(Object.keys(yachts)[0]);
   const [vw, setVw] = useState(window.innerWidth);
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -26,6 +24,8 @@ export default function OurYachts(props) {
     <StyledDiv>
       {vw <= 786 ? (
         <div className="MobileViewPadding">
+          {chosenYacht}
+
           <table>
             <tbody>
               <tr>
@@ -37,7 +37,7 @@ export default function OurYachts(props) {
               <tr>
                 <td></td>
                 <td className="links">
-                  {Data.Options.map((yacht, index) => {
+                  {Object.keys(yachts).map((yacht, index) => {
                     if (index !== 0) {
                       return (
                         <span style={{ marginLeft: "0.7vw" }}>
@@ -94,7 +94,7 @@ export default function OurYachts(props) {
                     >
                       <img
                         src={yachts[chosenYacht].logo}
-                        alt="Liberty"
+                        alt="Yacht_image"
                         className={`Liberty_Light_Mobile ${
                           chosenYacht === "zein" ? "zein-logo" : ""
                         }`}
@@ -133,7 +133,7 @@ export default function OurYachts(props) {
           </div>
         </div>
       ) : (
-        <OurYachtsNewDesign />
+        <OurYachtsNewDesign yachts={yachts}/>
         // <div
         //   className={
         //     props.language === "EN" ? "LeftTextAlign" : "RightTextAlign"
@@ -417,7 +417,7 @@ const StyledDiv = styled.div`
     height: 11.8vw;
     margin: 3.6vw 3.1vw 3.68vw 3.3vw;
   }
-  .zein-logo{
+  .zein-logo {
     width: 28.5vw;
     height: 28.5vw;
   }

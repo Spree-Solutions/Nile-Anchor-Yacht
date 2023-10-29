@@ -1,46 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Liberty_Image from "../../Images/Liberty_Image.png";
-import Bella_Image from "../../Images/bella-image.jpeg";
 import { colors } from "../../Styles/Colors";
-import BellaYellow from "../../Images/BellaYellow.png";
-import vidaLogo from "../../Images/vida-1.png";
-import Liberty_Dark from "../../Images/libDark.png";
-import vidaImage from "../../Images/Vida Yacht-1.jpg";
-import zeinLogo from "../../Images/zein-logo.png";
-import zeinImage from "../../Images/zein-1.jpg";
 
-export const yachts = {
-  bella: {
-    displayName: "BELLA",
-    logo: BellaYellow,
-    image: Bella_Image,
-    description:
-      " Bella – Italian for beauty, an inner reflection of the yacht’s overall look. Smaller than the liberty yacht in size yetstands-out elegantly as it cruises throughout Cairo’s Nile River. The yacht offers three decks with a classic high- end interior andß exterior design with the capacity to cater around 30 passengers.ßThe upper deck comes with tinted windows and a 360-degreeß panoramic view, giving our delightful guests the chance toß privately experience Cairo’s Nile River.",
-  },
-  liberty: {
-    displayName: "LIBERTY",
-    logo: Liberty_Dark,
-    image: Liberty_Image,
-    description:
-      "Liberty - Liberating one’s self to a moment of happiness. The two-story yacht is designed to comfortably accommodate guests who seek to host large; events, celebrations, marriage ceremonies, wedding parties, corporate outings and private meetings on Cairo’s Nile River. The yacht’s exterior and interior design is exquisitely designed to provide our guests with a sense of European luxury on the Nile.",
-  },
-  vida1: {
-    displayName: "VIDA",
-    logo: vidaLogo,
-    image: vidaImage,
-    description:
-      "Vida; Spanish for “life” Our smallest yacht, designed for a family gathering or cozy friends’ get-together.The yacht takes up to 20 people. Fully equipped, with a friendly crew to ensure a pleasurable trip on board",
-  },
-  zein: {
-    displayName: "ZEIN",
-    logo: zeinLogo,
-    image: zeinImage,
-    description: `Arabic for "beauty", Zein is the newest addition to our yacht collection. The yacht has a cozy indoor first floor and a spacious outdoor second level with a stacked bar and panoramic views of the Nile. The yacht also has the advantage of passing under all bridges and being able to explore all parts of the Nile.`,
-  },
-};
-const OurYachtsNewDesign = () => {
-  const [selectedYacht, setSelectedYacht] = useState("liberty");
+const OurYachtsNewDesign = ({ yachts }) => {
+  const [selectedYacht, setSelectedYacht] = useState(Object.keys(yachts)[0]);
   return (
     <StyledSection>
       <div className="column column-1">
@@ -54,44 +17,22 @@ const OurYachtsNewDesign = () => {
       <div className="column column-2">
         <div className="heading">
           <div className="yacht-buttons">
-            <div>
-              <p
-                onClick={() => setSelectedYacht("liberty")}
-                className={`y-name ${
-                  selectedYacht === "liberty" ? "selected" : ""
-                }`}
-              >
-                LIBERTY
-              </p>
-              <p>|</p>
-              <p
-                onClick={() => setSelectedYacht("bella")}
-                className={`y-name ${
-                  selectedYacht === "bella" ? "selected" : ""
-                }`}
-              >
-                BELLA
-              </p>
-            </div>
-            <div>
-              <p
-                onClick={() => setSelectedYacht("vida1")}
-                className={`y-name ${
-                  selectedYacht === "vida1" ? "selected" : ""
-                }`}
-              >
-                VIDA
-              </p>
-              <p>|</p>
-              <p
-                onClick={() => setSelectedYacht("zein")}
-                className={`y-name ${
-                  selectedYacht === "zein" ? "selected" : ""
-                }`}
-              >
-                ZEIN
-              </p>
-            </div>
+            {Object.keys(yachts).map((yacht, index) => (
+              <div>
+                <p
+                  onClick={() => setSelectedYacht(yacht)}
+                  className={`y-name ${
+                    selectedYacht === yacht ? "selected" : ""
+                  }`}
+                >
+                  {yachts[yacht].displayName}
+                </p>
+
+                {index != Object.keys(yachts).length - 1 && index % 2 === 0 && (
+                  <p>|</p>
+                )}
+              </div>
+            ))}
           </div>
           <div className="separator"></div>
           <img
@@ -160,15 +101,19 @@ const StyledSection = styled.div`
       align-items: center;
       margin-top: 3vw;
       .yacht-buttons {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(
+          2,
+          1fr
+        ); /* Two columns with equal width */
+        grid-template-rows: repeat(2, 1fr);
         div {
           display: flex;
           // text-align: left;
         }
         // flex-wrap: wrap;
         .y-name {
-          width: 8.333vw;
+          width: 10vw;
         }
       }
       p {

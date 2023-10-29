@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "./../NewComponents/HomePage/Navbar";
 import Welcome from "./../NewComponents/HomePage/Welcome";
 import OurYachts from "./../NewComponents/HomePage/OurYachts";
@@ -25,6 +25,13 @@ export default function HomePage(props) {
     }
   }
 
+  const { remote_data, isLoading } = useContext(RemoteContext);
+  let { nile_anchor_gallery, nile_anchor_yacht_collection } = remote_data || {};
+
+  if (isLoading) {
+    return "";
+  }
+
   return (
     <div>
       <div>
@@ -36,16 +43,21 @@ export default function HomePage(props) {
           language={props.language}
         />
       </div>
-      <div id="our-yachts">
-        <OurYachts
-          language={props.language}
-          executeScroll={props.executeScroll}
-          References={props.References}
-        />
-      </div>
-      <div id="gallery">
-        <Gallery language={props.language} />
-      </div>
+      {!isLoading && (
+        <>
+          <div id="our-yachts">
+            <OurYachts
+              language={props.language}
+              executeScroll={props.executeScroll}
+              References={props.References}
+              yachts={nile_anchor_yacht_collection}
+            />
+          </div>
+          <div id="gallery">
+            <Gallery language={props.language} data={nile_anchor_gallery} />
+          </div>
+        </>
+      )}
       <div id="our-services">
         <OurServices language={props.language} />
       </div>
