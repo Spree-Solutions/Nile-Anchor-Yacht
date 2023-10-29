@@ -71,8 +71,8 @@ export default function Footer(props) {
                   Tel: <a href="tel:+201211140222">01211140222</a>
                 </div>
                 <div>
-                  <a href="mailto:Info@thenileanchor.com">
-                    Info@thenileanchor.com
+                  <a href="mailto:reservation@thenileanchor.com">
+                    reservation@thenileanchor.com
                   </a>
                 </div>
                 <div>{Data.body5}</div>
