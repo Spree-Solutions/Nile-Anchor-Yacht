@@ -84,13 +84,13 @@ export default function OurYachts({ yachts, ...props }) {
                 <tr>
                   <td className="ImageCol">
                     <div
-                      className={
-                        chosenYacht === "liberty" || chosenYacht === "bella"
-                          ? chosenYacht === "liberty"
-                            ? "Liberty_Light_Background"
-                            : "Bella_Light_Background"
-                          : ""
-                      }
+                      // className={
+                      //   chosenYacht === "liberty" || chosenYacht === "bella"
+                      //     ? chosenYacht === "liberty"
+                      //       ? "Liberty_Light_Background"
+                      //       : "Bella_Light_Background"
+                      //     : ""
+                      // }
                     >
                       <img
                         src={yachts[chosenYacht].logo}
