@@ -54,7 +54,7 @@ export default function HomePage(props) {
             />
           </div>
           <div id="gallery">
-            <Gallery language={props.language} data={nile_anchor_gallery} />
+            <Gallery language={props.language} yachts={nile_anchor_gallery} />
           </div>
         </>
       )}

@@ -4,80 +4,17 @@ import { DataEnglish } from "../../Data/English/HomePage/Gallery";
 import { DataArabic } from "../../Data/Arabic/HomePage/Gallery";
 import { colors } from "../../Styles/Colors";
 import Gallery_Background from "../../Images/Gallery_Background.jpeg";
-import Liberty_Dark2 from "../../Images/Liberty_Dark2.png";
-import Bella_Dark from "../../Images/Bella_Dark.png";
-import CarouselComponent from "./Carousel";
 import logo from "../../Images/navylogo.png";
-import logoVida from "../../Images/vida1logo.png";
-import zeinLogo from "../../Images/zein-logo.png";
 
 import CustomCarousel from "../CustomCarousel";
-import Bella0 from "../../Images/Bella0.jpeg";
-import Bella1 from "../../Images/Bella1.jpeg";
-import Bella2 from "../../Images/Bella2.jpeg";
-import Bella3 from "../../Images/Bella3.jpeg";
-import Bella4 from "../../Images/Bella4.jpeg";
-import Bella5 from "../../Images/Bella5.jpeg";
-import Bella6 from "../../Images/Bella6.jpeg";
 
-import Liberty1 from "../../Images/Liberty1.jpeg";
-import Liberty2 from "../../Images/Liberty2.jpeg";
-import Liberty3 from "../../Images/Liberty3.jpeg";
-import Liberty4 from "../../Images/Liberty4.jpeg";
-import Liberty5 from "../../Images/Liberty5.jpeg";
-import Liberty6 from "../../Images/Liberty6.jpeg";
-import Liberty7 from "../../Images/Liberty7.jpeg";
-import Liberty8 from "../../Images/Liberty8.jpeg";
-import Liberty9 from "../../Images/Liberty9.jpeg";
-import Liberty10 from "../../Images/Liberty10.jpeg";
-
-import Vida1 from "../../Images/Vida Yacht-6.jpg";
-import Vida2 from "../../Images/Vida Yacht-7.jpg";
-import Vida3 from "../../Images/Vida Yacht-1.jpg";
-import Vida4 from "../../Images/Vida Yacht-2.jpg";
-import Vida5 from "../../Images/Vida Yacht-3.jpg";
-import Vida6 from "../../Images/Vida Yacht-4.jpg";
-import Vida7 from "../../Images/Vida Yacht-8.jpg";
-import Vida8 from "../../Images/Vida Yacht-9.jpg";
-import Vida9 from "../../Images/Vida Yacht-10.jpg";
-// import Vida5 from "../../Images/Vida Yacht-5.jpg";
-
-import Zein1 from "../../Images/zein-1.jpg";
-import Zein2 from "../../Images/zein-2.JPEG";
-import Zein3 from "../../Images/zein-3.jpg";
-import Zein4 from "../../Images/zein-4.jpg";
-import Zein5 from "../../Images/zein-5.jpg";
-import Zein6 from "../../Images/zein-6.jpg";
-
-export default function Gallery(props) {
-  const bellaImages = [Bella0, Bella1, Bella2, Bella3, Bella4, Bella5, Bella6];
-  const libertyImages = [
-    Liberty1,
-    Liberty2,
-    Liberty3,
-    Liberty4,
-    Liberty5,
-    Liberty6,
-    Liberty7,
-    Liberty8,
-    Liberty9,
-    Liberty10,
-  ];
-  const vidaImages = [
-    Vida1,
-    Vida2,
-    Vida3,
-    Vida4,
-    Vida5,
-    Vida6,
-    Vida7,
-    Vida8,
-    Vida9,
-  ];
-
-  const zeinImages = [Zein1, Zein2, Zein3, Zein4, Zein5, Zein6];
-  const [selectedYacht, setSelectedYacht] = useState(libertyImages);
-  const [selectedYachtName, setSelectedYachtName] = useState("liberty");
+export default function Gallery({ yachts, ...props }) {
+  const [selectedYacht, setSelectedYacht] = useState(
+    yachts[Object.keys(yachts)[0]].images
+  );
+  const [selectedYachtName, setSelectedYachtName] = useState(
+    Object.keys(yachts)[0]
+  );
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   return (
     <StyledDiv>
@@ -95,50 +32,24 @@ export default function Gallery(props) {
           <img src={logo} alt="logo" />
         </div>
         <div className="heading-section">
-          <img
-            src={Liberty_Dark2}
-            alt="liberty"
-            onClick={() => {
-              setSelectedYacht(libertyImages);
-              setSelectedYachtName("liberty");
-            }}
-            className={`${selectedYachtName === "liberty" ? "selected" : ""}`}
-          />
-          <div className="separator"></div>
-          <img
-            src={Bella_Dark}
-            id="bella"
-            alt="bella"
-            onClick={() => {
-              setSelectedYacht(bellaImages);
-              setSelectedYachtName("bella");
-            }}
-            className={`${selectedYachtName === "bella" ? "selected" : ""}`}
-          />
-          <div className="separator"></div>
-          <img
-            src={logoVida}
-            id="bella"
-            alt="bella"
-            onClick={() => {
-              setSelectedYacht(vidaImages);
-              setSelectedYachtName("vida1");
-            }}
-            className={`${selectedYachtName === "vida1" ? "selected" : ""}`}
-          />
-          <div className="separator"></div>
-          <img
-            src={zeinLogo}
-            id="zein"
-            alt="zein"
-            onClick={() => {
-              setSelectedYacht(zeinImages);
-              setSelectedYachtName("zein");
-            }}
-            className={`zein-logo ${
-              selectedYachtName === "zein" ? "selected" : ""
-            }`}
-          />
+          {Object.keys(yachts).map((yacht, index) => (
+            <>
+              <img
+                src={yachts[yacht].logo}
+                alt="yacht image"
+                onClick={() => {
+                  setSelectedYacht(yachts[yacht].images);
+                  setSelectedYachtName(yachts[yacht].name);
+                }}
+                className={`${
+                  selectedYachtName === yachts[yacht].name ? "selected" : ""
+                }`}
+              />
+              {index !== Object.keys(yachts).length - 1 && (
+                <div className="separator"></div>
+              )}
+            </>
+          ))}
         </div>
         <div className="carousel-section">
           <CustomCarousel imagesArray={selectedYacht} />
