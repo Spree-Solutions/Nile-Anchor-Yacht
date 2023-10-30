@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json .
 # COPY package-lock.json .
 # RUN npm upgrade -g
-RUN npm install --legacy-peer-deps
+RUN npm install
 # Copy app files
 COPY . .
 # Build the app
