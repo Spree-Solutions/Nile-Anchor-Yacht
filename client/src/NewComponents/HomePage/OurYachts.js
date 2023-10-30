@@ -24,8 +24,6 @@ export default function OurYachts({ yachts, ...props }) {
     <StyledDiv>
       {vw <= 786 ? (
         <div className="MobileViewPadding">
-          {chosenYacht}
-
           <table>
             <tbody>
               <tr>
