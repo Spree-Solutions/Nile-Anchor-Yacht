@@ -52,7 +52,7 @@ export default function Gallery({ yachts, ...props }) {
           ))}
         </div>
         <div className="carousel-section">
-          <CustomCarousel imagesArray={selectedYacht} />
+          <CustomCarousel imagesArray={selectedYacht} key={selectedYachtName}/>
         </div>
         <div className="Title">
           {Data.ServicesTitle}{" "}
