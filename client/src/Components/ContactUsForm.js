@@ -83,6 +83,7 @@ const ContactUsForm = (props) => {
               <option value="Liberty">Liberty</option>
               <option value="Bella">Bella</option>
               <option value="Vida">Vida</option>
+              <option value="Zein">Zein</option>
             </select>
           </div>
           <div className="form-item">
