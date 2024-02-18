@@ -7,18 +7,16 @@ import { DataEnglish } from "../../Data/English/DetailsPage/AboutInfo";
 
 import { colors } from "../../Styles/Colors";
 import AboutTitle from "../../Images/AboutTitle.jpeg";
+import video from "../../Images/nileanchor.mp4";
 
 export default function AboutInfo(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
-
   return (
     <StyledDiv>
       <div className="Body">{Data.body}</div>
-      <iframe
-        width="1000"
-        height="530"
-        src="https://www.youtube.com/embed/IZOxeMSrkPE?rel=0&mute=1"
-      ></iframe>
+      <video width="1000" height="530" controls>
+        <source src={video} type="video/mp4" />
+      </video>
       <div className="Label">{Data.label}</div>
     </StyledDiv>
   );
