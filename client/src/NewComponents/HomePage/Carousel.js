@@ -22,12 +22,7 @@ export default function CarouselComponent(props) {
     <img src={Bella3} alt="" className="image" />,
     <img src={Bella4} alt="" className="image" />,
   ];
-  const libertyImages = [
-    <img src={Liberty1} alt="" className="image" />,
-    <img src={Liberty2} alt="" className="image" />,
-    <img src={Liberty3} alt="" className="image" />,
-    <img src={Liberty4} alt="" className="image" />,
-  ];
+
   const [slides, setSlides] = useState(bellaImages);
   const [main, setMain] = useState([
     <img src={Bella1} alt="" className="main" />,

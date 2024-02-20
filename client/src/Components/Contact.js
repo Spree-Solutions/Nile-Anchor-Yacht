@@ -12,14 +12,12 @@ import TextField from "../Styles/TextField";
 import call from "../Images/Phone.png";
 import newsletter from "../Images/Email.png";
 import whatsapp_white from "../Images/Whatsaap.png";
-import egyptian_flag from "../Images/egyptian_flag.png";
 
 export default function Contact(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   const options = ["Liberty"];
   // eslint-disable-next-line no-unused-vars
   const [selected, setSelected] = useState(options[0]);
-  const [checkboxStatus, setCheckboxStatus] = useState(false);
   const [startHourOptions, setStartHourOptions] = useState([]);
   const [endHourOptions, setEndHourOptions] = useState([]);
   const [finalPrice, setFinalPrice] = useState(null);
@@ -165,14 +163,6 @@ export default function Contact(props) {
               </tr>
               <tr className="RowMargin">
                 <td className="flag-td">
-                  {/* <div
-                  className={
-                    props.language === "EN" ? "Flag ENflag" : "Flag ARflag"
-                  }
-                >
-                  {" "}
-                  <img src={egyptian_flag} alt="lag" className="EgyptianFlag" />
-                </div> */}
                   <TextField
                     required={true}
                     placeholder={Data.FormInput[1]}
@@ -349,25 +339,7 @@ export default function Contact(props) {
           <table className="action-table-booking">
             <tbody>
               <tr>
-                {/* <td className="Col0"></td> */}
-                {/* <tr className="special-row-check"> */}
-                {/* <td className="Col1">
-                  <label class="container">
-                    <span class="checkmark">
-                      <input
-                        type="checkbox"
-                        checked={checkboxStatus}
-                        onClick={() => setCheckboxStatus(!checkboxStatus)}
-                      />
-                    </span>
-                  </label>
-                </td> */}
-                {/* <td className="Col2">
-                  <span onClick={() => setCheckboxStatus(!checkboxStatus)}>
-                    {Data.CheckBox}
-                  </span>
-                </td> */}
-                {/* </tr> */}
+              
                 <tr>
                   <td className="Col3">
                     {" "}

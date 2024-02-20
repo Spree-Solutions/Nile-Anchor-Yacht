@@ -62,7 +62,7 @@ export const DatePickerComponent = (props) => {
   }
 
   const onChangeHandler = (date) => {
-    if (props.onChange != undefined && typeof props.onChange == "function") {
+    if (props.onChange !== undefined && typeof props.onChange === "function") {
       props.onChange(date);
     }
 

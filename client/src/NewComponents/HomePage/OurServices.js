@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-// import { isMobileOnly } from "react-device-detect";
-
 import BusinessEvents from "./BusinessEvents";
 import Weddings from "./Weddings";
 import Gatherings from "./Gatherings";

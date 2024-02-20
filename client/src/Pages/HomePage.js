@@ -1,11 +1,9 @@
-import Navbar from "./../NewComponents/HomePage/Navbar";
+
 import Welcome from "./../NewComponents/HomePage/Welcome";
 import OurYachts from "./../NewComponents/HomePage/OurYachts";
 import Gallery from "./../NewComponents/HomePage/Gallery";
 import OurServices from "./../NewComponents/HomePage/OurServices";
-import Partners from "./../NewComponents/HomePage/Partners";
 import Contact from "./../Components/Contact";
-import Footer from "./../Components/Footer";
 import Error from "./../NewComponents/HomePage/Error";
 import Success from "./../NewComponents/HomePage/Success";
 

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { DataEnglish } from "../Data/English/OurServices";
 import { DataArabic } from "../Data/Arabic/OurServices";
 
-// import { isMobileOnly } from "react-device-detect";
 
 import BusinessEvents from "./BusinessEvents";
 import Weddings from "./Weddings";

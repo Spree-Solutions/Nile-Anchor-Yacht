@@ -6,7 +6,6 @@ import { colors } from "../../Styles/Colors";
 import Gallery_Background from "../../Images/Gallery_Background.jpeg";
 import Liberty_Dark2 from "../../Images/Liberty_Dark2.png";
 import Bella_Dark from "../../Images/Bella_Dark.png";
-import CarouselComponent from "./Carousel";
 import logo from "../../Images/navylogo.png";
 import logoVida from "../../Images/vida1logo.png";
 import zeinLogo from "../../Images/zein-logo.png";

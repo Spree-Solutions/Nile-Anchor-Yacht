@@ -7,9 +7,7 @@ import { colors } from "../Styles/Colors";
 import Logo from "../Images/Logo.png";
 import fb from "../Icons/fb.svg";
 import instagram from "../Icons/instagram.svg";
-import twitter from "../Icons/twitter.svg";
 import whatsapp from "../Icons/whatsapp.svg";
-import { Link } from "react-router-dom";
 
 export default function Footer(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
@@ -28,30 +26,22 @@ export default function Footer(props) {
               <td className="Col1">
                 <img src={Logo} alt="Logo" className="Logo" />
               </td>
-              {/* <td className="Col2">
-                {Data.FooterTags.map((item, index) =>
-                  item === "Contact Us" ? (
-                    <Link className="Item" to="/contact-us">
-                      {item}
-                    </Link>
-                  ) : (
-                    <span className="Item">{item}</span>
-                  )
-                )}
-              </td> */}
+             
               <td className="Col3">
                 <a
                   target="__blank"
                   href="https://www.facebook.com/Thenileanchor"
+                  rel="noreferrer"
                 >
                   <img src={fb} alt="fb" className="fb" />
                 </a>
                 {/* <img src={twitter} alt="twitter" className="twitter" /> */}
-                <a target="__blank" href="https://wa.me/+201211140222">
+                <a target="__blank" href="https://wa.me/+201211140222" rel="noreferrer">
                   <img src={whatsapp} alt="whatsapp" className="whatsapp" />
                 </a>
                 <a
                   target="__blank"
+                  rel="noreferrer"
                   href="https://www.instagram.com/thenileanchor"
                 >
                   <img src={instagram} alt="instagram" className="instagram" />
@@ -62,6 +52,7 @@ export default function Footer(props) {
                 <a
                   href="https://maps.app.goo.gl/H9gLHWJKUEoDYUcY6"
                   target="_blank"
+                  rel="noreferrer"
                   style={{ color: "blue" }}
                 >
                   <div>{Data.body1}</div>

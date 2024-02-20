@@ -7,8 +7,6 @@ import { colors } from "../../Styles/Colors";
 
 import BusinessInfo_1 from "../../Images/BusinessInfo_1.jpeg";
 import BusinessInfo_2 from "../../Images/BusinessInfo_2.jpeg";
-import BusinessInfo_3 from "../../Images/BusinessInfo_3.jpeg";
-import BusinessInfo_4 from "../../Images/BusinessInfo_4.jpeg";
 import BusinessInfo_Background from "../../Images/newbg.png";
 
 export default function BusinessInfo(props) {
@@ -53,24 +51,6 @@ export default function BusinessInfo(props) {
             </tr>
           </tbody>
         </table>
-        {/* <table className="table-3">
-          <tbody>
-            <tr>
-              <td>
-                <img
-                  src={BusinessInfo_4}
-                  alt=""
-                  className={
-                    props.language === "EN"
-                      ? "BusinessInfo_4_EN"
-                      : "BusinessInfo_4_AR"
-                  }
-                />
-              </td>
-              <td className="text-inv">{Data.body3}</td>
-            </tr>
-          </tbody>
-        </table> */}
       </div>
     </StyledDiv>
   );

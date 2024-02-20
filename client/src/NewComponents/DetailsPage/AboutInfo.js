@@ -6,7 +6,6 @@ import { DataArabic } from "../../Data/Arabic/DetailsPage/AboutInfo";
 import { DataEnglish } from "../../Data/English/DetailsPage/AboutInfo";
 
 import { colors } from "../../Styles/Colors";
-import AboutTitle from "../../Images/AboutTitle.jpeg";
 import video from "../../Images/nileanchor.mp4";
 
 export default function AboutInfo(props) {

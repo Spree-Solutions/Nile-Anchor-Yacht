@@ -3,9 +3,6 @@ import styled from "styled-components";
 import { DataEnglish } from "../../Data/English/HomePage/OurYachts";
 import { DataArabic } from "../../Data/Arabic/HomePage/OurYachts";
 import { colors } from "../../Styles/Colors";
-import Liberty_Light from "../../Images/Liberty_Light.png";
-import Liberty_Image from "../../Images/Liberty_Image.png";
-import BellaYellow from "../../Images/BellaYellow.png";
 import OurYachtsNewDesign, { yachts } from "./OurYachtsNewDesign";
 
 export default function OurYachts(props) {
@@ -134,126 +131,6 @@ export default function OurYachts(props) {
         </div>
       ) : (
         <OurYachtsNewDesign />
-        // <div
-        //   className={
-        //     props.language === "EN" ? "LeftTextAlign" : "RightTextAlign"
-        //   }
-        // >
-        //   <table>
-        //     <tbody>
-        //       <tr>
-        //         <td className="Col1 Title">
-        //           <div className="Title"> {Data.TitleBold}</div>
-        //           <div className="TitleRegular"> {Data.Title}</div>
-        //           {Data.List.map((item, index) => (
-        //             <div className="ListItem">
-        //               <svg
-        //                 width="0.7vw"
-        //                 height="0.7vw"
-        //                 viewBox="0 0 0.7vw 0.7vw"
-        //                 fill="none"
-        //                 xmlns="http://www.w3.org/2000/svg"
-        //                 className={
-        //                   props.language === "EN" ? "ENbullet" : "ARbullet"
-        //                 }
-        //               >
-        //                 <rect
-        //                   width="0.7vw"
-        //                   height="0.7vw"
-        //                   fill={colors.Black}
-        //                 />
-        //               </svg>{" "}
-        //               <a href={`${index === 0 ? "/#gallery" : "/#booking"}`}>
-        //                 {item}
-        //               </a>
-        //             </div>
-        //           ))}
-        //         </td>
-        //         <td>
-        //           <table>
-        //             <tbody>
-        //               <tr>
-        //                 <td>
-        //                   {" "}
-        //                   <div className="Col2">
-        //                     <img
-        //                       src={Liberty_Image}
-        //                       alt="Liberty"
-        //                       className="Liberty_Image"
-        //                     />
-        //                   </div>
-        //                 </td>
-        //                 <td className="Col3">
-        //                   <div className="buttons">
-        //                     {Data.Options.map((yacht, index) => {
-        //                       if (index !== 0) {
-        //                         return (
-        //                           <span>
-        //                             {" | "}
-        //                             <span
-        //                               onClick={() => setChosenYacht(yacht)}
-        //                               className={
-        //                                 chosenYacht === yacht
-        //                                   ? "chosenButton"
-        //                                   : "clickable"
-        //                               }
-        //                             >
-        //                               {yacht}
-        //                             </span>
-        //                           </span>
-        //                         );
-        //                       } else {
-        //                         return (
-        //                           <span
-        //                             onClick={() => setChosenYacht(yacht)}
-        //                             className={
-        //                               chosenYacht === yacht
-        //                                 ? "chosenButton"
-        //                                 : "clickable"
-        //                             }
-        //                           >
-        //                             {yacht}
-        //                           </span>
-        //                         );
-        //                       }
-        //                     })}
-        //                   </div>
-        //                   <div
-        //                     className={
-        //                       chosenYacht === "Liberty"
-        //                         ? "Liberty_Light_Background"
-        //                         : "Bella_Light_Background"
-        //                     }
-        //                   >
-        //                     {chosenYacht === "Liberty" ? (
-        //                       <img
-        //                         src={Liberty_Light}
-        //                         alt="Liberty"
-        //                         className="Liberty_Light"
-        //                       />
-        //                     ) : (
-        //                       <img
-        //                         src={BellaYellow}
-        //                         alt="Bella"
-        //                         className="BellaYellow"
-        //                       />
-        //                     )}
-        //                   </div>
-        //                   <div className="body">
-        //                     {chosenYacht === "Liberty"
-        //                       ? Data.LibertyBody
-        //                       : Data.BellaBody}
-        //                   </div>
-        //                   {/* <div className="bodyBold">{Data.ReadMore}</div> */}
-        //                 </td>
-        //               </tr>
-        //             </tbody>
-        //           </table>
-        //         </td>
-        //       </tr>
-        //     </tbody>
-        //   </table>
-        // </div>
       )}
     </StyledDiv>
   );

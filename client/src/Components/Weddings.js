@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import { colors } from "../Styles/Colors";
 
-// import { isMobileOnly } from "react-device-detect";
 
 import Wedding_Rings from "../Images/Wedding_Rings.jpeg";
 import Wedding_Setup from "../Images/Wedding_Setup.jpeg";

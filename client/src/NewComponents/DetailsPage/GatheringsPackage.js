@@ -4,7 +4,7 @@ import { DataEnglish } from "../../Data/English/DetailsPage/GatheringsPackage";
 import { DataArabic } from "../../Data/Arabic/DetailsPage/GatheringsPackage";
 
 import { colors } from "../../Styles/Colors";
-import Label from "../Label";
+
 
 export default function GatheringsPackage(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

@@ -3,8 +3,6 @@ import styled from "styled-components";
 
 import { colors } from "../Styles/Colors";
 
-// import { isMobileOnly } from "react-device-detect";
-
 import Kids_Birthday from "../Images/Kids_Birthday.jpeg";
 import Party_Bags from "../Images/Party_Bags.jpeg";
 import Gathering_Background from "../Images/Gathering_Background.jpeg";

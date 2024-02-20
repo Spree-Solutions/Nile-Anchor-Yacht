@@ -121,9 +121,9 @@ export class ReservationHandler {
 
     get serviceCode(){
         let result = "";
-        if(this.serviceName == this.availableEvents[0]){
+        if(this.serviceName === this.availableEvents[0]){
             result = EVENT_TYPE_WEDDING;
-        } else if(this.serviceName == this.availableEvents[1]){
+        } else if(this.serviceName === this.availableEvents[1]){
             result = EVENT_TYPE_CORPORATE;
         } else if ( this.serviceName === this.availableEvents[2]){
             result = EVENT_TYPE_INDIVIDUAL;

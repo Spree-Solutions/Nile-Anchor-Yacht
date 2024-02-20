@@ -4,7 +4,6 @@ import { DataEnglish } from "../../Data/English/DetailsPage/WeddingsPackage";
 import { DataArabic } from "../../Data/Arabic/DetailsPage/WeddingsPackage";
 
 import { colors } from "../../Styles/Colors";
-import WeddingsPackages from "../../Images/WeddingsPackages.png";
 import Label from "../Label";
 
 export default function WeddingsPackage(props) {

@@ -12,7 +12,7 @@ const CustomCarousel = ({ imagesArray }) => {
 
     if (carouselImages)
       carouselImages.style.transform = `translateX(${-imageSelected * size}px)`;
-  }, [imageSelected]);
+  }, [imageSelected, imagesArray]);
   useEffect(() => {
     setImageSelected(0);
   }, [imagesArray]);
@@ -42,8 +42,8 @@ const CustomCarousel = ({ imagesArray }) => {
             {"<"}
           </div>
           <div className="images" id="image-container-carousel">
-            {imagesArray.map((src) => (
-              <img src={src} />
+            {imagesArray.map((src, index) => (
+              <img src={src} alt={`img-${index}`}/>
             ))}
           </div>
           <div className="bullets">

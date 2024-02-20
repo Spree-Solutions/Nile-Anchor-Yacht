@@ -15,32 +15,13 @@ export default function Navbar(props) {
   const location = useLocation();
   console.log(history);
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
-  const { language, setLanguage } = props;
+  const { language } = props;
   // eslint-disable-next-line no-unused-vars
-  const [selectedTag, setSelectedTag] = useState("whoWeAre");
   const [navVisible, setNavvisible] = useState(true);
   useEffect(() => {
     setNavvisible(false);
   }, [location]);
-  const changeToAR = () => {
-    if (language !== "AR") {
-      setLanguage("AR");
-    }
-  };
-  const changeToEN = () => {
-    if (language !== "EN") {
-      setLanguage("EN");
-    }
-  };
 
-  function handleClick(Reference, Tag) {
-    props.executeScroll(Reference);
-    setSelectedTag(Tag);
-  }
-
-  function handleClickByHistory(tagId) {
-    history.push(`/#${tagId}`);
-  }
   return (
     <StyledDiv>
       <div
@@ -68,6 +49,7 @@ export default function Navbar(props) {
                     className={`feather-icon  ${
                       navVisible ? "rotated-feather" : ""
                     }`}
+                    alt="feather-icon"
                     src={feather}
                     onClick={() => setNavvisible(!navVisible)}
                   />
@@ -137,24 +119,6 @@ export default function Navbar(props) {
                 <a href="/contact-us" className="NavSpan">
                   {Data.NavTags[5]}{" "}
                 </a>
-                {/* Changing language is commented out, pending arabic content */}
-                {/* <span
-                  className={
-                    language === "EN" ? "EN BoldText" : "EN NormalText"
-                  }
-                  onClick={changeToEN}
-                >
-                  EN
-                </span>
-                <span className="BoldText">| </span>
-                <span
-                  className={
-                    language === "AR" ? "AR BoldText" : "AR NormalText"
-                  }
-                  onClick={changeToAR}
-                >
-                  عربي
-                </span> */}
               </td>
             </tr>
           </tbody>
