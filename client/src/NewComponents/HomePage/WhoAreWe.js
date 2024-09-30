@@ -66,7 +66,7 @@ const StyledDiv = styled.div`
       align-items: flex-start;
       .title {
         display: flex;
-        margin-bottom: 21.6vw;
+        margin-bottom: calc((24 / 375) * 100vw);
         /* margin: auto; */
       }
     }
@@ -81,8 +81,10 @@ const StyledDiv = styled.div`
     text-align: left;
     @media (max-width: 768px) {
       width: fit-content;
-      font-size: 6.67vw;
       margin-top: 11.5vw;
+      font-weight : 700;
+      font-size: calc((24 / 375) * 100vw);
+      line-height: calc((30 / 375) * 100vw); 
     }
   }
   .SubTitleBold{
@@ -103,11 +105,11 @@ const StyledDiv = styled.div`
     padding: 0vw 3.5vw 0vw 7vw;
     line-height: 1.7vw;
     @media (max-width: 768px) {
-      font-size: 3.7vw;
-      line-height: 6vw;
+      font-size: calc((14 / 375) * 100vw);
+      line-height: calc((18 / 375) * 100vw);
       width: 77vw;
       padding: 0;
-      margin-bottom: 27.2vw;
+      margin-bottom: calc((24 / 375) * 100vw);
     }
   }
 
