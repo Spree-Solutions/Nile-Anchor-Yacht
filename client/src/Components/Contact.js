@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { DataEnglish } from "../Data/English/HomePage/Contact";
 import { DataArabic } from "../Data/Arabic/HomePage/Contact";
@@ -12,12 +12,19 @@ import TextField from "../Styles/TextField";
 import call from "../Images/Phone.png";
 import newsletter from "../Images/Email.png";
 import whatsapp_white from "../Images/Whatsaap.png";
+import PaymentModal from "./PaymentModal";
 
 export default function Contact(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;
   const options = ["Liberty"];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleSubmit = () => {
+    setIsModalOpen(true);
+  };
   // eslint-disable-next-line no-unused-vars
   const [selected, setSelected] = useState(options[0]);
+  const [errorCount, setCountError] = useState(false);
   const [startHourOptions, setStartHourOptions] = useState([]);
   const [endHourOptions, setEndHourOptions] = useState([]);
   const [finalPrice, setFinalPrice] = useState(null);
@@ -40,6 +47,19 @@ export default function Contact(props) {
   if (typeof window !== typeof undefined) {
     window.TanawyComponentTest = reservationInstance;
   }
+
+  useEffect(() => {
+    if (
+      selected === "Liberty" &&
+      reservationInstance.countHours < 2 &&
+      finalPrice !== null
+    ) {
+      setCountError(true);
+    } else {
+      setCountError(false);
+    }
+  }, [selected, reservationInstance.countHours, finalPrice]);
+
   return (
     <StyledDiv id="booking">
       <div
@@ -120,9 +140,10 @@ export default function Contact(props) {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            if (!reservationInstance.isReserveReady()) {
+            if (!reservationInstance.isReserveReady() || errorCount) {
               return;
             }
+            handleSubmit();
             reservationInstance.reserve().then((result) => {
               if (result.error) {
                 // handle error
@@ -156,9 +177,15 @@ export default function Contact(props) {
                     setSelected={(value) => {
                       reservationInstance.setYacht(value);
                       setSelected(value);
+                      setFinalPrice(reservationInstance.calculatedFinalPrice);
                     }}
                     language={props.language}
                   />
+                  {selected === "Liberty" && (
+                    <span className="text-alert">
+                      This Yacht At Least 2 Hours
+                    </span>
+                  )}
                 </td>
               </tr>
               <tr className="RowMargin">
@@ -339,7 +366,6 @@ export default function Contact(props) {
           <table className="action-table-booking">
             <tbody>
               <tr>
-              
                 <tr>
                   <td className="Col3">
                     {" "}
@@ -347,7 +373,7 @@ export default function Contact(props) {
                       type="submit"
                       // disabled={!finalPrice}
                       className={`Button ${
-                        !finalPrice ? "ButtonDisabled" : ""
+                        !finalPrice || errorCount ? "ButtonDisabled" : ""
                       }`}
                     >
                       {finalPrice
@@ -364,11 +390,18 @@ export default function Contact(props) {
                     </td>
                   )}
                 </tr>
+                {errorCount && (
+                  <span>Please At Least 2 Hours For This Yacht</span>
+                )}
               </tr>
             </tbody>
           </table>
         </form>
       </div>
+      <PaymentModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </StyledDiv>
   );
 }
