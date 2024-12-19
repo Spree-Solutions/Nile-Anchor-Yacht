@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/common.css";
+import AhlyBankLogo from "../Images/ahly-bank.png";
 import PaymentLogo from "../Images/payment_logo.png";
 import Instapay from "../Images/instapay.png";
 import mobile from "../Icons/mobile.svg";
@@ -33,9 +34,18 @@ const PaymentModal = ({ isOpen, onClose }) => {
               <span>Bank Transfer</span>
             </div>
           </div>
-          <div className="bank-container">
-            <h2>Bank Account</h2>
-            <div className="bank-account">EG820003003130712825969000110</div>
+          <div className="main-banks">
+            <div className="bank-container account-number">
+              <h2>
+                <img src={AhlyBankLogo} alt="" />
+                <span>Account Number</span>
+              </h2>
+              <div className="bank-account">0313071282596900011</div>
+            </div>
+            <div className="bank-container">
+              <h2>Bank Name</h2>
+              <div className="bank-account">Abd-ElAziz Aal So’ud</div>
+            </div>
           </div>
           <div className="transfer">
             <p className="transfer-text">You Can Transfer Using:</p>
