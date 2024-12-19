@@ -372,20 +372,20 @@ export default function Contact(props) {
                     <button
                       type="submit"
                       // disabled={!finalPrice}
-                      className={`Button ${
+                      className={`final-button ${
                         !finalPrice || errorCount ? "ButtonDisabled" : ""
                       }`}
                     >
                       {finalPrice
-                        ? `Pay 50% ( EGP ${finalPrice} )`
+                        ? `Pay 50% ( EGP ${finalPrice/2} )`
                         : Data.Button}
                     </button>{" "}
                   </td>
                   {finalPrice > 0 && (
                     <td>
                       {" "}
-                      <div className="final-message">
-                        {`Initial price EGP  ${(finalPrice * 2).toFixed(2)}`}
+                      <div className="final-msg">
+                        {`Initial price EGP  ${finalPrice}`}
                       </div>{" "}
                     </td>
                   )}
@@ -574,6 +574,7 @@ const StyledDiv = styled.div`
   }
   .ButtonDisabled {
     background: grey;
+    cursor: not-allowed;
   }
   .final-message {
     font-size: 1vw;

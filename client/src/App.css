@@ -45,3 +45,19 @@
     transform: rotate(360deg);
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #154cd635;
+  border: 2px solid transparent; /* Add space around the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f3f4f6; /* Customize the scrollbar track color */
+  border-radius: 10px;
+}
