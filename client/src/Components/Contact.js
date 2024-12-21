@@ -144,14 +144,14 @@ export default function Contact(props) {
               return;
             }
             handleSubmit();
-            reservationInstance.reserve().then((result) => {
-              if (result.error) {
-                // handle error
-                console.log("error returned from reserve()", result);
-              } else {
-                console.log("reserved successfully", result);
-              }
-            });
+            // reservationInstance.reserve().then((result) => {
+            //   if (result.error) {
+            //     // handle error
+            //     console.log("error returned from reserve()", result);
+            //   } else {
+            //     console.log("reserved successfully", result);
+            //   }
+            // });
           }}
         >
           <table className="form-table">
@@ -366,7 +366,7 @@ export default function Contact(props) {
           <table className="action-table-booking">
             <tbody>
               <tr>
-                <tr>
+                <tr className="btns-final">
                   <td className="Col3">
                     {" "}
                     <button
@@ -377,7 +377,7 @@ export default function Contact(props) {
                       }`}
                     >
                       {finalPrice
-                        ? `Pay 50% ( EGP ${finalPrice/2} )`
+                        ? `Pay 50% ( EGP ${finalPrice / 2} )`
                         : Data.Button}
                     </button>{" "}
                   </td>
@@ -391,7 +391,7 @@ export default function Contact(props) {
                   )}
                 </tr>
                 {errorCount && (
-                  <span>Please At Least 2 Hours For This Yacht</span>
+                  <span>Please At Least 2 Hours For Liberty Yacht</span>
                 )}
               </tr>
             </tbody>
@@ -668,7 +668,6 @@ const StyledDiv = styled.div`
     }
   }
   .Col3 {
-    width: 14.7vw;
     @media (max-width: 768px) {
       width: 100%;
     }

@@ -88,9 +88,23 @@
   font-weight: 500;
   line-height: 30px;
 }
-
+.main-banks {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 .bank-container {
-  margin-top: 12px;
+  flex: 1;
+}
+.account-number h2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+.account-number img {
+  width: 22px;
 }
 .bank-container h2 {
   color: #1a394f;
@@ -98,6 +112,8 @@
   font-weight: 600;
   line-height: 20px;
   display: flex;
+  margin-bottom: 4px !important;
+  margin-top: 0 !important;
 }
 .bank-account {
   background: #e2ddd0;
@@ -253,8 +269,8 @@
   background: #1a394f;
   color: #fff;
   border: none;
-  min-width: 120px;
-  height: 30px;
+  min-width: 130px;
+  height: 35px;
   border-radius: 4px;
   cursor: pointer;
   transition: 0.3s;
@@ -262,7 +278,7 @@
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
-  font-size: 10px;
+  font-size: 11px;
 }
 .final-msg {
   font-size: 13px;
@@ -324,4 +340,12 @@ input[type="radio"]:checked::after {
   height: 7px;
   border-radius: 50%;
   background-color: #0f2214;
+}
+
+.btns-final {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
