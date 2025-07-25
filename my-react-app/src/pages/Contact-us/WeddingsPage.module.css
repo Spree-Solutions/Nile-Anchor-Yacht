@@ -1,0 +1,20 @@
+.weddingsPage {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+
+/* Page-specific overrides */
+.weddingsPage section {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .weddingsPage {
+    overflow-x: hidden;
+  }
+}

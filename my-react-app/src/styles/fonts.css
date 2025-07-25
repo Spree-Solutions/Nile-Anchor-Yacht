@@ -1,0 +1,160 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Cormorant+Upright:wght@400;500;600;700&family=Marcellus&family=Outfit:wght@300;400;500;600&family=Rethink+Sans:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&family=Sacramento&family=Work+Sans:wght@300;400;500;600&display=swap');
+
+/* Font Face Declarations for Custom Fonts (if any) */
+
+/* Font Awesome Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* Font Classes */
+.font-primary {
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-heading {
+  font-family: 'Antic Didone', Georgia, 'Times New Roman', serif;
+}
+
+.font-accent {
+  font-family: 'Marcellus', Georgia, 'Times New Roman', serif;
+}
+
+.font-script {
+  font-family: 'Sacramento', cursive;
+}
+
+.font-display {
+  font-family: 'Cormorant Upright', Georgia, 'Times New Roman', serif;
+}
+
+.font-outfit {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-rethink {
+  font-family: 'Rethink Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Font Weight Utilities */
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+
+/* Font Style Utilities */
+.font-italic { font-style: italic; }
+.font-not-italic { font-style: normal; }
+
+/* Letter Spacing Utilities */
+.tracking-tighter { letter-spacing: -0.05em; }
+.tracking-tight { letter-spacing: -0.025em; }
+.tracking-normal { letter-spacing: 0; }
+.tracking-wide { letter-spacing: 0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.tracking-widest { letter-spacing: 0.1em; }
+
+/* Line Height Utilities */
+.leading-none { line-height: 1; }
+.leading-tight { line-height: 1.25; }
+.leading-snug { line-height: 1.375; }
+.leading-normal { line-height: 1.5; }
+.leading-relaxed { line-height: 1.625; }
+.leading-loose { line-height: 2; }
+
+/* Text Transform Utilities */
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+.normal-case { text-transform: none; }
+
+/* Font Smoothing */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.subpixel-antialiased {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+/* Responsive Font Sizes */
+.text-responsive {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.heading-responsive {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+/* Font Loading Optimization */
+@font-display {
+  font-display: swap;
+}
+
+/* Fallback Font Stack */
+.system-font {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Print Font Adjustments */
+@media print {
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+}
+
+/* Font Feature Settings */
+.font-features-normal {
+  font-feature-settings: normal;
+}
+
+.font-features-tabular {
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+}
+
+.font-features-oldstyle {
+  font-feature-settings: 'onum';
+  font-variant-numeric: oldstyle-nums;
+}
+
+.font-features-small-caps {
+  font-feature-settings: 'smcp';
+  font-variant-caps: small-caps;
+}
+
+/* Icon Font Helpers */
+.icon::before {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Arabic/RTL Font Support (if needed) */
+[dir="rtl"] {
+  font-family: 'Noto Sans Arabic', 'Work Sans', sans-serif;
+}
+
+/* Performance: Preload Critical Fonts */
+/* Add these link tags to your HTML head:
+<link rel="preload" href="/fonts/AnticDidone-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/WorkSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+*/
