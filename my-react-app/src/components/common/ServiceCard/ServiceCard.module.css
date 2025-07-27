@@ -1,0 +1,118 @@
+/* Default Card */
+.defaultCard {
+  height: 100%;
+}
+
+.defaultCard > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.defaultCard .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Horizontal Card */
+.horizontalCard {
+  width: 100%;
+}
+
+.horizontalCard img {
+  transition: transform 0.5s ease;
+}
+
+.horizontalCard:hover img {
+  transform: scale(1.05);
+}
+
+/* Featured Card */
+.featuredCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.featuredCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(161, 140, 109, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.featuredCard:hover::before {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.defaultCard,
+.horizontalCard,
+.featuredCard {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Hover Effects */
+.defaultCard:hover,
+.horizontalCard:hover {
+  transform: translateY(-4px);
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  .defaultCard h3,
+  .horizontalCard h3 {
+    font-size: 1.125rem;
+  }
+
+  .defaultCard p,
+  .horizontalCard p {
+    font-size: 0.875rem;
+  }
+
+  .featuredCard h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Loading State */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

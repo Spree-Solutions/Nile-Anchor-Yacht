@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#003950" />
+  <meta
+    name="description"
+    content="Nile Anchor - Premium luxury yacht rentals on Egypt's Nile River. Experience exclusive yacht charters for weddings, corporate events, and private celebrations since 2021."
+  />
+  <meta name="keywords" content="yacht rental, Nile River, luxury boats, Egypt yacht charter, wedding venue, corporate events, private parties, Cairo yacht rental" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thenileanchor.com/" />
+  <meta property="og:title" content="Nile Anchor - Luxury Yacht Experiences on the Nile" />
+  <meta property="og:description" content="Premium luxury yacht rentals on Egypt's Nile River. Book exclusive yacht charters for weddings, corporate events, and celebrations." />
+  <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://thenileanchor.com/" />
+  <meta property="twitter:title" content="Nile Anchor - Luxury Yacht Experiences on the Nile" />
+  <meta property="twitter:description" content="Premium luxury yacht rentals on Egypt's Nile River. Book exclusive yacht charters for weddings, corporate events, and celebrations." />
+  <meta property="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
+
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Cormorant+Upright:wght@400;500;600;700&family=Marcellus&family=Outfit:wght@300;400;500;600&family=Rethink+Sans:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&family=Sacramento&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <title>Nile Anchor - Luxury Yacht Experiences on the Nile</title>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      "name": "Nile Anchor",
+      "description": "Premium luxury yacht rentals on Egypt's Nile River",
+      "url": "https://thenileanchor.com",
+      "telephone": "+201211140222",
+      "email": "reservation@thenileanchor.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Nile view club, Dokki",
+        "addressLocality": "Giza",
+        "addressCountry": "Egypt"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:30"
+      },
+      "priceRange": "$$$"
+    }
+  </script>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  
+  <!-- Loading spinner for initial load -->
+  <style>
+    #initial-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #002e41;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s ease-out;
+    }
+    
+    .loader-content {
+      text-align: center;
+    }
+    
+    .loader-logo {
+      width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    .loader-spinner {
+      border: 3px solid #ffffff20;
+      border-top: 3px solid #a18c6d;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+  </style>
+  
+  <div id="initial-loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+  
+  <script>
+    // Remove loader when React app is mounted
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const loader = document.getElementById('initial-loader');
+        if (loader) {
+          loader.style.opacity = '0';
+          setTimeout(function() {
+            loader.style.display = 'none';
+          }, 300);
+        }
+      }, 100);
+    });
+  </script>
+</body>
+</html>
