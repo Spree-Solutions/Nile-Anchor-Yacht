@@ -1,11 +1,17 @@
-import { Button } from "@/components/ui/button";
-import { useTranslation } from "react-i18next";
+import BookingSection from "@/components/common/Book/BookingSection";
+import AboutSection from "@/features/Home/AboutSection";
+import { HeroSection } from "@/features/Home/Hero/HomeHero";
+import HomeGallerySection from "@/features/Home/HomeGallerySection/HomeGallerySection";
+import OurServices from "@/features/Home/OurServices";
 
 const HomePage = () => {
-  const { t } = useTranslation();
   return (
     <div>
-      <Button>{t("Home")}</Button>
+      <HeroSection />
+      <AboutSection />
+      <OurServices />
+      <HomeGallerySection />
+      <BookingSection />
     </div>
   );
 };
