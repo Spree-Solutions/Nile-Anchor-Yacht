@@ -1,0 +1,32 @@
+/* styles.css */
+.form-item {
+  @apply relative h-fit;
+}
+
+.form-item.horizontal {
+  @apply flex flex-auto;
+}
+
+.form-item.horizontal .form-label {
+  @apply justify-end;
+}
+
+.form-item.vertical {
+  @apply flex flex-col;
+}
+
+.form-item.inline {
+  @apply md:inline-flex mr-3 rtl:ml-3;
+}
+
+.form-label {
+  @apply flex items-center mb-2 font-semibold text-[14px] leading-5 text-[#696871];
+}
+
+.form-label.invalid {
+  @apply text-red-500;
+}
+
+.form-explain {
+  @apply text-sm font-medium text-destructive mt-1 flex justify-start;
+}

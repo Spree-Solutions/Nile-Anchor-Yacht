@@ -1,0 +1,41 @@
+/* General input styles */
+.input {
+    @apply border text-[#3B4453] h-12 border-[#E3E3E3] bg-white rounded-[8px] w-full py-2 px-3 transition duration-150 ease-in-out;
+}
+
+.input::placeholder {
+    @apply text-[#A5A5A5];
+}
+
+.input.input-invalid {
+    @apply ring-1 ring-red-500 border-red-500;
+}
+.textarea::placeholder {
+    @apply text-[#A5A5A5];
+}
+.textarea {
+    outline: none !important
+}
+
+.textarea.input-invalid {
+    @apply ring-1 ring-red-500 border-red-500;
+}
+
+.input-textarea {
+    @apply min-h-28 flex justify-start items-start;
+}
+
+.input.input-disabled {
+    @apply bg-gray-100 text-gray-400 cursor-not-allowed;
+}
+
+.input.input-disabled::placeholder {
+    @apply opacity-70 flex justify-start items-start;
+}
+
+input:focus-within {
+    --tw-ring-offset-width: 0 !important;
+    --tw-ring-offset-shadow: none !important;
+    --tw-ring-shadow: none !important;
+    box-shadow: none !important
+}
