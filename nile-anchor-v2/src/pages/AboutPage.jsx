@@ -5,7 +5,7 @@ import MessageCEO from "@/features/About/MessageCEO";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <ReusableHeroSection title="About" />
       <AboutDate />
       <MessageCEO />

@@ -6,7 +6,7 @@ import OurServices from "@/features/Home/OurServices";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <HeroSection />
       <AboutSection />
       <OurServices />

@@ -3,7 +3,7 @@ import ContactSection from "@/features/Contact/ContactSection";
 
 const ContactPage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <ReusableHeroSection title="Contact" />
       <ContactSection />
     </div>

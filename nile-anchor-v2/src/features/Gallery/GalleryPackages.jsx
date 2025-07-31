@@ -3,6 +3,7 @@ import Container from "@/components/common/Container";
 import LazyImage from "@/components/common/LazyImage";
 import { useTranslation } from "react-i18next";
 import { CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const GalleryPackages = () => {
   const { t } = useTranslation();
@@ -24,18 +25,33 @@ const GalleryPackages = () => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Content Section */}
-          <div className="row-start-2 md:row-span-1">
-            <h1 className="font-normal text-3xl text-[#003950] mb-6">{t("All Packages Include")}</h1>
+          <motion.div
+            className="row-start-2 md:row-span-1"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h1 className="font-normal text-3xl text-[#003950] mb-6">
+              {t("All Packages Include")}
+            </h1>
 
             <ul className="space-y-4">
               {points.map((point, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-[#404040] text-base md:text-lg">
+                <motion.li
+                  key={idx}
+                  className="flex items-start gap-3 text-[#404040] text-base md:text-lg"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 * idx }}
+                  viewport={{ once: true }}
+                >
                   <CheckCircle className="text-[#003950] w-5 h-5 mt-1" />
                   <span>{point}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Images Section */}
           <div className="flex justify-end relative min-h-[420px] md:min-h-[670px]">

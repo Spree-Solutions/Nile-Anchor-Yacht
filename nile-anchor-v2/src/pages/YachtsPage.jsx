@@ -5,7 +5,7 @@ import WeddingsPackages from "@/features/Weddings/WeddingsPackages";
 
 const YachtsPage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <ReusableHeroSection backgroundImage="/images/services/weddings/decoration-1.jpg" title="Weddings" />
       <WeddingsCollection />
       <WeddingsPackages />

@@ -34,7 +34,7 @@ function ContectForm() {
     <Form {...form}>
       <div className="flex-1">
         <form onSubmit={handleSubmit(onSubmit)} className="h-full flex flex-col justify-between">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-fit">
+          <div className="flex flex-col md:grid grid-cols-1 md:grid-cols-2 gap-3 h-fit">
             <FormItem label={t("Subject")} errorMessage={errors.subject?.message}>
               <Input
                 id="subject"

@@ -16,7 +16,7 @@ const BookingSection = () => {
           <div className="col-span-5 md:col-span-3 flex flex-col">
             <div className="flex flex-col gap-3 w-full mb-5">
               <h1 className="text-base text-[#A18C6D]">{t("Yacht Booking")}</h1>
-              <h1 className="text-5xl text-black">{t("Book Your Dream Yacht")}</h1>
+              <h1 className="text-2xl md:text-5xl text-black">{t("Book Your Dream Yacht")}</h1>
             </div>
             <BookingForm />
           </div>

@@ -5,7 +5,7 @@ import EventsCollection from "@/features/Events/EventsCollection";
 
 const ServicesPage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <ReusableHeroSection backgroundImage="/images/events/hero.jpg" title="Weddings" />
       <EventsCollection />
       <EventPackages />

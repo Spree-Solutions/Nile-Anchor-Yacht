@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import YachtCard from "./YachtCard";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export const HeroSection = () => {
   const {
@@ -62,9 +63,126 @@ export const HeroSection = () => {
     ],
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const slideInFromLeft = {
+    hidden: { 
+      opacity: 0, 
+      x: isRTL ? 60 : -60,
+      y: 20 
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const slideInFromRight = {
+    hidden: { 
+      opacity: 0, 
+      x: isRTL ? -60 : 60,
+      y: 20 
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const fadeInUp = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const scaleIn = {
+    hidden: {
+      opacity: 0,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
+    tap: {
+      scale: 0.95,
+    },
+  };
+
+  const sliderVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+        delay: 0.5,
+      },
+    },
+  };
+
   return (
     <div className="relative w-full md:min-h-screen overflow-hidden">
-      <div className="absolute inset-0">
+      {/* Background with fade in animation */}
+      <motion.div 
+        className="absolute inset-0"
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      >
         {!isMedium ? (
           <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
             <source src="/videos/hero-yacht.mp4" type="video/mp4" />
@@ -76,62 +194,128 @@ export const HeroSection = () => {
           />
         )}
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#041125]/70 via-[#041125]/60 to-[#041125]/80" />
-      </div>
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-b from-[#041125]/70 via-[#041125]/60 to-[#041125]/80"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        />
+      </motion.div>
 
       <div className="pb-8 pt-20 md:pb-16 md:pt-28">
         <Container>
-          <div className="">
+          <motion.div 
+            className=""
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             {/* Hero Content */}
             <div className={`relative h-full flex items-start justify-start flex-col ${isRTL && "text-right"}`}>
-              <p className="text-[#a18c6d] text-sm md:text-base lg:text-lg font-medium tracking-[1.5px] mb-4 md:mb-6 animate-fadeInUp">
+              {/* Subtitle */}
+              <motion.p 
+                className="text-[#a18c6d] text-sm md:text-base lg:text-lg font-medium tracking-[1.5px] mb-4 md:mb-6"
+                variants={slideInFromLeft}
+              >
                 {t("LUXURY YACHT RENTALS")}
-              </p>
+              </motion.p>
 
-              <h1 className="font-['Antic_Didone'] text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6 md:mb-8 animate-fadeInUp animation-delay-200">
+              {/* Main Title */}
+              <motion.h1 
+                className="font-['Antic_Didone'] text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6 md:mb-8"
+                variants={slideInFromRight}
+              >
                 {t("Discover the Ultimate")}
                 <br />
                 {t("Luxury on the Nile")}
-              </h1>
+              </motion.h1>
 
-              <p className="font-['Work_Sans'] text-[#d1d1d1] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0 mb-8 md:mb-12 animate-fadeInUp animation-delay-400">
+              {/* Description */}
+              <motion.p 
+                className="font-['Work_Sans'] text-[#d1d1d1] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0 mb-8 md:mb-12"
+                variants={fadeInUp}
+              >
                 {t(
                   "Nile Anchor offers a selection of premium yachts and tailored sailing services for every occasion, whether you're seeking adventure, relaxation, or an unforgettable event at sea.",
                 )}
-              </p>
+              </motion.p>
 
-              <div className="flex w-full flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:items-start justify-center sm:justify-start animate-fadeInUp animation-delay-600">
-                <a href="#booking-section">
-                  <button className="w-full sm:w-auto px-6 py-3 bg-[#e6e1d6] text-[#00162c] text-sm sm:text-base font-medium rounded-lg hover:bg-[#d4cfc2] transition-all duration-300 transform hover:scale-105">
+              {/* Buttons */}
+              <motion.div 
+                className="flex w-full flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:items-start justify-center sm:justify-start"
+                variants={scaleIn}
+              >
+                <motion.a 
+                  href="#booking-section"
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="w-full sm:w-auto block"
+                >
+                  <button className="w-full sm:w-auto px-6 py-3 bg-[#e6e1d6] text-[#00162c] text-sm sm:text-base font-medium rounded-lg hover:bg-[#d4cfc2] transition-all duration-300">
                     {t("BOOK NOW")}
                   </button>
-                </a>
+                </motion.a>
 
-                <button
+                <motion.button
                   onClick={() => navigate("/yachts")}
-                  className="w-full sm:w-auto px-6 py-3 border border-[#e6e1d6] text-[#e6e1d6] text-sm sm:text-base font-medium rounded-lg hover:bg-[#e6e1d6] hover:text-[#00162c] transition-all duration-300 transform hover:scale-105"
+                  className="w-full sm:w-auto px-6 py-3 border border-[#e6e1d6] text-[#e6e1d6] text-sm sm:text-base font-medium rounded-lg hover:bg-[#e6e1d6] hover:text-[#00162c] transition-all duration-300"
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   {t("EXPLORE MORE")}
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
             </div>
 
             {/* Yacht Slider Section */}
-            <div className="mt-8">
-              <div className="flex justify-between items-center relative gap-4">
+            <motion.div 
+              className="mt-8"
+              variants={sliderVariants}
+            >
+              <motion.div 
+                className="flex justify-between items-center relative gap-4"
+                initial={{ opacity: 0, x: isRTL ? 40 : -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
                 <h3 className="text-lg font-medium text-white">{t("Our Yachts")}</h3>
-                <span className="flex-1 block h-1 bg-white"></span>
+                <motion.span 
+                  className="flex-1 block h-1 bg-white"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  style={{ originX: isRTL ? 1 : 0 }}
+                />
                 <span className="w-24"></span>
-              </div>
-              <div className="relative animate-fadeInUp animation-delay-800 mt-5">
+              </motion.div>
+              
+              <motion.div 
+                className="relative mt-5"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
                 <Slider {...sliderSettings} className={`yacht-slider ${language}`}>
-                  {yachts?.slice(0, 6).map((yacht) => (
-                    <YachtCard key={yacht?.id} yacht={yacht} />
+                  {yachts?.slice(0, 6).map((yacht, index) => (
+                    <motion.div
+                      key={yacht?.id}
+                      initial={{ opacity: 0, y: 60, scale: 0.9 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: 1 + (index * 0.1),
+                        ease: "easeOut"
+                      }}
+                    >
+                      <YachtCard yacht={yacht} />
+                    </motion.div>
                   ))}
                 </Slider>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </Container>
       </div>
     </div>
