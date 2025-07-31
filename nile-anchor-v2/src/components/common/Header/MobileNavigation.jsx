@@ -10,7 +10,10 @@ import LanguageChanger from "../LanguageChanger";
 
 const MobileNavigation = ({ isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation();
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
   const location = useLocation();
   const navigationItems = NavigationItems();
 
@@ -32,7 +35,7 @@ const MobileNavigation = ({ isScrolled }) => {
           </button>
         </SheetTrigger>
 
-        <SheetContent side="right" className="w-full sm:w-80 bg-white header-mobile">
+        <SheetContent side="right" className={`w-full sm:w-80 bg-white header-mobile ${language}`}>
           <SheetHeader className="border-b border-gray-200 pb-4 mb-6">
             <SheetTitle className="text-left font-['Antic_Didone'] text-2xl text-[#041125]">
               <AppLogo />
@@ -48,7 +51,7 @@ const MobileNavigation = ({ isScrolled }) => {
                   key={item.key}
                   to={item.href}
                   onClick={handleLinkClick}
-                  className={`flex items-center px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
+                  className={`flex gap-1 items-center px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
                     isActive
                       ? "bg-[#a18c6d]/10 text-[#a18c6d] border-l-4 border-[#a18c6d]"
                       : "text-gray-700 hover:bg-gray-50 hover:text-[#a18c6d]"
@@ -60,7 +63,7 @@ const MobileNavigation = ({ isScrolled }) => {
               );
             })}
 
-            <LanguageChanger />
+            <LanguageChanger isScrolled isMobile />
 
             {/* Mobile CTA Button */}
             {/* <div className="pt-6 mt-6 border-t border-gray-200">

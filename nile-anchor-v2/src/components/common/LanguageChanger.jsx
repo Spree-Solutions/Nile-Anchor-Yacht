@@ -2,12 +2,13 @@ import { useEffect } from "react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import { Button } from "../ui/button";
 import i18n from "@/lib/i18n";
-import { GlobeIcon } from "lucide-react";
+import { ChevronDown, GlobeIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { EgyptIcon, USIcon } from "./icons";
 
-const LanguageChanger = ({ isScrolled = false }) => {
+const LanguageChanger = ({ isScrolled = false, isMobile = false }) => {
   const {
+    t,
     i18n: { language },
   } = useTranslation();
 
@@ -43,7 +44,15 @@ const LanguageChanger = ({ isScrolled = false }) => {
             isScrolled ? "text-black hover:text-black/70" : "text-white hover:text-white/70"
           } font-medium transition-all p-0`}
         >
-          <GlobeIcon style={{ width: "20px", height: "20px" }} />
+          {isMobile ? (
+            <div className="flex w-full mt-5 items-center gap-2 text-lg text-black font-bold">
+              <ChevronDown />
+              <h3>{t("Language")}</h3>
+              <GlobeIcon style={{ width: "20px", height: "20px" }} />
+            </div>
+          ) : (
+            <GlobeIcon style={{ width: "20px", height: "20px" }} />
+          )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
