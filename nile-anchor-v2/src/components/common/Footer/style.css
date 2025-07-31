@@ -1,0 +1,7 @@
+.accordion-btn {
+    justify-content: start;
+    gap: 8px;
+}
+.accordion-btn > svg{
+    display: none;
+}
