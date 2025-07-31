@@ -1,0 +1,139 @@
+import "./../style.css";
+import Container from "@/components/common/Container";
+import { yachts } from "@/data/home/yachts";
+import useMediaQuery from "@/hooks/helpers/useMediaQuery";
+import { useTranslation } from "react-i18next";
+import Slider from "react-slick";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import YachtCard from "./YachtCard";
+import { useNavigate } from "react-router-dom";
+
+export const HeroSection = () => {
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
+  const { isMedium } = useMediaQuery();
+  const navigate = useNavigate();
+
+  const isRTL = language === "ar";
+
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: false,
+    lazyLoad: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    arrows: true,
+    rtl: isRTL,
+    nextArrow: (
+      <button className={`custom-arrow right-4 top-4 ${language}`}>
+        <ChevronRight size={24} color="white" />
+      </button>
+    ),
+    prevArrow: (
+      <button className={`custom-arrow left-4 top-4 ${language}`}>
+        <ChevronLeft size={24} color="white" />
+      </button>
+    ),
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "30px",
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "30px",
+        },
+      },
+    ],
+  };
+
+  return (
+    <div className="relative w-full md:min-h-screen overflow-hidden">
+      <div className="absolute inset-0">
+        {!isMedium ? (
+          <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
+            <source src="/videos/hero-yacht.mp4" type="video/mp4" />
+          </video>
+        ) : (
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: "url(/images/hero-yacht-mobile.jpg)" }}
+          />
+        )}
+
+        <div className="absolute inset-0 bg-gradient-to-b from-[#041125]/70 via-[#041125]/60 to-[#041125]/80" />
+      </div>
+
+      <div className="pb-8 pt-20 md:pb-16 md:pt-28">
+        <Container>
+          <div className="">
+            {/* Hero Content */}
+            <div className={`relative h-full flex items-start justify-start flex-col ${isRTL && "text-right"}`}>
+              <p className="text-[#a18c6d] text-sm md:text-base lg:text-lg font-medium tracking-[1.5px] mb-4 md:mb-6 animate-fadeInUp">
+                {t("LUXURY YACHT RENTALS")}
+              </p>
+
+              <h1 className="font-['Antic_Didone'] text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6 md:mb-8 animate-fadeInUp animation-delay-200">
+                {t("Discover the Ultimate")}
+                <br />
+                {t("Luxury on the Nile")}
+              </h1>
+
+              <p className="font-['Work_Sans'] text-[#d1d1d1] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0 mb-8 md:mb-12 animate-fadeInUp animation-delay-400">
+                {t(
+                  "Nile Anchor offers a selection of premium yachts and tailored sailing services for every occasion, whether you're seeking adventure, relaxation, or an unforgettable event at sea.",
+                )}
+              </p>
+
+              <div className="flex w-full flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:items-start justify-center sm:justify-start animate-fadeInUp animation-delay-600">
+                <a href="#booking-section">
+                  <button className="w-full sm:w-auto px-6 py-3 bg-[#e6e1d6] text-[#00162c] text-sm sm:text-base font-medium rounded-lg hover:bg-[#d4cfc2] transition-all duration-300 transform hover:scale-105">
+                    {t("BOOK NOW")}
+                  </button>
+                </a>
+
+                <button
+                  onClick={() => navigate("/yachts")}
+                  className="w-full sm:w-auto px-6 py-3 border border-[#e6e1d6] text-[#e6e1d6] text-sm sm:text-base font-medium rounded-lg hover:bg-[#e6e1d6] hover:text-[#00162c] transition-all duration-300 transform hover:scale-105"
+                >
+                  {t("EXPLORE MORE")}
+                </button>
+              </div>
+            </div>
+
+            {/* Yacht Slider Section */}
+            <div className="mt-8">
+              <div className="flex justify-between items-center relative gap-4">
+                <h3 className="text-lg font-medium text-white">{t("Our Yachts")}</h3>
+                <span className="flex-1 block h-1 bg-white"></span>
+                <span className="w-24"></span>
+              </div>
+              <div className="relative animate-fadeInUp animation-delay-800 mt-5">
+                <Slider {...sliderSettings} className={`yacht-slider ${language}`}>
+                  {yachts?.slice(0, 6).map((yacht) => (
+                    <YachtCard key={yacht?.id} yacht={yacht} />
+                  ))}
+                </Slider>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </div>
+  );
+};
