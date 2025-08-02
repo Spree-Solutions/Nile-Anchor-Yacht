@@ -3,10 +3,10 @@ import ReusableHeroSection from "@/components/common/ReusableHeroSection";
 import EventPackages from "@/features/Events/EventPackages";
 import EventsCollection from "@/features/Events/EventsCollection";
 
-const ServicesPage = () => {
+const BusinessPage = () => {
   return (
     <div className="overflow-hidden">
-      <ReusableHeroSection backgroundImage="/images/events/hero.webp" title="Weddings" />
+      <ReusableHeroSection backgroundImage="/images/events/hero.webp" title="Business Events" />
       <EventsCollection />
       <EventPackages />
       <BookingSection />
@@ -14,4 +14,4 @@ const ServicesPage = () => {
   );
 };
 
-export default ServicesPage;
+export default BusinessPage;

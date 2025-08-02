@@ -3,7 +3,7 @@ import ReusableHeroSection from "@/components/common/ReusableHeroSection";
 import WeddingsCollection from "@/features/Weddings/WeddingsCollection";
 import WeddingsPackages from "@/features/Weddings/WeddingsPackages";
 
-const YachtsPage = () => {
+const WeddingsPage = () => {
   return (
     <div className="overflow-hidden">
       <ReusableHeroSection backgroundImage="/images/services/weddings/decoration-1.webp" title="Weddings" />
@@ -14,4 +14,4 @@ const YachtsPage = () => {
   );
 };
 
-export default YachtsPage;
+export default WeddingsPage;

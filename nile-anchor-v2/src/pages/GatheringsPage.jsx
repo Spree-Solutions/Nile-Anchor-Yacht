@@ -3,7 +3,7 @@ import ReusableHeroSection from "@/components/common/ReusableHeroSection";
 import GalleryCollection from "@/features/Gallery/GalleryCollection";
 import GalleryPackages from "@/features/Gallery/GalleryPackages";
 
-const GalleryPage = () => {
+const GatheringsPage = () => {
   return (
     <div className="overflow-hidden">
       <ReusableHeroSection backgroundImage="/images/yachts/liberty/liberty-1.webp" title="Gatherings & Parties" />
@@ -14,4 +14,4 @@ const GalleryPage = () => {
   );
 };
 
-export default GalleryPage;
+export default GatheringsPage;

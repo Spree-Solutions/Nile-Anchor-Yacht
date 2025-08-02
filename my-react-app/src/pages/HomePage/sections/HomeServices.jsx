@@ -12,7 +12,7 @@ export const ServicesSection = () => {
       description:
         "We host private events and meetings for groups, corporations, and delegations on Cairo's Nile River.",
       image: "/images/services/business-events.webp",
-      path: "/business-events",
+      path: "/business",
       icon: (
         <svg
           className="w-8 h-8"
@@ -41,7 +41,7 @@ export const ServicesSection = () => {
       description:
         "Create unforgettable memories with our exclusive wedding packages on the majestic Nile River.",
       image: "/images/services/weddings.webp",
-      path: "/services/weddings",
+      path: "/weddings",
       icon: (
         <svg
           className="w-8 h-8"
@@ -65,7 +65,7 @@ export const ServicesSection = () => {
       description:
         "Host memorable celebrations with friends and family aboard our luxury yachts.",
       image: "/images/services/parties.webp",
-      path: "/gatherings-parties",
+      path: "/gatherings",
       icon: (
         <svg
           className="w-8 h-8"
