@@ -4,10 +4,10 @@ import { DataEnglish } from "../../Data/English/HomePage/Partners";
 import { DataArabic } from "../../Data/Arabic/HomePage/Partners";
 import { colors } from "../../Styles/Colors";
 
-import Partner_01 from "../../Images/Partner_01.png";
-import Partner_02 from "../../Images/Partner_02.png";
-import Partner_03 from "../../Images/Partner_03.png";
-import Partner_04 from "../../Images/Partner_04.png";
+import Partner_01 from "../../Images/Partner_01.webp";
+import Partner_02 from "../../Images/Partner_02.webp";
+import Partner_03 from "../../Images/Partner_03.webp";
+import Partner_04 from "../../Images/Partner_04.webp";
 
 export default function Partners(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

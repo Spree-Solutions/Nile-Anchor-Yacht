@@ -18,7 +18,7 @@ export const aboutData = {
       id: 'ceo',
       name: "BASSEL EL BATOUTY",
       position: "Chief Executive Officer",
-      image: "bassel-el-batouty.jpg"
+      image: "bassel-el-batouty.webp"
     },
     // ... more team members
   ]

@@ -8,7 +8,7 @@ export const WeddingHero = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60 z-10" />
         <img
-          src="/images/services/weddings/weddings.jpg"
+          src="/images/services/weddings/weddings.webp"
           alt="Wedding on yacht"
           className="w-full h-full object-cover"
         />

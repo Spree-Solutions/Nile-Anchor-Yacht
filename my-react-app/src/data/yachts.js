@@ -7,14 +7,14 @@ export const yachts = [
     description: 'Embrace the serenity of sailing with a timeless, wind-powered journey',
     longDescription: 'BELLA represents the pinnacle of luxury yachting on the Nile. With its classic design and modern amenities, this yacht offers an unparalleled experience for those seeking elegance and comfort on the water.',
     images: {
-      main: '/images/yachts/bella/bella-10.png',
-      hero: '/images/yachts/bella/bella-hero.jpg',
+      main: '/images/yachts/bella/bella-10.webp',
+      hero: '/images/yachts/bella/bella-hero.webp',
       gallery: [
-        '/images/yachts/bella/bella-1.jpg',
-        '/images/yachts/bella/bella-2.jpg',
-        '/images/yachts/bella/bella-3.jpg',
-        '/images/yachts/bella/bella-4.jpg',
-        '/images/yachts/bella/bella-5.jpg'
+        '/images/yachts/bella/bella-1.webp',
+        '/images/yachts/bella/bella-2.webp',
+        '/images/yachts/bella/bella-3.webp',
+        '/images/yachts/bella/bella-4.webp',
+        '/images/yachts/bella/bella-5.webp'
       ]
     },
     specifications: {
@@ -91,13 +91,13 @@ export const yachts = [
     description: 'Speed and luxury combined for fast, stylish escapes on the open sea',
     longDescription: 'ZEIN is designed for those who appreciate both performance and luxury. This sleek yacht combines cutting-edge technology with sophisticated design to deliver an exhilarating experience on the Nile.',
     images: {
-      main: '/images/yachts/zein/zein-main.jpg',
-      hero: '/images/yachts/zein/zein-hero.jpg',
+      main: '/images/yachts/zein/zein-main.webp',
+      hero: '/images/yachts/zein/zein-hero.webp',
       gallery: [
-        '/images/yachts/zein/zein-1.jpg',
-        '/images/yachts/zein/zein-2.jpg',
-        '/images/yachts/zein/zein-3.jpg',
-        '/images/yachts/zein/zein-4.jpg'
+        '/images/yachts/zein/zein-1.webp',
+        '/images/yachts/zein/zein-2.webp',
+        '/images/yachts/zein/zein-3.webp',
+        '/images/yachts/zein/zein-4.webp'
       ]
     },
     specifications: {
@@ -142,14 +142,14 @@ export const yachts = [
     description: 'Spacious and stable, perfect for family trips or group adventures at sea',
     longDescription: 'VIDA is the ideal choice for larger groups and families. With its expansive deck space and stable design, this yacht ensures comfort and safety for all guests while exploring the beauty of the Nile.',
     images: {
-      main: '/images/yachts/vida/vida-main.jpg',
-      hero: '/images/yachts/vida/vida-hero.jpg',
+      main: '/images/yachts/vida/vida-main.webp',
+      hero: '/images/yachts/vida/vida-hero.webp',
       gallery: [
-        '/images/yachts/vida/vida-1.jpg',
-        '/images/yachts/vida/vida-2.jpg',
-        '/images/yachts/vida/vida-3.jpg',
-        '/images/yachts/vida/vida-4.jpg',
-        '/images/yachts/vida/vida-5.jpg'
+        '/images/yachts/vida/vida-1.webp',
+        '/images/yachts/vida/vida-2.webp',
+        '/images/yachts/vida/vida-3.webp',
+        '/images/yachts/vida/vida-4.webp',
+        '/images/yachts/vida/vida-5.webp'
       ]
     },
     specifications: {
@@ -194,15 +194,15 @@ export const yachts = [
     description: 'Ultimate luxury experience with premium amenities and exclusive services',
     longDescription: 'LIBERTY represents the apex of luxury yachting on the Nile. Every detail has been carefully crafted to provide an extraordinary experience, from the opulent interiors to the world-class service.',
     images: {
-      main: '/images/yachts/liberty/liberty-111.png',
-      hero: '/images/yachts/liberty/liberty-hero.jpg',
+      main: '/images/yachts/liberty/liberty-111.webp',
+      hero: '/images/yachts/liberty/liberty-hero.webp',
       gallery: [
-        '/images/yachts/liberty/liberty-1.jpg',
-        '/images/yachts/liberty/liberty-2.jpg',
-        '/images/yachts/liberty/liberty-3.jpg',
-        '/images/yachts/liberty/liberty-4.jpg',
-        '/images/yachts/liberty/liberty-5.jpg',
-        '/images/yachts/liberty/liberty-6.jpg'
+        '/images/yachts/liberty/liberty-1.webp',
+        '/images/yachts/liberty/liberty-2.webp',
+        '/images/yachts/liberty/liberty-3.webp',
+        '/images/yachts/liberty/liberty-4.webp',
+        '/images/yachts/liberty/liberty-5.webp',
+        '/images/yachts/liberty/liberty-6.webp'
       ]
     },
     specifications: {

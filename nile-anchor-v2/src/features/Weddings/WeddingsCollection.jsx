@@ -29,7 +29,7 @@ const WeddingsCollection = () => {
           >
             <LazyImage
               className="max-h-[270px] md:max-h-[370px] rounded-xl"
-              src={"/images/services/weddings/wedding-2.png"}
+              src={"/images/services/weddings/wedding-2.webp"}
               alt={"weddings"}
             />
           </motion.div>
@@ -73,7 +73,7 @@ const WeddingsCollection = () => {
           >
             <LazyImage
               className="max-h-[270px] md:max-h-[370px] rounded-xl"
-              src={"/images/services/weddings/decoration-2.jpg"}
+              src={"/images/services/weddings/decoration-2.webp"}
               alt={"weddings"}
             />
           </motion.div>

@@ -97,7 +97,7 @@ export const SEO = {
     'private parties',
     'Cairo yacht rental'
   ],
-  defaultImage: '/images/og-image.jpg',
+  defaultImage: '/images/og-image.webp',
   twitterHandle: '@nileanchor'
 };
 

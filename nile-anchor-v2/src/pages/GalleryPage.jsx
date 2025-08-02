@@ -6,7 +6,7 @@ import GalleryPackages from "@/features/Gallery/GalleryPackages";
 const GalleryPage = () => {
   return (
     <div className="overflow-hidden">
-      <ReusableHeroSection backgroundImage="/images/yachts/liberty/liberty-1.png" title="Gatherings & Parties" />
+      <ReusableHeroSection backgroundImage="/images/yachts/liberty/liberty-1.webp" title="Gatherings & Parties" />
       <GalleryCollection />
       <GalleryPackages />
       <BookingSection />

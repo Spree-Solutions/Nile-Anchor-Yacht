@@ -21,7 +21,7 @@ export const AboutOverview = () => (
         {/* Actual Image */}
         <div>
           <img
-            src="/images/about/all-yachts-8.png"
+            src="/images/about/all-yachts-8.webp"
             alt="Luxury yacht on the Nile"
             className="w-full rounded-lg shadow-lg"
           />

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Liberty_Image from "../../Images/Liberty_Image.png";
+import Liberty_Image from "../../Images/Liberty_Image.webp";
 import Bella_Image from "../../Images/bella-image.jpeg";
 import { colors } from "../../Styles/Colors";
-import BellaYellow from "../../Images/BellaYellow.png";
-import vidaLogo from "../../Images/vida-1.png";
-import Liberty_Dark from "../../Images/libDark.png";
-import vidaImage from "../../Images/Vida Yacht-1.jpg";
-import zeinLogo from "../../Images/zein-logo.png";
-import zeinImage from "../../Images/zein-1.jpg";
+import BellaYellow from "../../Images/BellaYellow.webp";
+import vidaLogo from "../../Images/vida-1.webp";
+import Liberty_Dark from "../../Images/libDark.webp";
+import vidaImage from "../../Images/Vida Yacht-1.webp";
+import zeinLogo from "../../Images/zein-logo.webp";
+import zeinImage from "../../Images/zein-1.webp";
 
 export const yachts = {
   bella: {

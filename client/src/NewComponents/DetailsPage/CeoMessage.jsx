@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../../Styles/Colors";
-import ceo from "../../Images/ceo.png";
-import illustration from "../../Images/illust.png";
+import ceo from "../../Images/ceo.webp";
+import illustration from "../../Images/illust.webp";
 
 const CeoMessage = () => {
   return (

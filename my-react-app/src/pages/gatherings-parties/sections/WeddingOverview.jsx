@@ -6,14 +6,14 @@ export const WeddingOverview = () => {
       id: 1,
       text: "If you're planning to have your wedding in Cairo and on the Nile, then this is the place to be. Our yachts provide the essentials needed to host exclusive wedding ceremonies and parties on Cairo's Nile River. We're here to offer you one of the most desirable location settings for wedding scenarios and a luxurious yacht cruise on the Nile.",
       imagePosition: "right",
-      imageSrc: "/images/services/weddings/decoration-1.jpg",
+      imageSrc: "/images/services/weddings/decoration-1.webp",
       imageAlt: "Wedding ceremony on yacht deck"
     },
     {
       id: 2,
       text: "Our services help you develop, manage and host the ultimate wedding of your lifetime. Whether you're looking to host a small wedding on the Nile River or a large one, our customizable packages are here to fulfill your needs while adding stress-free solutions to your list. We offer several wedding packages that are based on the number of attendees.",
       imagePosition: "left",
-      imageSrc: "/images/services/weddings/decoration-2.jpg",
+      imageSrc: "/images/services/weddings/decoration-2.webp",
       imageAlt: "Wedding reception setup on yacht"
     },
   ];

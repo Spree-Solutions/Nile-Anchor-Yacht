@@ -56,7 +56,7 @@ const AboutSection = () => {
     <div className="py-8 md:py-16 relative overflow-hidden">
       <Container>
         <motion.img
-          src="/images/about/vision.png"
+          src="/images/about/vision.webp"
           className={`absolute top-0 ${
             language === "en" ? "-left-1/2 md:left-0" : "-right-1/2 md:right-0"
           } opacity-30 w-full md:w-1/2 h-auto`}
@@ -92,11 +92,11 @@ const AboutSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="flex justify-end relative min-h-[300px]">
               <LazyImage
-                src="/images/about/all-yachts-31.png"
+                src="/images/about/all-yachts-31.webp"
                 className="h-full w-2/3 relative rounded-lg object-cover"
               />
               <LazyImage
-                src="/images/about/all-yachts-8.png"
+                src="/images/about/all-yachts-8.webp"
                 className={`h-1/2 w-1/2 about-image absolute ${
                   language === "en" ? "left-0" : "right-0"
                 } top-1/2 -translate-y-1/2 object-cover rounded-lg z-[2]`}

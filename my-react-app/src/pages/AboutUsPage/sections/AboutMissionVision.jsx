@@ -3,7 +3,7 @@ import React from 'react';
 export const AboutMissionVision = () => {
   const missionVisionData = [
     {
-      icon: "/images/about/mission.png",
+      icon: "/images/about/mission.webp",
       title: 'OUR MISSION',
       description: `Happiness comes through journeys, experiences and memories.
 We aim at bringing the letters of joy to our delightful
@@ -11,7 +11,7 @@ customers through our premier services and unforgettable,
 luxurious trips across Cairo's Nile River.`
     },
     {
-      icon: "/images/about/vision.png",
+      icon: "/images/about/vision.webp",
       title: 'OUR VISION',
       description: `Expand our services throughout Egypt's Nile River
 by providing a diversified collection of cruise boats

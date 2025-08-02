@@ -110,7 +110,7 @@ const ContactSection = () => {
           }}
         >
           <motion.img
-            src="/images/about/all-yachts-31.png"
+            src="/images/about/all-yachts-31.webp"
             alt="booking"
             className="hidden md:block col-span-2 object-cover h-full w-full rounded-lg"
             variants={imageVariants}

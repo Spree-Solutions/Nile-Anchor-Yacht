@@ -159,7 +159,7 @@ const MessageCEO = () => {
             variants={containerVariants}
           >
             <motion.img
-              src="/images/about/bassel.png"
+              src="/images/about/bassel.webp"
               alt="ceo"
               className="h-[230px] md:h-[460px] object-contain"
               variants={imageVariants}

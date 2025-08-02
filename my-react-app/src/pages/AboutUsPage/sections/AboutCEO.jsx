@@ -27,7 +27,7 @@ export const AboutCEO = () => {
             <div className="aspect-square rounded-lg overflow-hidden">
               <div>
                 <img
-                  src="/images/about/bassel.png"
+                  src="/images/about/bassel.webp"
                   alt="Bassel El Batouty"
                   className="w-full rounded-lg shadow-lg"
                 />

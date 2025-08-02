@@ -56,15 +56,15 @@ const GalleryPackages = () => {
           {/* Images Section */}
           <div className="flex justify-end relative min-h-[420px] md:min-h-[670px]">
             <LazyImage
-              src="/images/parties/party1.jpg"
+              src="/images/parties/party1.webp"
               className="h-[45%] w-2/3 wedding-image absolute left-0 top-0 object-cover rounded-lg z-[2]"
             />
             <LazyImage
-              src="/images/parties/party2.jpg"
+              src="/images/parties/party2.webp"
               className="h-1/2 w-2/3 wedding-image absolute right-0 top-1/2 -translate-y-1/2 object-cover rounded-lg z-[2]"
             />
             <LazyImage
-              src="/images/parties/party3.jpg"
+              src="/images/parties/party3.webp"
               className="h-1/2 w-2/3 wedding-image absolute left-0 bottom-0 object-cover rounded-lg z-[2]"
             />
           </div>

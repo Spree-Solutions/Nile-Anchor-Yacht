@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import bluegradient from "../../Images/bluegradient.png";
+import bluegradient from "../../Images/bluegradient.webp";
 
 import { DataArabic } from "../../Data/Arabic/DetailsPage/AboutInfo";
 import { DataEnglish } from "../../Data/English/DetailsPage/AboutInfo";

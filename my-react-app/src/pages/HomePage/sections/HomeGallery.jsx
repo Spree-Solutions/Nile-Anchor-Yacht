@@ -15,14 +15,14 @@ export const GallerySection = () => {
   ];
 
   const galleryImages = [
-    { id: 1, src: '/images/gallery/bella-1.png', category: 'yachts', alt: 'Bella yacht exterior' },
-    { id: 2, src: '/images/gallery/bella-2.png', category: 'interiors', alt: 'Bella yacht interior' },
-    { id: 3, src: '/images/gallery/bella-3.png', category: 'events', alt: 'Event on yacht' },
-    { id: 4, src: '/images/gallery/bella-4.png', category: 'views', alt: 'Nile river view' },
-    { id: 5, src: '/images/gallery/bella-5.png', category: 'yachts', alt: 'Yacht at sunset' },
-    { id: 6, src: '/images/gallery/liberty-event.jpg', category: 'events', alt: 'Wedding ceremony' },
-    { id: 7, src: '/images/gallery/nile-view.jpg', category: 'views', alt: 'Sunset on Nile' },
-    { id: 8, src: '/images/gallery/interior-luxury.jpg', category: 'interiors', alt: 'Luxury interior' }
+    { id: 1, src: '/images/gallery/bella-1.webp', category: 'yachts', alt: 'Bella yacht exterior' },
+    { id: 2, src: '/images/gallery/bella-2.webp', category: 'interiors', alt: 'Bella yacht interior' },
+    { id: 3, src: '/images/gallery/bella-3.webp', category: 'events', alt: 'Event on yacht' },
+    { id: 4, src: '/images/gallery/bella-4.webp', category: 'views', alt: 'Nile river view' },
+    { id: 5, src: '/images/gallery/bella-5.webp', category: 'yachts', alt: 'Yacht at sunset' },
+    { id: 6, src: '/images/gallery/liberty-event.webp', category: 'events', alt: 'Wedding ceremony' },
+    { id: 7, src: '/images/gallery/nile-view.webp', category: 'views', alt: 'Sunset on Nile' },
+    { id: 8, src: '/images/gallery/interior-luxury.webp', category: 'interiors', alt: 'Luxury interior' }
   ];
 
   const filteredImages = selectedCategory === 'all' 

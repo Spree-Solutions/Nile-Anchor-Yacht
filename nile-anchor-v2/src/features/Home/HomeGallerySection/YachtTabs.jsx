@@ -5,10 +5,10 @@ const YachtTabs = ({ yachts, activeYacht, onYachtChange }) => {
     i18n: { language },
   } = useTranslation();
   const yachtImages = {
-    bella: "/images/yachts/bella/bella.png",
-    liberty: "/images/yachts/liberty/liberty.png",
-    vida: "/images/yachts/vida/vida.png",
-    zein: "/images/yachts/zein/zein.png",
+    bella: "/images/yachts/bella/bella.webp",
+    liberty: "/images/yachts/liberty/liberty.webp",
+    vida: "/images/yachts/vida/vida.webp",
+    zein: "/images/yachts/zein/zein.webp",
   };
 
   return (

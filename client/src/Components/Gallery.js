@@ -4,11 +4,11 @@ import { DataEnglish } from "../Data/English/Gallery";
 import { DataArabic } from "../Data/Arabic/Gallery";
 
 import { colors } from "../Styles/Colors";
-import Bella_Light from "../Images/Bella_Light.png";
-import Liberty_Light from "../Images/Liberty_Light.png";
-import Love_Story_Light from "../Images/Love_Story_Light.png";
+import Bella_Light from "../Images/Bella_Light.webp";
+import Liberty_Light from "../Images/Liberty_Light.webp";
+import Love_Story_Light from "../Images/Love_Story_Light.webp";
 
-import Liberty_Image from "../Images/Liberty_Image.png";
+import Liberty_Image from "../Images/Liberty_Image.webp";
 import Liberty_Image1 from "../Images/Liberty_Image1.jpeg";
 import Liberty_Image2 from "../Images/Liberty_Image2.jpeg";
 

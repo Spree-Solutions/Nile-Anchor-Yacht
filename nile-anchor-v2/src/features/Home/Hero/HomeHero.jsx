@@ -190,7 +190,7 @@ export const HeroSection = () => {
         ) : (
           <div
             className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: "url(/images/hero-yacht-mobile.jpg)" }}
+            style={{ backgroundImage: "url(/images/hero-yacht-mobile.webp)" }}
           />
         )}
 

@@ -90,7 +90,7 @@ const OurServices = () => {
   return (
     <div
       className="bg-[#FFFBF3] bg-cover bg-center bg-no-repeat py-8 md:py-16"
-      style={{ backgroundImage: 'url("/images/backgrounds/our_service.png")' }}
+      style={{ backgroundImage: 'url("/images/backgrounds/our_service.webp")' }}
     >
       <Container>
         {/* Header Section */}

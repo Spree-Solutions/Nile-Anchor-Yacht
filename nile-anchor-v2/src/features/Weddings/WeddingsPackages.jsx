@@ -33,15 +33,15 @@ const WeddingsPackages = () => {
             viewport={{ once: true }}
           >
             <LazyImage
-              src="/images/services/weddings/wedding-1.png"
+              src="/images/services/weddings/wedding-1.webp"
               className="h-[45%] w-2/3 wedding-image absolute left-0 top-0 object-cover rounded-lg z-[2]"
             />
             <LazyImage
-              src="/images/services/weddings/wedding-3.png"
+              src="/images/services/weddings/wedding-3.webp"
               className="h-1/2 w-2/3 wedding-image absolute right-0 top-1/2 -translate-y-1/2 object-cover rounded-lg z-[2]"
             />
             <LazyImage
-              src="/images/services/weddings/wedding-4.png"
+              src="/images/services/weddings/wedding-4.webp"
               className="h-1/2 w-2/3 wedding-image absolute left-0 bottom-0 object-cover rounded-lg z-[2]"
             />
           </motion.div>

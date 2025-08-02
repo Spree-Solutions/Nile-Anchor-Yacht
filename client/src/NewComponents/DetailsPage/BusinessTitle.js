@@ -4,7 +4,7 @@ import { DataEnglish } from "../../Data/English/DetailsPage/BusinessTitle";
 import { DataArabic } from "../../Data/Arabic/DetailsPage/BusinessTitle";
 
 import { colors } from "../../Styles/Colors";
-import BusinessTitleImg from "../../Images/be.jpg";
+import BusinessTitleImg from "../../Images/be.webp";
 
 export default function BusinessTitle(props) {
   const Data = props.language === "EN" ? DataEnglish : DataArabic;

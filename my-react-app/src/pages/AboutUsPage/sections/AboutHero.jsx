@@ -3,7 +3,7 @@ import React from 'react';
 export const AboutHero = () => (
   <section
     className="relative h-[250px] bg-cover bg-center overflow-hidden"
-    style={{ backgroundImage: "url('/images/about/hero.png')" }} // <-- Replace with your actual image path
+    style={{ backgroundImage: "url('/images/about/hero.webp')" }} // <-- Replace with your actual image path
   >
     {/* Overlay gradient for visual depth */}
     <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />

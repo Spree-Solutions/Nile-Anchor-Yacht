@@ -4,10 +4,10 @@ import { DataEnglish } from "../Data/English/OurYachts";
 import { DataArabic } from "../Data/Arabic/OurYachts";
 import { colors } from "../Styles/Colors";
 import Bella_Dark from "../Images/Bella_Dark.jpeg";
-import Liberty_Dark from "../Images/Liberty_Dark.png";
-import Liberty_Light from "../Images/Liberty_Light.png";
-import Liberty_Image from "../Images/Liberty_Image.png";
-import Love_Story_Dark from "../Images/Love_Story_Dark.png";
+import Liberty_Dark from "../Images/Liberty_Dark.webp";
+import Liberty_Light from "../Images/Liberty_Light.webp";
+import Liberty_Image from "../Images/Liberty_Image.webp";
+import Love_Story_Dark from "../Images/Love_Story_Dark.webp";
 
 import { isMobileOnly } from "react-device-detect";
 

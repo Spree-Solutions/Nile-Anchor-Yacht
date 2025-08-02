@@ -15,8 +15,8 @@ export const YachtsSection = () => {
     {
       id: 1,
       name: "BELLA",
-      image: "/images/yachts/bella/bella-10.png",
-      bgImage: "/images/yachts/bella-hero.jpg",
+      image: "/images/yachts/bella/bella-10.webp",
+      bgImage: "/images/yachts/bella-hero.webp",
       description: "Embrace the serenity of sailing with a timeless, wind-powered journey",
       capacity: "20 guests",
       features: ["Sundeck", "Lounge", "Bar", "Kitchen"],
@@ -25,8 +25,8 @@ export const YachtsSection = () => {
     {
       id: 2,
       name: "ZEIN",
-      image: "/images/yachts/zein/zein-main.jpg",
-      bgImage: "/images/yachts/zein-hero.jpg",
+      image: "/images/yachts/zein/zein-main.webp",
+      bgImage: "/images/yachts/zein-hero.webp",
       description: "Speed and luxury combined for fast, stylish escapes on the open sea",
       capacity: "15 guests",
       features: ["Speed Boat", "Premium Sound", "Mini Bar"],
@@ -35,8 +35,8 @@ export const YachtsSection = () => {
     {
       id: 3,
       name: "VIDA",
-      image: "/images/yachts/vida/vida-main.jpg",
-      bgImage: "/images/yachts/vida-hero.jpg",
+      image: "/images/yachts/vida/vida-main.webp",
+      bgImage: "/images/yachts/vida-hero.webp",
       description: "Spacious and stable, perfect for family trips or group adventures at sea",
       capacity: "30 guests",
       features: ["Large Deck", "Dining Area", "Full Kitchen", "Entertainment"],
@@ -45,8 +45,8 @@ export const YachtsSection = () => {
     {
       id: 4,
       name: "LIBERTY",
-      image: "/images/yachts/liberty/liberty-111.png",
-      bgImage: "/images/yachts/liberty-hero.jpg",
+      image: "/images/yachts/liberty/liberty-111.webp",
+      bgImage: "/images/yachts/liberty-hero.webp",
       description: "Ultimate luxury experience with premium amenities and exclusive services",
       capacity: "25 guests",
       features: ["VIP Lounge", "Jacuzzi", "Premium Bar", "Chef Service"],

@@ -5,13 +5,13 @@ export const services = [
     title: 'Business Events',
     shortDescription: 'We host private events and meetings for groups, corporations, and delegations on Cairo\'s Nile River.',
     longDescription: 'Transform your corporate gatherings into extraordinary experiences aboard our luxury yachts. Our Business Events service provides the perfect blend of professionalism and elegance, offering a unique venue that will impress clients, motivate teams, and create lasting business relationships.',
-    image: '/images/services/business-events.jpg',
-    heroImage: '/images/services/business-events-hero.jpg',
+    image: '/images/services/business-events.webp',
+    heroImage: '/images/services/business-events-hero.webp',
     gallery: [
-      '/images/services/business/gallery-1.jpg',
-      '/images/services/business/gallery-2.jpg',
-      '/images/services/business/gallery-3.jpg',
-      '/images/services/business/gallery-4.jpg'
+      '/images/services/business/gallery-1.webp',
+      '/images/services/business/gallery-2.webp',
+      '/images/services/business/gallery-3.webp',
+      '/images/services/business/gallery-4.webp'
     ],
     icon: '💼',
     features: [
@@ -93,14 +93,14 @@ export const services = [
     title: 'Weddings',
     shortDescription: 'Create unforgettable memories with our exclusive wedding packages on the majestic Nile River.',
     longDescription: 'Celebrate your special day aboard our stunning yachts, where romance meets luxury on the timeless waters of the Nile. Our wedding packages are designed to create magical moments, offering breathtaking views, exquisite service, and an unforgettable setting for your ceremony and reception.',
-    image: '/images/services/weddings.jpg',
-    heroImage: '/images/services/weddings-hero.jpg',
+    image: '/images/services/weddings.webp',
+    heroImage: '/images/services/weddings-hero.webp',
     gallery: [
-      '/images/services/weddings/gallery-1.jpg',
-      '/images/services/weddings/gallery-2.jpg',
-      '/images/services/weddings/gallery-3.jpg',
-      '/images/services/weddings/gallery-4.jpg',
-      '/images/services/weddings/gallery-5.jpg'
+      '/images/services/weddings/gallery-1.webp',
+      '/images/services/weddings/gallery-2.webp',
+      '/images/services/weddings/gallery-3.webp',
+      '/images/services/weddings/gallery-4.webp',
+      '/images/services/weddings/gallery-5.webp'
     ],
     icon: '💒',
     features: [
@@ -173,13 +173,13 @@ export const services = [
     title: 'Gatherings & Parties',
     shortDescription: 'Host memorable celebrations with friends and family aboard our luxury yachts.',
     longDescription: 'Whether it\'s a birthday bash, anniversary celebration, or just a gathering of friends, our yachts provide the perfect party venue. Enjoy the freedom of the open water, spectacular views, and top-notch entertainment options that will make your event truly special.',
-    image: '/images/services/parties.jpg',
-    heroImage: '/images/services/parties-hero.jpg',
+    image: '/images/services/parties.webp',
+    heroImage: '/images/services/parties-hero.webp',
     gallery: [
-      '/images/services/parties/gallery-1.jpg',
-      '/images/services/parties/gallery-2.jpg',
-      '/images/services/parties/gallery-3.jpg',
-      '/images/services/parties/gallery-4.jpg'
+      '/images/services/parties/gallery-1.webp',
+      '/images/services/parties/gallery-2.webp',
+      '/images/services/parties/gallery-3.webp',
+      '/images/services/parties/gallery-4.webp'
     ],
     icon: '🎉',
     features: [

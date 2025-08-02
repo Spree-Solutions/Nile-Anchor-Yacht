@@ -197,7 +197,7 @@ export const BookingForm = () => {
         {/* Image Section */}
         <div className={`${isMobile ? 'w-full order-1' : 'w-1/3 lg:w-2/5'}`}>
           <img
-            src="/images/yachts/liberty/liberty-111.png"
+            src="/images/yachts/liberty/liberty-111.webp"
             alt="Liberty yacht booking"
             className="w-full h-full object-cover rounded-lg"
           />

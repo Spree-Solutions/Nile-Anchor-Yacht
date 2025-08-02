@@ -28,7 +28,7 @@ const EventsCollection = () => {
           >
             <LazyImage
               className="max-h-[270px] md:max-h-[370px] rounded-xl"
-              src={"/images/events/event1.jpg"}
+              src={"/images/events/event1.webp"}
               alt={"weddings"}
             />
           </motion.div>
@@ -71,7 +71,7 @@ const EventsCollection = () => {
           >
             <LazyImage
               className="max-h-[270px] md:max-h-[370px] rounded-xl"
-              src={"/images/events/event2.jpg"}
+              src={"/images/events/event2.webp"}
               alt={"weddings"}
             />
           </motion.div>

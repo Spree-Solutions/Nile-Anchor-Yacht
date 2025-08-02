@@ -11,7 +11,7 @@ export const ServicesSection = () => {
       title: "Business Events",
       description:
         "We host private events and meetings for groups, corporations, and delegations on Cairo's Nile River.",
-      image: "/images/services/business-events.jpg",
+      image: "/images/services/business-events.webp",
       path: "/business-events",
       icon: (
         <svg
@@ -40,7 +40,7 @@ export const ServicesSection = () => {
       title: "Weddings",
       description:
         "Create unforgettable memories with our exclusive wedding packages on the majestic Nile River.",
-      image: "/images/services/weddings.jpg",
+      image: "/images/services/weddings.webp",
       path: "/services/weddings",
       icon: (
         <svg
@@ -64,7 +64,7 @@ export const ServicesSection = () => {
       title: "Gatherings & Parties",
       description:
         "Host memorable celebrations with friends and family aboard our luxury yachts.",
-      image: "/images/services/parties.jpg",
+      image: "/images/services/parties.webp",
       path: "/gatherings-parties",
       icon: (
         <svg
@@ -89,7 +89,7 @@ export const ServicesSection = () => {
     <section className="relative overflow-hidden">
       {/* Background Decoration */}
       <img
-        src="/images/backgrounds/our_service.png"
+        src="/images/backgrounds/our_service.webp"
         alt=""
         className="absolute inset-0 w-full h-full object-cover opacity-60 "
       />

@@ -8,8 +8,8 @@ import { DataArabic } from "../../Data/Arabic/HomePage/Gatherings";
 import { colors } from "../../Styles/Colors";
 
 
-import party1 from "../../Images/new-gatherings/party1.JPG"
-import party2 from "../../Images/new-gatherings/party2.JPG"
+import party1 from "../../Images/new-gatherings/party1.webp"
+import party2 from "../../Images/new-gatherings/party2.webp"
 import Gatherings_Background from "../../Images/Gatherings_Background.jpeg";
 
 export default function Gatherings(props) {

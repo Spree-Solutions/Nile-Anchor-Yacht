@@ -9,7 +9,7 @@ const BookingSection = () => {
       <Container>
         <div className="bg-[#FAFAFA] p-5 grid grid-cols-5 gap-6 rounded-lg">
           <img
-            src="/images/yachts/liberty/liberty-1.png"
+            src="/images/yachts/liberty/liberty-1.webp"
             alt="booking"
             className="hidden md:block col-span-2 object-cover h-full w-full rounded-lg"
           />

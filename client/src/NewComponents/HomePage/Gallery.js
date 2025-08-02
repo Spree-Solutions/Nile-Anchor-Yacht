@@ -4,11 +4,11 @@ import { DataEnglish } from "../../Data/English/HomePage/Gallery";
 import { DataArabic } from "../../Data/Arabic/HomePage/Gallery";
 import { colors } from "../../Styles/Colors";
 import Gallery_Background from "../../Images/Gallery_Background.jpeg";
-import Liberty_Dark2 from "../../Images/Liberty_Dark2.png";
-import Bella_Dark from "../../Images/Bella_Dark.png";
-import logo from "../../Images/navylogo.png";
-import logoVida from "../../Images/vida1logo.png";
-import zeinLogo from "../../Images/zein-logo.png";
+import Liberty_Dark2 from "../../Images/Liberty_Dark2.webp";
+import Bella_Dark from "../../Images/Bella_Dark.webp";
+import logo from "../../Images/navylogo.webp";
+import logoVida from "../../Images/vida1logo.webp";
+import zeinLogo from "../../Images/zein-logo.webp";
 
 import CustomCarousel from "../CustomCarousel";
 import Bella0 from "../../Images/Bella0.jpeg";
@@ -30,23 +30,23 @@ import Liberty8 from "../../Images/Liberty8.jpeg";
 import Liberty9 from "../../Images/Liberty9.jpeg";
 import Liberty10 from "../../Images/Liberty10.jpeg";
 
-import Vida1 from "../../Images/Vida Yacht-6.jpg";
-import Vida2 from "../../Images/Vida Yacht-7.jpg";
-import Vida3 from "../../Images/Vida Yacht-1.jpg";
-import Vida4 from "../../Images/Vida Yacht-2.jpg";
-import Vida5 from "../../Images/Vida Yacht-3.jpg";
-import Vida6 from "../../Images/Vida Yacht-4.jpg";
-import Vida7 from "../../Images/Vida Yacht-8.jpg";
-import Vida8 from "../../Images/Vida Yacht-9.jpg";
-import Vida9 from "../../Images/Vida Yacht-10.jpg";
-// import Vida5 from "../../Images/Vida Yacht-5.jpg";
+import Vida1 from "../../Images/Vida Yacht-6.webp";
+import Vida2 from "../../Images/Vida Yacht-7.webp";
+import Vida3 from "../../Images/Vida Yacht-1.webp";
+import Vida4 from "../../Images/Vida Yacht-2.webp";
+import Vida5 from "../../Images/Vida Yacht-3.webp";
+import Vida6 from "../../Images/Vida Yacht-4.webp";
+import Vida7 from "../../Images/Vida Yacht-8.webp";
+import Vida8 from "../../Images/Vida Yacht-9.webp";
+import Vida9 from "../../Images/Vida Yacht-10.webp";
+// import Vida5 from "../../Images/Vida Yacht-5.webp";
 
-import Zein1 from "../../Images/zein-1.jpg";
+import Zein1 from "../../Images/zein-1.webp";
 import Zein2 from "../../Images/zein-2.JPEG";
-import Zein3 from "../../Images/zein-3.jpg";
-import Zein4 from "../../Images/zein-4.jpg";
-import Zein5 from "../../Images/zein-5.jpg";
-import Zein6 from "../../Images/zein-6.jpg";
+import Zein3 from "../../Images/zein-3.webp";
+import Zein4 from "../../Images/zein-4.webp";
+import Zein5 from "../../Images/zein-5.webp";
+import Zein6 from "../../Images/zein-6.webp";
 
 export default function Gallery(props) {
   const bellaImages = [Bella0, Bella1, Bella2, Bella3, Bella4, Bella5, Bella6];

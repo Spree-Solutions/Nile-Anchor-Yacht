@@ -12,7 +12,7 @@ export const FooterCTA = () => {
           <div className="absolute inset-0">
             <div className="absolute w-64 h-64 bg-[#0d455c] rounded-full -top-32 left-1/2 transform -translate-x-1/2" />
             <img
-              src="/images/backgrounds/yacht-silhouette.png"
+              src="/images/backgrounds/yacht-silhouette.webp"
               alt=""
               className="absolute top-0 w-auto h-auto opacity-80"
             />
@@ -41,7 +41,7 @@ export const FooterCTA = () => {
           {/* Yacht Image */}
           {!isMobile && (
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-              <div className="w-48 h-32 bg-[url('/images/yachts/yacht-3.png')] bg-cover bg-center" />
+              <div className="w-48 h-32 bg-[url('/images/yachts/yacht-3.webp')] bg-cover bg-center" />
             </div>
           )}
         </div>

@@ -29,7 +29,7 @@ const GalleryCollection = () => {
           >
             <LazyImage
               className="max-h-[270px] md:max-h-[370px] rounded-xl"
-              src={"/images/about/all-yachts-8.png"}
+              src={"/images/about/all-yachts-8.webp"}
               alt={"weddings"}
             />
           </motion.div>
@@ -73,7 +73,7 @@ const GalleryCollection = () => {
           >
             <LazyImage
               className="max-h-[270px] md:max-h-[370px] rounded-xl"
-              src={"/images/about/all-yachts-31.png"}
+              src={"/images/about/all-yachts-31.webp"}
               alt={"weddings"}
             />
           </motion.div>
@@ -89,7 +89,7 @@ const GalleryCollection = () => {
           >
             <LazyImage
               className="max-h-[270px] md:max-h-[370px] rounded-xl"
-              src={"/images/yachts/liberty/liberty-1.png"}
+              src={"/images/yachts/liberty/liberty-1.webp"}
               alt={"weddings"}
             />
           </motion.div>

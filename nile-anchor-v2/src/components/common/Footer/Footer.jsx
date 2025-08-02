@@ -132,7 +132,7 @@ const Footer = () => {
         </div>
         <div className="relative w-full h-[190px] rounded-xl overflow-hidden">
           <img
-            src="/images/backgrounds/yacht-silhouette.png"
+            src="/images/backgrounds/yacht-silhouette.webp"
             alt="image"
             className="absolute inset-0 w-full h-full object-cover"
           />

@@ -15,22 +15,22 @@ export const WeddingPackages = () => {
 
   const galleryImages = [
     {
-      src: "/images/services/weddings/wedding-3.png",
+      src: "/images/services/weddings/wedding-3.webp",
       alt: "Wedding decoration on yacht",
       aspect: "square"
     },
     {
-      src: "/images/services/weddings/wedding-2.png",
+      src: "/images/services/weddings/wedding-2.webp",
       alt: "Wedding dining setup",
       aspect: "landscape"
     },
     {
-      src: "/images/services/weddings/wedding-4.png",
+      src: "/images/services/weddings/wedding-4.webp",
       alt: "Wedding ceremony area",
       aspect: "landscape"
     },
     {
-      src: "/images/services/weddings/wedding-1.png",
+      src: "/images/services/weddings/wedding-1.webp",
       alt: "Wedding celebration",
       aspect: "square"
     }

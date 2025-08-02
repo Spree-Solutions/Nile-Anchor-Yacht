@@ -15,7 +15,7 @@ export const AboutSection = () => {
     <section className="relative">
       {/* Background Pattern */}
       <img
-        src="/images/backgrounds/about-pattern.png"
+        src="/images/backgrounds/about-pattern.webp"
         alt=""
         className="absolute w-[300px] md:w-[400px] lg:w-[595px] h-auto top-0 md:top-10 left-0 md:left-20 opacity-10"
       />
@@ -42,12 +42,12 @@ export const AboutSection = () => {
               // Mobile Layout - Stacked Images
               <div className="space-y-4">
                 <img
-                  src="/images/about/all-yachts-31.png"
+                  src="/images/about/all-yachts-31.webp"
                   alt="Luxury yacht on the Nile"
                   className="w-full h-64 object-cover rounded-lg shadow-lg "
                 />
                 <img
-                  src="/images/about/all-yachts-8.png"
+                  src="/images/about/all-yachts-8.webp"
                   alt="Another view of yacht on the Nile"
                   className="w-full h-48 object-cover rounded-lg shadow-lg"
                 />
@@ -56,17 +56,17 @@ export const AboutSection = () => {
               // Desktop Layout - Overlapping Images
               <div className="relative h-[500px] lg:h-[600px]">
                 <img
-                  src="/images/backgrounds/roller.png"
+                  src="/images/backgrounds/roller.webp"
                   alt="Luxury yacht on the Nile"
                   className="absolute top-20 left-0"
                 />
                 <img
-                  src="/images/about/all-yachts-31.png"
+                  src="/images/about/all-yachts-31.webp"
                   alt="Luxury yacht on the Nile"
                   className="absolute top-0 right-0 w-[60%] lg:w-[70%] h-[400px] lg:h-[485px] object-cover rounded-lg shadow-2xl z-10"
                 />
                 <img
-                  src="/images/about/all-yachts-8.png"
+                  src="/images/about/all-yachts-8.webp"
                   alt="Another view of yacht on the Nile"
                   className="absolute top-[20%] left-0 w-[70%] lg:w-[60%] h-[280px] lg:h-[336px] object-cover rounded-lg shadow-xl opacity-90"
                 />

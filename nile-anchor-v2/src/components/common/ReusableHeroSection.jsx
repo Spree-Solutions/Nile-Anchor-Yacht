@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const ReusableHeroSection = ({
   title = "Welcome to Our Website",
-  backgroundImage = "/images/about/hero.png",
+  backgroundImage = "/images/about/hero.webp",
   className = "",
 }) => {
   const { t } = useTranslation();
