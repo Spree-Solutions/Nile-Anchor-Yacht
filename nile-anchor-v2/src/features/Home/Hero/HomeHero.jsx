@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import YachtCard from "./YachtCard";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export const HeroSection = () => {
@@ -15,7 +15,7 @@ export const HeroSection = () => {
     i18n: { language },
   } = useTranslation();
   const { isMedium } = useMediaQuery();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const isRTL = language === "ar";
 
@@ -257,7 +257,7 @@ export const HeroSection = () => {
                   </button>
                 </motion.a>
 
-                <motion.button
+                {/* <motion.button
                   onClick={() => navigate("/yachts")}
                   className="w-full sm:w-auto px-6 py-3 border border-[#e6e1d6] text-[#e6e1d6] text-sm sm:text-base font-medium rounded-lg hover:bg-[#e6e1d6] hover:text-[#00162c] transition-all duration-300"
                   variants={buttonVariants}
@@ -265,7 +265,7 @@ export const HeroSection = () => {
                   whileTap="tap"
                 >
                   {t("EXPLORE MORE")}
-                </motion.button>
+                </motion.button> */}
               </motion.div>
             </div>
 
