@@ -9,8 +9,8 @@ const ImageModal = ({ isOpen, onClose, image, onNavigate, totalImages, yachtName
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-[80%] xl:max-w-7xl w-full h-full max-h-screen p-0 bg-black/95 image-modal">
-        <div className="relative w-full h-full flex items-center justify-center">
+      <DialogContent className="max-w-[80%] xl:max-w-7xl w-full h-full max-h-[90vh] p-0 bg-black/95 image-modal">
+        <div className="relative w-full h-full flex items-center justify-center max-h-[90vh]">
           {/* Close Button */}
           <button
             onClick={onClose}
