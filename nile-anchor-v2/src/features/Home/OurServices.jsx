@@ -183,7 +183,7 @@ const OurServices = () => {
                   whileHover={{ x: 5 }}
                 >
                   <Link
-                    to="/about"
+                    to={service?.link}
                     className="text-[#A18C6D] text-sm font-medium hover:underline inline-flex items-center group"
                   >
                     {t("Read More")}
