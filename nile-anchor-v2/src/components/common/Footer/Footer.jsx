@@ -25,16 +25,15 @@ const Footer = () => {
       heading: t("Our Company"),
       links: [
         { text: t("About Us"), to: "/about" },
-        { text: t("FAQ"), to: "/services" },
+        { text: t("Contact Us"), to: "/contact" },
       ],
     },
     {
-      heading: t("Yachts"),
+      heading: t("Services"),
       links: [
-        { text: t("BELLA"), to: "/" },
-        { text: t("ZEIN"), to: "/" },
-        { text: t("VIDA"), to: "/" },
-        { text: t("LIBERTY"), to: "/" },
+        { text: t("Weddings"), to: "/weddings" },
+        { text: t("Business Events"), to: "/business" },
+        { text: t("Gatherings and Parties"), to: "/gatherings" },
       ],
     },
   ];
@@ -53,7 +52,7 @@ const Footer = () => {
               <ColumnLogo className="" />
             </Link>
             <p className="text-base font-semibold text-[#CCCCCC]">
-              {t("We are a real estate agency that will help you find the best residence you dream!")}
+              {t("We offer exclusive, customizable premium packages for individuals, corporations, and organizations to create stress-free, unforgettable events on Egypt’s Nile River. Experience a journey that blends the river’s ancient heritage with the modern skyline of Cairo and Giza.")}
             </p>
           </div>
 
@@ -91,7 +90,14 @@ const Footer = () => {
                   <AccordionContent>
                     <div className="flex flex-col gap-2">
                       <p className="text-sm text-white font-medium">{t("Mon - Fri, 9.00am until 6.30pm")}</p>
-                      <p className="text-sm text-white font-medium">{t("Nile view club, Dokki Giza, Egypt")}</p>
+                      <a
+                        href="https://maps.app.goo.gl/HT8qv7vKsPKcreaVA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-white font-medium underline hover:opacity-80 transition-opacity duration-200" 
+                      >
+                        Nile view club, Dokki Giza, Egypt
+                      </a>
                       <a
                         href="mailto:reservation@thenileanchor.com"
                         className="text-sm text-white font-medium underline hover:opacity-80"
@@ -115,7 +121,14 @@ const Footer = () => {
                 <h3 className="text-lg font-bold mb-4 text-white">{t("Contact Details")}</h3>
                 <div className="flex flex-col gap-2">
                   <p className="text-sm text-white font-medium">{t("Mon - Fri, 9.00am until 6.30pm")}</p>
-                  <p className="text-sm text-white font-medium">{t("Nile view club, Dokki Giza, Egypt")}</p>
+                  <a
+                        href="https://maps.app.goo.gl/HT8qv7vKsPKcreaVA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-white font-medium underline hover:opacity-80 transition-opacity duration-200" 
+                      >
+                        Nile view club, Dokki Giza, Egypt
+                      </a>
                   <a
                     href="mailto:reservation@thenileanchor.com"
                     className="text-sm text-white font-medium underline hover:opacity-80"

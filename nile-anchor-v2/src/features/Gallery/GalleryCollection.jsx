@@ -73,7 +73,7 @@ const GalleryCollection = () => {
           >
             <LazyImage
               className="max-h-[270px] md:max-h-[370px] rounded-xl"
-              src={"/images/about/all-yachts-31.webp"}
+              src={"/images/parties/party3.webp"}
               alt={"weddings"}
             />
           </motion.div>
@@ -89,7 +89,7 @@ const GalleryCollection = () => {
           >
             <LazyImage
               className="max-h-[270px] md:max-h-[370px] rounded-xl"
-              src={"/images/yachts/liberty/liberty-1.webp"}
+              src={"/images/about/all-yachts-31.webp"}
               alt={"weddings"}
             />
           </motion.div>

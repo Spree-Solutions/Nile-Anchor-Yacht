@@ -195,7 +195,7 @@ export const HeroSection = () => {
         )}
 
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-b from-[#041125]/70 via-[#041125]/60 to-[#041125]/80"
+          className="absolute inset-0 bg-gradient-to-b from-[#041125]/50 via-[#041125]/40 to-[#041125]/60"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
