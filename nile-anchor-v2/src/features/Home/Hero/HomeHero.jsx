@@ -1,7 +1,7 @@
 import "./../style.css";
 import Container from "@/components/common/Container";
 import { yachts } from "@/data/home/yachts";
-import useMediaQuery from "@/hooks/helpers/useMediaQuery";
+//import useMediaQuery from "@/hooks/helpers/useMediaQuery";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -14,7 +14,7 @@ export const HeroSection = () => {
     t,
     i18n: { language },
   } = useTranslation();
-  const { isMedium } = useMediaQuery();
+  // const { isMedium } = useMediaQuery();
   // const navigate = useNavigate();
 
   const isRTL = language === "ar";
@@ -183,16 +183,9 @@ export const HeroSection = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        {!isMedium ? (
           <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
             <source src="/videos/hero-yacht.mp4" type="video/mp4" />
           </video>
-        ) : (
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: "url(/images/hero-yacht-mobile.webp)" }}
-          />
-        )}
 
         <motion.div 
           className="absolute inset-0 bg-gradient-to-b from-[#041125]/50 via-[#041125]/40 to-[#041125]/60"

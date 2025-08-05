@@ -96,7 +96,7 @@ const Footer = () => {
                         rel="noopener noreferrer"
                         className="text-sm text-white font-medium underline hover:opacity-80 transition-opacity duration-200" 
                       >
-                        Nile view club, Dokki Giza, Egypt
+                        Dokki Giza, Egypt
                       </a>
                       <a
                         href="mailto:reservation@thenileanchor.com"
@@ -127,7 +127,7 @@ const Footer = () => {
                         rel="noopener noreferrer"
                         className="text-sm text-white font-medium underline hover:opacity-80 transition-opacity duration-200" 
                       >
-                        Nile view club, Dokki Giza, Egypt
+                        Dokki Giza, Egypt
                       </a>
                   <a
                     href="mailto:reservation@thenileanchor.com"
