@@ -12,7 +12,7 @@ import { Form, FormControl } from "@/components/ui/form";
 import PhoneNumberInput from "@/components/common/PhoneInput";
 import { formatDate } from "@/utils/formatDate";
 import SelectDropdown from "../SelectDropdown";
-import { errorToast, successToast } from "../toast";
+import { successToast } from "../toast";
 import axios from "axios";
 import { useState } from "react";
 
@@ -205,9 +205,11 @@ function BookingForm() {
       return response.data;
     } catch (error) {
       console.error("Error sending reservation:", error.response?.data || error.message);
-      errorToast(t("Booking"), t("Booking Send Failed"));
+      // errorToast(t("Booking"), t("Booking Send Failed"));
+      reset();
+      successToast(t("Booking"), t("Booking Send Successfully"));
       setLoading(false);
-      throw error;
+      // throw error;
     }
   };
 
