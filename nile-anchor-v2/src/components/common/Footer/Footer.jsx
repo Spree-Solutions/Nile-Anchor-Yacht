@@ -52,7 +52,9 @@ const Footer = () => {
               <ColumnLogo className="" />
             </Link>
             <p className="text-base font-semibold text-[#CCCCCC]">
-              {t("We offer exclusive, customizable premium packages for individuals, corporations, and organizations to create stress-free, unforgettable events on Egypt’s Nile River. Experience a journey that blends the river’s ancient heritage with the modern skyline of Cairo and Giza.")}
+              {t(
+                "We offer exclusive, customizable premium packages for individuals, corporations, and organizations to create stress-free, unforgettable events on Egypt’s Nile River. Experience a journey that blends the river’s ancient heritage with the modern skyline of Cairo and Giza.",
+              )}
             </p>
           </div>
 
@@ -89,12 +91,11 @@ const Footer = () => {
                   </AccordionTrigger>
                   <AccordionContent>
                     <div className="flex flex-col gap-2">
-                      <p className="text-sm text-white font-medium">{t("Mon - Fri, 9.00am until 6.30pm")}</p>
                       <a
                         href="https://maps.app.goo.gl/HT8qv7vKsPKcreaVA"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-white font-medium underline hover:opacity-80 transition-opacity duration-200" 
+                        className="text-sm text-white font-medium underline hover:opacity-80 transition-opacity duration-200"
                       >
                         Dokki Giza, Egypt
                       </a>
@@ -120,15 +121,14 @@ const Footer = () => {
               <div>
                 <h3 className="text-lg font-bold mb-4 text-white">{t("Contact Details")}</h3>
                 <div className="flex flex-col gap-2">
-                  <p className="text-sm text-white font-medium">{t("Mon - Fri, 9.00am until 6.30pm")}</p>
                   <a
-                        href="https://maps.app.goo.gl/HT8qv7vKsPKcreaVA"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-white font-medium underline hover:opacity-80 transition-opacity duration-200" 
-                      >
-                        Dokki Giza, Egypt
-                      </a>
+                    href="https://maps.app.goo.gl/HT8qv7vKsPKcreaVA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-white font-medium underline hover:opacity-80 transition-opacity duration-200"
+                  >
+                    Dokki Giza, Egypt
+                  </a>
                   <a
                     href="mailto:reservation@thenileanchor.com"
                     className="text-sm text-white font-medium underline hover:opacity-80"

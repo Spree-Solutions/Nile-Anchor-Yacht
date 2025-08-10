@@ -12,22 +12,24 @@ import { Form, FormControl } from "@/components/ui/form";
 import PhoneNumberInput from "@/components/common/PhoneInput";
 import { formatDate } from "@/utils/formatDate";
 import SelectDropdown from "../SelectDropdown";
-import { successToast } from "../toast";
+import { errorToast, successToast } from "../toast";
+import axios from "axios";
+import { useState } from "react";
 
 const yachtOptions = [
-  { value: "bella", title: "BELLA - Luxury Yacht" },
-  { value: "zein", title: "ZEIN - Speed Yacht" },
-  { value: "vida", title: "VIDA - Family Yacht" },
-  { value: "liberty", title: "LIBERTY - Premium Yacht" },
+  { value: "BELLA", title: "BELLA - Luxury Yacht" },
+  { value: "ZEIN", title: "ZEIN - Speed Yacht" },
+  { value: "VIDA", title: "VIDA - Family Yacht" },
+  { value: "LIBERTY", title: "LIBERTY - Premium Yacht" },
 ];
 
 const eventTypes = [
-  { value: "wedding", title: "Wedding" },
-  { value: "birthday", title: "Birthday Party" },
-  { value: "corporate", title: "Corporate Event" },
-  { value: "anniversary", title: "Anniversary" },
-  { value: "private", title: "Private Party" },
-  { value: "other", title: "Other" },
+  { value: "WEDDING", title: "Wedding" },
+  { value: "BIRTHDAY", title: "Birthday Party" },
+  { value: "CORPORATE", title: "Corporate Event" },
+  { value: "ANNIVERSARY", title: "Anniversary" },
+  { value: "PRIVATE", title: "Private Party" },
+  { value: "OTHER", title: "Other" },
 ];
 
 const generateTimeOptions = () => {
@@ -65,6 +67,8 @@ function BookingForm() {
     t,
     i18n: { language },
   } = useTranslation();
+
+  const [isLoading, setLoading] = useState(false);
 
   const timeOptions = generateTimeOptions();
 
@@ -145,18 +149,66 @@ function BookingForm() {
       return;
     }
 
+    setLoading(true);
+
+    const convertToISOTime = (date, timeString) => {
+      if (!date || !timeString) return null;
+
+      const timeOption = timeOptions.find((t) => t.value === timeString);
+      if (!timeOption) return null;
+
+      const dateObj = new Date(date);
+      dateObj.setHours(timeOption.hour24, 0, 0, 0);
+
+      return dateObj.toISOString();
+    };
+
+    const startTimeISO = convertToISOTime(data.booking_date, data.start_time);
+    const endTimeISO = convertToISOTime(data.booking_date, data.end_time);
+
     const bookingData = {
       ...data,
-      booking_time: {
-        start: data.start_time,
-        end: data.end_time,
-      },
+      start_time: startTimeISO,
+      end_time: endTimeISO,
     };
 
     console.log("Booking Data:", bookingData);
 
-    reset();
-    successToast(t("Booking"), t("Booking Send Successfully"));
+    try {
+      const response = await axios.post(
+        "https://ppvdzvttzgtjyavdwviu.supabase.co/functions/v1/messaging-service",
+        {
+          messageData: {
+            fullName: bookingData.full_name,
+            email: bookingData.email,
+            phoneNumber: bookingData.phone,
+            yacht: bookingData.yacht,
+            eventType: bookingData.event_type,
+            startTime: bookingData.start_time,
+            endTime: bookingData.end_time,
+            date: new Date(bookingData.booking_date).toISOString(),
+          },
+          serviceKey: "nileanchor_v2_reservation_form",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+
+      console.log("Reservation sent successfully:", response.data);
+      setLoading(false);
+
+      reset();
+      successToast(t("Booking"), t("Booking Send Successfully"));
+      return response.data;
+    } catch (error) {
+      console.error("Error sending reservation:", error.response?.data || error.message);
+      errorToast(t("Booking"), t("Booking Send Failed"));
+      setLoading(false);
+      throw error;
+    }
   };
 
   return (
@@ -337,7 +389,11 @@ function BookingForm() {
           </div>
 
           <div className="flex flex-col justify-start gap-5 mt-4">
-            <CustomButton isLoading={false} onClick={handleSubmit(onSubmit)} disabled={Object.keys(errors).length > 0}>
+            <CustomButton
+              isLoading={isLoading}
+              onClick={handleSubmit(onSubmit)}
+              disabled={Object.keys(errors).length > 0}
+            >
               {t("Book")}
             </CustomButton>
           </div>
