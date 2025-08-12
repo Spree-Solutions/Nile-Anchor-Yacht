@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import YachtCard from "./YachtCard";
 // import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export const HeroSection = () => {
   const {
@@ -16,6 +17,13 @@ export const HeroSection = () => {
   } = useTranslation();
   // const { isMedium } = useMediaQuery();
   // const navigate = useNavigate();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5; // Half speed
+    }
+  }, []);
 
   const isRTL = language === "ar";
 
@@ -76,10 +84,10 @@ export const HeroSection = () => {
   };
 
   const slideInFromLeft = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       x: isRTL ? 60 : -60,
-      y: 20 
+      y: 20,
     },
     visible: {
       opacity: 1,
@@ -93,10 +101,10 @@ export const HeroSection = () => {
   };
 
   const slideInFromRight = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       x: isRTL ? -60 : 60,
-      y: 20 
+      y: 20,
     },
     visible: {
       opacity: 1,
@@ -177,17 +185,17 @@ export const HeroSection = () => {
   return (
     <div className="relative w-full md:min-h-screen overflow-hidden">
       {/* Background with fade in animation */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-          <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
-            <source src="/videos/hero-yacht.mp4" type="video/mp4" />
-          </video>
+        <video ref={videoRef} className="w-full h-full object-cover" autoPlay loop muted playsInline>
+          <source src="/videos/DJI_0133.MOV" type="video/mp4" />
+        </video>
 
-        <motion.div 
+        <motion.div
           className="absolute inset-0 bg-gradient-to-b from-[#041125]/50 via-[#041125]/40 to-[#041125]/60"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -197,16 +205,11 @@ export const HeroSection = () => {
 
       <div className="pb-8 pt-20 md:pb-16 md:pt-28">
         <Container>
-          <motion.div 
-            className=""
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
+          <motion.div className="" variants={containerVariants} initial="hidden" animate="visible">
             {/* Hero Content */}
             <div className={`relative h-full flex items-start justify-start flex-col ${isRTL && "text-right"}`}>
               {/* Subtitle */}
-              <motion.p 
+              <motion.p
                 className="text-[#a18c6d] text-sm md:text-base lg:text-lg font-medium tracking-[1.5px] mb-4 md:mb-6"
                 variants={slideInFromLeft}
               >
@@ -214,7 +217,7 @@ export const HeroSection = () => {
               </motion.p>
 
               {/* Main Title */}
-              <motion.h1 
+              <motion.h1
                 className="font-['Antic_Didone'] text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6 md:mb-8"
                 variants={slideInFromRight}
               >
@@ -224,7 +227,7 @@ export const HeroSection = () => {
               </motion.h1>
 
               {/* Description */}
-              <motion.p 
+              <motion.p
                 className="font-['Work_Sans'] text-[#d1d1d1] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0 mb-8 md:mb-12"
                 variants={fadeInUp}
               >
@@ -234,11 +237,11 @@ export const HeroSection = () => {
               </motion.p>
 
               {/* Buttons */}
-              <motion.div 
+              <motion.div
                 className="flex w-full flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:items-start justify-center sm:justify-start"
                 variants={scaleIn}
               >
-                <motion.a 
+                <motion.a
                   href="#booking-section"
                   variants={buttonVariants}
                   whileHover="hover"
@@ -263,18 +266,15 @@ export const HeroSection = () => {
             </div>
 
             {/* Yacht Slider Section */}
-            <motion.div 
-              className="mt-8"
-              variants={sliderVariants}
-            >
-              <motion.div 
+            <motion.div className="mt-8" variants={sliderVariants}>
+              <motion.div
                 className="flex justify-between items-center relative gap-4"
                 initial={{ opacity: 0, x: isRTL ? 40 : -40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <h3 className="text-lg font-medium text-white">{t("Our Yachts")}</h3>
-                <motion.span 
+                <motion.span
                   className="flex-1 block h-1 bg-white"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
@@ -283,8 +283,8 @@ export const HeroSection = () => {
                 />
                 <span className="w-24"></span>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="relative mt-5"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -296,10 +296,10 @@ export const HeroSection = () => {
                       key={yacht?.id}
                       initial={{ opacity: 0, y: 60, scale: 0.9 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ 
-                        duration: 0.6, 
-                        delay: 1 + (index * 0.1),
-                        ease: "easeOut"
+                      transition={{
+                        duration: 0.6,
+                        delay: 1 + index * 0.1,
+                        ease: "easeOut",
                       }}
                     >
                       <YachtCard yacht={yacht} />

@@ -23,7 +23,7 @@ const WeddingsPackages = () => {
   return (
     <div className="py-8 md:py-16 bg-[#FFFBF3]">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:items-center">
           {/* Images Section */}
           <motion.div
             className="flex justify-end relative min-h-[420px] md:min-h-[670px]"

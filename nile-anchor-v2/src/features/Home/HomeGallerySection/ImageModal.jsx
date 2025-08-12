@@ -9,14 +9,14 @@ const ImageModal = ({ isOpen, onClose, image, onNavigate, totalImages, yachtName
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-[80%] xl:max-w-7xl w-full h-full max-h-[90vh] p-0 bg-black/95 image-modal">
-        <div className="relative w-full h-full flex items-center justify-center max-h-[90vh]">
+      <DialogContent className="max-w-[100%] xl:max-w-7xl w-full h-full max-h-[100vh] md:max-h-[90vh] p-0 bg-black/95 image-modal">
+        <div className="relative w-full h-full flex items-center justify-center max-h-[100vh] md:max-h-[90vh]">
           {/* Close Button */}
           <button
             onClick={onClose}
             className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors duration-200"
           >
-            <X className="w-6 h-6 text-white" />
+            <X className="w-4 h-4 md:w-6 md:h-6 text-white" />
           </button>
 
           {/* Navigation Buttons */}
@@ -26,14 +26,14 @@ const ImageModal = ({ isOpen, onClose, image, onNavigate, totalImages, yachtName
                 onClick={() => onNavigate("prev")}
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors duration-200"
               >
-                <ChevronLeft className="w-6 h-6 text-white" />
+                <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-white" />
               </button>
 
               <button
                 onClick={() => onNavigate("next")}
                 className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors duration-200"
               >
-                <ChevronRight className="w-6 h-6 text-white" />
+                <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-white" />
               </button>
             </>
           )}

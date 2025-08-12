@@ -56,10 +56,10 @@ const AboutSection = () => {
     <div className="py-8 md:py-16 relative overflow-hidden">
       <Container>
         <motion.img
-          src="/images/about/vision.webp"
+          src="/images/about/Roller.png"
           className={`absolute top-0 ${
             language === "en" ? "-left-1/2 md:left-0" : "-right-1/2 md:right-0"
-          } opacity-30 w-full md:w-1/2 h-auto`}
+          } w-full md:w-1/2 h-auto`}
           animate={{ rotate: 360 }}
           transition={{
             duration: 20,

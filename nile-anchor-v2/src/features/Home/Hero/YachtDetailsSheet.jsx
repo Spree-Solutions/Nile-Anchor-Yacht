@@ -1,67 +1,12 @@
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import LazyImage from "@/components/common/LazyImage";
 import { useTranslation } from "react-i18next";
-import { X, Users, Clock, Check, Star, Anchor } from "lucide-react";
+import { X, Users, Clock, Check, Star, Anchor, Settings } from "lucide-react";
 
 const YachtDetailsSheet = ({ yacht, isOpen, onClose }) => {
-  const { t } = useTranslation();
+  const { t,i18n:{language} } = useTranslation();
 
   if (!yacht) return null;
-
-  // Parse description to extract different sections
-  const parseDescription = (description) => {
-    if (!description) return { mainDescription: "", pricing: [], inclusions: [], extraServices: [], priceNote: "" };
-    
-    const sections = description.split('**');
-    let mainDescription = "";
-    let pricing = [];
-    let inclusions = [];
-    let extraServices = [];
-    let priceNote = "";
-    
-    // Extract main description (before first **)
-    mainDescription = sections[0].trim();
-    
-    // Process each section
-    for (let i = 1; i < sections.length; i += 2) {
-      const sectionTitle = sections[i];
-      const sectionContent = sections[i + 1] || "";
-      
-      if (sectionTitle.includes('Pricing')) {
-        // Extract pricing items
-        const lines = sectionContent.split('\n').filter(line => line.trim().startsWith('•'));
-        pricing = lines.map(line => {
-          const cleanLine = line.replace('•', '').trim();
-          const [pax, price] = cleanLine.split(' - ');
-          return { pax: pax?.trim(), price: price?.trim() };
-        }).filter(item => item.pax && item.price);
-      } else if (sectionTitle.includes('Includes')) {
-        inclusions = sectionContent.split(',').map(item => item.trim()).filter(item => item);
-      } else if (sectionTitle.includes('Extra Services')) {
-        const lines = sectionContent.split('\n').filter(line => line.trim());
-        extraServices = lines.map(line => line.replace('•', '').trim()).filter(item => item);
-      }
-    }
-    
-    // Extract price note
-    const priceNoteMatch = description.match(/\*([^*]+)\*/);
-    if (priceNoteMatch) {
-      priceNote = priceNoteMatch[1];
-    }
-    
-    return { mainDescription, pricing, inclusions, extraServices, priceNote };
-  };
-
-  const { mainDescription, pricing, inclusions, extraServices, priceNote } = parseDescription(yacht.description);
-
-  // Get duration from description
-  const getDuration = () => {
-    if (yacht.description?.includes('(2 hours)')) return "2 hours";
-    if (yacht.description?.includes('(1 hour)')) return "1 hour";
-    return "";
-  };
-
-  const duration = getDuration();
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
@@ -69,8 +14,8 @@ const YachtDetailsSheet = ({ yacht, isOpen, onClose }) => {
         <div className="h-full flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-white/10">
-            <SheetHeader className="text-left">
-              <SheetTitle className="font-['Antic_Didone'] text-white text-2xl md:text-3xl">{t(yacht.name)}</SheetTitle>
+            <SheetHeader className={`${language === "ar" ? "text-right" : "text-left"} flex-1`}>
+              <SheetTitle className="font-['Antic_Didone'] text-white text-2xl md:text-3xl w-fit">{t(yacht.name)}</SheetTitle>
               <SheetDescription className="text-white/70 text-sm flex items-center gap-4">
                 <span>{t("Yacht Details")}</span>
                 {yacht.capacity && (
@@ -79,10 +24,10 @@ const YachtDetailsSheet = ({ yacht, isOpen, onClose }) => {
                     {t(yacht.capacity)}
                   </span>
                 )}
-                {duration && (
+                {yacht.duration && (
                   <span className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />
-                    {t(duration)}
+                    {t(yacht.duration)}
                   </span>
                 )}
               </SheetDescription>
@@ -107,7 +52,7 @@ const YachtDetailsSheet = ({ yacht, isOpen, onClose }) => {
                 {/* Price overlay */}
                 {yacht.price && (
                   <div className="absolute top-6 right-6 bg-[#a18c6d] text-white px-4 py-2 rounded-lg shadow-lg">
-                    <p className="text-lg font-bold">{yacht.price}</p>
+                    <p className="text-lg font-bold">{t(yacht.price)}</p>
                   </div>
                 )}
               </div>
@@ -122,46 +67,48 @@ const YachtDetailsSheet = ({ yacht, isOpen, onClose }) => {
                   </div>
 
                   {/* Description */}
-                  <div>
-                    <h3 className="text-xl font-semibold mb-3 text-[#a18c6d] flex items-center gap-2">
-                      <Anchor className="w-5 h-5" />
-                      {t("Description")}
-                    </h3>
-                    <p className="text-white/90 leading-relaxed text-base md:text-lg">{t(mainDescription)}</p>
-                  </div>
+                  {yacht.description && (
+                    <div>
+                      <h3 className="text-xl font-semibold mb-3 text-[#a18c6d] flex items-center gap-2">
+                        <Anchor className="w-5 h-5" />
+                        {t("Description")}
+                      </h3>
+                      <p className="text-white/90 leading-relaxed text-base md:text-lg">{t(yacht.description)}</p>
+                    </div>
+                  )}
 
                   {/* Pricing Section */}
-                  {pricing.length > 0 && (
+                  {yacht.pricing && yacht.pricing.length > 0 && (
                     <div>
                       <h3 className="text-xl font-semibold mb-4 text-[#a18c6d] flex items-center gap-2">
                         <Star className="w-5 h-5" />
-                        {t("Pricing")} {duration && `(${t(duration)})`}
+                        {t("Pricing")} {yacht.duration && `(${t(yacht.duration)})`}
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {pricing.map((item, index) => (
+                        {yacht.pricing.map((item, index) => (
                           <div key={index} className="bg-gradient-to-r from-[#a18c6d]/20 to-[#a18c6d]/10 rounded-lg p-4 border border-[#a18c6d]/30">
                             <div className="flex justify-between items-center">
-                              <span className="text-white/80 text-sm">{item.pax}</span>
-                              <span className="text-white font-bold text-lg">{item.price}</span>
+                              <span className="text-white/80 text-sm">{t(item.pax)}</span>
+                              <span className="text-white font-bold text-lg">{t(item.price)}</span>
                             </div>
                           </div>
                         ))}
                       </div>
-                      {priceNote && (
-                        <p className="text-white/60 text-sm mt-3 italic">{priceNote}</p>
+                      {yacht.priceNote && (
+                        <p className="text-white/60 text-sm mt-3 italic">{t(yacht.priceNote)}</p>
                       )}
                     </div>
                   )}
 
                   {/* Inclusions */}
-                  {inclusions.length > 0 && (
+                  {yacht.includes && yacht.includes.length > 0 && (
                     <div>
                       <h3 className="text-xl font-semibold mb-3 text-[#a18c6d] flex items-center gap-2">
                         <Check className="w-5 h-5" />
                         {t("What's Included")}
                       </h3>
                       <div className="grid grid-cols-1 gap-2">
-                        {inclusions.map((inclusion, index) => (
+                        {yacht.includes.map((inclusion, index) => (
                           <div key={index} className="flex items-center space-x-3">
                             <div className="w-2 h-2 bg-[#a18c6d] rounded-full flex-shrink-0" />
                             <span className="text-white/90">{t(inclusion)}</span>
@@ -187,11 +134,11 @@ const YachtDetailsSheet = ({ yacht, isOpen, onClose }) => {
                   )}
 
                   {/* Extra Services */}
-                  {extraServices.length > 0 && (
+                  {yacht.extraServices && yacht.extraServices.length > 0 && (
                     <div>
                       <h3 className="text-xl font-semibold mb-3 text-[#a18c6d]">{t("Extra Services")}</h3>
                       <div className="space-y-2">
-                        {extraServices.map((service, index) => (
+                        {yacht.extraServices.map((service, index) => (
                           <div key={index} className="bg-white/5 rounded-lg p-3 border border-white/10">
                             <span className="text-white/90 text-sm">{t(service)}</span>
                           </div>
@@ -200,33 +147,48 @@ const YachtDetailsSheet = ({ yacht, isOpen, onClose }) => {
                     </div>
                   )}
 
-                  {/* Specifications (if available) */}
+                  {/* Specifications */}
                   {yacht.specifications && (
                     <div>
-                      <h3 className="text-xl font-semibold mb-3 text-[#a18c6d]">{t("Specifications")}</h3>
+                      <h3 className="text-xl font-semibold mb-3 text-[#a18c6d] flex items-center gap-2">
+                        <Settings className="w-5 h-5" />
+                        {t("Specifications")}
+                      </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {yacht.specifications.length && (
-                          <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                            <span className="text-white/70 text-sm">{t("Length")}</span>
-                            <p className="text-white font-semibold">{yacht.specifications.length}</p>
-                          </div>
-                        )}
                         {yacht.specifications.capacity && (
                           <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                             <span className="text-white/70 text-sm">{t("Capacity")}</span>
-                            <p className="text-white font-semibold">{yacht.specifications.capacity}</p>
+                            <p className="text-white font-semibold">{t(yacht.specifications.capacity)}</p>
                           </div>
                         )}
-                        {yacht.specifications.year && (
+                        {yacht.specifications.decks && (
                           <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                            <span className="text-white/70 text-sm">{t("Year")}</span>
-                            <p className="text-white font-semibold">{yacht.specifications.year}</p>
+                            <span className="text-white/70 text-sm">{t("Decks")}</span>
+                            <p className="text-white font-semibold">{t(yacht.specifications.decks)}</p>
                           </div>
                         )}
-                        {yacht.specifications.speed && (
+                        {yacht.specifications.levels && (
                           <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                            <span className="text-white/70 text-sm">{t("Max Speed")}</span>
-                            <p className="text-white font-semibold">{yacht.specifications.speed}</p>
+                            <span className="text-white/70 text-sm">{t("Levels")}</span>
+                            <p className="text-white font-semibold">{t(yacht.specifications.levels)}</p>
+                          </div>
+                        )}
+                        {yacht.specifications.stories && (
+                          <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                            <span className="text-white/70 text-sm">{t("Stories")}</span>
+                            <p className="text-white font-semibold">{t(yacht.specifications.stories)}</p>
+                          </div>
+                        )}
+                        {yacht.specifications.type && (
+                          <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                            <span className="text-white/70 text-sm">{t("Type")}</span>
+                            <p className="text-white font-semibold">{t(yacht.specifications.type)}</p>
+                          </div>
+                        )}
+                        {yacht.specifications.specialFeature && (
+                          <div className="bg-white/5 rounded-lg p-4 border border-white/10 sm:col-span-2">
+                            <span className="text-white/70 text-sm">{t("Special Feature")}</span>
+                            <p className="text-white font-semibold">{t(yacht.specifications.specialFeature)}</p>
                           </div>
                         )}
                       </div>
