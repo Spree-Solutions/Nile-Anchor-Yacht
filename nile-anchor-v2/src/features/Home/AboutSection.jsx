@@ -117,15 +117,16 @@ const AboutSection = () => {
               </motion.h1>
 
               <motion.div
-                className={`${language === 'en'? "border-l":"border-r"} px-5  border-[#C3D2D9] text-3xl max-w-full md:max-w-[80%] mt-7 mb-5`}
+                className={`${
+                  language === "en" ? "border-l" : "border-r"
+                } px-5  border-[#C3D2D9] text-3xl max-w-full md:max-w-[80%] mt-7 mb-5`}
                 variants={fadeInUp}
               >
                 <p className="text-primary font-normal text-2xl">
-                  {t("aims at providing high-end value by offering exclusive offers and ")}
+                  {t("The Nile Anchor aims to redefine luxury on Egypt’s iconic Nile River. ")}
                   <br />
-                  {t("premium packages ")}
-                  <br />
-                  {t("to create memorable")}
+                  {t("With exclusive offers ")}
+                  {t("and premium packages")}
                 </p>
               </motion.div>
 
@@ -134,7 +135,7 @@ const AboutSection = () => {
                 variants={language === "en" ? slideInFromLeft : slideInFromRight}
               >
                 {t(
-                  "breathtaking moments on Egypt's Nile River. Packages are currently available to; individuals, corporations and organizations providing stress-free solutions to those who wish to organize and hold exclusive events whether; corporate or group outing's, wedding/engagement ceremonies or even celebrations.",
+                  "we craft extraordinary experiences for weddings, corporate gatherings, and private celebrations—ensuring every moment is as elegant as it is unforgettable.",
                 )}
               </motion.p>
 

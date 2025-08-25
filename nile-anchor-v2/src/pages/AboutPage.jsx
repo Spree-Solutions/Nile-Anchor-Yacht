@@ -1,14 +1,14 @@
 import BookingSection from "@/components/common/Book/BookingSection";
 import ReusableHeroSection from "@/components/common/ReusableHeroSection";
 import AboutDate from "@/features/About/AboutDate";
-import MessageCEO from "@/features/About/MessageCEO";
+// import MessageCEO from "@/features/About/MessageCEO";
 
 const AboutPage = () => {
   return (
     <div className="overflow-hidden">
       <ReusableHeroSection title="About" />
       <AboutDate />
-      <MessageCEO />
+      {/* <MessageCEO /> */}
       <BookingSection />
     </div>
   );

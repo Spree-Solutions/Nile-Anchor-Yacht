@@ -20,17 +20,17 @@ const DesktopNavigation = ({ isScrolled }) => {
             className={`relative px-1 py-2 text-sm font-medium transition-all duration-300 group ${
               isScrolled
                 ? isActive
-                  ? "text-[#a18c6d]"
-                  : "text-gray-700 hover:text-[#a18c6d]"
+                  ? "text-[#e2c293]"
+                  : "text-gray-700 hover:text-[#e2c293]"
                 : isActive
-                ? "text-[#a18c6d]"
-                : "text-white hover:text-[#a18c6d]"
+                ? "text-[#e2c293]"
+                : "text-white hover:text-[#e2c293]"
             }`}
           >
             {t(item.label)}
 
             <span
-              className={`absolute bottom-0 left-0 w-full h-0.5 bg-[#a18c6d] transform origin-left transition-transform duration-300 ${
+              className={`absolute bottom-0 left-0 w-full h-0.5 bg-[#e2c293] transform origin-left transition-transform duration-300 ${
                 isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
               }`}
             />
@@ -44,7 +44,7 @@ const DesktopNavigation = ({ isScrolled }) => {
       {/* <button
         className={`ml-4 px-6 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
           isScrolled
-            ? "bg-[#a18c6d] text-white hover:bg-[#8a7454] shadow-lg hover:shadow-xl"
+            ? "bg-[#e2c293] text-white hover:bg-[#8a7454] shadow-lg hover:shadow-xl"
             : "bg-white/10 text-white border border-white/30 hover:bg-white hover:text-[#041125] backdrop-blur-sm"
         }`}
       >

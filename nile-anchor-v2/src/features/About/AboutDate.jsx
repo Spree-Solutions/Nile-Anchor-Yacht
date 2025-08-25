@@ -189,7 +189,7 @@ const AboutDate = () => {
               viewport={{ once: true }}
             >
               <p className="text-primary font-normal text-2xl">
-                {t("aims at providing high-end value by offering exclusive offers and ")}
+                {t("The Nile Anchor aims to providing high-end value by offering exclusive offers and ")}
                 <br />
                 {t("premium packages ")}
                 <br />

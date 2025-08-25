@@ -21,6 +21,7 @@ const yachtOptions = [
   { value: "ZEIN", title: "ZEIN - Speed Yacht" },
   { value: "VIDA", title: "VIDA - Family Yacht" },
   { value: "LIBERTY", title: "LIBERTY - Premium Yacht" },
+  { value: "SPEEDBOATS", title: "SPEEDBOATS - Thrilling Nile Ride" },
 ];
 
 const eventTypes = [

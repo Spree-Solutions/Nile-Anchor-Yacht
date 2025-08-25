@@ -53,7 +53,7 @@ const Footer = () => {
             </Link>
             <p className="text-base font-semibold text-[#CCCCCC]">
               {t(
-                "We offer exclusive, customizable premium packages for individuals, corporations, and organizations to create stress-free, unforgettable events on Egypt’s Nile River. Experience a journey that blends the river’s ancient heritage with the modern skyline of Cairo and Giza.",
+                "We offer exclusive, customizable premium packages for individuals, corporations, and organizations , unforgettable events on Egypt’s Nile River. Experience a journey that blends the river’s ancient heritage with the modern skyline of Cairo and Giza.",
               )}
             </p>
           </div>
@@ -163,7 +163,7 @@ const Footer = () => {
         </div>
 
         <div className="text-center font-bold py-5 md:py-8 text-xs text-[#CCCCCC]">
-          {t("2025 Spree Solutions. All Rights Reserved")}
+          {t("2025 Nile Anchor. All Rights Reserved")}
         </div>
       </Container>
     </footer>

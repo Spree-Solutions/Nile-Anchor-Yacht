@@ -210,7 +210,7 @@ export const HeroSection = () => {
             <div className={`relative h-full flex items-start justify-start flex-col ${isRTL && "text-right"}`}>
               {/* Subtitle */}
               <motion.p
-                className="text-[#a18c6d] text-sm md:text-base lg:text-lg font-medium tracking-[1.5px] mb-4 md:mb-6"
+                className="text-[#e2c293] text-sm md:text-base lg:text-lg font-medium tracking-[1.5px] mb-4 md:mb-6"
                 variants={slideInFromLeft}
               >
                 {t("LUXURY YACHT RENTALS")}

@@ -101,7 +101,7 @@ const OurServices = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h1 className="text-3xl md:text-5xl font-bold text-[#00162C]" variants={headerVariants}>
-            {t("our services")}
+            {t("Our Services")}
           </motion.h1>
           <motion.p className="text-lg md:text-2xl text-[#00162C]" variants={subtitleVariants}>
             {t("Discover yachting feel freedom")}

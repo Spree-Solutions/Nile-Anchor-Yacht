@@ -53,8 +53,8 @@ const MobileNavigation = ({ isScrolled }) => {
                   onClick={handleLinkClick}
                   className={`flex gap-1 items-center px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
                     isActive
-                      ? "bg-[#a18c6d]/10 text-[#a18c6d] border-l-4 border-[#a18c6d]"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-[#a18c6d]"
+                      ? "bg-[#e2c293]/10 text-[#e2c293] border-l-4 border-[#e2c293]"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-[#e2c293]"
                   }`}
                 >
                   <item.icon className="h-5 w-5 mr-3" />
@@ -69,7 +69,7 @@ const MobileNavigation = ({ isScrolled }) => {
             {/* <div className="pt-6 mt-6 border-t border-gray-200">
               <button
                 onClick={handleLinkClick}
-                className="w-full bg-[#a18c6d] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#8a7454] transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="w-full bg-[#e2c293] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#8a7454] transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 {t("Book Now")}
               </button>

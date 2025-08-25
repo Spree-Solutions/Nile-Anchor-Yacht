@@ -129,7 +129,7 @@ const ContactSection = () => {
               viewport={{ once: true }}
             >
               <motion.h1 className="text-5xl text-black" variants={titleVariants}>
-                {t("Your voice matters to us")}
+                {t("Get in touch")}
               </motion.h1>
 
               <motion.h1 className="text-base text-black" variants={subtitleVariants}>
