@@ -109,7 +109,7 @@ const YachtDetailsSheet = ({ yacht, isOpen, onClose }) => {
                       </h3>
                       <div className="grid grid-cols-1 gap-2">
                         {yacht.includes.map((inclusion, index) => (
-                          <div key={index} className="flex items-center space-x-3">
+                          <div key={index} className="flex items-center gap-3">
                             <div className="w-2 h-2 bg-[#a18c6d] rounded-full flex-shrink-0" />
                             <span className="text-white/90">{t(inclusion)}</span>
                           </div>
@@ -124,7 +124,7 @@ const YachtDetailsSheet = ({ yacht, isOpen, onClose }) => {
                       <h3 className="text-xl font-semibold mb-3 text-[#a18c6d]">{t("Features & Amenities")}</h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {yacht.features.map((feature, index) => (
-                          <div key={index} className="flex items-center space-x-3 py-1">
+                          <div key={index} className="flex items-center gap-3 py-1">
                             <div className="w-2 h-2 bg-[#a18c6d] rounded-full flex-shrink-0" />
                             <span className="text-white/90">{t(feature)}</span>
                           </div>
