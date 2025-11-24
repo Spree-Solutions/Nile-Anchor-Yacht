@@ -187,7 +187,7 @@ function BookingForm() {
 
   try {
     const response = await axios.post(
-      "https://ppvdzvttzgtjyavdwviu.supabase.co/functions/v1/messaging-service",
+      "https://wikcppexkjyrqhfbvafg.supabase.co/functions/v1/messaging-service",
       {
         messageData: {
           fullName: data.full_name,
