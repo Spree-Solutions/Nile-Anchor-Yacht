@@ -144,75 +144,154 @@ function BookingForm() {
   };
 
   const onSubmit = async (data) => {
-    console.log("Form Data:", data);
+  console.log("Form Data:", data);
 
-    if (!validateTimeSelection(data.start_time, data.end_time)) {
-      return;
-    }
+  if (!validateTimeSelection(data.start_time, data.end_time)) {
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    const convertToISOTime = (date, timeString) => {
-      if (!date || !timeString) return null;
+  // Helper to format date and time WITHOUT timezone conversion
+  const formatDateTime = (date, timeString) => {
+    if (!date || !timeString) return null;
 
-      const timeOption = timeOptions.find((t) => t.value === timeString);
-      if (!timeOption) return null;
+    const timeOption = timeOptions.find((t) => t.value === timeString);
+    if (!timeOption) return null;
 
-      const dateObj = new Date(date);
-      dateObj.setHours(timeOption.hour24, 0, 0, 0);
+    const dateObj = new Date(date);
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const day = String(dateObj.getDate()).padStart(2, "0");
+    const hours = String(timeOption.hour24).padStart(2, "0");
 
-      return dateObj.toISOString();
-    };
-
-    const startTimeISO = convertToISOTime(data.booking_date, data.start_time);
-    const endTimeISO = convertToISOTime(data.booking_date, data.end_time);
-
-    const bookingData = {
-      ...data,
-      start_time: startTimeISO,
-      end_time: endTimeISO,
-    };
-
-    console.log("Booking Data:", bookingData);
-
-    try {
-      const response = await axios.post(
-        "https://ppvdzvttzgtjyavdwviu.supabase.co/functions/v1/messaging-service",
-        {
-          messageData: {
-            fullName: bookingData.full_name,
-            email: bookingData.email,
-            phoneNumber: bookingData.phone,
-            yacht: bookingData.yacht,
-            eventType: bookingData.event_type,
-            startTime: bookingData.start_time,
-            endTime: bookingData.end_time,
-            date: new Date(bookingData.booking_date).toISOString(),
-          },
-          serviceKey: "nileanchor_v2_reservation_form",
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-      );
-
-      console.log("Reservation sent successfully:", response.data);
-      setLoading(false);
-
-      reset();
-      successToast(t("Booking"), t("Booking Send Successfully"));
-      return response.data;
-    } catch (error) {
-      console.error("Error sending reservation:", error.response?.data || error.message);
-      // errorToast(t("Booking"), t("Booking Send Failed"));
-      reset();
-      successToast(t("Booking"), t("Booking Send Successfully"));
-      setLoading(false);
-      // throw error;
-    }
+    // Return ISO format string WITHOUT converting to UTC
+    return `${year}-${month}-${day}T${hours}:00:00`;
   };
+
+  const startTimeFormatted = formatDateTime(data.booking_date, data.start_time);
+  const endTimeFormatted = formatDateTime(data.booking_date, data.end_time);
+
+  // Format booking date without time conversion
+  const bookingDateObj = new Date(data.booking_date);
+  const year = bookingDateObj.getFullYear();
+  const month = String(bookingDateObj.getMonth() + 1).padStart(2, "0");
+  const day = String(bookingDateObj.getDate()).padStart(2, "0");
+  const formattedBookingDate = `${year}-${month}-${day}T00:00:00`;
+
+  console.log("Booking Data:", {
+    startTime: startTimeFormatted,
+    endTime: endTimeFormatted,
+    date: formattedBookingDate
+  });
+
+  try {
+    const response = await axios.post(
+      "https://ppvdzvttzgtjyavdwviu.supabase.co/functions/v1/messaging-service",
+      {
+        messageData: {
+          fullName: data.full_name,
+          email: data.email,
+          phoneNumber: data.phone,
+          yacht: data.yacht,
+          eventType: data.event_type,
+          startTime: startTimeFormatted,
+          endTime: endTimeFormatted,
+          date: formattedBookingDate,
+        },
+        serviceKey: "nileanchor_v2_reservation_form",
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    console.log("Reservation sent successfully:", response.data);
+    setLoading(false);
+
+    reset(null);
+    successToast(t("Booking"), t("Booking Send Successfully"));
+    return response.data;
+  } catch (error) {
+    console.error("Error sending reservation:", error.response?.data || error.message);
+    reset();
+    successToast(t("Booking"), t("Booking Send Successfully"));
+    setLoading(false);
+  }
+};
+
+  // const onSubmit = async (data) => {
+  //   console.log("Form Data:", data);
+
+  //   if (!validateTimeSelection(data.start_time, data.end_time)) {
+  //     return;
+  //   }
+
+  //   setLoading(true);
+
+  //   const convertToISOTime = (date, timeString) => {
+  //     if (!date || !timeString) return null;
+
+  //     const timeOption = timeOptions.find((t) => t.value === timeString);
+  //     if (!timeOption) return null;
+
+  //     const dateObj = new Date(date);
+  //     dateObj.setHours(timeOption.hour24, 0, 0, 0);
+
+  //     return dateObj.toISOString();
+  //   };
+
+  //   const startTimeISO = convertToISOTime(data.booking_date, data.start_time);
+  //   const endTimeISO = convertToISOTime(data.booking_date, data.end_time);
+
+  //   const bookingData = {
+  //     ...data,
+  //     start_time: startTimeISO,
+  //     end_time: endTimeISO,
+  //   };
+
+  //   console.log("Booking Data:", bookingData);
+
+  //   try {
+  //     const response = await axios.post(
+  //       "https://ppvdzvttzgtjyavdwviu.supabase.co/functions/v1/messaging-service",
+  //       {
+  //         messageData: {
+  //           fullName: bookingData.full_name,
+  //           email: bookingData.email,
+  //           phoneNumber: bookingData.phone,
+  //           yacht: bookingData.yacht,
+  //           eventType: bookingData.event_type,
+  //           startTime: bookingData.start_time,
+  //           endTime: bookingData.end_time,
+  //           date: new Date(bookingData.booking_date).toISOString(),
+  //         },
+  //         serviceKey: "nileanchor_v2_reservation_form",
+  //       },
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       },
+  //     );
+
+  //     console.log("Reservation sent successfully:", response.data);
+  //     setLoading(false);
+
+  //     reset();
+  //     successToast(t("Booking"), t("Booking Send Successfully"));
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error("Error sending reservation:", error.response?.data || error.message);
+  //     // errorToast(t("Booking"), t("Booking Send Failed"));
+  //     reset();
+  //     successToast(t("Booking"), t("Booking Send Successfully"));
+  //     setLoading(false);
+  //     // throw error;
+  //   }
+  // };
 
   return (
     <Form {...form}>
